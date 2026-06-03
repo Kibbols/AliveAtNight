@@ -832,6 +832,30 @@
     "powerDesc": "Movement Speeds:\nMain Article\nCharging Static Blast: 2.99 m/s\nCharging Shock Therapy: 3.08 m/s\nWalking: 4.6 m/s\n\nMadness:\nAdditional, detailed information can be found in the separate  Article.\nMadness thresholds: \nTier I: 1 Madness point\nTier II: 2 Madness points\nTier III: 3 Madness points\nShock Therapy Madness gain: +0.5 Madness points\nThis is equal to half a Tier.\nStatic Blast Madness gain: +1 Madness point\nThis is equal to a full Tier.\n\nShock Therapy:\nRange: 12 metres\nThis distance is calculated from the centre of '''The Doctor's hitbox capsule.\nCharge time: 1 second\nDetonation delay: 0.65 seconds\nThis refers to how long it takes the attack to shock Survivors after releasing it.\nCool-down duration: 1.5 seconds\nThis refers to how long after the attack The Doctor is prohibited from initiating another attack or from interacting with Props.\nSurvivor-Interactions Cool-down duration: 2.5 seconds\nThis refers to how long after receiving a shock Survivors are prohibited from interacting wit",
     "addons": [
       {
+        "name": "\"Calm\" - Class I",
+        "desc": "An ECT procedure using a deep wavelength that soothes various mental illnesses. With Carter's Spark as its source, this procedure can cause mild anxiety in the patient.\n'''' Terror Radius while Static Blast is ready.\n'' Terror Radius while Static Blast is on cool-down.\n\nSurvivors with Madness suffer from the Affliction of Calm:\nMadness II: '  causes Survivors to hear a distant Illusionary Terror Radius.\nMadness III: Constantly causes Survivors to hear a distant Illusionary Terror Radius'''."
+      },
+      {
+        "name": "\"Calm\" - Class II",
+        "desc": "A risky ECT procedure using a deep wavelength that soothes various mental illnesses.With Carter's Spark as its source, this procedure can cause moderate anxiety in the patient.\n'''' Terror Radius while Static Blast is ready.\n'' Terror Radius while Static Blast is on cool-down.\n\nSurvivors with '''''' suffer from the Affliction of Calm:\nMadness II: ' causes Survivors to hear a distant Illusionary Terror Radius.\nMadness III: Constantly causes Survivors to hear a distant Illusionary Terror Radius'''"
+      },
+      {
+        "name": "\"Calm\" - Carter\\'s Notes",
+        "desc": ""
+      },
+      {
+        "name": "\"Discipline\" - Class II",
+        "desc": ""
+      },
+      {
+        "name": "\"Discipline\" - Class III",
+        "desc": ""
+      },
+      {
+        "name": "\"Discipline\" - Carter\\'s Notes",
+        "desc": ""
+      },
+      {
         "name": "High Stimulus Electrode",
         "desc": "An experimental electrode that can withstand very high charges for a longer period of time.\n'''' Shock Therapy'' Attack range."
       },
@@ -856,8 +880,36 @@
         "desc": "A mouldy electrode which can nevertheless conduct a weak electrical current.\n'''' Shock Therapy'' Attack range."
       },
       {
+        "name": "\"Obedience\" - Class III",
+        "desc": "An experimental ECT procedure developed within the Fog, crudely annotated. The extra surge of power causes extreme muscle tension which depletes the patient's energy.\nSnap Out of It takes 2 seconds longer for Survivors to complete.\n\nSurvivors with Madness II or III suffer from the following Affliction:\nSkill Checks have a considerable chance to turn counter-clockwise.\n\nAfflictions of the same type do not stack."
+      },
+      {
+        "name": "\"Order\" - Class I",
+        "desc": "A conventional ECT procedure, part of a patient's daily routine at the Léry's Memorial Institute.Can cause a state of mild confusion in the patient.\nReduces Cool-down duration of Static Blast by -2 seconds.\n\nSurvivors with '''''''' suffer from the Affliction of Order:\nBroken  have a chance to become replaced with Illusionary Pallets that persist until approached.\nEvery 20 seconds, a new Illusionary Pallet'' is generated at the location of a random Broken Pallet.\n\nThe Doctor shares in his patient"
+      },
+      {
+        "name": "\"Order\" - Class II",
+        "desc": "A high stimulus ECT procedure, part of a patient's daily routine at the Léry's Memorial Institute.Can cause a state of moderate confusion in the patient.\n' ''' inflicted by Static Blast.\n\nSurvivors with Madness II or III suffer from the following Afflictions:\nBroken Pallets may appear to be replaced with Illusionary Pallets that persist until approached.\nIllusionary Pallets'' are generated every 20 seconds at the location of a Broken Pallet within 64 metres of The Doctor.\nThe Doctor shares in hi"
+      },
+      {
+        "name": "\"Order\" - Carter\\'s Notes",
+        "desc": ""
+      },
+      {
         "name": "Polished Electrode",
         "desc": "A like-new standard electrode equipment to conduct electro-convulsive treatments.\n'''' Shock Therapy'' Attack range."
+      },
+      {
+        "name": "\"Restraint\" - Class II",
+        "desc": "An experimental ECT procedure developed within The Fog.Uses a wavelength that links the patient's and '''The Doctor's''' minds.This procedure is known to cause mild cases of hallucination in the patient.\nReveals Survivors'  for 1 second when their ''''' Tier increases.\n\nSurvivors with Madness''' suffer from the Affliction of Restraint:\n' Illusionary Doctor duration.\n\nThe Doctor''' shares in his patients' Madness in order to read the Auras of Illusionary Doctors."
+      },
+      {
+        "name": "\"Restraint\" - Class III",
+        "desc": "An experimental ECT procedure developed within The Fog.Uses a high stimulus wavelength to link the patient's and '''The Doctor's''' minds.This procedure is known to cause serious cases of hallucinations in the patient.\nReveals Survivors'  for 2 seconds when their Madness Tier increases.\n\nSurvivors with Madness suffer from the Affliction of Restraint:\n' Illusionary Doctor duration.\n\nThe Doctor' shares in his patients' Madness in order to read the Auras of Illusionary Doctors."
+      },
+      {
+        "name": "\"Restraint\" - Carter\\'s Notes",
+        "desc": ""
       },
       {
         "name": "Scrapped Tape",
@@ -1168,6 +1220,10 @@
         "desc": "A sheath allowing for a full motion range: ideal to inflict quick and powerful wounds while moving freely.Stolen from a patrol officer the night Danny left Philadelphia.\nGrants a +10 % ''''' Status Effect for 5 seconds' after Marking a Survivor.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: now gives The Ghost Face a +10 % Haste Status Effect for 5 seconds when Marking a Survivor.\n\n== Trivia ==\nThe Haste effect stacks with itself when Marking multiple Survivors.\n\n== 3.0.0 Developer Build Trivia =="
       },
       {
+        "name": "\"Ghost Face Caught on Tape\"",
+        "desc": "A tape obtained by Olsen to write an article that terrorised Roseville.\nPutting a Survivor into the  with a Basic Attack immediately recharges Night Shroud.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: now immediately recharges Night Shroud when The Ghost Face puts a Survivor into the Dying State with a Basic Attack.\n\n== 3.0.0 Developer Build Trivia ==\nThis Add-on was originally named \"The Ghost Caught on Tape\". It had almost the same effect as the released Add-on, increasing lean stalk rate by 1"
+      },
+      {
         "name": "Headline Cut-Outs",
         "desc": "Cut-outs of articles covering unsolved murder cases from Utah to Pennsylvania.While Ghost Face just authored some of the headlines, he committed all of the murders.Compiling your success makes you proud and boosts your confidence. \nIncreases Movement speed while Stalking by +40 %.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: increased the bonus Stalking Movement speed from 10% to 40%.\n\n== Trivia ==\nOne of the headlines features a typo, spelling \"Florida\" as \"Flordia\".\n\n== 3.0.0 Developer Build Tr"
       },
@@ -1206,6 +1262,10 @@
       {
         "name": "Outdoor Security Camera",
         "desc": "A small surveillance camera that filmed Ghost Face breaking into a house on Belleview Road in Northern Roseville.The camera was positioned at the perfect angle to catch a glimpse of Ghost Face without providing any real clue to the police.\nPutting a Marked Survivor into the  reveals the  of all Survivors for 7 seconds.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: increased the Aura reveal time from 4 seconds to 7 seconds.\n: now reveals all Survivors.\n\nCategory: Visceral Add-ons\n\nit: Telecamera di"
+      },
+      {
+        "name": "\"Philly\"",
+        "desc": ""
       },
       {
         "name": "Telephoto Lens",
@@ -2443,6 +2503,10 @@
         "desc": ""
       },
       {
+        "name": "\"Z\" Block",
+        "desc": "A deeply scratched and burnt wooden block which's only recognisable feature is the letter \"Z\".\nReveals the Auras of Survivors affected by a Dream Snare or a Dream Pallet Rupture for 3 seconds."
+      },
+      {
         "name": "Dream Demon",
         "desc": ""
       }
@@ -2464,6 +2528,10 @@
       {
         "name": "Bad Man Keepsake",
         "desc": "A rotten molar ripped from the ''\"Bad Man's\" cold dead hand.\nAfter hitting a Survivor with a Blink Attack'', the  of that Survivor, when healing or being healed, is revealed to The Nurse within 28 metres for 60 seconds."
+      },
+      {
+        "name": "\"Bad Man\\'s\" Last Breath",
+        "desc": ""
       },
       {
         "name": "Campbell's Last Breath",
@@ -3772,12 +3840,112 @@
     "powerDesc": "Movement Speeds:\nMain Article\nWalking: 4.6 m/s\nCloaked Walking: 6.0 m/s\nUncloaking: 1.6 m/s\nPost-Uncloak Boost: 6.9 m/s\nCloaking: 4.6 m/s\n\nSurprise Attack:\nThe Surprise Attack is a Score Event in the Deviousness Category that is triggered each time The Wraith successfully hits any Survivor within 5 seconds after uncloaking with a regular Basic Attack.The Surprise Attack is not a Special Attack, but rather just a Score Event the game checks for to trigger certain effects (e.g. ,  and ).\n\nCloaking:\nAction duration: 1.5 seconds\nThe Wailing Bell rings throughout the animation.\nStarting to cloak triggers a rattling noise.\nNo Movement Speed penalty.\nThe Wailing Bell rings throughout the animation.\n\nUncloaking:\nAction duration: 3 seconds\nThe Wailing Bell only starts ringing after 1.5 seconds.\nUncloak Movement speed: 1.6 m/s\nPost-Uncloak Speed burst: 1 second at 6 m/s\n\nStuns:\nGetting stunned while The Wraith is Cloaked forces him to uncloak while he is stunned in place for 4 seconds.\n\nLightbur",
     "addons": [
       {
+        "name": "\"All Seeing\" - Blood",
+        "desc": ""
+      },
+      {
+        "name": "\"All Seeing\" - Mud",
+        "desc": ""
+      },
+      {
+        "name": "\"All Seeing\" - Spirit",
+        "desc": ""
+      },
+      {
+        "name": "\"All Seeing\" - White",
+        "desc": ""
+      },
+      {
+        "name": "\"Blind Warrior\" - Blood",
+        "desc": ""
+      },
+      {
+        "name": "\"Blind Warrior\" - Mud",
+        "desc": ""
+      },
+      {
+        "name": "\"Blind Warrior\" - Soot",
+        "desc": ""
+      },
+      {
+        "name": "\"Blind Warrior\" - Spirit",
+        "desc": ""
+      },
+      {
+        "name": "\"Blind Warrior\" - White",
+        "desc": ""
+      },
+      {
+        "name": "\"Blink\" - Mud",
+        "desc": "The Kratin symbol, representing quick passing, is finger-drawn in mud on the body of the Bell.\n'''''' The Wraith's Disappearance time."
+      },
+      {
+        "name": "\"Blink\" - White",
+        "desc": "The Kratin symbol, representing quick passing, is stamped in white ink on the body of the Bell.\nTremendously reduces the Cloaking time (-60 %)."
+      },
+      {
         "name": "Bone Clapper",
         "desc": "A Bell clapper made from a highly polished piece of bone. Causes the sounds of the Wailing Bell to echo and warp chaotically.\nSurvivors can no longer discern the ''Wailing Bell's'' distance or direction."
       },
       {
         "name": "Coxcombed Clapper",
         "desc": "A simple coxcomb knotted rope wrapped around the Bell Clapper to muffle its sound. A malevolent Aura emanates from it.\nRenders the Wailing Bell completely silent."
+      },
+      {
+        "name": "\"Shadow Dance\" - Blood",
+        "desc": "The Yiwarick symbol, representing dark synergy, is stamped in blood on the body of the Bell.\n'''''' Breaking, Damaging, and Vaulting Action speeds when cloaked."
+      },
+      {
+        "name": "\"Shadow Dance\" - Soot",
+        "desc": ""
+      },
+      {
+        "name": "\"Shadow Dance\" - White",
+        "desc": "The Yiwarick symbol, representing dark synergy, is stamped in white ink on the body of the Bell.\n'''''' Breaking, Damaging, and Vaulting Action speeds when cloaked."
+      },
+      {
+        "name": "\"Swift Hunt\" - Blood",
+        "desc": ""
+      },
+      {
+        "name": "\"Swift Hunt\" - Mud",
+        "desc": ""
+      },
+      {
+        "name": "\"Swift Hunt\" - Soot",
+        "desc": ""
+      },
+      {
+        "name": "\"Swift Hunt\" - White",
+        "desc": ""
+      },
+      {
+        "name": "\"The Beast\" - Soot",
+        "desc": ""
+      },
+      {
+        "name": "\"The Ghost\" - Soot",
+        "desc": "The Khugwemuu symbol, representing the spirit world, is finger-drawn out of soot on the body of the Bell.\nAfter uncloaking, The Wraith's Terror Radius and Red Stain will remain suppressed for 6 seconds."
+      },
+      {
+        "name": "\"The Hound\" - Soot",
+        "desc": "The Wonnug symbol, representing a peerless tracker, is finger-drawn out of soot on the body of the Bell.\nFresh Blood Marks are '''''' discernible than normal."
+      },
+      {
+        "name": "\"The Serpent\" - Soot",
+        "desc": "The Laokeye symbol, representing cunning, is finger-drawn out of soot on the body of the Bell.\nThe Wraith will uncloak completely after breaking  or damaging  when cloaked."
+      },
+      {
+        "name": "\"Windstorm\" - Blood",
+        "desc": "The Ohuwe-Onmnea symbol, representing a howling storm, is stamped in blood on the body of the Bell.\n'''''' The Wraith's Movement speed when cloaked."
+      },
+      {
+        "name": "\"Windstorm\" - Mud",
+        "desc": ""
+      },
+      {
+        "name": "\"Windstorm\" - White",
+        "desc": "The Ohuwe-Onmnea symbol, representing a howling storm, is stamped in white ink on the body of the Bell.\n'''''' The Wraith's Movement speed when cloaked."
       },
       {
         "name": "Wailing Bell",
