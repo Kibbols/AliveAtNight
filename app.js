@@ -296,8 +296,10 @@ async function fetchKillerList() {
     } catch (_) {}
   }
 
-  // Merge in any killers from the fallback that are not in the wiki results
-  // (covers very new killers not yet categorised)
+  // Store wiki names for use in toWikiName()
+  wikiKillerNames = [...allNames];
+
+  // Merge in any killers from the fallback not yet categorised on the wiki
   for (const k of window.DBD_KILLERS) {
     allNames.add(k.name);
   }
@@ -305,14 +307,29 @@ async function fetchKillerList() {
   return [...allNames].sort();
 }
 
+let wikiKillerNames = [];
+
+function firstTwo(name) {
+  return name.split(' ').slice(0, 2).join(' ').toLowerCase();
+}
+
+function toWikiName(displayName) {
+  const prefix = firstTwo(displayName);
+  const match = wikiKillerNames.find(w => firstTwo(w) === prefix);
+  return match || displayName;
+}
+
 async function fetchKillerAddons(killerName) {
+  const wikiName = toWikiName(killerName);
   const data = await wikiGet({
     action: 'parse',
-    page: `${killerName}/Add-ons`,
+    page: `${wikiName}/Add-ons`,
     prop: 'wikitext',
     section: '0'
   });
-  const wikitext = data?.parse?.wikitext?.['*'] || '';
+  if (data?.error) throw new Error(data.error.info || 'Wiki page not found');
+  const wikitext = data?.parse?.wikitext?.["*"] || '';
+  if (!wikitext) throw new Error('Empty wikitext');
   return parseAddonNames(wikitext);
 }
 
