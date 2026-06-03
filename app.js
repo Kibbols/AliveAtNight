@@ -136,18 +136,32 @@ function parsePowerDesc(wikitext, powerName) {
 
 // Parse addon description from raw wikitext using patch version
 function parseAddonDesc(wikitext, patch) {
-  // Find the matching patch version in the History tabber
-  // Format: |-|PATCH=\n{| ... | DESCRIPTION\n|}
-  const escaped = patch.replace('.', '\\.');
-  const re = new RegExp('\\|\\-\\|' + escaped + '=\\s*\\{\\|[^}]*\\|\\-[^|]*\\|\\|?\\s*\\n([\\s\\S]*?)(?=\\n\\|})', '');
-  const m = re.exec(wikitext);
-  if (!m) {
-    // Fallback: just grab first table description
-    const fallback = /\|\s*\n([\s\S]*?)(?=\n\|-)/.exec(wikitext);
-    if (fallback) return stripWikiMarkup(fallback[1]).slice(0, 500);
-    return '';
+  // Find |-|PATCH= section in the History tabber
+  const marker = '|-|' + patch + '=';
+  let idx = wikitext.indexOf(marker);
+  // Fallback: use last section if patch not found
+  if (idx < 0) {
+    const lastMarker = wikitext.lastIndexOf('|-|');
+    if (lastMarker < 0) return '';
+    idx = lastMarker;
   }
-  return stripWikiMarkup(m[1]).slice(0, 500);
+  // Find the next |-| or end of tabber
+  const nextSection = wikitext.indexOf('\n|-|', idx + 1);
+  const section = wikitext.slice(idx, nextSection > 0 ? nextSection : wikitext.length);
+  // Extract description lines: | text (not |- or |} or ! lines)
+  const lines = section.split('\n');
+  const descLines = [];
+  let inDesc = false;
+  for (const line of lines) {
+    if (!inDesc && line.startsWith('| ') && !line.startsWith('|-')) {
+      inDesc = true;
+    }
+    if (inDesc) {
+      if (line === '|}') break;
+      descLines.push(line.replace(/^\| /, ''));
+    }
+  }
+  return stripWikiMarkup(descLines.join('\n')).slice(0, 500);
 }
 
 // ── Parse killers from Module:Datatable ──────────────────────────────────────
@@ -210,8 +224,8 @@ function parseLoadout(lua) {
     const eqBrace = lua.indexOf('{', i);
     if (eqBrace < 0) break;
     // Make sure there's just = and whitespace between name and brace
-    const between = lua.slice(i, eqBrace).trim();
-    if (between !== '=') { i = eqBrace + 1; continue; }
+    const between = lua.slice(i, eqBrace).replace(/--[^\n]*/g, '').trim();
+    if (!/^=\s*$/.test(between)) { i = eqBrace + 1; continue; }
 
     // Count braces to find end of props
     let depth = 1, j = eqBrace + 1;
