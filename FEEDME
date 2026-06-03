@@ -6,107 +6,86 @@
     "addons": [
       {
         "name": "Access Panel",
-        "killerId": "40",
         "desc": ""
       },
       {
         "name": "Bonnie's Guitar Strings",
-        "killerId": "40",
         "desc": ""
       },
       {
         "name": "Celebrate! Poster",
-        "killerId": "40",
         "desc": ""
       },
       {
         "name": "Chica's Bib",
-        "killerId": "40",
         "desc": ""
       },
       {
         "name": "Endo CPU",
-        "killerId": "40",
         "desc": ""
       },
       {
         "name": "Faz-Coin",
-        "killerId": "40",
         "desc": ""
       },
       {
         "name": "Foxy's Hook",
-        "killerId": "40",
         "desc": ""
       },
       {
         "name": "Freddy's Hat",
-        "killerId": "40",
         "desc": ""
       },
       {
         "name": "Greasy Paper Plate",
-        "killerId": "40",
         "desc": ""
       },
       {
         "name": "Help Wanted Ad",
-        "killerId": "40",
         "desc": ""
       },
       {
         "name": "Iridescent Remnant",
-        "killerId": "40",
         "desc": ""
       },
       {
         "name": "Loot Bag",
-        "killerId": "40",
         "desc": ""
       },
       {
         "name": "Office Phone",
-        "killerId": "40",
         "desc": ""
       },
       {
         "name": "Party Hat",
-        "killerId": "40",
         "desc": ""
       },
       {
         "name": "Purple Guy Drawing",
-        "killerId": "40",
         "desc": ""
       },
       {
         "name": "Restaurant Menu",
-        "killerId": "40",
         "desc": ""
       },
       {
         "name": "Ripped Curtain",
-        "killerId": "40",
         "desc": ""
       },
       {
         "name": "Rotten Pizza",
-        "killerId": "40",
         "desc": ""
       },
       {
         "name": "Security Guard's Badge",
-        "killerId": "40",
         "desc": ""
       },
       {
         "name": "Streamers",
-        "killerId": "40",
         "desc": ""
       },
       {
         "name": "Fazbear's Fright",
-        "killerId": "40",
         "desc": ""
       }
     ]
@@ -118,107 +97,86 @@
     "addons": [
       {
         "name": "Automatic Drawing",
-        "killerId": "26",
         "desc": ""
       },
       {
         "name": "Charcoal Stick",
-        "killerId": "26",
         "desc": ""
       },
       {
         "name": "Choclo Corn",
-        "killerId": "26",
         "desc": ""
       },
       {
         "name": "Darkest Ink",
-        "killerId": "26",
         "desc": ""
       },
       {
         "name": "Festering Carrion",
-        "killerId": "26",
         "desc": ""
       },
       {
         "name": "Garden of Rot",
-        "killerId": "26",
         "desc": ""
       },
       {
         "name": "Ink Egg",
-        "killerId": "26",
         "desc": ""
       },
       {
         "name": "Iridescent Feather",
-        "killerId": "26",
         "desc": ""
       },
       {
         "name": "Matias' Baby Shoes",
-        "killerId": "26",
         "desc": ""
       },
       {
         "name": "O Grief, O Lover",
-        "killerId": "26",
         "desc": ""
       },
       {
         "name": "Oil Paints",
-        "killerId": "26",
         "desc": ""
       },
       {
         "name": "Severed Hands",
-        "killerId": "26",
         "desc": ""
       },
       {
         "name": "Severed Tongue",
-        "killerId": "26",
         "desc": ""
       },
       {
         "name": "Silver Bell",
-        "killerId": "26",
         "desc": ""
       },
       {
         "name": "Still Life Crow",
-        "killerId": "26",
         "desc": ""
       },
       {
         "name": "Thick Tar",
-        "killerId": "26",
         "desc": ""
       },
       {
         "name": "Thorny Nest",
-        "killerId": "26",
         "desc": ""
       },
       {
         "name": "Untitled Agony",
-        "killerId": "26",
         "desc": ""
       },
       {
         "name": "Velvet Fabric",
-        "killerId": "26",
         "desc": ""
       },
       {
         "name": "Vibrant Obituary",
-        "killerId": "26",
         "desc": ""
       },
       {
         "name": "Birds of Torment",
-        "killerId": "26",
         "desc": ""
       }
     ]
@@ -230,107 +188,86 @@
     "addons": [
       {
         "name": "Adrenaline Vial",
-        "killerId": "21",
         "desc": ""
       },
       {
         "name": "Alchemist's Ring",
-        "killerId": "21",
         "desc": ""
       },
       {
         "name": "Blighted Crow",
-        "killerId": "21",
         "desc": ""
       },
       {
         "name": "Blighted Rat",
-        "killerId": "21",
         "desc": ""
       },
       {
         "name": "Canker Thorn",
-        "killerId": "21",
         "desc": ""
       },
       {
         "name": "Chipped Monocle",
-        "killerId": "21",
         "desc": ""
       },
       {
         "name": "Compound Seven",
-        "killerId": "21",
         "desc": ""
       },
       {
         "name": "Compound Thirty-Three",
-        "killerId": "21",
         "desc": ""
       },
       {
         "name": "Compound Twenty-One",
-        "killerId": "21",
         "desc": ""
       },
       {
         "name": "Foxglove",
-        "killerId": "21",
         "desc": ""
       },
       {
         "name": "Iridescent Blight Tag",
-        "killerId": "21",
         "desc": ""
       },
       {
         "name": "Placebo Tablet",
-        "killerId": "21",
         "desc": ""
       },
       {
         "name": "Plague Bile",
-        "killerId": "21",
         "desc": ""
       },
       {
         "name": "Pustula Dust",
-        "killerId": "21",
         "desc": ""
       },
       {
         "name": "Rose Tonic",
-        "killerId": "21",
         "desc": ""
       },
       {
         "name": "Shredded Notes",
-        "killerId": "21",
         "desc": ""
       },
       {
         "name": "Soul Chemical",
-        "killerId": "21",
         "desc": ""
       },
       {
         "name": "Summoning Stone",
-        "killerId": "21",
         "desc": ""
       },
       {
         "name": "Umbra Salts",
-        "killerId": "21",
         "desc": ""
       },
       {
         "name": "Vigo's Journal",
-        "killerId": "21",
         "desc": ""
       },
       {
         "name": "Blighted Corruption",
-        "killerId": "21",
         "desc": ""
       }
     ]
@@ -342,107 +279,86 @@
     "addons": [
       {
         "name": "Speed Limiter",
-        "killerId": "9",
         "desc": ""
       },
       {
         "name": "Award-winning Chilli",
-        "killerId": "9",
         "desc": ""
       },
       {
         "name": "Begrimed Chains (Bubba's Chainsaw)",
-        "killerId": "9",
         "desc": ""
       },
       {
         "name": "Carburettor Tuning Guide",
-        "killerId": "9",
         "desc": ""
       },
       {
         "name": "Chainsaw File",
-        "killerId": "9",
         "desc": ""
       },
       {
         "name": "Chilli",
-        "killerId": "9",
         "desc": ""
       },
       {
         "name": "Depth Gauge Rake",
-        "killerId": "9",
         "desc": ""
       },
       {
         "name": "Grisly Chains",
-        "killerId": "9",
         "desc": ""
       },
       {
         "name": "Homemade Muffler",
-        "killerId": "9",
         "desc": ""
       },
       {
         "name": "Iridescent Flesh",
-        "killerId": "9",
         "desc": ""
       },
       {
         "name": "Knife Scratches",
-        "killerId": "9",
         "desc": ""
       },
       {
         "name": "Light Chassis",
-        "killerId": "9",
         "desc": ""
       },
       {
         "name": "Long Guide Bar",
-        "killerId": "9",
         "desc": ""
       },
       {
         "name": "Primer Bulb",
-        "killerId": "9",
         "desc": ""
       },
       {
         "name": "Rusted Chains",
-        "killerId": "9",
         "desc": ""
       },
       {
         "name": "Shop Lubricant",
-        "killerId": "9",
         "desc": ""
       },
       {
         "name": "Spark Plug",
-        "killerId": "9",
         "desc": ""
       },
       {
         "name": "The Beast's Marks",
-        "killerId": "9",
         "desc": ""
       },
       {
         "name": "The Grease",
-        "killerId": "9",
         "desc": ""
       },
       {
         "name": "Vegetable Oil",
-        "killerId": "9",
         "desc": ""
       },
       {
         "name": "Bubba's Chainsaw",
-        "killerId": "9",
         "desc": ""
       }
     ]
@@ -454,107 +370,86 @@
     "addons": [
       {
         "name": "Bent Nail",
-        "killerId": "25",
         "desc": ""
       },
       {
         "name": "Burning Candle",
-        "killerId": "25",
         "desc": ""
       },
       {
         "name": "Chatterer's Tooth",
-        "killerId": "25",
         "desc": ""
       },
       {
         "name": "Engineer's Fang",
-        "killerId": "25",
         "desc": ""
       },
       {
         "name": "Flickering Television",
-        "killerId": "25",
         "desc": ""
       },
       {
         "name": "Frank's Heart",
-        "killerId": "25",
         "desc": ""
       },
       {
         "name": "Greasy Black Lens",
-        "killerId": "25",
         "desc": ""
       },
       {
         "name": "Impaling Wire",
-        "killerId": "25",
         "desc": ""
       },
       {
         "name": "Iridescent Lament Configuration",
-        "killerId": "25",
         "desc": ""
       },
       {
         "name": "Larry's Blood",
-        "killerId": "25",
         "desc": ""
       },
       {
         "name": "Larry's Remains",
-        "killerId": "25",
         "desc": ""
       },
       {
         "name": "Leather Strip",
-        "killerId": "25",
         "desc": ""
       },
       {
         "name": "Liquified Gore",
-        "killerId": "25",
         "desc": ""
       },
       {
         "name": "Lively Crickets",
-        "killerId": "25",
         "desc": ""
       },
       {
         "name": "Original Pain",
-        "killerId": "25",
         "desc": ""
       },
       {
         "name": "Skewered Rat",
-        "killerId": "25",
         "desc": ""
       },
       {
         "name": "Slice of Frank",
-        "killerId": "25",
         "desc": ""
       },
       {
         "name": "Spoiled Meal",
-        "killerId": "25",
         "desc": ""
       },
       {
         "name": "Torture Pillar",
-        "killerId": "25",
         "desc": ""
       },
       {
         "name": "Wriggling Maggots",
-        "killerId": "25",
         "desc": ""
       },
       {
         "name": "Summons of Pain",
-        "killerId": "25",
         "desc": ""
       }
     ]
@@ -566,117 +461,94 @@
     "addons": [
       {
         "name": "Bottle of Chloroform",
-        "killerId": "12",
         "desc": ""
       },
       {
         "name": "Cheap Gin Bottle",
-        "killerId": "12",
         "desc": ""
       },
       {
         "name": "Cigar Box",
-        "killerId": "12",
         "desc": ""
       },
       {
         "name": "Ether 5 Vol%",
-        "killerId": "12",
         "desc": ""
       },
       {
         "name": "Ether 10 Vol%",
-        "killerId": "12",
         "desc": ""
       },
       {
         "name": "Ether 15 Vol%",
-        "killerId": "12",
         "desc": ""
       },
       {
         "name": "Fingerless Parade Gloves",
-        "killerId": "12",
         "desc": ""
       },
       {
         "name": "Flask of Bleach",
-        "killerId": "12",
         "desc": ""
       },
       {
         "name": "Garish Make-Up Kit",
-        "killerId": "12",
         "desc": ""
       },
       {
         "name": "Kerosene Can",
-        "killerId": "12",
         "desc": ""
       },
       {
         "name": "Party Bottle",
-        "killerId": "12",
         "desc": ""
       },
       {
         "name": "Redhead's Pinkie Finger",
-        "killerId": "12",
         "desc": ""
       },
       {
         "name": "Robin Feather",
-        "killerId": "12",
         "desc": ""
       },
       {
         "name": "Smelly Inner Soles",
-        "killerId": "12",
         "desc": ""
       },
       {
         "name": "Solvent Jug",
-        "killerId": "12",
         "desc": ""
       },
       {
         "name": "Spirit of Hartshorn",
-        "killerId": "12",
         "desc": ""
       },
       {
         "name": "Starling Feather",
-        "killerId": "12",
         "desc": ""
       },
       {
         "name": "Sticky Soda Bottle",
-        "killerId": "12",
         "desc": ""
       },
       {
         "name": "Sulphuric Acid Vial",
-        "killerId": "12",
         "desc": ""
       },
       {
         "name": "Tattoo's Middle Finger",
-        "killerId": "12",
         "desc": ""
       },
       {
         "name": "Thick Cork Stopper",
-        "killerId": "12",
         "desc": ""
       },
       {
         "name": "VHS Porn",
-        "killerId": "12",
         "desc": ""
       },
       {
         "name": "The Afterpiece Tonic",
-        "killerId": "12",
         "desc": ""
       }
     ]
@@ -688,107 +560,86 @@
     "addons": [
       {
         "name": "Alucard's Shield",
-        "killerId": "37",
         "desc": ""
       },
       {
         "name": "Blood-Filled Goblet",
-        "killerId": "37",
         "desc": ""
       },
       {
         "name": "Cerberus Talon",
-        "killerId": "37",
         "desc": ""
       },
       {
         "name": "Clock Tower Gear",
-        "killerId": "37",
         "desc": ""
       },
       {
         "name": "Cube of Zoe",
-        "killerId": "37",
         "desc": ""
       },
       {
         "name": "Force of Echo",
-        "killerId": "37",
         "desc": ""
       },
       {
         "name": "Iridescent Ring of Vlad",
-        "killerId": "37",
         "desc": ""
       },
       {
         "name": "Killer Doll",
-        "killerId": "37",
         "desc": ""
       },
       {
         "name": "Lapis Lazuli",
-        "killerId": "37",
         "desc": ""
       },
       {
         "name": "Magical Ticket",
-        "killerId": "37",
         "desc": ""
       },
       {
         "name": "Medusa's Hair",
-        "killerId": "37",
         "desc": ""
       },
       {
         "name": "Moonstone Necklace",
-        "killerId": "37",
         "desc": ""
       },
       {
         "name": "Pocket Watch (Vampiric Shift)",
-        "killerId": "37",
         "desc": ""
       },
       {
         "name": "Ruby Circlet",
-        "killerId": "37",
         "desc": ""
       },
       {
         "name": "Sunglasses",
-        "killerId": "37",
         "desc": ""
       },
       {
         "name": "Sylph Feather",
-        "killerId": "37",
         "desc": ""
       },
       {
         "name": "Traveller's Hat",
-        "killerId": "37",
         "desc": ""
       },
       {
         "name": "Warg's Fang",
-        "killerId": "37",
         "desc": ""
       },
       {
         "name": "White Wolf Medallion",
-        "killerId": "37",
         "desc": ""
       },
       {
         "name": "Winged Boots",
-        "killerId": "37",
         "desc": ""
       },
       {
         "name": "Vampiric Shift",
-        "killerId": "37",
         "desc": ""
       }
     ]
@@ -800,107 +651,86 @@
     "addons": [
       {
         "name": "Barbed Wire",
-        "killerId": "19",
         "desc": ""
       },
       {
         "name": "Bayshore's Cigar",
-        "killerId": "19",
         "desc": ""
       },
       {
         "name": "Bayshore's Gold Tooth",
-        "killerId": "19",
         "desc": ""
       },
       {
         "name": "Chewing Tobacco",
-        "killerId": "19",
         "desc": ""
       },
       {
         "name": "Gold Creek Whiskey",
-        "killerId": "19",
         "desc": ""
       },
       {
         "name": "Hellshire Iron",
-        "killerId": "19",
         "desc": ""
       },
       {
         "name": "Honey Locust Thorn",
-        "killerId": "19",
         "desc": ""
       },
       {
         "name": "Iridescent Coin",
-        "killerId": "19",
         "desc": ""
       },
       {
         "name": "Jaw Smasher",
-        "killerId": "19",
         "desc": ""
       },
       {
         "name": "Marshal's Badge",
-        "killerId": "19",
         "desc": ""
       },
       {
         "name": "Modified Ammo Belt",
-        "killerId": "19",
         "desc": ""
       },
       {
         "name": "Poison Oak Leaves",
-        "killerId": "19",
         "desc": ""
       },
       {
         "name": "Prison Chain",
-        "killerId": "19",
         "desc": ""
       },
       {
         "name": "Rickety Chain",
-        "killerId": "19",
         "desc": ""
       },
       {
         "name": "Rusted Spike",
-        "killerId": "19",
         "desc": ""
       },
       {
         "name": "Snake Oil",
-        "killerId": "19",
         "desc": ""
       },
       {
         "name": "Spit Polish Rag",
-        "killerId": "19",
         "desc": ""
       },
       {
         "name": "Tin Oil Can",
-        "killerId": "19",
         "desc": ""
       },
       {
         "name": "Wanted Poster",
-        "killerId": "19",
         "desc": ""
       },
       {
         "name": "Warden's Keys",
-        "killerId": "19",
         "desc": ""
       },
       {
         "name": "The Redeemer",
-        "killerId": "19",
         "desc": ""
       }
     ]
@@ -912,107 +742,86 @@
     "addons": [
       {
         "name": "Barb's Glasses",
-        "killerId": "17",
         "desc": ""
       },
       {
         "name": "Black Heart",
-        "killerId": "17",
         "desc": ""
       },
       {
         "name": "Brass Case Lighter",
-        "killerId": "17",
         "desc": ""
       },
       {
         "name": "Deer Lung",
-        "killerId": "17",
         "desc": ""
       },
       {
         "name": "Eleven's Soda",
-        "killerId": "17",
         "desc": ""
       },
       {
         "name": "Leprose Lichen",
-        "killerId": "17",
         "desc": ""
       },
       {
         "name": "Lifeguard Whistle",
-        "killerId": "17",
         "desc": ""
       },
       {
         "name": "Mews' Guts",
-        "killerId": "17",
         "desc": ""
       },
       {
         "name": "Rat Liver",
-        "killerId": "17",
         "desc": ""
       },
       {
         "name": "Rat Tail",
-        "killerId": "17",
         "desc": ""
       },
       {
         "name": "Red Moss",
-        "killerId": "17",
         "desc": ""
       },
       {
         "name": "Rotten Green Tripe",
-        "killerId": "17",
         "desc": ""
       },
       {
         "name": "Rotten Pumpkin",
-        "killerId": "17",
         "desc": ""
       },
       {
         "name": "Sticky Lining",
-        "killerId": "17",
         "desc": ""
       },
       {
         "name": "Thorny Vines",
-        "killerId": "17",
         "desc": ""
       },
       {
         "name": "Unknown Egg",
-        "killerId": "17",
         "desc": ""
       },
       {
         "name": "Upside Down Resin",
-        "killerId": "17",
         "desc": ""
       },
       {
         "name": "Vermilion Webcap",
-        "killerId": "17",
         "desc": ""
       },
       {
         "name": "Violet Waxcap",
-        "killerId": "17",
         "desc": ""
       },
       {
         "name": "Viscous Webbing",
-        "killerId": "17",
         "desc": ""
       },
       {
         "name": "Of the Abyss",
-        "killerId": "17",
         "desc": ""
       }
     ]
@@ -1024,47 +833,38 @@
     "addons": [
       {
         "name": "High Stimulus Electrode",
-        "killerId": "7",
         "desc": ""
       },
       {
         "name": "Interview Tape",
-        "killerId": "7",
         "desc": ""
       },
       {
         "name": "Iridescent King",
-        "killerId": "7",
         "desc": ""
       },
       {
         "name": "Iridescent Queen",
-        "killerId": "7",
         "desc": ""
       },
       {
         "name": "Maple Knight",
-        "killerId": "7",
         "desc": ""
       },
       {
         "name": "Mouldy Electrode",
-        "killerId": "7",
         "desc": ""
       },
       {
         "name": "Polished Electrode",
-        "killerId": "7",
         "desc": ""
       },
       {
         "name": "Scrapped Tape",
-        "killerId": "7",
         "desc": ""
       },
       {
         "name": "Carter's Spark",
-        "killerId": "7",
         "desc": ""
       }
     ]
@@ -1076,107 +876,86 @@
     "addons": [
       {
         "name": "Air Freshener",
-        "killerId": "28",
         "desc": ""
       },
       {
         "name": "Boat Key",
-        "killerId": "28",
         "desc": ""
       },
       {
         "name": "Broken Doll",
-        "killerId": "28",
         "desc": ""
       },
       {
         "name": "Burnt Letters",
-        "killerId": "28",
         "desc": ""
       },
       {
         "name": "Caffeine Tablets",
-        "killerId": "28",
         "desc": ""
       },
       {
         "name": "Destroyed Pillow",
-        "killerId": "28",
         "desc": ""
       },
       {
         "name": "Fallen Shingle",
-        "killerId": "28",
         "desc": ""
       },
       {
         "name": "Field Recorder",
-        "killerId": "28",
         "desc": ""
       },
       {
         "name": "Follower's Cowl",
-        "killerId": "28",
         "desc": ""
       },
       {
         "name": "Haddie's Calendar",
-        "killerId": "28",
         "desc": ""
       },
       {
         "name": "Iridescent Wooden Plank",
-        "killerId": "28",
         "desc": ""
       },
       {
         "name": "Lavalier Microphone",
-        "killerId": "28",
         "desc": ""
       },
       {
         "name": "Malthinker's Skull",
-        "killerId": "28",
         "desc": ""
       },
       {
         "name": "Mortar and Pestle",
-        "killerId": "28",
         "desc": ""
       },
       {
         "name": "Ottomarian Writing",
-        "killerId": "28",
         "desc": ""
       },
       {
         "name": "Sacrificial Knife",
-        "killerId": "28",
         "desc": ""
       },
       {
         "name": "Tilling Blade",
-        "killerId": "28",
         "desc": ""
       },
       {
         "name": "War Helmet",
-        "killerId": "28",
         "desc": ""
       },
       {
         "name": "Wooden Plank",
-        "killerId": "28",
         "desc": ""
       },
       {
         "name": "Worry Stone",
-        "killerId": "28",
         "desc": ""
       },
       {
         "name": "Reign of Darkness",
-        "killerId": "28",
         "desc": ""
       }
     ]
@@ -1188,107 +967,86 @@
     "addons": [
       {
         "name": "Black Strap",
-        "killerId": "20",
         "desc": ""
       },
       {
         "name": "Burning Man Painting",
-        "killerId": "20",
         "desc": ""
       },
       {
         "name": "Cinderella Music Box",
-        "killerId": "20",
         "desc": ""
       },
       {
         "name": "Copper Ring",
-        "killerId": "20",
         "desc": ""
       },
       {
         "name": "Crimson Ceremony Book",
-        "killerId": "20",
         "desc": ""
       },
       {
         "name": "Dead Butterfly",
-        "killerId": "20",
         "desc": ""
       },
       {
         "name": "Forgotten Videotape",
-        "killerId": "20",
         "desc": ""
       },
       {
         "name": "Iridescent Seal of Metatron",
-        "killerId": "20",
         "desc": ""
       },
       {
         "name": "Lead Ring",
-        "killerId": "20",
         "desc": ""
       },
       {
         "name": "Leopard-Print Fabric",
-        "killerId": "20",
         "desc": ""
       },
       {
         "name": "Lost Memories Book",
-        "killerId": "20",
         "desc": ""
       },
       {
         "name": "Mannequin Foot",
-        "killerId": "20",
         "desc": ""
       },
       {
         "name": "Misty Day, Remains of Judgement",
-        "killerId": "20",
         "desc": ""
       },
       {
         "name": "Obsidian Goblet",
-        "killerId": "20",
         "desc": ""
       },
       {
         "name": "Rust-Coloured Egg",
-        "killerId": "20",
         "desc": ""
       },
       {
         "name": "Scarlet Egg",
-        "killerId": "20",
         "desc": ""
       },
       {
         "name": "Spearhead",
-        "killerId": "20",
         "desc": ""
       },
       {
         "name": "Tablet of the Oppressor",
-        "killerId": "20",
         "desc": ""
       },
       {
         "name": "Valtiel Sect Photograph",
-        "killerId": "20",
         "desc": ""
       },
       {
         "name": "Wax Doll",
-        "killerId": "20",
         "desc": ""
       },
       {
         "name": "Rites of Judgement",
-        "killerId": "20",
         "desc": ""
       }
     ]
@@ -1300,107 +1058,86 @@
     "addons": [
       {
         "name": "Bead Maze",
-        "killerId": "42",
         "desc": ""
       },
       {
         "name": "Black Widow Spider",
-        "killerId": "42",
         "desc": ""
       },
       {
         "name": "Bloody Roller Skate",
-        "killerId": "42",
         "desc": ""
       },
       {
         "name": "Broken Skateboard",
-        "killerId": "42",
         "desc": ""
       },
       {
         "name": "Chess Piece",
-        "killerId": "42",
         "desc": ""
       },
       {
         "name": "Clock Hands",
-        "killerId": "42",
         "desc": ""
       },
       {
         "name": "Electrode Cap",
-        "killerId": "42",
         "desc": ""
       },
       {
         "name": "Electroshock Collar",
-        "killerId": "42",
         "desc": ""
       },
       {
         "name": "Forged Death Certificate",
-        "killerId": "42",
         "desc": ""
       },
       {
         "name": "Gutted Supercom",
-        "killerId": "42",
         "desc": ""
       },
       {
         "name": "Iridescent Soteria Chip",
-        "killerId": "42",
         "desc": ""
       },
       {
         "name": "Mid-Century Radio",
-        "killerId": "42",
         "desc": ""
       },
       {
         "name": "Neck Tendril",
-        "killerId": "42",
         "desc": ""
       },
       {
         "name": "Orderly ID",
-        "killerId": "42",
         "desc": ""
       },
       {
         "name": "Pizza Goggles",
-        "killerId": "42",
         "desc": ""
       },
       {
         "name": "Rabbit Remains",
-        "killerId": "42",
         "desc": ""
       },
       {
         "name": "Shattered Wrist Rocket",
-        "killerId": "42",
         "desc": ""
       },
       {
         "name": "Smashed Cassette Deck",
-        "killerId": "42",
         "desc": ""
       },
       {
         "name": "Stained Glass Mural",
-        "killerId": "42",
         "desc": ""
       },
       {
         "name": "Victor's Razor Blade",
-        "killerId": "42",
         "desc": ""
       },
       {
         "name": "Test Subject #001",
-        "killerId": "42",
         "desc": ""
       }
     ]
@@ -1412,97 +1149,78 @@
     "addons": [
       {
         "name": "Cheap Cologne",
-        "killerId": "16",
         "desc": ""
       },
       {
         "name": "Chewed Pen",
-        "killerId": "16",
         "desc": ""
       },
       {
         "name": "Cinch Straps",
-        "killerId": "16",
         "desc": ""
       },
       {
         "name": "Driver's License",
-        "killerId": "16",
         "desc": ""
       },
       {
         "name": "Drop-Leg Knife Sheath",
-        "killerId": "16",
         "desc": ""
       },
       {
         "name": "Headline Cut-Outs",
-        "killerId": "16",
         "desc": ""
       },
       {
         "name": "Knife Belt Clip",
-        "killerId": "16",
         "desc": ""
       },
       {
         "name": "Lasting Perfume",
-        "killerId": "16",
         "desc": ""
       },
       {
         "name": "Leather Knife Sheath",
-        "killerId": "16",
         "desc": ""
       },
       {
         "name": "Marked Map",
-        "killerId": "16",
         "desc": ""
       },
       {
         "name": "Night Vision Monocular",
-        "killerId": "16",
         "desc": ""
       },
       {
         "name": "Olsen's Address Book",
-        "killerId": "16",
         "desc": ""
       },
       {
         "name": "Olsen's Journal",
-        "killerId": "16",
         "desc": ""
       },
       {
         "name": "Olsen's Wallet",
-        "killerId": "16",
         "desc": ""
       },
       {
         "name": "Outdoor Security Camera",
-        "killerId": "16",
         "desc": ""
       },
       {
         "name": "Telephoto Lens",
-        "killerId": "16",
         "desc": ""
       },
       {
         "name": "Victim's Detailed Routine",
-        "killerId": "16",
         "desc": ""
       },
       {
         "name": "Walleye's Matchbook",
-        "killerId": "16",
         "desc": ""
       },
       {
         "name": "Night Shroud",
-        "killerId": "16",
         "desc": ""
       }
     ]
@@ -1514,107 +1232,86 @@
     "addons": [
       {
         "name": "Amon's Necktie",
-        "killerId": "39",
         "desc": ""
       },
       {
         "name": "Anteiku Apron",
-        "killerId": "39",
         "desc": ""
       },
       {
         "name": "Aogiri Tree Robe",
-        "killerId": "39",
         "desc": ""
       },
       {
         "name": "Blood-Stained Handkerchief",
-        "killerId": "39",
         "desc": ""
       },
       {
         "name": "Broken Chain",
-        "killerId": "39",
         "desc": ""
       },
       {
         "name": "CCG ID Card",
-        "killerId": "39",
         "desc": ""
       },
       {
         "name": "Fresh Coffee",
-        "killerId": "39",
         "desc": ""
       },
       {
         "name": "Hide's Headphones",
-        "killerId": "39",
         "desc": ""
       },
       {
         "name": "Hinami's Umbrella",
-        "killerId": "39",
         "desc": ""
       },
       {
         "name": "Iridescent Eye Patch",
-        "killerId": "39",
         "desc": ""
       },
       {
         "name": "Kaneki's Satchel",
-        "killerId": "39",
         "desc": ""
       },
       {
         "name": "Kaneki's Wallet",
-        "killerId": "39",
         "desc": ""
       },
       {
         "name": "Mado's Glove",
-        "killerId": "39",
         "desc": ""
       },
       {
         "name": "Red Spider Lily",
-        "killerId": "39",
         "desc": ""
       },
       {
         "name": "Red-Headed Centipede",
-        "killerId": "39",
         "desc": ""
       },
       {
         "name": "Rize's Glasses",
-        "killerId": "39",
         "desc": ""
       },
       {
         "name": "Taiyaki",
-        "killerId": "39",
         "desc": ""
       },
       {
         "name": "The Black Goat's Egg",
-        "killerId": "39",
         "desc": ""
       },
       {
         "name": "Torture Apparatus",
-        "killerId": "39",
         "desc": ""
       },
       {
         "name": "Yamori's Mask",
-        "killerId": "39",
         "desc": ""
       },
       {
         "name": "One-Eyed Terror",
-        "killerId": "39",
         "desc": ""
       }
     ]
@@ -1626,107 +1323,86 @@
     "addons": [
       {
         "name": "Automatic Screwdriver",
-        "killerId": "34",
         "desc": ""
       },
       {
         "name": "Doll Eyes",
-        "killerId": "34",
         "desc": ""
       },
       {
         "name": "Electric Carving Knife",
-        "killerId": "34",
         "desc": ""
       },
       {
         "name": "Good Guy Box",
-        "killerId": "34",
         "desc": ""
       },
       {
         "name": "Hair Spray & Candle",
-        "killerId": "34",
         "desc": ""
       },
       {
         "name": "Hard Hat",
-        "killerId": "34",
         "desc": ""
       },
       {
         "name": "Iridescent Amulet",
-        "killerId": "34",
         "desc": ""
       },
       {
         "name": "Jump Rope (Playtime's Over)",
-        "killerId": "34",
         "desc": ""
       },
       {
         "name": "Mirror Shards (Playtime's Over)",
-        "killerId": "34",
         "desc": ""
       },
       {
         "name": "Pile of Nails",
-        "killerId": "34",
         "desc": ""
       },
       {
         "name": "Plastic Bag",
-        "killerId": "34",
         "desc": ""
       },
       {
         "name": "Portable TV",
-        "killerId": "34",
         "desc": ""
       },
       {
         "name": "Power Drill",
-        "killerId": "34",
         "desc": ""
       },
       {
         "name": "Rat Poison",
-        "killerId": "34",
         "desc": ""
       },
       {
         "name": "Running Shoes",
-        "killerId": "34",
         "desc": ""
       },
       {
         "name": "Silk Pillow",
-        "killerId": "34",
         "desc": ""
       },
       {
         "name": "Straight Razor",
-        "killerId": "34",
         "desc": ""
       },
       {
         "name": "Strobing Light",
-        "killerId": "34",
         "desc": ""
       },
       {
         "name": "Tiny Scalpel",
-        "killerId": "34",
         "desc": ""
       },
       {
         "name": "Yardstick",
-        "killerId": "34",
         "desc": ""
       },
       {
         "name": "Playtime's Over",
-        "killerId": "34",
         "desc": ""
       }
     ]
@@ -1738,107 +1414,86 @@
     "addons": [
       {
         "name": "Bloodied Mud",
-        "killerId": "6",
         "desc": ""
       },
       {
         "name": "Bloodied Water",
-        "killerId": "6",
         "desc": ""
       },
       {
         "name": "Bog Water",
-        "killerId": "6",
         "desc": ""
       },
       {
         "name": "Cracked Turtle Egg",
-        "killerId": "6",
         "desc": ""
       },
       {
         "name": "Cypress Necklet",
-        "killerId": "6",
         "desc": ""
       },
       {
         "name": "Dead Fly Mud",
-        "killerId": "6",
         "desc": ""
       },
       {
         "name": "Disfigured Ear",
-        "killerId": "6",
         "desc": ""
       },
       {
         "name": "Dragonfly Wings",
-        "killerId": "6",
         "desc": ""
       },
       {
         "name": "Dried Cicada",
-        "killerId": "6",
         "desc": ""
       },
       {
         "name": "Grandma's Heart",
-        "killerId": "6",
         "desc": ""
       },
       {
         "name": "Half Eggshell",
-        "killerId": "6",
         "desc": ""
       },
       {
         "name": "Mint Rag",
-        "killerId": "6",
         "desc": ""
       },
       {
         "name": "Powdered Eggshell",
-        "killerId": "6",
         "desc": ""
       },
       {
         "name": "Pussy Willow Catkins",
-        "killerId": "6",
         "desc": ""
       },
       {
         "name": "Rope Necklet",
-        "killerId": "6",
         "desc": ""
       },
       {
         "name": "Rusty Shackles",
-        "killerId": "6",
         "desc": ""
       },
       {
         "name": "Scarred Hand",
-        "killerId": "6",
         "desc": ""
       },
       {
         "name": "Swamp Orchid Necklet",
-        "killerId": "6",
         "desc": ""
       },
       {
         "name": "Waterlogged Shoe",
-        "killerId": "6",
         "desc": ""
       },
       {
         "name": "Willow Wreath",
-        "killerId": "6",
         "desc": ""
       },
       {
         "name": "Blackened Catalyst",
-        "killerId": "6",
         "desc": ""
       }
     ]
@@ -1850,112 +1505,90 @@
     "addons": [
       {
         "name": "Apex Muffler",
-        "killerId": "3",
         "desc": ""
       },
       {
         "name": "Begrimed Chains (Chainsaw)",
-        "killerId": "3",
         "desc": ""
       },
       {
         "name": "The Thompsons' Mix",
-        "killerId": "3",
         "desc": ""
       },
       {
         "name": "Dad's Boots",
-        "killerId": "3",
         "desc": ""
       },
       {
         "name": "Clogged Intake",
-        "killerId": "3",
         "desc": ""
       },
       {
         "name": "Iridescent Engravings",
-        "killerId": "3",
         "desc": ""
       },
       {
         "name": "Counterweight",
-        "killerId": "3",
         "desc": ""
       },
       {
         "name": "Filthy Slippers",
-        "killerId": "3",
         "desc": ""
       },
       {
         "name": "Greased Throttle",
-        "killerId": "3",
         "desc": ""
       },
       {
         "name": "Ragged Engine",
-        "killerId": "3",
         "desc": ""
       },
       {
         "name": "LoPro Chains",
-        "killerId": "3",
         "desc": ""
       },
       {
         "name": "Low Kickback Chains",
-        "killerId": "3",
         "desc": ""
       },
       {
         "name": "Discarded Air Filter",
-        "killerId": "3",
         "desc": ""
       },
       {
         "name": "Off-Brand Motor Oil",
-        "killerId": "3",
         "desc": ""
       },
       {
         "name": "High-Speed Idler Screw",
-        "killerId": "3",
         "desc": ""
       },
       {
         "name": "Thermal Casing",
-        "killerId": "3",
         "desc": ""
       },
       {
         "name": "Spiked Boots",
-        "killerId": "3",
         "desc": ""
       },
       {
         "name": "Steel Toe Boots",
-        "killerId": "3",
         "desc": ""
       },
       {
         "name": "Tuned Carburettor",
-        "killerId": "3",
         "desc": ""
       },
       {
         "name": "Cracked Primer Bulb",
-        "killerId": "3",
         "desc": ""
       },
       {
         "name": "Thompson's Moonshine",
-        "killerId": "3",
         "desc": ""
       },
       {
         "name": "Chainsaw",
-        "killerId": "3",
         "desc": ""
       }
     ]
@@ -1967,107 +1600,86 @@
     "addons": [
       {
         "name": "Barley Meal",
-        "killerId": "38",
         "desc": ""
       },
       {
         "name": "Belaying Pins",
-        "killerId": "38",
         "desc": ""
       },
       {
         "name": "Creature's Bone",
-        "killerId": "38",
         "desc": ""
       },
       {
         "name": "Fatty Meat",
-        "killerId": "38",
         "desc": ""
       },
       {
         "name": "Gunpowder Tin",
-        "killerId": "38",
         "desc": ""
       },
       {
         "name": "Iridescent Wheel Handle",
-        "killerId": "38",
         "desc": ""
       },
       {
         "name": "Knotted Rope",
-        "killerId": "38",
         "desc": ""
       },
       {
         "name": "Leather Harness",
-        "killerId": "38",
         "desc": ""
       },
       {
         "name": "Marlinspike",
-        "killerId": "38",
         "desc": ""
       },
       {
         "name": "Ship Figurehead",
-        "killerId": "38",
         "desc": ""
       },
       {
         "name": "Smoked Snapper",
-        "killerId": "38",
         "desc": ""
       },
       {
         "name": "Spiked Collar",
-        "killerId": "38",
         "desc": ""
       },
       {
         "name": "Spyglass",
-        "killerId": "38",
         "desc": ""
       },
       {
         "name": "Sticky Pitch",
-        "killerId": "38",
         "desc": ""
       },
       {
         "name": "Torn Novel",
-        "killerId": "38",
         "desc": ""
       },
       {
         "name": "Trainer's Book",
-        "killerId": "38",
         "desc": ""
       },
       {
         "name": "Training Bell",
-        "killerId": "38",
         "desc": ""
       },
       {
         "name": "Unfinished Map",
-        "killerId": "38",
         "desc": ""
       },
       {
         "name": "Waterskin",
-        "killerId": "38",
         "desc": ""
       },
       {
         "name": "Young Coconut",
-        "killerId": "38",
         "desc": ""
       },
       {
         "name": "Scent of Blood",
-        "killerId": "38",
         "desc": ""
       }
     ]
@@ -2079,132 +1691,106 @@
     "addons": [
       {
         "name": "Amanita Toxin",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Bandaged Haft",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Begrimed Head",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Berus Toxin",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Coarse Stone",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Deerskin Gloves",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Fine Stone",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Flower Babushka",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Glowing Concoction",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Infantry Belt",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Iridescent Head",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Leather Loop",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Manna Grass Braid",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Oak Haft",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Pungent Phial",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Rose Root",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Rusty Head",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Shiny Pin",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Soldier's Puttee",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Venomous Concoction",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Yellowed Cloth",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Yew Seed Brew",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Yew Seed Concoction",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Weighted Head",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Wooden Fox",
-        "killerId": "8",
         "desc": ""
       },
       {
         "name": "Hunting Hatchets",
-        "killerId": "8",
         "desc": ""
       }
     ]
@@ -2216,117 +1802,94 @@
     "addons": [
       {
         "name": "Battle Axe Head",
-        "killerId": "30",
         "desc": ""
       },
       {
         "name": "Blacksmith's Hammer",
-        "killerId": "30",
         "desc": ""
       },
       {
         "name": "Broken Hilt",
-        "killerId": "30",
         "desc": ""
       },
       {
         "name": "Call to Arms",
-        "killerId": "30",
         "desc": ""
       },
       {
         "name": "Chain Mail Fragment",
-        "killerId": "30",
         "desc": ""
       },
       {
         "name": "Cold Steel Manacles",
-        "killerId": "30",
         "desc": ""
       },
       {
         "name": "Dried Horsemeat",
-        "killerId": "30",
         "desc": ""
       },
       {
         "name": "Flint and Steel",
-        "killerId": "30",
         "desc": ""
       },
       {
         "name": "Grim Iron Mask",
-        "killerId": "30",
         "desc": ""
       },
       {
         "name": "Gritty Lump",
-        "killerId": "30",
         "desc": ""
       },
       {
         "name": "Healing Poultice",
-        "killerId": "30",
         "desc": ""
       },
       {
         "name": "Iridescent Company Banner",
-        "killerId": "30",
         "desc": ""
       },
       {
         "name": "Ironworker's Tongs",
-        "killerId": "30",
         "desc": ""
       },
       {
         "name": "Sharpened Mount",
-        "killerId": "30",
         "desc": ""
       },
       {
         "name": "Knight's Contract",
-        "killerId": "30",
         "desc": ""
       },
       {
         "name": "Lightweight Greaves",
-        "killerId": "30",
         "desc": ""
       },
       {
         "name": "Map of the Realm",
-        "killerId": "30",
         "desc": ""
       },
       {
         "name": "Pillaged Mead",
-        "killerId": "30",
         "desc": ""
       },
       {
         "name": "Jailer's Chimes",
-        "killerId": "30",
         "desc": ""
       },
       {
         "name": "Tattered Tabard",
-        "killerId": "30",
         "desc": ""
       },
       {
         "name": "Town Watch's Torch",
-        "killerId": "30",
         "desc": ""
       },
       {
         "name": "Treated Blade",
-        "killerId": "30",
         "desc": ""
       },
       {
         "name": "Guardia Compagnia",
-        "killerId": "30",
         "desc": ""
       }
     ]
@@ -2338,107 +1901,86 @@
     "addons": [
       {
         "name": "Broken Tiara",
-        "killerId": "41",
         "desc": ""
       },
       {
         "name": "Chicken Head",
-        "killerId": "41",
         "desc": ""
       },
       {
         "name": "Chunk of Malai",
-        "killerId": "41",
         "desc": ""
       },
       {
         "name": "Crumpled Sheet Music",
-        "killerId": "41",
         "desc": ""
       },
       {
         "name": "Defective Metronome",
-        "killerId": "41",
         "desc": ""
       },
       {
         "name": "Dulled Knife",
-        "killerId": "41",
         "desc": ""
       },
       {
         "name": "First Libretto",
-        "killerId": "41",
         "desc": ""
       },
       {
         "name": "Framed Newspaper",
-        "killerId": "41",
         "desc": ""
       },
       {
         "name": "Janjira's Hand",
-        "killerId": "41",
         "desc": ""
       },
       {
         "name": "Lorenza's Remains",
-        "killerId": "41",
         "desc": ""
       },
       {
         "name": "Luckless Mouse",
-        "killerId": "41",
         "desc": ""
       },
       {
         "name": "Mysterious Elixir",
-        "killerId": "41",
         "desc": ""
       },
       {
         "name": "Pig's Eye",
-        "killerId": "41",
         "desc": ""
       },
       {
         "name": "Queen's Sceptre",
-        "killerId": "41",
         "desc": ""
       },
       {
         "name": "Rotten Swine",
-        "killerId": "41",
         "desc": ""
       },
       {
         "name": "Shredded Gown",
-        "killerId": "41",
         "desc": ""
       },
       {
         "name": "Spattered Handkerchief",
-        "killerId": "41",
         "desc": ""
       },
       {
         "name": "Sticky Lozenge",
-        "killerId": "41",
         "desc": ""
       },
       {
         "name": "Theatre Binoculars",
-        "killerId": "41",
         "desc": ""
       },
       {
         "name": "Wriggling Parasite",
-        "killerId": "41",
         "desc": ""
       },
       {
         "name": "Unbodied Flesh",
-        "killerId": "41",
         "desc": ""
       }
     ]
@@ -2450,117 +1992,94 @@
     "addons": [
       {
         "name": "BFFs",
-        "killerId": "14",
         "desc": ""
       },
       {
         "name": "Cold Dirt",
-        "killerId": "14",
         "desc": ""
       },
       {
         "name": "Defaced Smiley Pin",
-        "killerId": "14",
         "desc": ""
       },
       {
         "name": "Etched Ruler",
-        "killerId": "14",
         "desc": ""
       },
       {
         "name": "Filthy Blade",
-        "killerId": "14",
         "desc": ""
       },
       {
         "name": "Frank's Mix Tape",
-        "killerId": "14",
         "desc": ""
       },
       {
         "name": "Friendship Bracelet",
-        "killerId": "14",
         "desc": ""
       },
       {
         "name": "Fuming Mix Tape",
-        "killerId": "14",
         "desc": ""
       },
       {
         "name": "Iridescent Button",
-        "killerId": "14",
         "desc": ""
       },
       {
         "name": "Joey's Mix Tape",
-        "killerId": "14",
         "desc": ""
       },
       {
         "name": "Julie's Mix Tape",
-        "killerId": "14",
         "desc": ""
       },
       {
         "name": "Mischief List",
-        "killerId": "14",
         "desc": ""
       },
       {
         "name": "Mural Sketch",
-        "killerId": "14",
         "desc": ""
       },
       {
         "name": "Nasty Blade",
-        "killerId": "14",
         "desc": ""
       },
       {
         "name": "Never-Sleep Pills",
-        "killerId": "14",
         "desc": ""
       },
       {
         "name": "Scratched Ruler",
-        "killerId": "14",
         "desc": ""
       },
       {
         "name": "Smiley Face Pin",
-        "killerId": "14",
         "desc": ""
       },
       {
         "name": "Stab Wounds Study",
-        "killerId": "14",
         "desc": ""
       },
       {
         "name": "Stolen Sketch Book",
-        "killerId": "14",
         "desc": ""
       },
       {
         "name": "Stylish Sunglasses",
-        "killerId": "14",
         "desc": ""
       },
       {
         "name": "Susie's Mix Tape",
-        "killerId": "14",
         "desc": ""
       },
       {
         "name": "The Legion Pin",
-        "killerId": "14",
         "desc": ""
       },
       {
         "name": "Feral Frenzy",
-        "killerId": "14",
         "desc": ""
       }
     ]
@@ -2572,107 +2091,86 @@
     "addons": [
       {
         "name": "Bag of Holding",
-        "killerId": "36",
         "desc": ""
       },
       {
         "name": "Boots of Speed",
-        "killerId": "36",
         "desc": ""
       },
       {
         "name": "Cloak of Elvenkind",
-        "killerId": "36",
         "desc": ""
       },
       {
         "name": "Cloak of Invisibility",
-        "killerId": "36",
         "desc": ""
       },
       {
         "name": "Crystal Ball",
-        "killerId": "36",
         "desc": ""
       },
       {
         "name": "Dragontooth Dagger",
-        "killerId": "36",
         "desc": ""
       },
       {
         "name": "Glass Eye",
-        "killerId": "36",
         "desc": ""
       },
       {
         "name": "Iridescent Book of Vile Darkness",
-        "killerId": "36",
         "desc": ""
       },
       {
         "name": "Lantern of Revealing",
-        "killerId": "36",
         "desc": ""
       },
       {
         "name": "Ornate Horn",
-        "killerId": "36",
         "desc": ""
       },
       {
         "name": "Pearl of Power",
-        "killerId": "36",
         "desc": ""
       },
       {
         "name": "Potion of Speed",
-        "killerId": "36",
         "desc": ""
       },
       {
         "name": "Raven's Feather",
-        "killerId": "36",
         "desc": ""
       },
       {
         "name": "Ring of Spell Storing",
-        "killerId": "36",
         "desc": ""
       },
       {
         "name": "Ring of Telekinesis",
-        "killerId": "36",
         "desc": ""
       },
       {
         "name": "Robe of Eyes",
-        "killerId": "36",
         "desc": ""
       },
       {
         "name": "Staff of Withering",
-        "killerId": "36",
         "desc": ""
       },
       {
         "name": "Tattered Headband",
-        "killerId": "36",
         "desc": ""
       },
       {
         "name": "Trickster's Glove",
-        "killerId": "36",
         "desc": ""
       },
       {
         "name": "Vorpal Sword",
-        "killerId": "36",
         "desc": ""
       },
       {
         "name": "Vile Darkness",
-        "killerId": "36",
         "desc": ""
       }
     ]
@@ -2684,107 +2182,86 @@
     "addons": [
       {
         "name": "Bullhorn",
-        "killerId": "29",
         "desc": ""
       },
       {
         "name": "Chalice (Gold)",
-        "killerId": "29",
         "desc": ""
       },
       {
         "name": "Dark Sunglasses",
-        "killerId": "29",
         "desc": ""
       },
       {
         "name": "Egg (Gold)",
-        "killerId": "29",
         "desc": ""
       },
       {
         "name": "Green Herb",
-        "killerId": "29",
         "desc": ""
       },
       {
         "name": "Helicopter Stick",
-        "killerId": "29",
         "desc": ""
       },
       {
         "name": "Iridescent Uroboros Vial",
-        "killerId": "29",
         "desc": ""
       },
       {
         "name": "Jewel Beetle",
-        "killerId": "29",
         "desc": ""
       },
       {
         "name": "Lab Photo",
-        "killerId": "29",
         "desc": ""
       },
       {
         "name": "Leather Gloves",
-        "killerId": "29",
         "desc": ""
       },
       {
         "name": "Lion Medallion",
-        "killerId": "29",
         "desc": ""
       },
       {
         "name": "Loose Crank",
-        "killerId": "29",
         "desc": ""
       },
       {
         "name": "Maiden Medallion",
-        "killerId": "29",
         "desc": ""
       },
       {
         "name": "Portable Safe",
-        "killerId": "29",
         "desc": ""
       },
       {
         "name": "R.P.D. Shoulder Walkie",
-        "killerId": "29",
         "desc": ""
       },
       {
         "name": "Red Herb",
-        "killerId": "29",
         "desc": ""
       },
       {
         "name": "Unicorn Medallion",
-        "killerId": "29",
         "desc": ""
       },
       {
         "name": "Uroboros Tendril",
-        "killerId": "29",
         "desc": ""
       },
       {
         "name": "Uroboros Virus",
-        "killerId": "29",
         "desc": ""
       },
       {
         "name": "Video Conference Device",
-        "killerId": "29",
         "desc": ""
       },
       {
         "name": "Virulent Bound",
-        "killerId": "29",
         "desc": ""
       }
     ]
@@ -2796,112 +2273,90 @@
     "addons": [
       {
         "name": "Admin Wristband",
-        "killerId": "24",
         "desc": ""
       },
       {
         "name": "Adrenaline Injector",
-        "killerId": "24",
         "desc": ""
       },
       {
         "name": "Brian's Intestine",
-        "killerId": "24",
         "desc": ""
       },
       {
         "name": "Broken Recovery Coin",
-        "killerId": "24",
         "desc": ""
       },
       {
         "name": "Damaged Syringe",
-        "killerId": "24",
         "desc": ""
       },
       {
         "name": "Depleted Ink Ribbon",
-        "killerId": "24",
         "desc": ""
       },
       {
         "name": "Iridescent Umbrella Badge",
-        "killerId": "24",
         "desc": ""
       },
       {
         "name": "Jill's Sandwich",
-        "killerId": "24",
         "desc": ""
       },
       {
         "name": "Licker Tongue",
-        "killerId": "24",
         "desc": ""
       },
       {
         "name": "Marvin's Blood",
-        "killerId": "24",
         "desc": ""
       },
       {
         "name": "Mikhail's Eye",
-        "killerId": "24",
         "desc": ""
       },
       {
         "name": "NE-a Parasite",
-        "killerId": "24",
         "desc": ""
       },
       {
         "name": "Plant 43 Vines",
-        "killerId": "24",
         "desc": ""
       },
       {
         "name": "Serotonin Injector",
-        "killerId": "24",
         "desc": ""
       },
       {
         "name": "Shattered S.T.A.R.S. Badge",
-        "killerId": "24",
         "desc": ""
       },
       {
         "name": "Shredded Fedora",
-        "killerId": "24",
         "desc": ""
       },
       {
         "name": "S.T.A.R.S. Field Combat Manual",
-        "killerId": "24",
         "desc": ""
       },
       {
         "name": "T-Virus Sample",
-        "killerId": "24",
         "desc": ""
       },
       {
         "name": "Tyrant Gore",
-        "killerId": "24",
         "desc": ""
       },
       {
         "name": "Visitor Wristband",
-        "killerId": "24",
         "desc": ""
       },
       {
         "name": "Zombie Heart",
-        "killerId": "24",
         "desc": ""
       },
       {
         "name": "T-Virus",
-        "killerId": "24",
         "desc": ""
       }
     ]
@@ -2913,102 +2368,82 @@
     "addons": [
       {
         "name": "Black Box",
-        "killerId": "10",
         "desc": ""
       },
       {
         "name": "Blue Dress",
-        "killerId": "10",
         "desc": ""
       },
       {
         "name": "Cat Block",
-        "killerId": "10",
         "desc": ""
       },
       {
         "name": "Class Photo",
-        "killerId": "10",
         "desc": ""
       },
       {
         "name": "Garden Rake",
-        "killerId": "10",
         "desc": ""
       },
       {
         "name": "Green Dress",
-        "killerId": "10",
         "desc": ""
       },
       {
         "name": "Jump Rope (Dream Demon)",
-        "killerId": "10",
         "desc": ""
       },
       {
         "name": "Kid's Drawing",
-        "killerId": "10",
         "desc": ""
       },
       {
         "name": "Nancy's Masterpiece",
-        "killerId": "10",
         "desc": ""
       },
       {
         "name": "Nancy's Sketch",
-        "killerId": "10",
         "desc": ""
       },
       {
         "name": "Outdoor Rope",
-        "killerId": "10",
         "desc": ""
       },
       {
         "name": "Paint Thinner",
-        "killerId": "10",
         "desc": ""
       },
       {
         "name": "Pill Bottle",
-        "killerId": "10",
         "desc": ""
       },
       {
         "name": "Prototype Claws",
-        "killerId": "10",
         "desc": ""
       },
       {
         "name": "Red Paint Brush",
-        "killerId": "10",
         "desc": ""
       },
       {
         "name": "Sheep Block",
-        "killerId": "10",
         "desc": ""
       },
       {
         "name": "Swing Chains",
-        "killerId": "10",
         "desc": ""
       },
       {
         "name": "Unicorn Block",
-        "killerId": "10",
         "desc": ""
       },
       {
         "name": "Wool Shirt",
-        "killerId": "10",
         "desc": ""
       },
       {
         "name": "Dream Demon",
-        "killerId": "10",
         "desc": ""
       }
     ]
@@ -3020,102 +2455,82 @@
     "addons": [
       {
         "name": "Anxious Gasp",
-        "killerId": "4",
         "desc": ""
       },
       {
         "name": "Ataxic Respiration",
-        "killerId": "4",
         "desc": ""
       },
       {
         "name": "Bad Man Keepsake",
-        "killerId": "4",
         "desc": ""
       },
       {
         "name": "Campbell's Last Breath",
-        "killerId": "4",
         "desc": ""
       },
       {
         "name": "Catatonic Boy's Treasure",
-        "killerId": "4",
         "desc": ""
       },
       {
         "name": "Dark Cincture",
-        "killerId": "4",
         "desc": ""
       },
       {
         "name": "Dull Bracelet",
-        "killerId": "4",
         "desc": ""
       },
       {
         "name": "Fragile Wheeze",
-        "killerId": "4",
         "desc": ""
       },
       {
         "name": "Heavy Panting",
-        "killerId": "4",
         "desc": ""
       },
       {
         "name": "Jenner's Last Breath",
-        "killerId": "4",
         "desc": ""
       },
       {
         "name": "Kavanagh's Last Breath",
-        "killerId": "4",
         "desc": ""
       },
       {
         "name": "Matchbox",
-        "killerId": "4",
         "desc": ""
       },
       {
         "name": "Metal Spoon",
-        "killerId": "4",
         "desc": ""
       },
       {
         "name": "Plaid Flannel",
-        "killerId": "4",
         "desc": ""
       },
       {
         "name": "Pocket Watch (Spencer's Last Breath)",
-        "killerId": "4",
         "desc": ""
       },
       {
         "name": "Spasmodic Breath",
-        "killerId": "4",
         "desc": ""
       },
       {
         "name": "Torn Bookmark",
-        "killerId": "4",
         "desc": ""
       },
       {
         "name": "White Nit Comb",
-        "killerId": "4",
         "desc": ""
       },
       {
         "name": "Wooden Horse",
-        "killerId": "4",
         "desc": ""
       },
       {
         "name": "Spencer's Last Breath",
-        "killerId": "4",
         "desc": ""
       }
     ]
@@ -3127,107 +2542,86 @@
     "addons": [
       {
         "name": "Akito's Crutch",
-        "killerId": "18",
         "desc": ""
       },
       {
         "name": "Blackened Toenail",
-        "killerId": "18",
         "desc": ""
       },
       {
         "name": "Bloody Sash",
-        "killerId": "18",
         "desc": ""
       },
       {
         "name": "Child's Wooden Sword",
-        "killerId": "18",
         "desc": ""
       },
       {
         "name": "Chipped Saihai",
-        "killerId": "18",
         "desc": ""
       },
       {
         "name": "Cracked Sakazuki",
-        "killerId": "18",
         "desc": ""
       },
       {
         "name": "Ink Lion",
-        "killerId": "18",
         "desc": ""
       },
       {
         "name": "Iridescent Family Crest",
-        "killerId": "18",
         "desc": ""
       },
       {
         "name": "Kanai-Anzen Talisman",
-        "killerId": "18",
         "desc": ""
       },
       {
         "name": "Lion Fang",
-        "killerId": "18",
         "desc": ""
       },
       {
         "name": "Paper Lantern",
-        "killerId": "18",
         "desc": ""
       },
       {
         "name": "Polished Maedate",
-        "killerId": "18",
         "desc": ""
       },
       {
         "name": "Renjiro's Bloody Glove",
-        "killerId": "18",
         "desc": ""
       },
       {
         "name": "Rotting Rope",
-        "killerId": "18",
         "desc": ""
       },
       {
         "name": "Scalped Topknot",
-        "killerId": "18",
         "desc": ""
       },
       {
         "name": "Shattered Wakizashi",
-        "killerId": "18",
         "desc": ""
       },
       {
         "name": "Splintered Hull",
-        "killerId": "18",
         "desc": ""
       },
       {
         "name": "Tear-Soaked Tenugui",
-        "killerId": "18",
         "desc": ""
       },
       {
         "name": "Wooden Oni Mask",
-        "killerId": "18",
         "desc": ""
       },
       {
         "name": "Yamaoka Sashimono",
-        "killerId": "18",
         "desc": ""
       },
       {
         "name": "Yamaoka's Wrath",
-        "killerId": "18",
         "desc": ""
       }
     ]
@@ -3239,107 +2633,86 @@
     "addons": [
       {
         "name": "Bloody Fingernails",
-        "killerId": "27",
         "desc": ""
       },
       {
         "name": "Cabin Sign",
-        "killerId": "27",
         "desc": ""
       },
       {
         "name": "Clump of Hair",
-        "killerId": "27",
         "desc": ""
       },
       {
         "name": "Distorted Photo",
-        "killerId": "27",
         "desc": ""
       },
       {
         "name": "Iridescent Videotape",
-        "killerId": "27",
         "desc": ""
       },
       {
         "name": "Mother's Comb",
-        "killerId": "27",
         "desc": ""
       },
       {
         "name": "Mother's Mirror",
-        "killerId": "27",
         "desc": ""
       },
       {
         "name": "Old Newspaper",
-        "killerId": "27",
         "desc": ""
       },
       {
         "name": "Reiko's Watch",
-        "killerId": "27",
         "desc": ""
       },
       {
         "name": "Remote Control",
-        "killerId": "27",
         "desc": ""
       },
       {
         "name": "Rickety Pinwheel",
-        "killerId": "27",
         "desc": ""
       },
       {
         "name": "Ring Drawing",
-        "killerId": "27",
         "desc": ""
       },
       {
         "name": "Sea-Soaked Cloth",
-        "killerId": "27",
         "desc": ""
       },
       {
         "name": "Tape Editing Deck",
-        "killerId": "27",
         "desc": ""
       },
       {
         "name": "Telephone",
-        "killerId": "27",
         "desc": ""
       },
       {
         "name": "VCR",
-        "killerId": "27",
         "desc": ""
       },
       {
         "name": "Videotape Copy",
-        "killerId": "27",
         "desc": ""
       },
       {
         "name": "Well Stone",
-        "killerId": "27",
         "desc": ""
       },
       {
         "name": "Well Water",
-        "killerId": "27",
         "desc": ""
       },
       {
         "name": "Yoichi's Fishing Net",
-        "killerId": "27",
         "desc": ""
       },
       {
         "name": "Deluge of Fear",
-        "killerId": "27",
         "desc": ""
       }
     ]
@@ -3351,107 +2724,86 @@
     "addons": [
       {
         "name": "Amanda's Letter",
-        "killerId": "11",
         "desc": ""
       },
       {
         "name": "Amanda's Secret",
-        "killerId": "11",
         "desc": ""
       },
       {
         "name": "Bag of Gears",
-        "killerId": "11",
         "desc": ""
       },
       {
         "name": "Combat Straps",
-        "killerId": "11",
         "desc": ""
       },
       {
         "name": "Crate of Gears",
-        "killerId": "11",
         "desc": ""
       },
       {
         "name": "Face Mask",
-        "killerId": "11",
         "desc": ""
       },
       {
         "name": "Interlocking Razor",
-        "killerId": "11",
         "desc": ""
       },
       {
         "name": "Jigsaw's Annotated Plan",
-        "killerId": "11",
         "desc": ""
       },
       {
         "name": "Jigsaw's Sketch",
-        "killerId": "11",
         "desc": ""
       },
       {
         "name": "John's Medical File",
-        "killerId": "11",
         "desc": ""
       },
       {
         "name": "Last Will",
-        "killerId": "11",
         "desc": ""
       },
       {
         "name": "Razor Wires",
-        "killerId": "11",
         "desc": ""
       },
       {
         "name": "Rules Set No.2",
-        "killerId": "11",
         "desc": ""
       },
       {
         "name": "Rusty Attachments",
-        "killerId": "11",
         "desc": ""
       },
       {
         "name": "Shattered Syringe",
-        "killerId": "11",
         "desc": ""
       },
       {
         "name": "Slow-Release Toxin",
-        "killerId": "11",
         "desc": ""
       },
       {
         "name": "Tampered Timer",
-        "killerId": "11",
         "desc": ""
       },
       {
         "name": "Utility Blades",
-        "killerId": "11",
         "desc": ""
       },
       {
         "name": "Video Tape",
-        "killerId": "11",
         "desc": ""
       },
       {
         "name": "Workshop Grease",
-        "killerId": "11",
         "desc": ""
       },
       {
         "name": "Jigsaw's Baptism",
-        "killerId": "11",
         "desc": ""
       }
     ]
@@ -3463,107 +2815,86 @@
     "addons": [
       {
         "name": "Ashen Apple",
-        "killerId": "15",
         "desc": ""
       },
       {
         "name": "Black Incense",
-        "killerId": "15",
         "desc": ""
       },
       {
         "name": "Blessed Apple",
-        "killerId": "15",
         "desc": ""
       },
       {
         "name": "Devotee's Amulet",
-        "killerId": "15",
         "desc": ""
       },
       {
         "name": "Emetic Potion",
-        "killerId": "15",
         "desc": ""
       },
       {
         "name": "Exorcism Amulet",
-        "killerId": "15",
         "desc": ""
       },
       {
         "name": "Haematite Seal",
-        "killerId": "15",
         "desc": ""
       },
       {
         "name": "Healing Salve",
-        "killerId": "15",
         "desc": ""
       },
       {
         "name": "Incensed Ointment",
-        "killerId": "15",
         "desc": ""
       },
       {
         "name": "Infected Emetic",
-        "killerId": "15",
         "desc": ""
       },
       {
         "name": "Iridescent Seal",
-        "killerId": "15",
         "desc": ""
       },
       {
         "name": "Limestone Seal",
-        "killerId": "15",
         "desc": ""
       },
       {
         "name": "Olibanum Incense",
-        "killerId": "15",
         "desc": ""
       },
       {
         "name": "Potent Tincture",
-        "killerId": "15",
         "desc": ""
       },
       {
         "name": "Prayer Tablet Fragment",
-        "killerId": "15",
         "desc": ""
       },
       {
         "name": "Prophylactic Amulet",
-        "killerId": "15",
         "desc": ""
       },
       {
         "name": "Rubbing Oil",
-        "killerId": "15",
         "desc": ""
       },
       {
         "name": "Severed Toe",
-        "killerId": "15",
         "desc": ""
       },
       {
         "name": "Vile Emetic",
-        "killerId": "15",
         "desc": ""
       },
       {
         "name": "Worship Tablet",
-        "killerId": "15",
         "desc": ""
       },
       {
         "name": "Vile Purge",
-        "killerId": "15",
         "desc": ""
       }
     ]
@@ -3575,107 +2906,86 @@
     "addons": [
       {
         "name": "Blond Hair",
-        "killerId": "5",
         "desc": ""
       },
       {
         "name": "Boyfriend's Memo",
-        "killerId": "5",
         "desc": ""
       },
       {
         "name": "Dead Rabbit",
-        "killerId": "5",
         "desc": ""
       },
       {
         "name": "Fragrant Tuft of Hair",
-        "killerId": "5",
         "desc": ""
       },
       {
         "name": "Glass Fragment",
-        "killerId": "5",
         "desc": ""
       },
       {
         "name": "Hair Bow",
-        "killerId": "5",
         "desc": ""
       },
       {
         "name": "Hair Brush",
-        "killerId": "5",
         "desc": ""
       },
       {
         "name": "J. Myers Memorial",
-        "killerId": "5",
         "desc": ""
       },
       {
         "name": "Jewellery",
-        "killerId": "5",
         "desc": ""
       },
       {
         "name": "Jewellery Box",
-        "killerId": "5",
         "desc": ""
       },
       {
         "name": "Judith's Journal",
-        "killerId": "5",
         "desc": ""
       },
       {
         "name": "Judith's Tombstone",
-        "killerId": "5",
         "desc": ""
       },
       {
         "name": "Lock of Hair",
-        "killerId": "5",
         "desc": ""
       },
       {
         "name": "Memorial Flower",
-        "killerId": "5",
         "desc": ""
       },
       {
         "name": "Mirror Shard",
-        "killerId": "5",
         "desc": ""
       },
       {
         "name": "Reflective Fragment",
-        "killerId": "5",
         "desc": ""
       },
       {
         "name": "Scratched Mirror",
-        "killerId": "5",
         "desc": ""
       },
       {
         "name": "Tacky Earrings",
-        "killerId": "5",
         "desc": ""
       },
       {
         "name": "Tombstone Piece",
-        "killerId": "5",
         "desc": ""
       },
       {
         "name": "Vanity Mirror",
-        "killerId": "5",
         "desc": ""
       },
       {
         "name": "Evil Within",
-        "killerId": "5",
         "desc": ""
       }
     ]
@@ -3687,107 +2997,86 @@
     "addons": [
       {
         "name": "Android Arm",
-        "killerId": "32",
         "desc": ""
       },
       {
         "name": "Broken Security Key",
-        "killerId": "32",
         "desc": ""
       },
       {
         "name": "Cremated Remains",
-        "killerId": "32",
         "desc": ""
       },
       {
         "name": "Crew Manifest",
-        "killerId": "32",
         "desc": ""
       },
       {
         "name": "Cryo Gel",
-        "killerId": "32",
         "desc": ""
       },
       {
         "name": "Denied Requisition Form",
-        "killerId": "32",
         "desc": ""
       },
       {
         "name": "Diagnostic Tool (Construction)",
-        "killerId": "32",
         "desc": ""
       },
       {
         "name": "Diagnostic Tool (Repair)",
-        "killerId": "32",
         "desc": ""
       },
       {
         "name": "Foreign Plant Fibres",
-        "killerId": "32",
         "desc": ""
       },
       {
         "name": "Heavy Water",
-        "killerId": "32",
         "desc": ""
       },
       {
         "name": "Hologram Generator",
-        "killerId": "32",
         "desc": ""
       },
       {
         "name": "Hyperawareness Spray",
-        "killerId": "32",
         "desc": ""
       },
       {
         "name": "Iridescent Crystal Shard",
-        "killerId": "32",
         "desc": ""
       },
       {
         "name": "Kid's Ball Glove",
-        "killerId": "32",
         "desc": ""
       },
       {
         "name": "Live Wires",
-        "killerId": "32",
         "desc": ""
       },
       {
         "name": "Nanomachine Gel",
-        "killerId": "32",
         "desc": ""
       },
       {
         "name": "Nutritional Slurry",
-        "killerId": "32",
         "desc": ""
       },
       {
         "name": "Soma Family Photo",
-        "killerId": "32",
         "desc": ""
       },
       {
         "name": "Spent Oxygen Tank",
-        "killerId": "32",
         "desc": ""
       },
       {
         "name": "Ultrasonic Sensor",
-        "killerId": "32",
         "desc": ""
       },
       {
         "name": "Quantum Instantiation",
-        "killerId": "32",
         "desc": ""
       }
     ]
@@ -3799,107 +3088,86 @@
     "addons": [
       {
         "name": "Adaptive Lighting",
-        "killerId": "31",
         "desc": ""
       },
       {
         "name": "Adi Valente Issue 1",
-        "killerId": "31",
         "desc": ""
       },
       {
         "name": "Advanced Movement Prediction",
-        "killerId": "31",
         "desc": ""
       },
       {
         "name": "Brown Noise Generator",
-        "killerId": "31",
         "desc": ""
       },
       {
         "name": "Expired Batteries",
-        "killerId": "31",
         "desc": ""
       },
       {
         "name": "Geographical Readout",
-        "killerId": "31",
         "desc": ""
       },
       {
         "name": "High-Current Upgrade",
-        "killerId": "31",
         "desc": ""
       },
       {
         "name": "High-Power Floodlight",
-        "killerId": "31",
         "desc": ""
       },
       {
         "name": "Infrared Upgrade",
-        "killerId": "31",
         "desc": ""
       },
       {
         "name": "Iridescent Unpublished Manuscript",
-        "killerId": "31",
         "desc": ""
       },
       {
         "name": "Loose Screw",
-        "killerId": "31",
         "desc": ""
       },
       {
         "name": "Low-Power Mode",
-        "killerId": "31",
         "desc": ""
       },
       {
         "name": "Powdered Glass",
-        "killerId": "31",
         "desc": ""
       },
       {
         "name": "Prototype Rotor",
-        "killerId": "31",
         "desc": ""
       },
       {
         "name": "Randomised Strobes",
-        "killerId": "31",
         "desc": ""
       },
       {
         "name": "Shotgun Speakers",
-        "killerId": "31",
         "desc": ""
       },
       {
         "name": "Stereo Remote Mic",
-        "killerId": "31",
         "desc": ""
       },
       {
         "name": "Supercharge",
-        "killerId": "31",
         "desc": ""
       },
       {
         "name": "Ultrasonic Speaker",
-        "killerId": "31",
         "desc": ""
       },
       {
         "name": "Vital Targeting Processor",
-        "killerId": "31",
         "desc": ""
       },
       {
         "name": "Eyes in the Sky",
-        "killerId": "31",
         "desc": ""
       }
     ]
@@ -3911,107 +3179,86 @@
     "addons": [
       {
         "name": "Orderly's Shoe",
-        "killerId": "43",
         "desc": ""
       },
       {
         "name": "Knitting Needle",
-        "killerId": "43",
         "desc": ""
       },
       {
         "name": "Garden Claw",
-        "killerId": "43",
         "desc": ""
       },
       {
         "name": "Bent Wheel",
-        "killerId": "43",
         "desc": ""
       },
       {
         "name": "Toxic Waste",
-        "killerId": "43",
         "desc": ""
       },
       {
         "name": "Sleeping Bag",
-        "killerId": "43",
         "desc": ""
       },
       {
         "name": "Party Noisemaker",
-        "killerId": "43",
         "desc": ""
       },
       {
         "name": "Coroner's Coffee",
-        "killerId": "43",
         "desc": ""
       },
       {
         "name": "Bloody Smile",
-        "killerId": "43",
         "desc": ""
       },
       {
         "name": "Two Nails",
-        "killerId": "43",
         "desc": ""
       },
       {
         "name": "Sauna Rock",
-        "killerId": "43",
         "desc": ""
       },
       {
         "name": "Mirror Shards (Omnipresent Evil)",
-        "killerId": "43",
         "desc": ""
       },
       {
         "name": "Imprinted Aluminum",
-        "killerId": "43",
         "desc": ""
       },
       {
         "name": "Eye Goop",
-        "killerId": "43",
         "desc": ""
       },
       {
         "name": "Missing Corkscrew",
-        "killerId": "43",
         "desc": ""
       },
       {
         "name": "Deputy's Badge",
-        "killerId": "43",
         "desc": ""
       },
       {
         "name": "Burnt Fuse",
-        "killerId": "43",
         "desc": ""
       },
       {
         "name": "Bloody Magazine",
-        "killerId": "43",
         "desc": ""
       },
       {
         "name": "Iridescent Boat Motor",
-        "killerId": "43",
         "desc": ""
       },
       {
         "name": "Dirty Money",
-        "killerId": "43",
         "desc": ""
       },
       {
         "name": "Omnipresent Evil",
-        "killerId": "43",
         "desc": ""
       }
     ]
@@ -4023,132 +3270,106 @@
     "addons": [
       {
         "name": "Bloody Hair Brooch",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Dirty Uwabaki",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Dried Cherry Blossom",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Father's Glasses",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Furin",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Gifted Bamboo Comb",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Juniper Bonsai",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Kaiun Talisman",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Katana Tsuba",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Katsumori Talisman",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Kintsugi Teacup",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Mother's Glasses",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Mother-Daughter Ring",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Muddy Sports Day Cap",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Origami Crane",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Prayer Beads Bracelet",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Rin's Broken Watch",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Rusty Flute",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Senko Hanabi",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Shiawase Amulet",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Uchiwa",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Wakizashi Saya",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "White Hair Ribbon",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Yakuyoke Amulet",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Zōri",
-        "killerId": "13",
         "desc": ""
       },
       {
         "name": "Yamaoka's Haunting",
-        "killerId": "13",
         "desc": ""
       }
     ]
@@ -4160,137 +3381,110 @@
     "addons": [
       {
         "name": "4-Coil Spring Kit",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Bear Oil",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Bloody Coil",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Coffee Grounds",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Fastening Tools",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Honing Stone",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Iridescent Stone",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Lengthened Jaws",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Logwood Dye",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Makeshift Wrap",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Oily Coil",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Padded Jaws",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Rusted Jaws",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Secondary Coil",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Serrated Jaws",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Setting Tools",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Stitched Bag",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Strong Coil Spring",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Tar Bottle",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Tension Spring",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Trap Setters",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Trapper Bag",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Trapper Gloves",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Trapper Sack",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Trapper Sack (Decommissioned)",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Wax Brick",
-        "killerId": "1",
         "desc": ""
       },
       {
         "name": "Bear Trap",
-        "killerId": "1",
         "desc": ""
       }
     ]
@@ -4302,112 +3496,90 @@
     "addons": [
       {
         "name": "Bloody Boa",
-        "killerId": "23",
         "desc": ""
       },
       {
         "name": "Caged Heart Shoes",
-        "killerId": "23",
         "desc": ""
       },
       {
         "name": "Cut Thru U Single",
-        "killerId": "23",
         "desc": ""
       },
       {
         "name": "Death Throes Compilation",
-        "killerId": "23",
         "desc": ""
       },
       {
         "name": "Diamond Cufflinks",
-        "killerId": "23",
         "desc": ""
       },
       {
         "name": "Edge of Revival Album",
-        "killerId": "23",
         "desc": ""
       },
       {
         "name": "Fizz-Spin Soda",
-        "killerId": "23",
         "desc": ""
       },
       {
         "name": "Inferno Wires",
-        "killerId": "23",
         "desc": ""
       },
       {
         "name": "Iridescent Photocard",
-        "killerId": "23",
         "desc": ""
       },
       {
         "name": "Ji-Woon's Autograph",
-        "killerId": "23",
         "desc": ""
       },
       {
         "name": "Killing Part Chords",
-        "killerId": "23",
         "desc": ""
       },
       {
         "name": "Lucky Blade",
-        "killerId": "23",
         "desc": ""
       },
       {
         "name": "Melodious Murder",
-        "killerId": "23",
         "desc": ""
       },
       {
         "name": "Memento Blades",
-        "killerId": "23",
         "desc": ""
       },
       {
         "name": "On Target Single",
-        "killerId": "23",
         "desc": ""
       },
       {
         "name": "Ripper Brace",
-        "killerId": "23",
         "desc": ""
       },
       {
         "name": "Smash 'n' Run Gloves",
-        "killerId": "23",
         "desc": ""
       },
       {
         "name": "Tequila Moonrock",
-        "killerId": "23",
         "desc": ""
       },
       {
         "name": "Trick Blades",
-        "killerId": "23",
         "desc": ""
       },
       {
         "name": "Trick Pouch",
-        "killerId": "23",
         "desc": ""
       },
       {
         "name": "Waiting For You Watch",
-        "killerId": "23",
         "desc": ""
       },
       {
         "name": "Showstopper",
-        "killerId": "23",
         "desc": ""
       }
     ]
@@ -4419,107 +3591,86 @@
     "addons": [
       {
         "name": "Baby Teeth",
-        "killerId": "22",
         "desc": ""
       },
       {
         "name": "Bloody Black Hood",
-        "killerId": "22",
         "desc": ""
       },
       {
         "name": "Cat's Eye",
-        "killerId": "22",
         "desc": ""
       },
       {
         "name": "Cat Figurine",
-        "killerId": "22",
         "desc": ""
       },
       {
         "name": "Ceremonial Candelabrum",
-        "killerId": "22",
         "desc": ""
       },
       {
         "name": "Drop of Perfume",
-        "killerId": "22",
         "desc": ""
       },
       {
         "name": "Forest Stew",
-        "killerId": "22",
         "desc": ""
       },
       {
         "name": "Iridescent Pendant",
-        "killerId": "22",
         "desc": ""
       },
       {
         "name": "Madeleine's Glove",
-        "killerId": "22",
         "desc": ""
       },
       {
         "name": "Madeleine's Scarf",
-        "killerId": "22",
         "desc": ""
       },
       {
         "name": "Rusted Needle",
-        "killerId": "22",
         "desc": ""
       },
       {
         "name": "Sewer Sludge",
-        "killerId": "22",
         "desc": ""
       },
       {
         "name": "Silencing Cloth",
-        "killerId": "22",
         "desc": ""
       },
       {
         "name": "Soured Milk",
-        "killerId": "22",
         "desc": ""
       },
       {
         "name": "Spinning Top",
-        "killerId": "22",
         "desc": ""
       },
       {
         "name": "Stale Biscuit",
-        "killerId": "22",
         "desc": ""
       },
       {
         "name": "Tiny Fingernail",
-        "killerId": "22",
         "desc": ""
       },
       {
         "name": "Toy Sword",
-        "killerId": "22",
         "desc": ""
       },
       {
         "name": "Victor's Soldier",
-        "killerId": "22",
         "desc": ""
       },
       {
         "name": "Weighty Rattle",
-        "killerId": "22",
         "desc": ""
       },
       {
         "name": "Blood Bond",
-        "killerId": "22",
         "desc": ""
       }
     ]
@@ -4531,107 +3682,86 @@
     "addons": [
       {
         "name": "Blurry Photo",
-        "killerId": "35",
         "desc": ""
       },
       {
         "name": "B-Movie Poster",
-        "killerId": "35",
         "desc": ""
       },
       {
         "name": "Captured by the Dark",
-        "killerId": "35",
         "desc": ""
       },
       {
         "name": "Device of Undisclosed Origin",
-        "killerId": "35",
         "desc": ""
       },
       {
         "name": "Discarded Milk Carton",
-        "killerId": "35",
         "desc": ""
       },
       {
         "name": "Footprint Cast",
-        "killerId": "35",
         "desc": ""
       },
       {
         "name": "Front-Page Article",
-        "killerId": "35",
         "desc": ""
       },
       {
         "name": "Homemade Mask",
-        "killerId": "35",
         "desc": ""
       },
       {
         "name": "Hypnotist's Watch",
-        "killerId": "35",
         "desc": ""
       },
       {
         "name": "Iridescent OSS Report",
-        "killerId": "35",
         "desc": ""
       },
       {
         "name": "Last Known Recording",
-        "killerId": "35",
         "desc": ""
       },
       {
         "name": "Notebook of Theories",
-        "killerId": "35",
         "desc": ""
       },
       {
         "name": "Obscure Game Cartridge",
-        "killerId": "35",
         "desc": ""
       },
       {
         "name": "Punctured Eyeball",
-        "killerId": "35",
         "desc": ""
       },
       {
         "name": "Rabbit's Foot",
-        "killerId": "35",
         "desc": ""
       },
       {
         "name": "Serum Vial",
-        "killerId": "35",
         "desc": ""
       },
       {
         "name": "Sketch Attempt",
-        "killerId": "35",
         "desc": ""
       },
       {
         "name": "Slashed Backpack",
-        "killerId": "35",
         "desc": ""
       },
       {
         "name": "Vanishing Box",
-        "killerId": "35",
         "desc": ""
       },
       {
         "name": "Victim's Map",
-        "killerId": "35",
         "desc": ""
       },
       {
         "name": "UVX",
-        "killerId": "35",
         "desc": ""
       }
     ]
@@ -4643,17 +3773,14 @@
     "addons": [
       {
         "name": "Bone Clapper",
-        "killerId": "2",
         "desc": ""
       },
       {
         "name": "Coxcombed Clapper",
-        "killerId": "2",
         "desc": ""
       },
       {
         "name": "Wailing Bell",
-        "killerId": "2",
         "desc": ""
       }
     ]
@@ -4665,107 +3792,86 @@
     "addons": [
       {
         "name": "Acidic Blood",
-        "killerId": "33",
         "desc": ""
       },
       {
         "name": "Ash's Innards",
-        "killerId": "33",
         "desc": ""
       },
       {
         "name": "Brett's Cap",
-        "killerId": "33",
         "desc": ""
       },
       {
         "name": "Cat Carrier",
-        "killerId": "33",
         "desc": ""
       },
       {
         "name": "Cereal Rations",
-        "killerId": "33",
         "desc": ""
       },
       {
         "name": "Crew Headset",
-        "killerId": "33",
         "desc": ""
       },
       {
         "name": "Drinking Bird",
-        "killerId": "33",
         "desc": ""
       },
       {
         "name": "Emergency Helmet",
-        "killerId": "33",
         "desc": ""
       },
       {
         "name": "Harpoon Gun",
-        "killerId": "33",
         "desc": ""
       },
       {
         "name": "Improvised Cattle Prod",
-        "killerId": "33",
         "desc": ""
       },
       {
         "name": "Kane's Helmet",
-        "killerId": "33",
         "desc": ""
       },
       {
         "name": "Lambert's Star Map",
-        "killerId": "33",
         "desc": ""
       },
       {
         "name": "Light Wand",
-        "killerId": "33",
         "desc": ""
       },
       {
         "name": "Moulted Skin",
-        "killerId": "33",
         "desc": ""
       },
       {
         "name": "Multipurpose Hatchet",
-        "killerId": "33",
         "desc": ""
       },
       {
         "name": "Ovomorph",
-        "killerId": "33",
         "desc": ""
       },
       {
         "name": "Parker's Headband",
-        "killerId": "33",
         "desc": ""
       },
       {
         "name": "Ripley's Watch",
-        "killerId": "33",
         "desc": ""
       },
       {
         "name": "Self-Destruct Bolt",
-        "killerId": "33",
         "desc": ""
       },
       {
         "name": "Semiotic Keyboard",
-        "killerId": "33",
         "desc": ""
       },
       {
         "name": "Hidden Pursuit",
-        "killerId": "33",
         "desc": ""
       }
     ]
