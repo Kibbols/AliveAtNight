@@ -1,4 +1,4 @@
-const CACHE_NAME = 'aliveatnight-v1';
+const CACHE_NAME = 'aliveatnight-v3';
 const ASSETS = [
   '/',
   '/index.html',
@@ -18,21 +18,24 @@ self.addEventListener('install', e => {
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
+      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => {
+        console.log('[SW] Deleting old cache:', k);
+        return caches.delete(k);
+      }))
     )
   );
   self.clients.claim();
 });
 
 self.addEventListener('fetch', e => {
-  // Network-first for FEEDME so wiki syncs always get fresh data
-  if (e.request.url.includes('FEEDME') || e.request.url.includes('fandom.com')) {
+  // Always network-first for FEEDME and wiki API
+  if (e.request.url.includes('FEEDME') || e.request.url.includes('fandom.com') || e.request.url.includes('api.github.com')) {
     e.respondWith(
       fetch(e.request).catch(() => caches.match(e.request))
     );
     return;
   }
-  // Cache-first for everything else
+  // Cache-first for static assets
   e.respondWith(
     caches.match(e.request).then(cached => cached || fetch(e.request))
   );

@@ -234,15 +234,21 @@ async function pushFeedmeToGithub(content, pat) {
 
 // ── Lock Overlay + Auto-refresh ───────────────────────────────────────────────
 function showLockAndRefresh() {
+  if (!lockOverlay) {
+    // Fallback if overlay element missing for any reason
+    setTimeout(() => window.location.reload(), 120000);
+    return;
+  }
   lockOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
   let seconds = 120;
 
   function tick() {
     const m = Math.floor(seconds / 60);
     const s = seconds % 60;
-    lockCountdown.textContent = `${m}:${s.toString().padStart(2, '0')}`;
+    if (lockCountdown) lockCountdown.textContent = `${m}:${s.toString().padStart(2, '0')}`;
     if (seconds <= 0) {
-      lockStatus.textContent = 'Refreshing…';
+      if (lockStatus) lockStatus.textContent = 'Refreshing…';
       window.location.reload();
       return;
     }
@@ -262,17 +268,41 @@ async function wikiGet(params) {
 }
 
 async function fetchKillerList() {
-  const data = await wikiGet({
-    action: 'query',
-    list: 'categorymembers',
-    cmtitle: 'Category:Killers',
-    cmlimit: '100',
-    cmnamespace: '0'
-  });
-  const members = data?.query?.categorymembers || [];
-  return members
-    .map(m => m.title)
-    .filter(t => t.startsWith('The ') || t.includes('('));
+  // Category:Killers only contains subcategories, not killer pages directly.
+  // Query each difficulty subcategory and combine results.
+  const subcategories = [
+    'Category:Easy_Killers',
+    'Category:Moderate_Killers',
+    'Category:Hard_Killers',
+    'Category:Very_Hard_Killers'
+  ];
+
+  const allNames = new Set();
+
+  for (const cat of subcategories) {
+    try {
+      const data = await wikiGet({
+        action: 'query',
+        list: 'categorymembers',
+        cmtitle: cat,
+        cmlimit: '100',
+        cmnamespace: '0'
+      });
+      const members = data?.query?.categorymembers || [];
+      members
+        .map(m => m.title)
+        .filter(t => t.startsWith('The ') || t.includes('('))
+        .forEach(n => allNames.add(n));
+    } catch (_) {}
+  }
+
+  // Merge in any killers from the fallback that are not in the wiki results
+  // (covers very new killers not yet categorised)
+  for (const k of window.DBD_KILLERS) {
+    allNames.add(k.name);
+  }
+
+  return [...allNames].sort();
 }
 
 async function fetchKillerAddons(killerName) {

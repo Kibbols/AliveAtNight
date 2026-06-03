@@ -760,13 +760,13 @@ textarea::placeholder {
   display: none;
   position: fixed;
   inset: 0;
-  z-index: 200;
+  z-index: 99999;
   background: rgba(10,10,12,0.97);
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-.lock-overlay.active { display: flex; }
+.lock-overlay.active { display: flex !important; }
 
 .lock-inner {
   display: flex;
