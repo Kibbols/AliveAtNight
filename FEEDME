@@ -1,6 +1,6 @@
 [
   {
-    "name": "The Animatronic",
+    "name": "Animatronic",
     "power": "Fazbear's Fright",
     "powerDesc": "",
     "addons": [
@@ -112,7 +112,7 @@
     ]
   },
   {
-    "name": "The Artist",
+    "name": "Artist",
     "power": "Birds of Torment",
     "powerDesc": "",
     "addons": [
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "name": "The Blight",
+    "name": "Blight",
     "power": "Blighted Corruption",
     "powerDesc": "",
     "addons": [
@@ -336,7 +336,7 @@
     ]
   },
   {
-    "name": "The Cannibal",
+    "name": "Cannibal",
     "power": "Bubba's Chainsaw",
     "powerDesc": "",
     "addons": [
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "name": "The Cenobite",
+    "name": "Cenobite",
     "power": "Summons of Pain",
     "powerDesc": "",
     "addons": [
@@ -560,7 +560,7 @@
     ]
   },
   {
-    "name": "The Clown",
+    "name": "Clown",
     "power": "The Afterpiece Tonic",
     "powerDesc": "",
     "addons": [
@@ -682,7 +682,7 @@
     ]
   },
   {
-    "name": "The Dark Lord",
+    "name": "Dark Lord",
     "power": "Vampiric Shift",
     "powerDesc": "",
     "addons": [
@@ -794,7 +794,7 @@
     ]
   },
   {
-    "name": "The Deathslinger",
+    "name": "Deathslinger",
     "power": "The Redeemer",
     "powerDesc": "",
     "addons": [
@@ -906,7 +906,7 @@
     ]
   },
   {
-    "name": "The Demogorgon",
+    "name": "Demogorgon",
     "power": "Of the Abyss",
     "powerDesc": "",
     "addons": [
@@ -1018,7 +1018,7 @@
     ]
   },
   {
-    "name": "The Doctor",
+    "name": "Doctor",
     "power": "Carter's Spark",
     "powerDesc": "",
     "addons": [
@@ -1070,7 +1070,7 @@
     ]
   },
   {
-    "name": "The Dredge",
+    "name": "Dredge",
     "power": "Reign of Darkness",
     "powerDesc": "",
     "addons": [
@@ -1182,7 +1182,7 @@
     ]
   },
   {
-    "name": "The Executioner",
+    "name": "Executioner",
     "power": "Rites of Judgement",
     "powerDesc": "",
     "addons": [
@@ -1294,7 +1294,7 @@
     ]
   },
   {
-    "name": "The First",
+    "name": "First",
     "power": "Test Subject #001",
     "powerDesc": "",
     "addons": [
@@ -1406,7 +1406,7 @@
     ]
   },
   {
-    "name": "The Ghost Face",
+    "name": "Ghost Face",
     "power": "Night Shroud",
     "powerDesc": "",
     "addons": [
@@ -1508,7 +1508,7 @@
     ]
   },
   {
-    "name": "The Ghoul",
+    "name": "Ghoul",
     "power": "One-Eyed Terror",
     "powerDesc": "",
     "addons": [
@@ -1620,7 +1620,7 @@
     ]
   },
   {
-    "name": "The Good Guy",
+    "name": "Good Guy",
     "power": "Playtime's Over",
     "powerDesc": "",
     "addons": [
@@ -1732,7 +1732,7 @@
     ]
   },
   {
-    "name": "The Hag",
+    "name": "Hag",
     "power": "Blackened Catalyst",
     "powerDesc": "",
     "addons": [
@@ -1844,7 +1844,7 @@
     ]
   },
   {
-    "name": "The Houndmaster",
+    "name": "Houndmaster",
     "power": "Scent of Blood",
     "powerDesc": "",
     "addons": [
@@ -1956,7 +1956,7 @@
     ]
   },
   {
-    "name": "The Huntress",
+    "name": "Huntress",
     "power": "Hunting Hatchets",
     "powerDesc": "",
     "addons": [
@@ -2093,7 +2093,7 @@
     ]
   },
   {
-    "name": "The Knight",
+    "name": "Knight",
     "power": "Guardia Compagnia",
     "powerDesc": "",
     "addons": [
@@ -2215,7 +2215,7 @@
     ]
   },
   {
-    "name": "The Krasue",
+    "name": "Krasue",
     "power": "Unbodied Flesh",
     "powerDesc": "",
     "addons": [
@@ -2327,7 +2327,7 @@
     ]
   },
   {
-    "name": "The Legion",
+    "name": "Legion",
     "power": "Feral Frenzy",
     "powerDesc": "",
     "addons": [
@@ -2449,7 +2449,7 @@
     ]
   },
   {
-    "name": "The Lich",
+    "name": "Lich",
     "power": "Vile Darkness",
     "powerDesc": "",
     "addons": [
@@ -2561,7 +2561,7 @@
     ]
   },
   {
-    "name": "The Mastermind",
+    "name": "Mastermind",
     "power": "Virulent Bound",
     "powerDesc": "",
     "addons": [
@@ -2673,7 +2673,7 @@
     ]
   },
   {
-    "name": "The Nemesis",
+    "name": "Nemesis",
     "power": "T-Virus",
     "powerDesc": "",
     "addons": [
@@ -2790,7 +2790,7 @@
     ]
   },
   {
-    "name": "The Nightmare",
+    "name": "Nightmare",
     "power": "Dream Demon",
     "powerDesc": "",
     "addons": [
@@ -2897,7 +2897,7 @@
     ]
   },
   {
-    "name": "The Oni",
+    "name": "Oni",
     "power": "Yamaoka's Wrath",
     "powerDesc": "",
     "addons": [
@@ -3009,7 +3009,7 @@
     ]
   },
   {
-    "name": "The Onryō",
+    "name": "Onryō",
     "power": "Deluge of Fear",
     "powerDesc": "",
     "addons": [
@@ -3121,7 +3121,7 @@
     ]
   },
   {
-    "name": "The Pig",
+    "name": "Pig",
     "power": "Jigsaw's Baptism",
     "powerDesc": "",
     "addons": [
@@ -3233,7 +3233,7 @@
     ]
   },
   {
-    "name": "The Plague",
+    "name": "Plague",
     "power": "Vile Purge",
     "powerDesc": "",
     "addons": [
@@ -3345,7 +3345,7 @@
     ]
   },
   {
-    "name": "The Singularity",
+    "name": "Singularity",
     "power": "Quantum Instantiation",
     "powerDesc": "",
     "addons": [
@@ -3457,7 +3457,7 @@
     ]
   },
   {
-    "name": "The Skull Merchant",
+    "name": "Skull Merchant",
     "power": "Eyes in the Sky",
     "powerDesc": "",
     "addons": [
@@ -3569,7 +3569,7 @@
     ]
   },
   {
-    "name": "The Slasher",
+    "name": "Slasher",
     "power": "Omnipresent Evil",
     "powerDesc": "",
     "addons": [
@@ -3681,7 +3681,7 @@
     ]
   },
   {
-    "name": "The Spirit",
+    "name": "Spirit",
     "power": "Yamaoka's Haunting",
     "powerDesc": "",
     "addons": [
@@ -3818,7 +3818,7 @@
     ]
   },
   {
-    "name": "The Trickster",
+    "name": "Trickster",
     "power": "Showstopper",
     "powerDesc": "",
     "addons": [
@@ -3935,7 +3935,7 @@
     ]
   },
   {
-    "name": "The Twins",
+    "name": "Twins",
     "power": "Blood Bond",
     "powerDesc": "",
     "addons": [
@@ -4047,7 +4047,7 @@
     ]
   },
   {
-    "name": "The Unknown",
+    "name": "Unknown",
     "power": "UVX",
     "powerDesc": "",
     "addons": [
@@ -4159,7 +4159,7 @@
     ]
   },
   {
-    "name": "The Xenomorph",
+    "name": "Xenomorph",
     "power": "Hidden Pursuit",
     "powerDesc": "",
     "addons": [
