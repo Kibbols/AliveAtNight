@@ -390,6 +390,7 @@ async function fetchKillerAddons(killerName, powerName) {
   let addonTable = null;
   const idSearchStr = 'id="Add-ons_for_';
   let idPos = html.indexOf(idSearchStr);
+  console.log('[wiki.gg debug]', killerName, '| html length:', html.length, '| idPos:', idPos, '| snippet around id:', idPos >= 0 ? html.slice(idPos, idPos+300) : html.slice(0, 300));
   if (idPos >= 0) {
     const tableStart = html.indexOf('<table', idPos);
     if (tableStart >= 0) {
