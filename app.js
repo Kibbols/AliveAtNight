@@ -305,7 +305,7 @@ const KILLER_META = {
   'the deathslinger':   { charPage: 'Caleb_Quinn',                 power: 'The Redeemer' },
   'the executioner':    { charPage: 'Pyramid_Head',                power: 'Rites of Judgment' },
   'the blight':         { charPage: 'Talbot_Grimes',               power: 'Blighted Corruption' },
-  'the twins':          { charPage: 'Charlotte_%26_Victor_Deshayes', power: 'Blood Bond' },
+  'the twins':          { charPage: 'Charlotte_&_Victor_Deshayes',   power: 'Blood Bond' },
   'the trickster':      { charPage: 'Ji-Woon_Hak',                 power: 'Showstopper' },
   'the nemesis':        { charPage: 'Nemesis_T-Type',              power: 'T-Virus' },
   'the cenobite':       { charPage: 'Elliot_Spencer',              power: 'Summons of Pain' },
@@ -324,8 +324,8 @@ const KILLER_META = {
   'the houndmaster':    { charPage: 'Portia_Maye',                 power: 'The Hunt' },
   'the ghoul':          { charPage: 'Ken_Kaneki',                  power: 'One-Eyed Terror' },
   'the animatronic':    { charPage: 'William_Afton',               power: "Fazbear's Fright" },
-  'the krasue':         { charPage: 'The_Krasue',                  power: 'Unbodied Flesh' },
-  'the first':          { charPage: 'The_First',                   power: 'Worldeater' },
+  'the krasue':         { charPage: 'Burong_Sukapat',               power: 'Unbodied Flesh' },
+  'the first':          { charPage: 'Vecna',                        power: 'Worldeater' },
 };
 
 async function fetchDatatable() {
@@ -413,6 +413,10 @@ async function fetchKillerAddons(killerName, powerName) {
       .trim()
       .slice(0, 800); // cap at 800 chars
   }
+
+  // Debug: log raw addon section
+  if (addonSection) console.log('[addon section]', addonSection.slice(0, 1000));
+  else console.log('[addon section] NOT FOUND for', wikiPower);
 
   return { addons: addonSection ? parseAddonNames(addonSection) : [], powerDesc };
 }
