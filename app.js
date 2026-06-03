@@ -1,6 +1,5 @@
 'use strict';
 
-// ── Constants ─────────────────────────────────────────────────────────────────
 const API_KEY_STORAGE    = 'dbd_gemini_api_key';
 const GITHUB_PAT_STORAGE = 'dbd_github_pat';
 const FEEDME_STORAGE     = 'dbd_feedme_data';
@@ -8,21 +7,11 @@ const WORKER_URL         = 'https://aliveatnight-proxy.portgamingsttv.workers.de
 const GITHUB_REPO        = 'Kibbols/AliveAtNight';
 const GITHUB_FILE        = 'FEEDME';
 
-// Powers missing from the Datatable for early killers
-const MISSING_POWERS = {
-  1: "Bear Traps",
-  2: "Wailing Bell",
-  3: "Chainsaw",
-  4: "Spencer's Last Breath",
-  5: "Evil Within"
-};
-
-// ── State ─────────────────────────────────────────────────────────────────────
 let apiKey    = localStorage.getItem(API_KEY_STORAGE)    || '';
 let githubPAT = localStorage.getItem(GITHUB_PAT_STORAGE) || '';
 let activeKillers = [];
 
-// ── DOM refs ──────────────────────────────────────────────────────────────────
+// ── DOM ───────────────────────────────────────────────────────────────────────
 const apiModal        = document.getElementById('apiModal');
 const apiToggleBtn    = document.getElementById('apiToggleBtn');
 const apiKeyInput     = document.getElementById('apiKeyInput');
@@ -30,33 +19,27 @@ const apiSaveBtn      = document.getElementById('apiSaveBtn');
 const apiCancelBtn    = document.getElementById('apiCancelBtn');
 const noKeyBanner     = document.getElementById('noKeyBanner');
 const setKeyBannerBtn = document.getElementById('setKeyBannerBtn');
-
-const syncBtn       = document.getElementById('syncBtn');
-const syncModal     = document.getElementById('syncModal');
-const syncStatus    = document.getElementById('syncStatus');
-const syncCancelBtn = document.getElementById('syncCancelBtn');
-const syncStartBtn  = document.getElementById('syncStartBtn');
-const patInput      = document.getElementById('patInput');
-
-const lockOverlay   = document.getElementById('lockOverlay');
-const lockStatus    = document.getElementById('lockStatus');
-const lockCountdown = document.getElementById('lockCountdown');
-
-const tabs  = document.querySelectorAll('.tab');
-const panels = document.querySelectorAll('.panel');
-
+const syncBtn         = document.getElementById('syncBtn');
+const syncModal       = document.getElementById('syncModal');
+const syncStatus      = document.getElementById('syncStatus');
+const syncCancelBtn   = document.getElementById('syncCancelBtn');
+const syncStartBtn    = document.getElementById('syncStartBtn');
+const patInput        = document.getElementById('patInput');
+const lockOverlay     = document.getElementById('lockOverlay');
+const lockStatus      = document.getElementById('lockStatus');
+const lockCountdown   = document.getElementById('lockCountdown');
+const tabs            = document.querySelectorAll('.tab');
+const panels          = document.querySelectorAll('.panel');
 const killerSelect       = document.getElementById('killerSelect');
 const killerPowerPreview = document.getElementById('killerPowerPreview');
 const surpriseMe         = document.getElementById('surpriseMe');
 const killerPromptGroup  = document.getElementById('killerPromptGroup');
 const killerPrompt       = document.getElementById('killerPrompt');
-
 const survivorPrompt  = document.getElementById('survivorPrompt');
 const survivorGenBtn  = document.getElementById('survivorGenBtn');
 const survivorResults = document.getElementById('survivorResults');
-
-const killerGenBtn  = document.getElementById('killerGenBtn');
-const killerResults = document.getElementById('killerResults');
+const killerGenBtn    = document.getElementById('killerGenBtn');
+const killerResults   = document.getElementById('killerResults');
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 (async function init() {
@@ -65,24 +48,14 @@ const killerResults = document.getElementById('killerResults');
     const res = await fetch('FEEDME');
     if (res.ok) {
       const data = JSON.parse(await res.text());
-      if (Array.isArray(data) && data.length > 0) {
-        activeKillers = data;
-        populateKillerSelect(activeKillers, 'wiki');
-        checkKeyBanner();
-        return;
-      }
+      if (Array.isArray(data) && data.length > 0) { activeKillers = data; populateKillerSelect(activeKillers, 'wiki'); checkKeyBanner(); return; }
     }
   } catch (_) {}
   try {
     const stored = localStorage.getItem(FEEDME_STORAGE);
     if (stored) {
       const data = JSON.parse(stored);
-      if (Array.isArray(data) && data.length > 0) {
-        activeKillers = data;
-        populateKillerSelect(activeKillers, 'cache');
-        checkKeyBanner();
-        return;
-      }
+      if (Array.isArray(data) && data.length > 0) { activeKillers = data; populateKillerSelect(activeKillers, 'cache'); checkKeyBanner(); return; }
     }
   } catch (_) {}
   populateKillerSelect([], 'empty');
@@ -94,7 +67,6 @@ function checkKeyBanner() { noKeyBanner.classList.toggle('visible', !apiKey); }
 function openApiModal() { apiKeyInput.value = apiKey; apiModal.classList.add('open'); setTimeout(() => apiKeyInput.focus(), 50); }
 function closeApiModal() { apiModal.classList.remove('open'); }
 function saveApiKey() { const v = apiKeyInput.value.trim(); if (v) { apiKey = v; localStorage.setItem(API_KEY_STORAGE, v); } checkKeyBanner(); closeApiModal(); }
-
 apiToggleBtn.addEventListener('click', openApiModal);
 apiSaveBtn.addEventListener('click', saveApiKey);
 apiCancelBtn.addEventListener('click', closeApiModal);
@@ -103,20 +75,11 @@ apiModal.addEventListener('click', e => { if (e.target === apiModal) closeApiMod
 apiKeyInput.addEventListener('keydown', e => { if (e.key === 'Enter') saveApiKey(); });
 
 // ── Sync Modal ────────────────────────────────────────────────────────────────
-syncBtn.addEventListener('click', () => {
-  syncStatus.innerHTML = '';
-  syncStartBtn.disabled = false;
-  syncStartBtn.textContent = '⟳ Start Sync';
-  syncStartBtn.style.display = '';
-  syncModal.classList.add('open');
-});
+syncBtn.addEventListener('click', () => { syncStatus.innerHTML = ''; syncStartBtn.disabled = false; syncStartBtn.textContent = '⟳ Start Sync'; syncStartBtn.style.display = ''; syncModal.classList.add('open'); });
 syncCancelBtn.addEventListener('click', () => syncModal.classList.remove('open'));
 syncModal.addEventListener('click', e => { if (e.target === syncModal) syncModal.classList.remove('open'); });
 syncStartBtn.addEventListener('click', runSync);
-patInput.addEventListener('change', () => {
-  const v = patInput.value.trim();
-  if (v && !v.startsWith('•')) { githubPAT = v; localStorage.setItem(GITHUB_PAT_STORAGE, v); patInput.value = '••••••••••••••••'; }
-});
+patInput.addEventListener('change', () => { const v = patInput.value.trim(); if (v && !v.startsWith('•')) { githubPAT = v; localStorage.setItem(GITHUB_PAT_STORAGE, v); patInput.value = '••••••••••••••••'; } });
 
 function logSync(msg, cls = '') {
   const line = document.createElement('div');
@@ -126,69 +89,85 @@ function logSync(msg, cls = '') {
   syncStatus.scrollTop = syncStatus.scrollHeight;
 }
 
-// ── Wiki helpers ──────────────────────────────────────────────────────────────
-async function wikiGet(params) {
+// ── Wiki API ──────────────────────────────────────────────────────────────────
+async function wikiGetModule(title) {
   const url = new URL(WORKER_URL);
-  url.search = new URLSearchParams({ ...params, format: 'json' }).toString();
+  url.search = new URLSearchParams({ action: 'query', prop: 'revisions', titles: title, rvprop: 'content', rvslots: 'main', format: 'json' }).toString();
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Worker HTTP ${res.status}`);
-  return res.json();
-}
-
-async function wikiGetHTML(page) {
-  const url = new URL(WORKER_URL);
-  url.searchParams.set('html', '1');
-  url.searchParams.set('page', page);
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`Worker HTTP ${res.status} for ${page}`);
-  return res.text();
-}
-
-async function wikiGetModule(title) {
-  const data = await wikiGet({ action: 'query', prop: 'revisions', titles: title, rvprop: 'content', rvslots: 'main' });
+  const data = await res.json();
   const pages = data?.query?.pages || {};
   const page = Object.values(pages)[0];
   return page?.revisions?.[0]?.slots?.main?.['*'] || page?.revisions?.[0]?.['*'] || '';
 }
 
-function firstTwo(name) {
-  return name.split(' ').slice(0, 2).join(' ').toLowerCase();
+// Fetch raw wikitext for a page, following #REDIRECT if present
+async function wikiGetRaw(pageTitle) {
+  const lua = await wikiGetModule(pageTitle);
+  if (lua.startsWith('#REDIRECT')) {
+    const m = /\[\[([^\]]+)\]\]/.exec(lua);
+    if (m) return wikiGetModule(m[1]);
+  }
+  return lua;
+}
+
+// Strip {{#Invoke:Utils|clr*|...|VALUE}} → VALUE, and other wiki markup
+function stripWikiMarkup(text) {
+  return text
+    .replace(/\{\{#Invoke:[^|]+\|clro[^|]*\|([^}]+)\}\}/gi, '$1')  // clror, clro, etc.
+    .replace(/\{\{#Invoke:[^|]+\|clr\|[^|]+\|([^}]+)\}\}/gi, '$1') // clr|N|VALUE
+    .replace(/\{\{[^}]+\}\}/g, '')   // remaining templates
+    .replace(/\[\[(?:[^\]|]+\|)?([^\]]+)\]\]/g, '$1') // [[link|text]] → text
+    .replace(/'''([^']+)'''/g, '$1') // bold
+    .replace(/''([^']+)''/g, '$1')   // italic
+    .replace(/<[^>]+>/g, '')         // HTML tags
+    .replace(/^\s*[:*#]+\s*/gm, '')  // list markers
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+// Parse power description from raw wikitext (Power Trivia section)
+function parsePowerDesc(wikitext, powerName) {
+  // Find ==== Power Trivia ==== or === Power === section
+  const triviaMatch = wikitext.match(/={3,4}\s*Power(?:\s+Trivia)?\s*={3,4}([\s\S]*?)(?=={3,4})/);
+  if (!triviaMatch) return '';
+  return stripWikiMarkup(triviaMatch[1]).slice(0, 1000);
+}
+
+// Parse addon description from raw wikitext using patch version
+function parseAddonDesc(wikitext, patch) {
+  // Find the matching patch version in the History tabber
+  // Format: |-|PATCH=\n{| ... | DESCRIPTION\n|}
+  const escaped = patch.replace('.', '\\.');
+  const re = new RegExp('\\|\\-\\|' + escaped + '=\\s*\\{\\|[^}]*\\|\\-[^|]*\\|\\|?\\s*\\n([\\s\\S]*?)(?=\\n\\|})', '');
+  const m = re.exec(wikitext);
+  if (!m) {
+    // Fallback: just grab first table description
+    const fallback = /\|\s*\n([\s\S]*?)(?=\n\|-)/.exec(wikitext);
+    if (fallback) return stripWikiMarkup(fallback[1]).slice(0, 500);
+    return '';
+  }
+  return stripWikiMarkup(m[1]).slice(0, 500);
 }
 
 // ── Parse killers from Module:Datatable ──────────────────────────────────────
-// Returns array of { id, title, power, charPage }
 function parseKillersFromLua(lua) {
   const killers = [];
-
-  // Find killers = { ... } block
   const blockIdx = lua.indexOf('killers = {');
   if (blockIdx < 0) return killers;
-
-  // Find the opening brace of the block
   const outerOpen = lua.indexOf('{', blockIdx);
-
-  // Walk character by character to find the matching closing brace
-  let depth = 1;
-  let pos = outerOpen + 1;
-  let outerClose = -1;
+  let depth = 1, pos = outerOpen + 1, outerClose = -1;
   while (pos < lua.length) {
     if (lua[pos] === '{') depth++;
-    else if (lua[pos] === '}') {
-      depth--;
-      if (depth === 0) { outerClose = pos; break; }
-    }
+    else if (lua[pos] === '}') { depth--; if (depth === 0) { outerClose = pos; break; } }
     pos++;
   }
   if (outerClose < 0) return killers;
-
-  // Now parse individual entries within the block
   const block = lua.slice(outerOpen + 1, outerClose);
   let i = 0;
   while (i < block.length) {
     const open = block.indexOf('{', i);
     if (open < 0) break;
-
-    // Find matching }
     let d = 1, j = open + 1;
     while (j < block.length && d > 0) {
       if (block[j] === '{') d++;
@@ -197,178 +176,128 @@ function parseKillersFromLua(lua) {
     }
     const entry = block.slice(open, j);
     i = j;
-
-    const idM   = /\bid\s*=\s*(\d+)/.exec(entry);
-    const nameM = /\bname\s*=\s*"([^"]+)"/.exec(entry);
-    const realM = /\brealName\s*=\s*"([^"]+)"/.exec(entry);
+    const idM    = /\bid\s*=\s*(\d+)/.exec(entry);
+    const nameM  = /\bname\s*=\s*"([^"]+)"/.exec(entry);
+    const realM  = /\brealName\s*=\s*"([^"]+)"/.exec(entry);
     const powerM = /\bpower\s*=\s*"([^"]+)"/.exec(entry);
-
     if (!idM || !nameM) continue;
-
+    // Skip non-killer entries (no power and no id in killer range)
     const id = parseInt(idM[1]);
-    const power = powerM ? powerM[1] : (MISSING_POWERS[id] || null);
-    if (!power) continue; // not a killer entry
-
-    const title = 'The ' + nameM[1];
-    // Use realName for the page if available, otherwise use the full title
-    const charPage = realM ? realM[1].replace(/ /g, '_') : title.replace(/ /g, '_');
-
-    killers.push({ id, title, power, charPage });
+    if (!powerM && id > 43) continue;
+    const title    = 'The ' + nameM[1];
+    const rawPage  = title.replace(/ /g, '_'); // try title first, redirect will handle it
+    const realPage = realM ? realM[1].replace(/ /g, '_') : null;
+    killers.push({ id, title, power: powerM ? powerM[1] : '', rawPage, realPage });
   }
   return killers;
 }
 
-// ── Parse addon loadout from Module:Datatable/Loadout ────────────────────────
-// Returns Map of killerId -> [addonName, ...]
+// ── Parse addons from Module:Datatable/Loadout ────────────────────────────────
 function parseLoadout(lua) {
-  const map = new Map();
+  const addons = [];
   const re = /\["([^"]+)"\]\s*=\s*\{([^}]+)\}/g;
   let m;
   while ((m = re.exec(lua)) !== null) {
     const name  = m[1];
     const props = m[2];
     const killerM = /\bkiller\s*=\s*(\d+)/.exec(props);
+    const patchM  = /\bpatch\s*=\s*"([^"]+)"/.exec(props);
     if (!killerM) continue;
-    const kid = killerM[1];
-    if (!map.has(kid)) map.set(kid, []);
-    map.get(kid).push(name);
+    addons.push({ name, killerId: killerM[1], patch: patchM ? patchM[1] : '' });
   }
-  return map;
-}
-
-// ── Parse character page HTML ─────────────────────────────────────────────────
-// Returns { powerDesc, addonDescs: Map of name -> desc }
-function parseCharPage(html) {
-  const result = { powerDesc: '', addonDescs: new Map() };
-  if (!html || html.length < 100) return result;
-
-  // Power description: between id="Power" and id="Add-ons_for_"
-  const powerPos    = html.indexOf('id="Power"');
-  const addonAnchor = html.indexOf('id="Add-ons_for_');
-  if (powerPos >= 0 && addonAnchor > powerPos) {
-    result.powerDesc = html.slice(powerPos, addonAnchor)
-      .replace(/<[^>]+>/g, ' ')
-      .replace(/\s+/g, ' ')
-      .trim()
-      .slice(0, 1000);
-  }
-
-  // Addon table: find it after the id="Add-ons_for_" anchor
-  if (addonAnchor >= 0) {
-    const tableStart = html.indexOf('<table', addonAnchor);
-    if (tableStart >= 0) {
-      // Extract table via bracket counting
-      let depth = 0, k = tableStart, tableEnd = -1;
-      while (k < html.length) {
-        if (html.slice(k, k + 6).toLowerCase() === '<table') depth++;
-        else if (html.slice(k, k + 8).toLowerCase() === '</table>') {
-          depth--;
-          if (depth === 0) { tableEnd = k + 8; break; }
-        }
-        k++;
-      }
-      if (tableEnd > 0) {
-        const table = html.slice(tableStart, tableEnd);
-        // Each data row: <th>icon</th> <td>name</td> <td>description</td>
-        let p = 0;
-        while (p < table.length) {
-          const td1 = table.indexOf('<td', p);
-          if (td1 < 0) break;
-          const td1c = table.indexOf('>', td1) + 1;
-          const td1e = findClosingTag(table, td1c, 'td');
-          if (td1e < 0) break;
-
-          const td2 = table.indexOf('<td', td1e);
-          if (td2 < 0) break;
-          const td2c = table.indexOf('>', td2) + 1;
-          const td2e = findClosingTag(table, td2c, 'td');
-          if (td2e < 0) break;
-
-          const name = table.slice(td1c, td1e).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-          const desc = table.slice(td2c, td2e).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-          if (name.length >= 3 && name.length <= 60) result.addonDescs.set(name, desc);
-          p = td2e;
-        }
-      }
-    }
-  }
-  return result;
-}
-
-function findClosingTag(html, start, tag) {
-  const open  = '<'  + tag;
-  const close = '</' + tag + '>';
-  let depth = 1, i = start;
-  while (i < html.length) {
-    if (html.slice(i, i + open.length + 1).toLowerCase().startsWith(open)) depth++;
-    else if (html.slice(i, i + close.length).toLowerCase() === close) {
-      depth--;
-      if (depth === 0) return i;
-    }
-    i++;
-  }
-  return -1;
+  return addons;
 }
 
 // ── Main Sync ─────────────────────────────────────────────────────────────────
 async function runSync() {
   const pat = githubPAT;
   if (!pat) { logSync('✗ No GitHub PAT set.', 'err'); return; }
-
   syncStartBtn.disabled = true;
   syncStatus.innerHTML = '';
 
   try {
-    // 1. Fetch and parse Module:Datatable
+    // Step 1: fetch killer metadata
     logSync('Fetching killer metadata…', 'working');
     const datatableLua = await wikiGetModule('Module:Datatable');
     const killerList = parseKillersFromLua(datatableLua);
     logSync(`✓ Found ${killerList.length} killers`, 'ok');
 
-    // 2. Fetch and parse Module:Datatable/Loadout
-    logSync('Fetching add-on data…', 'working');
+    // Step 2: fetch addon list
+    logSync('Fetching add-on list…', 'working');
     const loadoutLua = await wikiGetModule('Module:Datatable/Loadout');
-    const loadoutMap = parseLoadout(loadoutLua);
-    const totalAddons = Array.from(loadoutMap.values()).reduce((s, a) => s + a.length, 0);
-    logSync(`✓ ${totalAddons} add-ons loaded`, 'ok');
+    const allAddons = parseLoadout(loadoutLua);
+    logSync(`✓ ${allAddons.length} add-ons loaded`, 'ok');
 
-    // 3. For each killer, fetch their character page for power desc + addon descs
-    const results = [];
-    for (const killer of killerList.sort((a, b) => a.title.localeCompare(b.title))) {
-      logSync(`Parsing: ${killer.title}…`, 'working');
-
-      // Get addon names for this killer
-      const addonNames = loadoutMap.get(String(killer.id)) || [];
-
-      let powerDesc = '';
-      const addons = addonNames.map(n => ({ name: n, desc: '' }));
-
-      try {
-        const html = await wikiGetHTML(killer.charPage);
-        const parsed = parseCharPage(html);
-        powerDesc = parsed.powerDesc;
-        for (const addon of addons) {
-          if (parsed.addonDescs.has(addon.name)) {
-            addon.desc = parsed.addonDescs.get(addon.name);
-          }
-        }
-      } catch (e) {
-        logSync(`  ⚠ ${e.message}`, 'warn');
-      }
-
-      results.push({ name: killer.title, power: killer.power, powerDesc, addons });
-      logSync(`  ✓ ${addons.length} add-ons`, 'ok');
+    // Build killer ID → addons map
+    const killerAddonsMap = new Map();
+    for (const addon of allAddons) {
+      if (!killerAddonsMap.has(addon.killerId)) killerAddonsMap.set(addon.killerId, []);
+      killerAddonsMap.get(addon.killerId).push(addon);
     }
 
-    // 4. Push FEEDME
-    const json = JSON.stringify(results, null, 2);
+    // Step 3: fetch power descriptions from killer pages (raw wikitext)
+    logSync('Fetching power descriptions from killer pages…', 'working');
+    const results = [];
+    for (const killer of killerList.sort((a, b) => a.title.localeCompare(b.title))) {
+      logSync(`  ${killer.title}…`, 'working');
+      let powerDesc = '';
+      let resolvedPage = killer.rawPage;
+      try {
+        const raw = await wikiGetRaw(killer.rawPage);
+        powerDesc = parsePowerDesc(raw, killer.power);
+        // If redirect resolved, note the real page
+        if (raw.startsWith('#REDIRECT') && killer.realPage) resolvedPage = killer.realPage;
+      } catch (e) {
+        logSync(`  ⚠ Power fetch failed: ${e.message}`, 'warn');
+      }
+
+      const addonEntries = killerAddonsMap.get(String(killer.id)) || [];
+      results.push({
+        killer,
+        powerDesc,
+        addonEntries
+      });
+      logSync(`  ✓ power desc: ${powerDesc.length} chars, ${addonEntries.length} add-ons`, 'ok');
+    }
+
+    // Step 4: fetch addon descriptions from individual addon pages
+    logSync('Fetching add-on descriptions (this will take a few minutes)…', 'working');
+    let addonCount = 0;
+    const addonDescCache = new Map(); // name → desc
+
+    for (const { killer, powerDesc, addonEntries } of results) {
+      for (const addon of addonEntries) {
+        if (addonDescCache.has(addon.name)) continue;
+        const pageName = addon.name.replace(/ /g, '_').replace(/'/g, '%27');
+        try {
+          const raw = await wikiGetRaw(pageName);
+          const desc = parseAddonDesc(raw, addon.patch);
+          addonDescCache.set(addon.name, desc);
+        } catch (_) {
+          addonDescCache.set(addon.name, '');
+        }
+        addonCount++;
+      }
+    }
+    logSync(`✓ ${addonCount} add-on descriptions fetched`, 'ok');
+
+    // Step 5: assemble final FEEDME
+    const feedme = results.map(({ killer, powerDesc, addonEntries }) => ({
+      name: killer.title,
+      power: killer.power,
+      powerDesc,
+      addons: addonEntries.map(a => ({ name: a.name, desc: addonDescCache.get(a.name) || '' }))
+    }));
+
+    // Step 6: push
+    const json = JSON.stringify(feedme, null, 2);
     localStorage.setItem(FEEDME_STORAGE, json);
-    activeKillers = results;
+    activeKillers = feedme;
     populateKillerSelect(activeKillers, 'wiki');
 
     logSync('Pushing FEEDME to GitHub…', 'working');
     await pushFeedme(json, pat);
-    logSync('✓ FEEDME committed to repo!', 'ok');
+    logSync('✓ FEEDME committed!', 'ok');
     logSync('✓ Sync complete!', 'ok');
 
     syncStartBtn.style.display = 'none';
@@ -388,26 +317,11 @@ async function runSync() {
 
 // ── GitHub push ───────────────────────────────────────────────────────────────
 async function pushFeedme(content, pat) {
-  const headers = {
-    'Authorization': `Bearer ${pat}`,
-    'Accept': 'application/vnd.github+json',
-    'X-GitHub-Api-Version': '2022-11-28',
-    'Content-Type': 'application/json'
-  };
+  const headers = { 'Authorization': `Bearer ${pat}`, 'Accept': 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', 'Content-Type': 'application/json' };
   const apiBase = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
   let sha = null;
-  try {
-    const check = await fetch(apiBase, { headers });
-    if (check.ok) sha = (await check.json()).sha;
-  } catch (_) {}
-  const res = await fetch(apiBase, {
-    method: 'PUT', headers,
-    body: JSON.stringify({
-      message: `chore: sync FEEDME [${new Date().toISOString().slice(0, 10)}]`,
-      content: btoa(unescape(encodeURIComponent(content))),
-      ...(sha ? { sha } : {})
-    })
-  });
+  try { const check = await fetch(apiBase, { headers }); if (check.ok) sha = (await check.json()).sha; } catch (_) {}
+  const res = await fetch(apiBase, { method: 'PUT', headers, body: JSON.stringify({ message: `chore: sync FEEDME [${new Date().toISOString().slice(0, 10)}]`, content: btoa(unescape(encodeURIComponent(content))), ...(sha ? { sha } : {}) }) });
   if (!res.ok) { const e = await res.json().catch(() => ({})); throw new Error(e.message || `GitHub HTTP ${res.status}`); }
 }
 
@@ -450,7 +364,7 @@ function updatePowerPreview() {
   if (idx === '' || idx === null) { killerPowerPreview.innerHTML = ''; return; }
   const k = activeKillers[parseInt(idx)];
   let html = '';
-  if (k.power) html += `<span class="power-name">⚡ ${k.power}:</span>${k.powerDesc}`;
+  if (k.power) html += `<span class="power-name">⚡ ${k.power}:</span> ${k.powerDesc}`;
   if (k.addons && k.addons.length > 0) {
     const names = k.addons.map(a => typeof a === 'object' ? a.name : a).join(', ');
     html += `<div style="margin-top:0.5rem;font-size:0.8rem;color:var(--text-dim)">Add-ons: ${names}</div>`;
@@ -459,38 +373,22 @@ function updatePowerPreview() {
 }
 
 killerSelect.addEventListener('change', updatePowerPreview);
-surpriseMe.addEventListener('change', () => {
-  killerPrompt.disabled = surpriseMe.checked;
-  killerPromptGroup.style.opacity = surpriseMe.checked ? '0.4' : '1';
-});
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('active'));
-    panels.forEach(p => p.classList.remove('active'));
-    tab.classList.add('active');
-    document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
-  });
-});
+surpriseMe.addEventListener('change', () => { killerPrompt.disabled = surpriseMe.checked; killerPromptGroup.style.opacity = surpriseMe.checked ? '0.4' : '1'; });
+tabs.forEach(tab => { tab.addEventListener('click', () => { tabs.forEach(t => t.classList.remove('active')); panels.forEach(p => p.classList.remove('active')); tab.classList.add('active'); document.getElementById('panel-' + tab.dataset.tab).classList.add('active'); }); });
 
 // ── Gemini ────────────────────────────────────────────────────────────────────
 async function callGemini(prompt) {
   if (!apiKey) throw new Error('No API key set. Click ⚙ API Key to add your Gemini key.');
-  const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`;
-  const res = await fetch(endpoint, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+  const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`, {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], generationConfig: { temperature: 0.9, maxOutputTokens: 2048 } })
   });
   if (!res.ok) { const e = await res.json().catch(() => ({})); throw new Error(`Gemini API error: ${e?.error?.message || `HTTP ${res.status}`}`); }
   return (await res.json()).candidates?.[0]?.content?.parts?.[0]?.text || '';
 }
 
-function setLoading(container, msg = 'Thinking…') {
-  container.innerHTML = `<div class="loading-state"><div class="spinner"></div><span>${msg}</span></div>`;
-}
-function setError(container, msg) {
-  container.innerHTML = `<div class="error-state">⚠ ${msg}</div>`;
-}
+function setLoading(c, msg = 'Thinking…') { c.innerHTML = `<div class="loading-state"><div class="spinner"></div><span>${msg}</span></div>`; }
+function setError(c, msg) { c.innerHTML = `<div class="error-state">⚠ ${msg}</div>`; }
 function renderMarkdown(container, text) {
   let html = text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   html = html.replace(/^#{1,3} (.+)$/gm, '<h3>$1</h3>');
@@ -505,19 +403,16 @@ function renderMarkdown(container, text) {
   container.appendChild(div);
 }
 
-// ── Survivor tab ──────────────────────────────────────────────────────────────
 survivorGenBtn.addEventListener('click', async () => {
   const prompt = survivorPrompt.value.trim();
   if (!prompt) { survivorPrompt.focus(); survivorPrompt.style.borderColor = 'var(--accent)'; setTimeout(() => survivorPrompt.style.borderColor = '', 1500); return; }
   survivorGenBtn.disabled = true;
   setLoading(survivorResults, 'Generating survivor video ideas…');
-  const full = `You are a creative YouTube content strategist who specializes in Dead by Daylight (DbD) gaming content.\n\nThe user wants YouTube video ideas for survivor gameplay content based on the following request:\n"${prompt}"\n\nGenerate 4-6 distinct YouTube video concepts. For each concept, provide:\n1. A compelling, click-worthy YouTube video title\n2. A brief description of what the video would cover (2-4 sentences)\n3. Why this would perform well on YouTube for the DbD community\n\nMake titles punchy and engaging — the kind that get clicks in the DbD community.`;
-  try { renderMarkdown(survivorResults, await callGemini(full)); }
+  try { renderMarkdown(survivorResults, await callGemini(`You are a creative YouTube content strategist who specializes in Dead by Daylight (DbD) gaming content.\n\nThe user wants YouTube video ideas for survivor gameplay content based on the following request:\n"${prompt}"\n\nGenerate 4-6 distinct YouTube video concepts. For each concept, provide:\n1. A compelling, click-worthy YouTube video title\n2. A brief description of what the video would cover (2-4 sentences)\n3. Why this would perform well on YouTube for the DbD community\n\nMake titles punchy and engaging.`)); }
   catch (err) { setError(survivorResults, err.message); }
   finally { survivorGenBtn.disabled = false; }
 });
 
-// ── Killer tab ────────────────────────────────────────────────────────────────
 killerGenBtn.addEventListener('click', async () => {
   const idx = killerSelect.value;
   if (idx === '' || idx === null) { killerSelect.focus(); return; }
@@ -525,26 +420,15 @@ killerGenBtn.addEventListener('click', async () => {
   const isSurprise = surpriseMe.checked;
   const buildRequest = isSurprise ? null : killerPrompt.value.trim();
   if (!isSurprise && !buildRequest) { killerPrompt.focus(); killerPrompt.style.borderColor = 'var(--accent)'; setTimeout(() => killerPrompt.style.borderColor = '', 1500); return; }
-
   killerGenBtn.disabled = true;
   setLoading(killerResults, `Cooking up ${killer.name} builds…`);
-
   let addonContext = '\n**Note: No add-on list available — use your best knowledge of this killer\'s real add-ons only.**';
   if (killer.addons && killer.addons.length > 0) {
-    const list = killer.addons.map(a => {
-      if (typeof a === 'object' && a.name) return a.desc ? `- **${a.name}**: ${a.desc}` : `- ${a.name}`;
-      return `- ${a}`;
-    }).join('\n');
+    const list = killer.addons.map(a => typeof a === 'object' && a.name ? (a.desc ? `- **${a.name}**: ${a.desc}` : `- ${a.name}`) : `- ${a}`).join('\n');
     addonContext = `\n**${killer.name}'s add-ons (use ONLY these, no others):**\n${list}`;
   }
-
-  const intent = isSurprise
-    ? 'Come up with genuinely creative, fun, and interesting builds that would make for entertaining YouTube content. Think outside the meta — find synergies, meme potential, unique playstyles, or high-skill-expression builds that viewers would find exciting to watch.'
-    : `The user wants: "${buildRequest}"`;
-
-  const full = `You are a Dead by Daylight build theorist and YouTube content strategist with deep mechanical knowledge of the game.\n\n**Killer:** ${killer.name}\n**Killer Power — ${killer.power}:** ${killer.powerDesc}${addonContext}\n\n**Critical mechanical rules:**\n- Killer power hits are SPECIAL ATTACKS, not basic attacks. Perks that require "basic attacks" do NOT synergize with power hits unless the perk explicitly says "any attack" or "special attacks".\n- Reason from what each perk DOES mechanically, not its name or flavor text.\n- Only recommend add-ons from the list provided above. Do not invent or substitute add-on names.\n\n${intent}\n\nGenerate 3 distinct perk + add-on builds for ${killer.name}. For each build:\n1. Give the build a catchy name/title (suitable as a YouTube video title)\n2. List exactly 4 perks — for each, briefly explain what it does mechanically and why it fits\n3. List 2 add-ons from the provided list — explain the mechanical effect and why it fits\n4. Write a short "video pitch" (2-3 sentences) — why would viewers want to watch this?\n5. Rate: Difficulty (Beginner/Intermediate/Advanced), Fun Factor (1-5 🔪), Meme Potential (Low/Medium/High)`;
-
-  try { renderMarkdown(killerResults, await callGemini(full)); }
+  const intent = isSurprise ? 'Come up with genuinely creative, fun, and interesting builds that would make for entertaining YouTube content. Think outside the meta — find synergies, meme potential, unique playstyles, or high-skill-expression builds that viewers would find exciting to watch.' : `The user wants: "${buildRequest}"`;
+  try { renderMarkdown(killerResults, await callGemini(`You are a Dead by Daylight build theorist and YouTube content strategist with deep mechanical knowledge of the game.\n\n**Killer:** ${killer.name}\n**Killer Power — ${killer.power}:** ${killer.powerDesc}${addonContext}\n\n**Critical mechanical rules:**\n- Killer power hits are SPECIAL ATTACKS, not basic attacks. Perks that require "basic attacks" do NOT synergize with power hits unless the perk explicitly says "any attack" or "special attacks".\n- Reason from what each perk DOES mechanically, not its name or flavor text.\n- Only recommend add-ons from the list provided above. Do not invent or substitute add-on names.\n\n${intent}\n\nGenerate 3 distinct perk + add-on builds for ${killer.name}. For each build:\n1. Give the build a catchy name/title (suitable as a YouTube video title)\n2. List exactly 4 perks — for each, briefly explain what it does mechanically and why it fits\n3. List 2 add-ons from the provided list — explain the mechanical effect and why it fits\n4. Write a short "video pitch" (2-3 sentences) — why would viewers want to watch this?\n5. Rate: Difficulty (Beginner/Intermediate/Advanced), Fun Factor (1-5 🔪), Meme Potential (Low/Medium/High)`)); }
   catch (err) { setError(killerResults, err.message); }
   finally { killerGenBtn.disabled = false; }
 });
