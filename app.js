@@ -384,45 +384,39 @@ async function fetchKillerAddons(killerName, powerName) {
   const html = await fetchRenderedHTML(charPage);
   if (!html || html.length < 100) throw new Error('Empty HTML for ' + charPage);
 
-  // Debug: find "Add-ons for" in HTML and log surrounding structure
-  const addonIdx = html.indexOf('Add-ons for');
-  if (addonIdx >= 0) {
-    console.log('[html debug]', killerName, '| found at', addonIdx, '| snippet:', html.slice(addonIdx, addonIdx + 800));
-  } else {
-    console.log('[html debug]', killerName, '| "Add-ons for" NOT FOUND | html length:', html.length, '| first 200:', html.slice(0, 200));
+  // Skip the TOC — use id= anchor to find the real addon section
+  // TOC uses href="#Add-ons_for_X", actual section has id="Add-ons_for_X"
+  const idMatch = /id="(Add-ons_for_[^"]+)"/.exec(html);
+  let addonTable = null;
+  if (idMatch) {
+    const afterId = html.slice(html.indexOf(idMatch[0]));
+    const tableMatch = /<table[\s\S]*?<\/table>/i.exec(afterId);
+    if (tableMatch) addonTable = tableMatch[0];
   }
 
-  // Parse power description — section between == Power == and the addon table
+  // Power description from the Power section
   let powerDesc = '';
-  const powerSectionMatch = html.match(/id="Power"[\s\S]*?<\/h2>([\s\S]*?)(?=<h[23][^>]*>[\s\S]*?Add-ons for|<h2)/i);
-  if (powerSectionMatch) {
-    powerDesc = powerSectionMatch[1]
+  const powerIdMatch = /id="Power"[^>]*>[\s\S]{0,100}<\/[^>]+>([\s\S]*?)(?=id="Add-ons_for_)/i.exec(html);
+  if (powerIdMatch) {
+    powerDesc = powerIdMatch[1]
       .replace(/<[^>]+>/g, ' ')
       .replace(/\s+/g, ' ')
       .trim()
       .slice(0, 1000);
   }
 
-  // Find the addon table — parse name + description from each row
-  // Table structure: <tr> <td>icon</td> <td>name</td> <td>description</td> </tr>
   const addons = [];
-  const addonSectionMatch = html.match(/Add-ons for[\s\S]*?(<table[\s\S]*?<\/table>)/i);
-
-  if (addonSectionMatch) {
-    const tableHtml = addonSectionMatch[1];
-    // Extract all rows
+  if (addonTable) {
     const rowRe = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
     let rowMatch;
-    while ((rowMatch = rowRe.exec(tableHtml)) !== null) {
+    while ((rowMatch = rowRe.exec(addonTable)) !== null) {
       const row = rowMatch[1];
-      // Get all <td> cells
       const cells = [];
       const cellRe = /<td[^>]*>([\s\S]*?)<\/td>/gi;
       let cellMatch;
       while ((cellMatch = cellRe.exec(row)) !== null) {
         cells.push(cellMatch[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim());
       }
-      // Row has 3 cells: icon, name, description
       if (cells.length >= 3) {
         const name = cells[1].trim();
         const desc = cells[2].trim();
