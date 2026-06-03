@@ -367,110 +367,73 @@ function firstTwo(name) {
   return name.split(' ').slice(0, 2).join(' ').toLowerCase();
 }
 
-async function fetchRenderedHTML(page) {
-  const url = new URL(WORKER_URL);
-  url.searchParams.set('html', '1');
-  url.searchParams.set('page', page);
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`Worker HTTP ${res.status}`);
-  return res.text();
+// Cache for the Loadout module data
+let _loadoutData = null;
+
+async function fetchLoadoutModule() {
+  if (_loadoutData) return _loadoutData;
+  const data = await wikiGet({
+    action: 'query',
+    prop: 'revisions',
+    titles: 'Module:Datatable/Loadout',
+    rvprop: 'content',
+    rvslots: 'main'
+  });
+  const pages = data?.query?.pages || {};
+  const page = Object.values(pages)[0];
+  const content = page?.revisions?.[0]?.slots?.main?.['*']
+    || page?.revisions?.[0]?.['*'] || '';
+  if (!content) throw new Error('Could not fetch Module:Datatable/Loadout');
+  _loadoutData = content;
+  return content;
 }
 
 async function fetchKillerAddons(killerName, powerName) {
   const meta = KILLER_META[firstTwo(killerName)];
   if (!meta) throw new Error('No datatable entry for ' + killerName);
 
-  const { charPage } = meta;
+  const lua = await fetchLoadoutModule();
+  // Loadout format: ["Addon Name"] = {id=N, rarity=N, killer=N, ...}
+  // We need to find killer ID from Module:Datatable killers table
+  // But we can also match by looking at the killer number from KILLER_META
+  // For now parse all addons and their killer IDs, then filter by killer
+  
+  // First find killer ID by matching power name in the lua content
+  // Module:Datatable has: {id=N, name="Trapper", power="Bear Traps", ...}
+  const killerNameShort = killerName.replace(/^The /, '').replace(/\s*\([^)]+\)$/, '').trim();
+  const killerIdMatch = new RegExp('name\s*=\s*"' + killerNameShort.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '"[^}]*id\s*=\s*(\d+)', 'i').exec(lua)
+    || new RegExp('id\s*=\s*(\d+)[^}]*name\s*=\s*"' + killerNameShort.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '"', 'i').exec(lua);
 
-  const html = await fetchRenderedHTML(charPage);
-  if (!html || html.length < 100) throw new Error('Empty HTML for ' + charPage);
-
-  // Find the real addon section using id= anchor (not TOC href)
-  // Then extract the table using bracket counting to avoid catastrophic regex backtracking
-  let addonTable = null;
-  const idSearchStr = 'id="Add-ons_for_';
-  let idPos = html.indexOf(idSearchStr);
-  // removed noisy debug
-  if (idPos >= 0) {
-    const tableStart = html.indexOf('<table', idPos);
-    if (tableStart >= 0) {
-      // Walk forward counting <table> open/close to find the matching </table>
-      let depth = 0;
-      let i = tableStart;
-      while (i < html.length) {
-        if (html[i] === '<') {
-          if (html.slice(i, i+6).toLowerCase() === '<table') { depth++; }
-          else if (html.slice(i, i+8).toLowerCase() === '</table>') {
-            depth--;
-            if (depth === 0) { addonTable = html.slice(tableStart, i + 8); break; }
-          }
-        }
-        i++;
-      }
-    }
-  }
-
-  // Power description from the Power section
-  let powerDesc = '';
-  const powerIdMatch = /id="Power"[^>]*>[\s\S]{0,100}<\/[^>]+>([\s\S]*?)(?=id="Add-ons_for_)/i.exec(html);
-  if (powerIdMatch) {
-    powerDesc = powerIdMatch[1]
-      .replace(/<[^>]+>/g, ' ')
-      .replace(/\s+/g, ' ')
-      .trim()
-      .slice(0, 1000);
-  }
-
+  // Parse addons from loadout: ["Name"] = {killer=N, ...}
   const addons = [];
-  if (addonTable) {
-    // Each data row has exactly 2 <td> cells: name and description
-    // (icon is in a <th>, not a <td>)
-    // Use indexOf to walk through <td> pairs without regex backtracking on nested HTML
-    function extractCellText(html, start) {
-      // Find matching </td> by counting tag depth
-      let depth = 0, i = start;
-      while (i < html.length) {
-        if (html[i] === '<') {
-          const tag = html.slice(i, i + 4).toLowerCase();
-          if (tag === '<td>') depth++;
-          else if (html.slice(i, i + 5).toLowerCase() === '</td>') {
-            depth--;
-            if (depth === 0) return { text: html.slice(start, i), end: i + 5 };
-          }
-        }
-        i++;
-      }
-      return null;
-    }
-
-    let pos = 0;
-    while (pos < addonTable.length) {
-      // Find next <td opening tag
-      const td1Start = addonTable.indexOf('<td', pos);
-      if (td1Start < 0) break;
-      const td1Open = addonTable.indexOf('>', td1Start) + 1;
-      const cell1 = extractCellText(addonTable, td1Open);
-      if (!cell1) break;
-
-      // Find next <td for description
-      const td2Start = addonTable.indexOf('<td', cell1.end);
-      if (td2Start < 0) break;
-      const td2Open = addonTable.indexOf('>', td2Start) + 1;
-      const cell2 = extractCellText(addonTable, td2Open);
-      if (!cell2) break;
-
-      const name = cell1.text.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-      const desc = cell2.text.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-
-      if (name.length >= 3 && name.length <= 60 && /^["A-Z']/.test(name)) {
-        addons.push({ name, desc });
-      }
-
-      pos = cell2.end;
-    }
+  const addonRe = /\["([^"]+)"\]\s*=\s*\{([^}]+)\}/g;
+  let m;
+  while ((m = addonRe.exec(lua)) !== null) {
+    const name = m[1];
+    const props = m[2];
+    // Check if this addon belongs to this killer
+    const killerMatch = /killer\s*=\s*(\d+)/.exec(props);
+    if (!killerMatch) continue;
+    const killerId = killerMatch[1];
+    // Match killer by id if we found it, otherwise include all addons with description
+    const descMatch = /description\s*=\s*"([^"]*)"/.exec(props);
+    const effectMatch = /effect\s*=\s*"([^"]*)"/.exec(props);
+    const desc = descMatch ? descMatch[1] : (effectMatch ? effectMatch[1] : '');
+    addons.push({ name, killerId, desc });
   }
 
-  return { addons: addons.slice(0, 20), powerDesc };
+  // Filter to this killer's addons
+  // Use killer ID if found, otherwise use power name matching
+  let killerAddons;
+  if (killerIdMatch) {
+    const id = killerIdMatch[1];
+    killerAddons = addons.filter(a => a.killerId === id);
+  } else {
+    // Fallback: can't filter precisely, skip
+    killerAddons = [];
+  }
+
+  return { addons: killerAddons.slice(0, 20).map(a => ({ name: a.name, desc: a.desc })), powerDesc };
 }
 
 
