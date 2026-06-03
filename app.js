@@ -5,7 +5,7 @@ const API_KEY_STORAGE    = 'dbd_gemini_api_key';
 const GITHUB_PAT_STORAGE = 'dbd_github_pat';
 const FEEDME_STORAGE     = 'dbd_feedme_data';
 const WORKER_URL = 'https://aliveatnight-proxy.portgamingsttv.workers.dev';
-const WIKI_API   = 'https://deadbydaylight.fandom.com/api.php'; // fallback reference only
+const WIKI_API   = 'https://deadbydaylight.wiki.gg/api.php'; // fallback reference only
 const GITHUB_REPO        = 'Kibbols/AliveAtNight';
 const GITHUB_FILE        = 'FEEDME';
 
@@ -329,8 +329,9 @@ const KILLER_META = {
   'the houndmaster':    { charPage: 'Portia_Maye',                 power: 'The Hunt' },
   'the ghoul':          { charPage: 'Ken_Kaneki',                  power: 'One-Eyed Terror' },
   'the animatronic':    { charPage: 'William_Afton',               power: "Fazbear's Fright" },
-  'the krasue':         { charPage: 'The_Krasue',               power: 'Unbodied Flesh' },
-  'the first':          { charPage: 'Vecna',                        power: 'Worldeater' },
+  'the krasue':         { charPage: 'Burong_Sukapat',               power: 'Unbodied Flesh' },
+  'the first':          { charPage: 'Henry_Creel',                     power: 'Worldeater' },
+  'the slasher':        { charPage: 'Jason_Voorhees',                  power: 'Voorhees' },
 };
 
 async function fetchDatatable() {
@@ -384,19 +385,28 @@ async function fetchKillerAddons(killerName, powerName) {
   const html = await fetchRenderedHTML(charPage);
   if (!html || html.length < 100) throw new Error('Empty HTML for ' + charPage);
 
-  // Skip the TOC — use id= anchor to find the real addon section
-  // TOC uses href="#Add-ons_for_X", actual section has id="Add-ons_for_X"
-  const idMatch = /id="(Add-ons_for_[^"]+)"/.exec(html);
+  // Find the real addon section using id= anchor (not TOC href)
+  // Then extract the table using bracket counting to avoid catastrophic regex backtracking
   let addonTable = null;
-  if (idMatch) {
-    const afterId = html.slice(html.indexOf(idMatch[0]));
-    // Debug: log what we find after the id anchor
-    console.log('[id debug]', killerName, '| id found:', idMatch[0], '| next 500:', afterId.slice(0, 500));
-    const tableMatch = /<table[\s\S]*?<\/table>/i.exec(afterId);
-    if (tableMatch) addonTable = tableMatch[0];
-    else console.log('[id debug]', killerName, '| NO TABLE FOUND after id');
-  } else {
-    console.log('[id debug]', killerName, '| NO id="Add-ons_for_" FOUND in html');
+  const idSearchStr = 'id="Add-ons_for_';
+  let idPos = html.indexOf(idSearchStr);
+  if (idPos >= 0) {
+    const tableStart = html.indexOf('<table', idPos);
+    if (tableStart >= 0) {
+      // Walk forward counting <table> open/close to find the matching </table>
+      let depth = 0;
+      let i = tableStart;
+      while (i < html.length) {
+        if (html[i] === '<') {
+          if (html.slice(i, i+6).toLowerCase() === '<table') { depth++; }
+          else if (html.slice(i, i+8).toLowerCase() === '</table>') {
+            depth--;
+            if (depth === 0) { addonTable = html.slice(tableStart, i + 8); break; }
+          }
+        }
+        i++;
+      }
+    }
   }
 
   // Power description from the Power section

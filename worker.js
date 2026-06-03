@@ -1,8 +1,8 @@
 // AliveAtNight Wiki Proxy Worker
 // Proxies requests to deadbydaylight.fandom.com to bypass CORS
 
-const WIKI_API_BASE  = 'https://deadbydaylight.fandom.com/api.php';
-const WIKI_HTML_BASE = 'https://deadbydaylight.fandom.com/wiki/';
+const WIKI_API_BASE  = 'https://deadbydaylight.wiki.gg/api.php';
+const WIKI_HTML_BASE = 'https://deadbydaylight.wiki.gg/wiki/';
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',

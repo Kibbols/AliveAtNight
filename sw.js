@@ -1,4 +1,4 @@
-const CACHE_NAME = 'aliveatnight-v28';
+const CACHE_NAME = 'aliveatnight-v31';
 const ASSETS = [
   '/',
   '/index.html',
