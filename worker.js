@@ -1,5 +1,9 @@
-:
-//   1. Create a Wrker at dash.cloudflare.com named "aliveatnight-proxy"
+// AliveAtNight Wiki Proxy Worker
+// Deploys to Cloudflare Workers — proxies requests to deadbydaylight.fandom.com
+// to bypass CORS restrictions from the browser.
+//
+// Setup:
+//   1. Create a Worker at dash.cloudflare.com named "aliveatnight-proxy"
 //   2. Paste this file's contents into the editor and Deploy
 //   3. Copy your worker URL (e.g. https://aliveatnight-proxy.YOUR.workers.dev)
 //   4. Set WORKER_URL in app.js to that URL
