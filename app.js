@@ -390,7 +390,7 @@ async function fetchKillerAddons(killerName, powerName) {
   let addonTable = null;
   const idSearchStr = 'id="Add-ons_for_';
   let idPos = html.indexOf(idSearchStr);
-  console.log('[wiki.gg debug]', killerName, '| html length:', html.length, '| idPos:', idPos, '| snippet around id:', idPos >= 0 ? html.slice(idPos, idPos+300) : html.slice(0, 300));
+  // removed noisy debug
   if (idPos >= 0) {
     const tableStart = html.indexOf('<table', idPos);
     if (tableStart >= 0) {
@@ -422,6 +422,10 @@ async function fetchKillerAddons(killerName, powerName) {
   }
 
   const addons = [];
+  console.log('[table debug]', killerName, '| addonTable length:', addonTable ? addonTable.length : 'NULL');
+  if (addonTable) {
+    console.log('[table debug] first 600:', addonTable.slice(0, 600));
+  }
   if (addonTable) {
     // Each row: <th>icon</th> <td>name</td> <td>description</td>
     // Icon is in a <th>, name and desc are in <td>s
@@ -446,6 +450,7 @@ async function fetchKillerAddons(killerName, powerName) {
         }
       }
     }
+    console.log('[table debug] parsed addons:', addons.length, addons.length > 0 ? addons[0] : 'none');
   }
 
   return { addons: addons.slice(0, 20), powerDesc };
