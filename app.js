@@ -212,13 +212,26 @@ function parseLoadout(lua) {
   // Find each ["Name"] = { ... } entry using bracket counting to handle nested tables
   let i = 0;
   while (i < lua.length) {
-    // Find ["AddonName"]
-    const nameStart = lua.indexOf('["', i);
+    // Match ["name"] or ['"name with quotes"'] 
+    const nameStart = lua.indexOf('[', i);
     if (nameStart < 0) break;
-    const nameEnd = lua.indexOf('"]', nameStart + 2);
-    if (nameEnd < 0) break;
-    const name = lua.slice(nameStart + 2, nameEnd);
-    i = nameEnd + 2;
+    let name, iAfterName;
+    if (lua[nameStart + 1] === "'") {
+      // ['"Name"'] format - single-quoted key containing double quotes
+      const closeIdx = lua.indexOf("']", nameStart + 2);
+      if (closeIdx < 0) { i = nameStart + 1; continue; }
+      name = lua.slice(nameStart + 2, closeIdx); // strip surrounding single quotes
+      iAfterName = closeIdx + 2;
+    } else if (lua[nameStart + 1] === '"') {
+      // ["Name"] format
+      const closeIdx = lua.indexOf('"]', nameStart + 2);
+      if (closeIdx < 0) { i = nameStart + 1; continue; }
+      name = lua.slice(nameStart + 2, closeIdx);
+      iAfterName = closeIdx + 2;
+    } else {
+      i = nameStart + 1; continue;
+    }
+    i = iAfterName;
 
     // Find the = {
     const eqBrace = lua.indexOf('{', i);
