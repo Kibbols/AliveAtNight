@@ -219,15 +219,19 @@ async function pushFeedmeToGithub(content, pat) {
 
   const apiBase = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
 
-  // Get current SHA if file exists (needed for update)
+  // Always fetch current SHA — required for update, even if we think we know it
   let sha = null;
   try {
     const check = await fetch(apiBase, { headers });
     if (check.ok) {
       const data = await check.json();
       sha = data.sha;
+    } else if (check.status !== 404) {
+      throw new Error('GitHub SHA fetch failed: ' + check.status);
     }
-  } catch (_) {}
+  } catch (e) {
+    if (!e.message.includes('SHA')) throw e;
+  }
 
   const body = {
     message: `chore: sync FEEDME from wiki [${new Date().toISOString().slice(0,10)}]`,
@@ -379,6 +383,14 @@ async function fetchKillerAddons(killerName, powerName) {
 
   const html = await fetchRenderedHTML(charPage);
   if (!html || html.length < 100) throw new Error('Empty HTML for ' + charPage);
+
+  // Debug: find "Add-ons for" in HTML and log surrounding structure
+  const addonIdx = html.indexOf('Add-ons for');
+  if (addonIdx >= 0) {
+    console.log('[html debug]', killerName, '| found at', addonIdx, '| snippet:', html.slice(addonIdx, addonIdx + 800));
+  } else {
+    console.log('[html debug]', killerName, '| "Add-ons for" NOT FOUND | html length:', html.length, '| first 200:', html.slice(0, 200));
+  }
 
   // Parse power description — section between == Power == and the addon table
   let powerDesc = '';
