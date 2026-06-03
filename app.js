@@ -269,122 +269,100 @@ async function wikiGet(params) {
   return res.json();
 }
 
-async function fetchKillerList() {
-  // Category:Killers only contains subcategories, not killer pages directly.
-  // Query each difficulty subcategory and combine results.
-  const subcategories = [
-    'Category:Easy_Killers',
-    'Category:Moderate_Killers',
-    'Category:Hard_Killers',
-    'Category:Very_Hard_Killers'
-  ];
+// Fetches Module:Datatable raw wikitext and parses out killer entries.
+// Returns array of { title, charPage, power } where:
+//   title    = "The Trapper", "The Nemesis" etc (wiki killer title)
+//   charPage = "Evan_MacMillan", "Nemesis_T-Type" etc (wiki page name)
+//   power    = "Bear Traps", "T-Virus" etc
+async function fetchDatatable() {
+  const data = await wikiGet({
+    action: 'query',
+    prop: 'revisions',
+    titles: 'Module:Datatable',
+    rvprop: 'content',
+    rvslots: 'main'
+  });
+  const pages = data?.query?.pages || {};
+  const pageData = Object.values(pages)[0];
+  const content = pageData?.revisions?.[0]?.slots?.main?.['*']
+    || pageData?.revisions?.[0]?.['*']
+    || '';
+  if (!content) throw new Error('Could not fetch Module:Datatable');
 
-  const allNames = new Set();
-
-  for (const cat of subcategories) {
-    try {
-      const data = await wikiGet({
-        action: 'query',
-        list: 'categorymembers',
-        cmtitle: cat,
-        cmlimit: '100',
-        cmnamespace: '0'
-      });
-      const members = data?.query?.categorymembers || [];
-      members
-        .map(m => m.title)
-        .filter(t => t.startsWith('The ') || t.includes('('))
-        .forEach(n => allNames.add(n));
-    } catch (_) {}
+  // Parse Lua table entries: {id=N, name="Trapper", realName="Evan MacMillan", power="Bear Traps", ...}
+  const killers = [];
+  const entryRe = /\{[^{}]*?id\s*=\s*(\d+)[^{}]*?\}/gs;
+  let m;
+  while ((m = entryRe.exec(content)) !== null) {
+    const entry = m[0];
+    // Only killer entries have a power field
+    const powerMatch = entry.match(/power\s*=\s*"([^"]+)"/);
+    if (!powerMatch) continue;
+    const nameMatch = entry.match(/name\s*=\s*"([^"]+)"/);
+    const realNameMatch = entry.match(/realName\s*=\s*"([^"]+)"/);
+    if (!nameMatch) continue;
+    const killerTitle = 'The ' + nameMatch[1];
+    const realName = realNameMatch ? realNameMatch[1] : nameMatch[1];
+    const charPage = realName.replace(/ /g, '_');
+    killers.push({ title: killerTitle, charPage, power: powerMatch[1] });
   }
-
-  // Store wiki names for use in toWikiName()
-  wikiKillerNames = [...allNames];
-
-  // Merge in any killers from the fallback not yet categorised on the wiki
-  for (const k of window.DBD_KILLERS) {
-    allNames.add(k.name);
-  }
-
-  return [...allNames].sort();
+  return killers;
 }
 
-let wikiKillerNames = [];
+async function fetchKillerList() {
+  const datatableKillers = await fetchDatatable();
+
+  // Build a lookup: first two words of title -> { charPage, power }
+  window._wikiKillerMeta = {};
+  for (const k of datatableKillers) {
+    window._wikiKillerMeta[firstTwo(k.title)] = k;
+  }
+
+  // Return display names — use our fallback names where we have them,
+  // falling back to wiki titles for any we don't know
+  const allNames = new Set(window.DBD_KILLERS.map(k => k.name));
+  for (const k of datatableKillers) {
+    if (![...allNames].some(n => firstTwo(n) === firstTwo(k.title))) {
+      allNames.add(k.title);
+    }
+  }
+  return [...allNames].sort();
+}
 
 function firstTwo(name) {
   return name.split(' ').slice(0, 2).join(' ').toLowerCase();
 }
 
-// Maps killer display name -> character wiki page title
-const KILLER_CHAR_PAGE = {
-  'The Trapper':        'Evan_MacMillan',
-  'The Wraith':         'Philip_Ojomo',
-  'The Hillbilly':      'Max_Thompson_Jr.',
-  'The Nurse':          'Sally_Smithson',
-  'The Shape':          'Michael_Myers',
-  'The Hag':            'Lisa_Sherwood',
-  'The Doctor':         'Herman_Carter',
-  'The Huntress':       'Anna',
-  'The Cannibal':       'Bubba_Sawyer',
-  'The Nightmare':      'Freddy_Krueger',
-  'The Pig':            'Amanda_Young',
-  'The Clown':          'Jeffrey_Hawk',
-  'The Spirit':         'Rin_Yamaoka',
-  'The Legion':         'Frank_Morrison',
-  'The Plague':         'Adiris',
-  'The Ghost Face':     'Danny_Johnson',
-  'The Demogorgon':     'Demogorgon',
-  'The Oni':            'Kazan_Yamaoka',
-  'The Deathslinger':   'Caleb_Quinn',
-  'The Executioner':    'Pyramid_Head',
-  'The Blight':         'Talbot_Grimes',
-  'The Twins':          'Charlotte_and_Victor_Deshayes',
-  'The Trickster':      'Ji-Woon_Hak',
-  'The Nemesis':        'Nemesis_T-Type',
-  'The Cenobite':       'Elliot_Spencer',
-  'The Artist':         'Carmina_Mora',
-  'The Onryo':          'Sadako_Yamamura',
-  'The Dredge':         'Dredge',
-  'The Mastermind':     'Albert_Wesker',
-  'The Knight':         'Tarhos_Kovacs',
-  'The Skull Merchant': 'Adriana_Imai',
-  'The Singularity':    'HUX-A7-13',
-  'The Xenomorph':      'Xenomorph',
-  'The Good Guy':       'Charles_Lee_Ray',
-  'The Unknown':        'Unknown',
-  'The Lich':           'Vecna',
-  'The Dark Lord':      'Dracula',
-  'The Houndmaster':    'Portia_Maye',
-  'The Ghoul':          'Ken_Kaneki',
-  'The Animatronic':    'William_Afton',
-  'The Krasue':         'Usa_Srichai',
-};
-
-function getCharPage(killerName) {
-  if (KILLER_CHAR_PAGE[killerName]) return KILLER_CHAR_PAGE[killerName];
-  const prefix = firstTwo(killerName);
-  const key = Object.keys(KILLER_CHAR_PAGE).find(k => firstTwo(k) === prefix);
-  return key ? KILLER_CHAR_PAGE[key] : null;
-}
-
 async function fetchKillerAddons(killerName, powerName) {
-  const charPage = getCharPage(killerName);
-  if (!charPage) throw new Error('No character page mapping for ' + killerName);
+  // Look up charPage and wiki power name from the datatable metadata
+  const meta = window._wikiKillerMeta?.[firstTwo(killerName)];
+  const charPage = meta?.charPage;
+  const wikiPower = meta?.power || powerName;
+
+  if (!charPage) throw new Error('No datatable entry for ' + killerName);
 
   const data = await wikiGet({
-    action: 'parse',
-    page: charPage,
-    prop: 'wikitext'
+    action: 'query',
+    prop: 'revisions',
+    titles: charPage,
+    rvprop: 'content',
+    rvslots: 'main'
   });
-  if (data?.error) throw new Error(data.error.info || 'Wiki page not found');
-  const wikitext = data?.parse?.wikitext?.['*'] || '';
-  if (!wikitext) throw new Error('Empty wikitext');
 
-  // Find the add-ons section by power name header: === Add-ons for PowerName ===
-  const escaped = powerName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const re = new RegExp('===\\s*Add-ons for ' + escaped + '[\\s\\S]*?(?====|$)', 'i');
-  const match = wikitext.match(re);
-  const section = match ? match[0] : wikitext;
+  const pages = data?.query?.pages || {};
+  const pageData = Object.values(pages)[0];
+  if (pageData?.missing !== undefined) throw new Error('Wiki page missing: ' + charPage);
+
+  const wikitext = pageData?.revisions?.[0]?.slots?.main?.['*']
+    || pageData?.revisions?.[0]?.['*']
+    || '';
+  if (!wikitext) throw new Error('Empty wikitext for ' + charPage);
+
+  // Find the === Add-ons for [PowerName] === section
+  const parts = wikitext.split(/(?====[^=])/);
+  const section = parts.find(p => p.toLowerCase().includes('add-ons for ' + wikiPower.toLowerCase()))
+    || parts.find(p => p.toLowerCase().includes('add-on'))
+    || wikitext;
 
   return parseAddonNames(section);
 }
