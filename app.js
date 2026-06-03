@@ -156,7 +156,7 @@ async function runSync() {
 
     const results = [];
     for (const name of killerNames) {
-      logSync(`Fetching add-ons: ${name}…`, 'working');
+      logSync(`Parsing: ${name}…`, 'working');
 
       // Match fallback power data using first-two-words comparison
       const fallback = window.DBD_KILLERS.find(k => firstTwo(k.name) === firstTwo(name))
@@ -167,7 +167,7 @@ async function runSync() {
       }
 
       try {
-        const addons = await fetchKillerAddons(name);
+        const addons = await fetchKillerAddons(name, fallback.power);
         results.push({ name, power: fallback.power, powerDesc: fallback.powerDesc, addons });
         logSync(`  ✓ ${addons.length} add-ons`, 'ok');
       } catch (err) {
@@ -315,24 +315,78 @@ function firstTwo(name) {
   return name.split(' ').slice(0, 2).join(' ').toLowerCase();
 }
 
-function toWikiName(displayName) {
-  const prefix = firstTwo(displayName);
-  const match = wikiKillerNames.find(w => firstTwo(w) === prefix);
-  return match || displayName;
+// Maps killer display name -> character wiki page title
+const KILLER_CHAR_PAGE = {
+  'The Trapper':        'Evan_MacMillan',
+  'The Wraith':         'Philip_Ojomo',
+  'The Hillbilly':      'Max_Thompson_Jr.',
+  'The Nurse':          'Sally_Smithson',
+  'The Shape':          'Michael_Myers',
+  'The Hag':            'Lisa_Sherwood',
+  'The Doctor':         'Herman_Carter',
+  'The Huntress':       'Anna',
+  'The Cannibal':       'Bubba_Sawyer',
+  'The Nightmare':      'Freddy_Krueger',
+  'The Pig':            'Amanda_Young',
+  'The Clown':          'Jeffrey_Hawk',
+  'The Spirit':         'Rin_Yamaoka',
+  'The Legion':         'Frank_Morrison',
+  'The Plague':         'Adiris',
+  'The Ghost Face':     'Danny_Johnson',
+  'The Demogorgon':     'Demogorgon',
+  'The Oni':            'Kazan_Yamaoka',
+  'The Deathslinger':   'Caleb_Quinn',
+  'The Executioner':    'Pyramid_Head',
+  'The Blight':         'Talbot_Grimes',
+  'The Twins':          'Charlotte_and_Victor_Deshayes',
+  'The Trickster':      'Ji-Woon_Hak',
+  'The Nemesis':        'Nemesis_T-Type',
+  'The Cenobite':       'Elliot_Spencer',
+  'The Artist':         'Carmina_Mora',
+  'The Onryo':          'Sadako_Yamamura',
+  'The Dredge':         'Dredge',
+  'The Mastermind':     'Albert_Wesker',
+  'The Knight':         'Tarhos_Kovacs',
+  'The Skull Merchant': 'Adriana_Imai',
+  'The Singularity':    'HUX-A7-13',
+  'The Xenomorph':      'Xenomorph',
+  'The Good Guy':       'Charles_Lee_Ray',
+  'The Unknown':        'Unknown',
+  'The Lich':           'Vecna',
+  'The Dark Lord':      'Dracula',
+  'The Houndmaster':    'Portia_Maye',
+  'The Ghoul':          'Ken_Kaneki',
+  'The Animatronic':    'William_Afton',
+  'The Krasue':         'Usa_Srichai',
+};
+
+function getCharPage(killerName) {
+  if (KILLER_CHAR_PAGE[killerName]) return KILLER_CHAR_PAGE[killerName];
+  const prefix = firstTwo(killerName);
+  const key = Object.keys(KILLER_CHAR_PAGE).find(k => firstTwo(k) === prefix);
+  return key ? KILLER_CHAR_PAGE[key] : null;
 }
 
-async function fetchKillerAddons(killerName) {
-  const wikiName = toWikiName(killerName);
+async function fetchKillerAddons(killerName, powerName) {
+  const charPage = getCharPage(killerName);
+  if (!charPage) throw new Error('No character page mapping for ' + killerName);
+
   const data = await wikiGet({
     action: 'parse',
-    page: `${wikiName}/Add-ons`,
-    prop: 'wikitext',
-    section: '0'
+    page: charPage,
+    prop: 'wikitext'
   });
   if (data?.error) throw new Error(data.error.info || 'Wiki page not found');
-  const wikitext = data?.parse?.wikitext?.["*"] || '';
+  const wikitext = data?.parse?.wikitext?.['*'] || '';
   if (!wikitext) throw new Error('Empty wikitext');
-  return parseAddonNames(wikitext);
+
+  // Find the add-ons section by power name header: === Add-ons for PowerName ===
+  const escaped = powerName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const re = new RegExp('===\\s*Add-ons for ' + escaped + '[\\s\\S]*?(?====|$)', 'i');
+  const match = wikitext.match(re);
+  const section = match ? match[0] : wikitext;
+
+  return parseAddonNames(section);
 }
 
 function parseAddonNames(wikitext) {
