@@ -176,12 +176,21 @@ async function runSync() {
         ? allAddons.filter(a => a.killerId === String(killerId))
         : [];
 
-      // Fetch power description from character page
+      // Fetch power description and addon descriptions from character page HTML
       let powerDesc = '';
       if (charPage) {
         try {
-          powerDesc = await fetchPowerDesc(charPage, power);
-        } catch (_) {}
+          const pageData = await fetchPageData(charPage);
+          powerDesc = pageData.powerDesc;
+          // Merge descriptions into addons
+          for (const addon of addons) {
+            if (pageData.addonDescs[addon.name]) {
+              addon.desc = pageData.addonDescs[addon.name];
+            }
+          }
+        } catch (e) {
+          logSync(`  ⚠ Page fetch failed: ${e.message}`, 'warn');
+        }
       }
 
       results.push({ name: killerTitle, power, powerDesc, addons });
@@ -268,19 +277,35 @@ async function fetchKillerMeta() {
   const lua = await wikiGetModule('Module:Datatable');
   const meta = {};
 
-  // Entries are single-line, e.g.:
+  // Each killer entry is a single-line table entry like:
   // {id = 1, name = "Trapper", realName = "Evan MacMillan", power = "Bear Trap", ...},
-  // Scan for each power = "..." and grab id/name/realName from the surrounding context
-  const powerRe = /\bpower\s*=\s*"([^"]+)"/g;
-  let m;
-  while ((m = powerRe.exec(lua)) !== null) {
-    const center = m.index;
-    const ctx = lua.slice(Math.max(0, center - 400), center + 100);
-    const idM   = /\bid\s*=\s*(\d+)/.exec(ctx);
-    const nameM = /\bname\s*=\s*"([^"]+)"/.exec(ctx);
-    const realM = /\brealName\s*=\s*"([^"]+)"/.exec(ctx);
-    if (!idM || !nameM) continue;
+  // Find each entry by scanning for {id = N, ... } boundaries
+  // then extract fields only from within that entry.
+  let i = 0;
+  while (i < lua.length) {
+    // Find next { that starts a killer entry (has id = N inside)
+    const braceOpen = lua.indexOf('{', i);
+    if (braceOpen < 0) break;
 
+    // Find the matching closing brace
+    let depth = 1, j = braceOpen + 1;
+    while (j < lua.length && depth > 0) {
+      if (lua[j] === '{') depth++;
+      else if (lua[j] === '}') depth--;
+      j++;
+    }
+    const entry = lua.slice(braceOpen, j);
+    i = j;
+
+    // Only process killer entries: must have id and power fields
+    const idM    = /\bid\s*=\s*(\d+)/.exec(entry);
+    const powerM = /\bpower\s*=\s*"([^"]+)"/.exec(entry);
+    const nameM  = /\bname\s*=\s*"([^"]+)"/.exec(entry);
+    const realM  = /\brealName\s*=\s*"([^"]+)"/.exec(entry);
+
+    if (!idM || !powerM || !nameM) continue;
+    // Skip entries that look like they're from other tables (survivors, realms, etc.)
+    // Killer entries always have a power field
     const killerTitle = 'The ' + nameM[1];
     const realName    = realM ? realM[1] : nameM[1];
     const charPage    = realName.replace(/ /g, '_');
@@ -288,7 +313,7 @@ async function fetchKillerMeta() {
     meta[firstTwo(killerTitle)] = {
       id:       parseInt(idM[1]),
       title:    killerTitle,
-      power:    m[1],
+      power:    powerM[1],
       charPage
     };
   }
@@ -299,10 +324,10 @@ async function fetchKillerMeta() {
 // ── Fetch all addons from Module:Datatable/Loadout ────────────────────────────
 // Returns array of { name, killerId, desc }
 async function fetchAllAddons() {
+  // Loadout module has addon names and killer IDs but not full descriptions.
+  // We fetch it for the killer ID mapping, then get descriptions from HTML pages.
   const lua = await wikiGetModule('Module:Datatable/Loadout');
   const addons = [];
-
-  // Format: ["Addon Name"] = {id=N, rarity=N, killer=N, effect="...", ...}
   const addonRe = /\["([^"]+)"\]\s*=\s*\{([^}]+)\}/g;
   let m;
   while ((m = addonRe.exec(lua)) !== null) {
@@ -310,31 +335,91 @@ async function fetchAllAddons() {
     const props = m[2];
     const killerM = /\bkiller\s*=\s*(\d+)/.exec(props);
     if (!killerM) continue;
-    const effectM = /\beffect\s*=\s*"([^"]*)"/.exec(props);
-    const desc = effectM ? effectM[1] : '';
-    addons.push({ name, killerId: killerM[1], desc });
+    addons.push({ name, killerId: killerM[1], desc: '' });
   }
   return addons;
 }
 
 // ── Fetch power description from character page HTML ──────────────────────────
-async function fetchPowerDesc(charPage, powerName) {
+async function fetchPageData(charPage) {
+  // Returns { powerDesc, addonDescs } where addonDescs is { [addonName]: desc }
   const html = await wikiGetHTML(charPage);
-  if (!html || html.length < 100) return '';
+  if (!html || html.length < 100) return { powerDesc: '', addonDescs: {} };
 
-  // Find the Power section and extract text before the addon table
-  const idSearchStr = 'id="Power"';
-  const powerPos = html.indexOf(idSearchStr);
-  if (powerPos < 0) return '';
+  // Power description: text between id="Power" heading and id="Add-ons_for_" heading
+  let powerDesc = '';
+  const powerPos = html.indexOf('id="Power"');
+  const addonHeadPos = html.indexOf('id="Add-ons_for_');
+  if (powerPos >= 0 && addonHeadPos > powerPos) {
+    powerDesc = html.slice(powerPos, addonHeadPos)
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .slice(0, 1000);
+  }
 
-  const addonPos = html.indexOf('id="Add-ons_for_', powerPos);
-  const chunk = addonPos > 0 ? html.slice(powerPos, addonPos) : html.slice(powerPos, powerPos + 8000);
+  // Addon descriptions: parse the addon table using same bracket-counting approach
+  const addonDescs = {};
+  if (addonHeadPos >= 0) {
+    const tableStart = html.indexOf('<table', addonHeadPos);
+    if (tableStart >= 0) {
+      // Extract table via bracket counting
+      let depth = 0, k = tableStart;
+      let tableHtml = null;
+      while (k < html.length) {
+        if (html[k] === '<') {
+          if (html.slice(k, k+6).toLowerCase() === '<table') depth++;
+          else if (html.slice(k, k+8).toLowerCase() === '</table>') {
+            depth--;
+            if (depth === 0) { tableHtml = html.slice(tableStart, k + 8); break; }
+          }
+        }
+        k++;
+      }
 
-  return chunk
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .slice(0, 1000);
+      if (tableHtml) {
+        // Each data row: <th>icon</th><td>name</td><td>description</td>
+        function extractCell(html, start) {
+          let depth = 0, i = start;
+          while (i < html.length) {
+            if (html[i] === '<') {
+              const tag = html.slice(i, i+4).toLowerCase();
+              if (tag === '<td>') depth++;
+              else if (html.slice(i, i+5).toLowerCase() === '</td>') {
+                depth--;
+                if (depth === 0) return { text: html.slice(start, i), end: i + 5 };
+              }
+            }
+            i++;
+          }
+          return null;
+        }
+
+        let pos = 0;
+        while (pos < tableHtml.length) {
+          const td1Start = tableHtml.indexOf('<td', pos);
+          if (td1Start < 0) break;
+          const td1Open = tableHtml.indexOf('>', td1Start) + 1;
+          const cell1 = extractCell(tableHtml, td1Open);
+          if (!cell1) break;
+
+          const td2Start = tableHtml.indexOf('<td', cell1.end);
+          if (td2Start < 0) break;
+          const td2Open = tableHtml.indexOf('>', td2Start) + 1;
+          const cell2 = extractCell(tableHtml, td2Open);
+          if (!cell2) break;
+
+          const name = cell1.text.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+          const desc = cell2.text.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+          if (name.length >= 3 && name.length <= 60) addonDescs[name] = desc;
+
+          pos = cell2.end;
+        }
+      }
+    }
+  }
+
+  return { powerDesc, addonDescs };
 }
 
 // ── GitHub Push ───────────────────────────────────────────────────────────────
