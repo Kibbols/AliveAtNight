@@ -268,11 +268,13 @@ async function fetchKillerMeta() {
   const lua = await wikiGetModule('Module:Datatable');
   const meta = {};
 
+  // Some early killers are missing the power field — hardcode them
+  const missingPowers = {1: 'Bear Traps', 2: 'Wailing Bell', 3: 'Chainsaw', 4: "Spencer's Last Breath", 5: 'Evil Within'};
+
   // Find the killers = { } block
-  const killersStart = lua.indexOf('\nkillers = {');
+  const killersStart = lua.indexOf('killers = {');
   if (killersStart < 0) return meta;
 
-  // Find the end of the killers block by counting braces
   const blockStart = lua.indexOf('{', killersStart);
   let blockEnd = blockStart + 1, depth = 1;
   while (blockEnd < lua.length && depth > 0) {
@@ -280,39 +282,44 @@ async function fetchKillerMeta() {
     else if (lua[blockEnd] === '}') depth--;
     blockEnd++;
   }
-  const killersBlock = lua.slice(blockStart + 1, blockEnd - 1); // contents inside outer { }
+  const killersBlock = lua.slice(blockStart + 1, blockEnd - 1);
 
-  // Parse each entry within the killers block
   let i = 0;
   while (i < killersBlock.length) {
     const braceOpen = killersBlock.indexOf('{', i);
     if (braceOpen < 0) break;
-    let depth = 1, j = braceOpen + 1;
-    while (j < killersBlock.length && depth > 0) {
-      if (killersBlock[j] === '{') depth++;
-      else if (killersBlock[j] === '}') depth--;
+    let d = 1, j = braceOpen + 1;
+    while (j < killersBlock.length && d > 0) {
+      if (killersBlock[j] === '{') d++;
+      else if (killersBlock[j] === '}') d--;
       j++;
     }
     const entry = killersBlock.slice(braceOpen, j);
     i = j;
 
-    const idM    = /\bid\s*=\s*(\d+)/.exec(entry);
-    const powerM = /\bpower\s*=\s*"([^"]+)"/.exec(entry);
-    const nameM  = /\bname\s*=\s*"([^"]+)"/.exec(entry);
-    const realM  = /\brealName\s*=\s*"([^"]+)"/.exec(entry);
-    if (!idM || !powerM || !nameM) continue;
+    const idM   = /\bid\s*=\s*(\d+)/.exec(entry);
+    const nameM = /\bname\s*=\s*"([^"]+)"/.exec(entry);
+    const realM = /\brealName\s*=\s*"([^"]+)"/.exec(entry);
+    if (!idM || !nameM) continue;
 
-    const killerTitle = nameM[1];
+    const id = parseInt(idM[1]);
+    let powerM = /\bpower\s*=\s*"([^"]+)"/.exec(entry);
+    const power = powerM ? powerM[1] : (missingPowers[id] || null);
+    if (!power) continue; // not a killer entry or unknown power
+
+    // name field is just the nickname e.g. "Trapper" — prepend "The "
+    const killerTitle = 'The ' + nameM[1];
     const realName    = realM ? realM[1] : nameM[1];
     meta[firstTwo(killerTitle)] = {
-      id:       parseInt(idM[1]),
+      id,
       title:    killerTitle,
-      power:    powerM[1],
+      power,
       charPage: realName.replace(/ /g, '_')
     };
   }
   return meta;
 }
+
 // ── Fetch all addons from Module:Datatable/Loadout ────────────────────────────
 // Returns array of { name, killerId, desc }
 async function fetchAllAddons() {
