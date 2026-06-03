@@ -157,19 +157,21 @@ async function runSync() {
     const results = [];
     for (const name of killerNames) {
       logSync(`Fetching add-ons: ${name}…`, 'working');
+
+      // Match fallback power data using first-two-words comparison
+      const fallback = window.DBD_KILLERS.find(k => firstTwo(k.name) === firstTwo(name))
+        || { power: '', powerDesc: '' };
+
+      if (!fallback.power) {
+        logSync(`  ⚠ No power data for ${name}`, 'err');
+      }
+
       try {
         const addons = await fetchKillerAddons(name);
-        const fallback = window.DBD_KILLERS.find(k =>
-          k.name.toLowerCase().includes(name.toLowerCase().replace('the ', '')) ||
-          name.toLowerCase().includes(k.name.toLowerCase().replace('the ', ''))
-        ) || { power: '', powerDesc: '' };
         results.push({ name, power: fallback.power, powerDesc: fallback.powerDesc, addons });
         logSync(`  ✓ ${addons.length} add-ons`, 'ok');
       } catch (err) {
-        logSync(`  ✗ Failed: ${err.message}`, 'err');
-        const fallback = window.DBD_KILLERS.find(k =>
-          k.name.toLowerCase().includes(name.toLowerCase().replace('the ', ''))
-        ) || { power: '', powerDesc: '' };
+        logSync(`  ✗ Add-ons failed: ${err.message}`, 'err');
         results.push({ name, power: fallback.power, powerDesc: fallback.powerDesc, addons: [] });
       }
     }
