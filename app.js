@@ -390,8 +390,13 @@ async function fetchKillerAddons(killerName, powerName) {
   let addonTable = null;
   if (idMatch) {
     const afterId = html.slice(html.indexOf(idMatch[0]));
+    // Debug: log what we find after the id anchor
+    console.log('[id debug]', killerName, '| id found:', idMatch[0], '| next 500:', afterId.slice(0, 500));
     const tableMatch = /<table[\s\S]*?<\/table>/i.exec(afterId);
     if (tableMatch) addonTable = tableMatch[0];
+    else console.log('[id debug]', killerName, '| NO TABLE FOUND after id');
+  } else {
+    console.log('[id debug]', killerName, '| NO id="Add-ons_for_" FOUND in html');
   }
 
   // Power description from the Power section
