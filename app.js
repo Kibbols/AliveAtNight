@@ -422,35 +422,52 @@ async function fetchKillerAddons(killerName, powerName) {
   }
 
   const addons = [];
-  console.log('[table debug]', killerName, '| addonTable length:', addonTable ? addonTable.length : 'NULL');
   if (addonTable) {
-    console.log('[table debug] first 600:', addonTable.slice(0, 600));
-  }
-  if (addonTable) {
-    // Each row: <th>icon</th> <td>name</td> <td>description</td>
-    // Icon is in a <th>, name and desc are in <td>s
-    const rowRe = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
-    let rowMatch;
-    while ((rowMatch = rowRe.exec(addonTable)) !== null) {
-      const row = rowMatch[1];
-      // Skip header rows (all <th>)
-      if (!/<td/i.test(row)) continue;
-      const tds = [];
-      const tdRe = /<td[^>]*>([\s\S]*?)<\/td>/gi;
-      let tdMatch;
-      while ((tdMatch = tdRe.exec(row)) !== null) {
-        tds.push(tdMatch[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim());
-      }
-      // First td = name, second td = description
-      if (tds.length >= 2) {
-        const name = tds[0].trim();
-        const desc = tds[1].trim();
-        if (name.length >= 3 && name.length <= 60 && /^["A-Z']/.test(name)) {
-          addons.push({ name, desc });
+    // Each data row has exactly 2 <td> cells: name and description
+    // (icon is in a <th>, not a <td>)
+    // Use indexOf to walk through <td> pairs without regex backtracking on nested HTML
+    function extractCellText(html, start) {
+      // Find matching </td> by counting tag depth
+      let depth = 0, i = start;
+      while (i < html.length) {
+        if (html[i] === '<') {
+          const tag = html.slice(i, i + 4).toLowerCase();
+          if (tag === '<td>') depth++;
+          else if (html.slice(i, i + 5).toLowerCase() === '</td>') {
+            depth--;
+            if (depth === 0) return { text: html.slice(start, i), end: i + 5 };
+          }
         }
+        i++;
       }
+      return null;
     }
-    console.log('[table debug] parsed addons:', addons.length, addons.length > 0 ? addons[0] : 'none');
+
+    let pos = 0;
+    while (pos < addonTable.length) {
+      // Find next <td opening tag
+      const td1Start = addonTable.indexOf('<td', pos);
+      if (td1Start < 0) break;
+      const td1Open = addonTable.indexOf('>', td1Start) + 1;
+      const cell1 = extractCellText(addonTable, td1Open);
+      if (!cell1) break;
+
+      // Find next <td for description
+      const td2Start = addonTable.indexOf('<td', cell1.end);
+      if (td2Start < 0) break;
+      const td2Open = addonTable.indexOf('>', td2Start) + 1;
+      const cell2 = extractCellText(addonTable, td2Open);
+      if (!cell2) break;
+
+      const name = cell1.text.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+      const desc = cell2.text.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+
+      if (name.length >= 3 && name.length <= 60 && /^["A-Z']/.test(name)) {
+        addons.push({ name, desc });
+      }
+
+      pos = cell2.end;
+    }
   }
 
   return { addons: addons.slice(0, 20), powerDesc };
