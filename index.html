@@ -44,12 +44,15 @@
   <!-- API Key Modal -->
   <div class="modal-overlay" id="apiModal">
     <div class="modal">
-      <h2>Gemini API Key</h2>
-      <p>Your key is stored in localStorage and never leaves your device.</p>
+      <h2>Settings</h2>
+      <label style="display:block;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:0.4rem;">Gemini API Key</label>
       <input type="password" id="apiKeyInput" placeholder="AIza..." autocomplete="off" />
+      <label style="display:block;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin:0.9rem 0 0.4rem;">Cloudflare Worker URL</label>
+      <input type="text" id="workerUrlInput" placeholder="https://aliveatnight-proxy.YOUR.workers.dev" autocomplete="off" style="font-size:0.82rem;" />
+      <p style="font-size:0.75rem;color:var(--text-dim);margin-top:0.35rem;">Required for wiki sync. Deploy worker.js from the repo to Cloudflare Workers.</p>
       <div class="modal-actions">
         <button class="btn-secondary" id="apiCancelBtn">Cancel</button>
-        <button class="btn-primary" id="apiSaveBtn">Save Key</button>
+        <button class="btn-primary" id="apiSaveBtn">Save</button>
       </div>
     </div>
   </div>
