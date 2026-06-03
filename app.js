@@ -298,7 +298,8 @@ async function fetchKillerMeta() {
     const realM  = /\brealName\s*=\s*"([^"]+)"/.exec(entry);
     if (!idM || !powerM || !nameM) continue;
 
-    const killerTitle = 'The ' + nameM[1];
+    // name field is the full title e.g. "The Trapper" — use as-is
+    const killerTitle = nameM[1];
     const realName    = realM ? realM[1] : nameM[1];
     meta[firstTwo(killerTitle)] = {
       id:       parseInt(idM[1]),
