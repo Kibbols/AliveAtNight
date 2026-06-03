@@ -173,6 +173,7 @@ async function runSync() {
         const powerDesc = result.powerDesc || fallback.powerDesc || '';
         results.push({ name, power: fallback.power, powerDesc, addons });
         logSync(`  ✓ ${addons.length} add-ons`, 'ok');
+        if (addons.length > 0) logSync(`    e.g. ${addons[0].name || addons[0]}`, '');
       } catch (err) {
         logSync(`  ✗ Add-ons failed: ${err.message}`, 'err');
         results.push({ name, power: fallback.power, powerDesc: fallback.powerDesc || '', addons: [] });
@@ -361,65 +362,69 @@ function firstTwo(name) {
   return name.split(' ').slice(0, 2).join(' ').toLowerCase();
 }
 
+async function fetchRenderedHTML(page) {
+  const url = new URL(WORKER_URL);
+  url.searchParams.set('html', '1');
+  url.searchParams.set('page', page);
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Worker HTTP ${res.status}`);
+  return res.text();
+}
+
 async function fetchKillerAddons(killerName, powerName) {
-  // Look up charPage and wiki power name from the datatable metadata
-  const meta = window._wikiKillerMeta?.[firstTwo(killerName)];
-  const charPage = meta?.charPage;
-  const wikiPower = meta?.power || powerName;
+  const meta = KILLER_META[firstTwo(killerName)];
+  if (!meta) throw new Error('No datatable entry for ' + killerName);
 
-  if (!charPage) throw new Error('No datatable entry for ' + killerName);
+  const { charPage } = meta;
 
-  const data = await wikiGet({
-    action: 'query',
-    prop: 'revisions',
-    titles: charPage,
-    rvprop: 'content',
-    rvslots: 'main'
-  });
+  const html = await fetchRenderedHTML(charPage);
+  if (!html || html.length < 100) throw new Error('Empty HTML for ' + charPage);
 
-  const pages = data?.query?.pages || {};
-  const pageData = Object.values(pages)[0];
-  if (pageData?.missing !== undefined) throw new Error('Wiki page missing: ' + charPage);
-
-  const wikitext = pageData?.revisions?.[0]?.slots?.main?.['*']
-    || pageData?.revisions?.[0]?.['*']
-    || '';
-  if (!wikitext) throw new Error('Empty wikitext for ' + charPage);
-
-  // Find the === Add-ons for [PowerName] === section
-  // Split on === headers ===
-  const parts = wikitext.split(/(?=====[^=])/);
-
-  // Find add-ons section
-  const addonSection = parts.find(p => /===\s*Add-ons for/i.test(p));
-
-  // Find power description section — the one containing the power stats
-  // It sits just before the add-ons section and contains mechanical info
-  const addonIdx = parts.findIndex(p => /===\s*Add-ons for/i.test(p));
+  // Parse power description — section between == Power == and the addon table
   let powerDesc = '';
-  if (addonIdx > 0) {
-    const powerSection = parts[addonIdx - 1];
-    // Strip wiki markup: templates {{...}}, links [[...]], bold/italic, HTML tags
-    powerDesc = powerSection
-      .replace(/\{\{[^}]*\}\}/g, '')
-      .replace(/\[\[(?:[^|\]]+\|)?([^\]]+)\]\]/g, '$1')
-      .replace(/'''([^']+)'''/g, '$1')
-      .replace(/''([^']+)''/g, '$1')
-      .replace(/<[^>]+>/g, '')
-      .replace(/^===.*===\s*/m, '')
-      .replace(/:\s*/g, ' ')
-      .replace(/\*+\s*/g, '• ')
-      .replace(/\n{3,}/g, '\n\n')
+  const powerSectionMatch = html.match(/id="Power"[\s\S]*?<\/h2>([\s\S]*?)(?=<h[23][^>]*>[\s\S]*?Add-ons for|<h2)/i);
+  if (powerSectionMatch) {
+    powerDesc = powerSectionMatch[1]
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ')
       .trim()
-      .slice(0, 800); // cap at 800 chars
+      .slice(0, 1000);
   }
 
-  // Debug: log raw addon section
-  if (addonSection) console.log('[addon section]', addonSection.slice(0, 1000));
-  else console.log('[addon section] NOT FOUND for', wikiPower);
+  // Find the addon table — parse name + description from each row
+  // Table structure: <tr> <td>icon</td> <td>name</td> <td>description</td> </tr>
+  const addons = [];
+  const addonSectionMatch = html.match(/Add-ons for[\s\S]*?(<table[\s\S]*?<\/table>)/i);
 
-  return { addons: addonSection ? parseAddonNames(addonSection) : [], powerDesc };
+  if (addonSectionMatch) {
+    const tableHtml = addonSectionMatch[1];
+    // Extract all rows
+    const rowRe = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
+    let rowMatch;
+    while ((rowMatch = rowRe.exec(tableHtml)) !== null) {
+      const row = rowMatch[1];
+      // Get all <td> cells
+      const cells = [];
+      const cellRe = /<td[^>]*>([\s\S]*?)<\/td>/gi;
+      let cellMatch;
+      while ((cellMatch = cellRe.exec(row)) !== null) {
+        cells.push(cellMatch[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim());
+      }
+      // Row has 3 cells: icon, name, description
+      if (cells.length >= 3) {
+        const name = cells[1].trim();
+        const desc = cells[2].trim();
+        if (name.length >= 3 && name.length <= 60 && /^["A-Z']/.test(name)) {
+          addons.push({ name, desc });
+        }
+      }
+    }
+  }
+
+  return { addons: addons.slice(0, 20), powerDesc };
 }
+
+
 
 function parseAddonNames(wikitext) {
   const names = [];
@@ -592,9 +597,16 @@ killerGenBtn.addEventListener('click', async () => {
   killerGenBtn.disabled = true;
   setLoading(killerResults, `Cooking up ${killer.name} builds…`);
 
-  const addonContext = killer.addons && killer.addons.length > 0
-    ? `\n**${killer.name}'s actual add-ons (use ONLY these, no others):**\n${killer.addons.join(', ')}`
-    : '\n**Note: No add-on list available — use your best knowledge of this killer\'s real add-ons only.**';
+  let addonContext = '\n**Note: No add-on list available — use your best knowledge of this killer\'s real add-ons only.**';
+  if (killer.addons && killer.addons.length > 0) {
+    const addonList = killer.addons.map(a => {
+      if (typeof a === 'object' && a.name) {
+        return a.desc ? `- **${a.name}**: ${a.desc}` : `- ${a.name}`;
+      }
+      return `- ${a}`;
+    }).join('\n');
+    addonContext = `\n**${killer.name}'s add-ons (use ONLY these, no others):**\n${addonList}`;
+  }
 
   const intent = isSurprise
     ? 'Come up with genuinely creative, fun, and interesting builds that would make for entertaining YouTube content. Think outside the meta — find synergies, meme potential, unique playstyles, or high-skill-expression builds that viewers would find exciting to watch.'
