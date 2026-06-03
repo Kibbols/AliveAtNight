@@ -151,15 +151,11 @@ async function runSync() {
   syncStatus.innerHTML = '';
 
   try {
-    // Step 1: fetch killer list from wiki categories
-    logSync('Fetching killer list…', 'working');
-    const killerNames = await fetchKillerList();
-    logSync(`✓ Found ${killerNames.length} killers`, 'ok');
-
-    // Step 2: fetch Module:Datatable for power names + killer IDs
+    // Step 1+2: fetch Module:Datatable — gives us killer list, power names, IDs, char pages
     logSync('Fetching killer metadata…', 'working');
     const killerMeta = await fetchKillerMeta();
-    logSync(`✓ Metadata for ${Object.keys(killerMeta).length} killers`, 'ok');
+    const killerNames = Object.values(killerMeta).map(m => m.title).sort();
+    logSync(`✓ Found ${killerNames.length} killers`, 'ok');
 
     // Step 3: fetch Module:Datatable/Loadout for all addon data
     logSync('Fetching add-on data…', 'working');
@@ -257,46 +253,62 @@ function firstTwo(name) {
   return name.split(' ').slice(0, 2).join(' ').toLowerCase();
 }
 
-// ── Fetch killer list from wiki categories ────────────────────────────────────
+// ── Fetch killer list from Module:Datatable ──────────────────────────────────
+// Returns killer titles e.g. "The Trapper", "The Wraith" etc.
+// We derive these from fetchKillerMeta which parses Module:Datatable
 async function fetchKillerList() {
-  const subcategories = ['Category:Easy_Killers', 'Category:Moderate_Killers', 'Category:Hard_Killers', 'Category:Very_Hard_Killers'];
-  const names = new Set();
-  for (const cat of subcategories) {
-    try {
-      const data = await wikiGet({ action: 'query', list: 'categorymembers', cmtitle: cat, cmlimit: '100', cmnamespace: '0' });
-      (data?.query?.categorymembers || []).forEach(m => names.add(m.title));
-    } catch (_) {}
-  }
-  return [...names].sort();
+  const meta = await fetchKillerMeta();
+  // meta keys are firstTwo() — reconstruct full titles from the stored data
+  return Object.values(meta).map(m => m.title).sort();
 }
 
 // ── Fetch killer metadata from Module:Datatable ───────────────────────────────
-// Returns map of firstTwo(killerTitle) -> { id, power, charPage }
+// Returns map of firstTwo(killerTitle) -> { id, title, power, charPage }
 async function fetchKillerMeta() {
   const lua = await wikiGetModule('Module:Datatable');
   const meta = {};
 
-  // Match killer entries: {id=N, name="X", realName="Y", power="Z", ...}
-  const entryRe = /\{[^{}]*id\s*=\s*(\d+)[^{}]*\}/gs;
-  let m;
-  while ((m = entryRe.exec(lua)) !== null) {
-    const entry = m[0];
-    const powerM = entry.match(/power\s*=\s*"([^"]+)"/);
-    if (!powerM) continue; // not a killer entry
-    const nameM  = entry.match(/\bname\s*=\s*"([^"]+)"/);
-    const realM  = entry.match(/realName\s*=\s*"([^"]+)"/);
-    const idM    = entry.match(/\bid\s*=\s*(\d+)/);
-    if (!nameM || !idM) continue;
+  // The killers table entries look like:
+  //   {id = 1, name = "Trapper", realName = "Evan MacMillan", power = "Bear Traps", ...},
+  // We find the killers = { ... } block then parse each entry line by line.
+  // Since entries can span multiple lines with nested tables (altSpeed etc),
+  // we scan for lines containing both a name and a power field.
 
-    const killerTitle = 'The ' + nameM[1];
-    const realName    = realM ? realM[1] : nameM[1];
-    const charPage    = realName.replace(/ /g, '_');
+  // Split on entry boundaries: look for lines starting a new {id = N, ...} block
+  const lines = lua.split('\n');
+  let currentEntry = '';
+  for (const line of lines) {
+    const trimmed = line.trim();
+    // New entry starts when we see {id = N,
+    if (/^\{id\s*=\s*\d+/.test(trimmed)) {
+      currentEntry = trimmed;
+    } else if (currentEntry) {
+      currentEntry += ' ' + trimmed;
+    }
 
-    meta[firstTwo(killerTitle)] = {
-      id:       parseInt(idM[1]),
-      power:    powerM[1],
-      charPage
-    };
+    // Entry ends at }, or },
+    if (currentEntry && /\},?\s*$/.test(trimmed)) {
+      const entry = currentEntry;
+      currentEntry = '';
+
+      const powerM  = entry.match(/power\s*=\s*"([^"]+)"/);
+      if (!powerM) continue; // not a killer entry
+      const nameM   = entry.match(/name\s*=\s*"([^"]+)"/);
+      const realM   = entry.match(/realName\s*=\s*"([^"]+)"/);
+      const idM     = entry.match(/id\s*=\s*(\d+)/);
+      if (!nameM || !idM) continue;
+
+      const killerTitle = 'The ' + nameM[1];
+      const realName    = realM ? realM[1] : nameM[1];
+      const charPage    = realName.replace(/ /g, '_');
+
+      meta[firstTwo(killerTitle)] = {
+        id:       parseInt(idM[1]),
+        title:    killerTitle,
+        power:    powerM[1],
+        charPage
+      };
+    }
   }
   return meta;
 }
