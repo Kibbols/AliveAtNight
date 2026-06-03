@@ -129,7 +129,7 @@ function stripWikiMarkup(text) {
 // Parse power description from raw wikitext (Power Trivia section)
 function parsePowerDesc(wikitext, powerName) {
   // Find ==== Power Trivia ==== or === Power === section
-  const triviaMatch = wikitext.match(/={3,4}\s*Power(?:\s+Trivia)?\s*={3,4}([\s\S]*?)(?=={3,4})/);
+  const triviaMatch = wikitext.match(/={3,4}\s*Power(?:\s+Trivia)?\s*={3,4}([\s\S]*?)(?===+\s*Add-ons for|==+\s*Achievements|==+\s*Innate Skill)/);
   if (!triviaMatch) return '';
   return stripWikiMarkup(triviaMatch[1]).slice(0, 1000);
 }
@@ -195,11 +195,34 @@ function parseKillersFromLua(lua) {
 // ── Parse addons from Module:Datatable/Loadout ────────────────────────────────
 function parseLoadout(lua) {
   const addons = [];
-  const re = /\["([^"]+)"\]\s*=\s*\{([^}]+)\}/g;
-  let m;
-  while ((m = re.exec(lua)) !== null) {
-    const name  = m[1];
-    const props = m[2];
+  // Find each ["Name"] = { ... } entry using bracket counting to handle nested tables
+  let i = 0;
+  while (i < lua.length) {
+    // Find ["AddonName"]
+    const nameStart = lua.indexOf('["', i);
+    if (nameStart < 0) break;
+    const nameEnd = lua.indexOf('"]', nameStart + 2);
+    if (nameEnd < 0) break;
+    const name = lua.slice(nameStart + 2, nameEnd);
+    i = nameEnd + 2;
+
+    // Find the = {
+    const eqBrace = lua.indexOf('{', i);
+    if (eqBrace < 0) break;
+    // Make sure there's just = and whitespace between name and brace
+    const between = lua.slice(i, eqBrace).trim();
+    if (between !== '=') { i = eqBrace + 1; continue; }
+
+    // Count braces to find end of props
+    let depth = 1, j = eqBrace + 1;
+    while (j < lua.length && depth > 0) {
+      if (lua[j] === '{') depth++;
+      else if (lua[j] === '}') depth--;
+      j++;
+    }
+    const props = lua.slice(eqBrace + 1, j - 1);
+    i = j;
+
     const killerM = /\bkiller\s*=\s*(\d+)/.exec(props);
     const patchM  = /\bpatch\s*=\s*"([^"]+)"/.exec(props);
     if (!killerM) continue;
