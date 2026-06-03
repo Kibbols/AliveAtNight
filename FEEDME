@@ -1,6 +1,6 @@
 [
   {
-    "name": "Animatronic",
+    "name": "The Animatronic",
     "power": "Fazbear's Fright",
     "powerDesc": "",
     "addons": [
@@ -112,7 +112,7 @@
     ]
   },
   {
-    "name": "Artist",
+    "name": "The Artist",
     "power": "Birds of Torment",
     "powerDesc": "",
     "addons": [
@@ -224,7 +224,7 @@
     ]
   },
   {
-    "name": "Blight",
+    "name": "The Blight",
     "power": "Blighted Corruption",
     "powerDesc": "",
     "addons": [
@@ -336,7 +336,7 @@
     ]
   },
   {
-    "name": "Cannibal",
+    "name": "The Cannibal",
     "power": "Bubba's Chainsaw",
     "powerDesc": "",
     "addons": [
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "name": "Cenobite",
+    "name": "The Cenobite",
     "power": "Summons of Pain",
     "powerDesc": "",
     "addons": [
@@ -560,7 +560,7 @@
     ]
   },
   {
-    "name": "Clown",
+    "name": "The Clown",
     "power": "The Afterpiece Tonic",
     "powerDesc": "",
     "addons": [
@@ -682,7 +682,7 @@
     ]
   },
   {
-    "name": "Dark Lord",
+    "name": "The Dark Lord",
     "power": "Vampiric Shift",
     "powerDesc": "",
     "addons": [
@@ -794,7 +794,7 @@
     ]
   },
   {
-    "name": "Deathslinger",
+    "name": "The Deathslinger",
     "power": "The Redeemer",
     "powerDesc": "",
     "addons": [
@@ -906,7 +906,7 @@
     ]
   },
   {
-    "name": "Demogorgon",
+    "name": "The Demogorgon",
     "power": "Of the Abyss",
     "powerDesc": "",
     "addons": [
@@ -1018,7 +1018,7 @@
     ]
   },
   {
-    "name": "Doctor",
+    "name": "The Doctor",
     "power": "Carter's Spark",
     "powerDesc": "",
     "addons": [
@@ -1070,7 +1070,7 @@
     ]
   },
   {
-    "name": "Dredge",
+    "name": "The Dredge",
     "power": "Reign of Darkness",
     "powerDesc": "",
     "addons": [
@@ -1182,7 +1182,7 @@
     ]
   },
   {
-    "name": "Executioner",
+    "name": "The Executioner",
     "power": "Rites of Judgement",
     "powerDesc": "",
     "addons": [
@@ -1294,7 +1294,7 @@
     ]
   },
   {
-    "name": "First",
+    "name": "The First",
     "power": "Test Subject #001",
     "powerDesc": "",
     "addons": [
@@ -1406,7 +1406,7 @@
     ]
   },
   {
-    "name": "Ghost Face",
+    "name": "The Ghost Face",
     "power": "Night Shroud",
     "powerDesc": "",
     "addons": [
@@ -1508,7 +1508,7 @@
     ]
   },
   {
-    "name": "Ghoul",
+    "name": "The Ghoul",
     "power": "One-Eyed Terror",
     "powerDesc": "",
     "addons": [
@@ -1620,7 +1620,7 @@
     ]
   },
   {
-    "name": "Good Guy",
+    "name": "The Good Guy",
     "power": "Playtime's Over",
     "powerDesc": "",
     "addons": [
@@ -1732,7 +1732,7 @@
     ]
   },
   {
-    "name": "Hag",
+    "name": "The Hag",
     "power": "Blackened Catalyst",
     "powerDesc": "",
     "addons": [
@@ -1844,7 +1844,124 @@
     ]
   },
   {
-    "name": "Houndmaster",
+    "name": "The Hillbilly",
+    "power": "Chainsaw",
+    "powerDesc": "",
+    "addons": [
+      {
+        "name": "Apex Muffler",
+        "killerId": "3",
+        "desc": ""
+      },
+      {
+        "name": "Begrimed Chains (Chainsaw)",
+        "killerId": "3",
+        "desc": ""
+      },
+      {
+        "name": "The Thompsons' Mix",
+        "killerId": "3",
+        "desc": ""
+      },
+      {
+        "name": "Dad's Boots",
+        "killerId": "3",
+        "desc": ""
+      },
+      {
+        "name": "Clogged Intake",
+        "killerId": "3",
+        "desc": ""
+      },
+      {
+        "name": "Iridescent Engravings",
+        "killerId": "3",
+        "desc": ""
+      },
+      {
+        "name": "Counterweight",
+        "killerId": "3",
+        "desc": ""
+      },
+      {
+        "name": "Filthy Slippers",
+        "killerId": "3",
+        "desc": ""
+      },
+      {
+        "name": "Greased Throttle",
+        "killerId": "3",
+        "desc": ""
+      },
+      {
+        "name": "Ragged Engine",
+        "killerId": "3",
+        "desc": ""
+      },
+      {
+        "name": "LoPro Chains",
+        "killerId": "3",
+        "desc": ""
+      },
+      {
+        "name": "Low Kickback Chains",
+        "killerId": "3",
+        "desc": ""
+      },
+      {
+        "name": "Discarded Air Filter",
+        "killerId": "3",
+        "desc": ""
+      },
+      {
+        "name": "Off-Brand Motor Oil",
+        "killerId": "3",
+        "desc": ""
+      },
+      {
+        "name": "High-Speed Idler Screw",
+        "killerId": "3",
+        "desc": ""
+      },
+      {
+        "name": "Thermal Casing",
+        "killerId": "3",
+        "desc": ""
+      },
+      {
+        "name": "Spiked Boots",
+        "killerId": "3",
+        "desc": ""
+      },
+      {
+        "name": "Steel Toe Boots",
+        "killerId": "3",
+        "desc": ""
+      },
+      {
+        "name": "Tuned Carburettor",
+        "killerId": "3",
+        "desc": ""
+      },
+      {
+        "name": "Cracked Primer Bulb",
+        "killerId": "3",
+        "desc": ""
+      },
+      {
+        "name": "Thompson's Moonshine",
+        "killerId": "3",
+        "desc": ""
+      },
+      {
+        "name": "Chainsaw",
+        "killerId": "3",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "The Houndmaster",
     "power": "Scent of Blood",
     "powerDesc": "",
     "addons": [
@@ -1956,7 +2073,7 @@
     ]
   },
   {
-    "name": "Huntress",
+    "name": "The Huntress",
     "power": "Hunting Hatchets",
     "powerDesc": "",
     "addons": [
@@ -2093,7 +2210,7 @@
     ]
   },
   {
-    "name": "Knight",
+    "name": "The Knight",
     "power": "Guardia Compagnia",
     "powerDesc": "",
     "addons": [
@@ -2215,7 +2332,7 @@
     ]
   },
   {
-    "name": "Krasue",
+    "name": "The Krasue",
     "power": "Unbodied Flesh",
     "powerDesc": "",
     "addons": [
@@ -2327,7 +2444,7 @@
     ]
   },
   {
-    "name": "Legion",
+    "name": "The Legion",
     "power": "Feral Frenzy",
     "powerDesc": "",
     "addons": [
@@ -2449,7 +2566,7 @@
     ]
   },
   {
-    "name": "Lich",
+    "name": "The Lich",
     "power": "Vile Darkness",
     "powerDesc": "",
     "addons": [
@@ -2561,7 +2678,7 @@
     ]
   },
   {
-    "name": "Mastermind",
+    "name": "The Mastermind",
     "power": "Virulent Bound",
     "powerDesc": "",
     "addons": [
@@ -2673,7 +2790,7 @@
     ]
   },
   {
-    "name": "Nemesis",
+    "name": "The Nemesis",
     "power": "T-Virus",
     "powerDesc": "",
     "addons": [
@@ -2790,7 +2907,7 @@
     ]
   },
   {
-    "name": "Nightmare",
+    "name": "The Nightmare",
     "power": "Dream Demon",
     "powerDesc": "",
     "addons": [
@@ -2897,7 +3014,114 @@
     ]
   },
   {
-    "name": "Oni",
+    "name": "The Nurse",
+    "power": "Spencer's Last Breath",
+    "powerDesc": "",
+    "addons": [
+      {
+        "name": "Anxious Gasp",
+        "killerId": "4",
+        "desc": ""
+      },
+      {
+        "name": "Ataxic Respiration",
+        "killerId": "4",
+        "desc": ""
+      },
+      {
+        "name": "Bad Man Keepsake",
+        "killerId": "4",
+        "desc": ""
+      },
+      {
+        "name": "Campbell's Last Breath",
+        "killerId": "4",
+        "desc": ""
+      },
+      {
+        "name": "Catatonic Boy's Treasure",
+        "killerId": "4",
+        "desc": ""
+      },
+      {
+        "name": "Dark Cincture",
+        "killerId": "4",
+        "desc": ""
+      },
+      {
+        "name": "Dull Bracelet",
+        "killerId": "4",
+        "desc": ""
+      },
+      {
+        "name": "Fragile Wheeze",
+        "killerId": "4",
+        "desc": ""
+      },
+      {
+        "name": "Heavy Panting",
+        "killerId": "4",
+        "desc": ""
+      },
+      {
+        "name": "Jenner's Last Breath",
+        "killerId": "4",
+        "desc": ""
+      },
+      {
+        "name": "Kavanagh's Last Breath",
+        "killerId": "4",
+        "desc": ""
+      },
+      {
+        "name": "Matchbox",
+        "killerId": "4",
+        "desc": ""
+      },
+      {
+        "name": "Metal Spoon",
+        "killerId": "4",
+        "desc": ""
+      },
+      {
+        "name": "Plaid Flannel",
+        "killerId": "4",
+        "desc": ""
+      },
+      {
+        "name": "Pocket Watch (Spencer's Last Breath)",
+        "killerId": "4",
+        "desc": ""
+      },
+      {
+        "name": "Spasmodic Breath",
+        "killerId": "4",
+        "desc": ""
+      },
+      {
+        "name": "Torn Bookmark",
+        "killerId": "4",
+        "desc": ""
+      },
+      {
+        "name": "White Nit Comb",
+        "killerId": "4",
+        "desc": ""
+      },
+      {
+        "name": "Wooden Horse",
+        "killerId": "4",
+        "desc": ""
+      },
+      {
+        "name": "Spencer's Last Breath",
+        "killerId": "4",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "The Oni",
     "power": "Yamaoka's Wrath",
     "powerDesc": "",
     "addons": [
@@ -3009,7 +3233,7 @@
     ]
   },
   {
-    "name": "Onryō",
+    "name": "The Onryō",
     "power": "Deluge of Fear",
     "powerDesc": "",
     "addons": [
@@ -3121,7 +3345,7 @@
     ]
   },
   {
-    "name": "Pig",
+    "name": "The Pig",
     "power": "Jigsaw's Baptism",
     "powerDesc": "",
     "addons": [
@@ -3233,7 +3457,7 @@
     ]
   },
   {
-    "name": "Plague",
+    "name": "The Plague",
     "power": "Vile Purge",
     "powerDesc": "",
     "addons": [
@@ -3345,7 +3569,119 @@
     ]
   },
   {
-    "name": "Singularity",
+    "name": "The Shape",
+    "power": "Evil Within",
+    "powerDesc": "",
+    "addons": [
+      {
+        "name": "Blond Hair",
+        "killerId": "5",
+        "desc": ""
+      },
+      {
+        "name": "Boyfriend's Memo",
+        "killerId": "5",
+        "desc": ""
+      },
+      {
+        "name": "Dead Rabbit",
+        "killerId": "5",
+        "desc": ""
+      },
+      {
+        "name": "Fragrant Tuft of Hair",
+        "killerId": "5",
+        "desc": ""
+      },
+      {
+        "name": "Glass Fragment",
+        "killerId": "5",
+        "desc": ""
+      },
+      {
+        "name": "Hair Bow",
+        "killerId": "5",
+        "desc": ""
+      },
+      {
+        "name": "Hair Brush",
+        "killerId": "5",
+        "desc": ""
+      },
+      {
+        "name": "J. Myers Memorial",
+        "killerId": "5",
+        "desc": ""
+      },
+      {
+        "name": "Jewellery",
+        "killerId": "5",
+        "desc": ""
+      },
+      {
+        "name": "Jewellery Box",
+        "killerId": "5",
+        "desc": ""
+      },
+      {
+        "name": "Judith's Journal",
+        "killerId": "5",
+        "desc": ""
+      },
+      {
+        "name": "Judith's Tombstone",
+        "killerId": "5",
+        "desc": ""
+      },
+      {
+        "name": "Lock of Hair",
+        "killerId": "5",
+        "desc": ""
+      },
+      {
+        "name": "Memorial Flower",
+        "killerId": "5",
+        "desc": ""
+      },
+      {
+        "name": "Mirror Shard",
+        "killerId": "5",
+        "desc": ""
+      },
+      {
+        "name": "Reflective Fragment",
+        "killerId": "5",
+        "desc": ""
+      },
+      {
+        "name": "Scratched Mirror",
+        "killerId": "5",
+        "desc": ""
+      },
+      {
+        "name": "Tacky Earrings",
+        "killerId": "5",
+        "desc": ""
+      },
+      {
+        "name": "Tombstone Piece",
+        "killerId": "5",
+        "desc": ""
+      },
+      {
+        "name": "Vanity Mirror",
+        "killerId": "5",
+        "desc": ""
+      },
+      {
+        "name": "Evil Within",
+        "killerId": "5",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "The Singularity",
     "power": "Quantum Instantiation",
     "powerDesc": "",
     "addons": [
@@ -3457,7 +3793,7 @@
     ]
   },
   {
-    "name": "Skull Merchant",
+    "name": "The Skull Merchant",
     "power": "Eyes in the Sky",
     "powerDesc": "",
     "addons": [
@@ -3569,7 +3905,7 @@
     ]
   },
   {
-    "name": "Slasher",
+    "name": "The Slasher",
     "power": "Omnipresent Evil",
     "powerDesc": "",
     "addons": [
@@ -3681,7 +4017,7 @@
     ]
   },
   {
-    "name": "Spirit",
+    "name": "The Spirit",
     "power": "Yamaoka's Haunting",
     "powerDesc": "",
     "addons": [
@@ -3818,7 +4154,149 @@
     ]
   },
   {
-    "name": "Trickster",
+    "name": "The Trapper",
+    "power": "Bear Traps",
+    "powerDesc": "",
+    "addons": [
+      {
+        "name": "4-Coil Spring Kit",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Bear Oil",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Bloody Coil",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Coffee Grounds",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Fastening Tools",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Honing Stone",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Iridescent Stone",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Lengthened Jaws",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Logwood Dye",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Makeshift Wrap",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Oily Coil",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Padded Jaws",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Rusted Jaws",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Secondary Coil",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Serrated Jaws",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Setting Tools",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Stitched Bag",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Strong Coil Spring",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Tar Bottle",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Tension Spring",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Trap Setters",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Trapper Bag",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Trapper Gloves",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Trapper Sack",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Trapper Sack (Decommissioned)",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Wax Brick",
+        "killerId": "1",
+        "desc": ""
+      },
+      {
+        "name": "Bear Trap",
+        "killerId": "1",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "The Trickster",
     "power": "Showstopper",
     "powerDesc": "",
     "addons": [
@@ -3935,7 +4413,7 @@
     ]
   },
   {
-    "name": "Twins",
+    "name": "The Twins",
     "power": "Blood Bond",
     "powerDesc": "",
     "addons": [
@@ -4047,7 +4525,7 @@
     ]
   },
   {
-    "name": "Unknown",
+    "name": "The Unknown",
     "power": "UVX",
     "powerDesc": "",
     "addons": [
@@ -4159,7 +4637,29 @@
     ]
   },
   {
-    "name": "Xenomorph",
+    "name": "The Wraith",
+    "power": "Wailing Bell",
+    "powerDesc": "",
+    "addons": [
+      {
+        "name": "Bone Clapper",
+        "killerId": "2",
+        "desc": ""
+      },
+      {
+        "name": "Coxcombed Clapper",
+        "killerId": "2",
+        "desc": ""
+      },
+      {
+        "name": "Wailing Bell",
+        "killerId": "2",
+        "desc": ""
+      }
+    ]
+  },
+  {
+    "name": "The Xenomorph",
     "power": "Hidden Pursuit",
     "powerDesc": "",
     "addons": [
