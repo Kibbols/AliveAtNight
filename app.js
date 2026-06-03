@@ -189,7 +189,7 @@ async function runSync() {
     }
 
     // Step 5: save and push
-    const compact = JSON.stringify(results);
+    const compact = JSON.stringify(results, null, 2);
     localStorage.setItem(FEEDME_STORAGE, compact);
     activeKillers = results;
     populateKillerSelect(activeKillers, 'wiki');
