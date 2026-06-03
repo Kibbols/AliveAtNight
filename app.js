@@ -390,6 +390,9 @@ async function fetchKillerAddons(killerName, powerName) {
     || parts.find(p => p.toLowerCase().includes('add-on'))
     || wikitext;
 
+  // Debug: log first 500 chars of section and wikitext length
+  console.log('[addon debug]', killerName, '| wikitext length:', wikitext.length, '| section snippet:', section.slice(0, 500));
+
   return parseAddonNames(section);
 }
 
