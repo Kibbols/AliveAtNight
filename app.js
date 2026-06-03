@@ -4,15 +4,14 @@
 const API_KEY_STORAGE    = 'dbd_gemini_api_key';
 const GITHUB_PAT_STORAGE = 'dbd_github_pat';
 const FEEDME_STORAGE     = 'dbd_feedme_data';
-const WORKER_URL = 'https://aliveatnight-proxy.portgamingsttv.workers.dev';
-const WIKI_API   = 'https://deadbydaylight.wiki.gg/api.php'; // fallback reference only
+const WORKER_URL         = 'https://aliveatnight-proxy.portgamingsttv.workers.dev';
 const GITHUB_REPO        = 'Kibbols/AliveAtNight';
 const GITHUB_FILE        = 'FEEDME';
 
 // ── State ─────────────────────────────────────────────────────────────────────
 let apiKey    = localStorage.getItem(API_KEY_STORAGE)    || '';
 let githubPAT = localStorage.getItem(GITHUB_PAT_STORAGE) || '';
-let activeKillers = window.DBD_KILLERS;
+let activeKillers = [];
 
 // ── DOM refs ──────────────────────────────────────────────────────────────────
 const apiModal        = document.getElementById('apiModal');
@@ -50,10 +49,11 @@ const survivorResults = document.getElementById('survivorResults');
 const killerGenBtn  = document.getElementById('killerGenBtn');
 const killerResults = document.getElementById('killerResults');
 
-// ── Init ──────────────────────────────────────────────────────────────────────
+// ── Init: load FEEDME ─────────────────────────────────────────────────────────
 (async function init() {
   if (githubPAT) patInput.value = '••••••••••••••••';
 
+  // Try repo FEEDME file first
   try {
     const res = await fetch('FEEDME');
     if (res.ok) {
@@ -67,6 +67,7 @@ const killerResults = document.getElementById('killerResults');
     }
   } catch (_) {}
 
+  // Try localStorage cache
   try {
     const stored = localStorage.getItem(FEEDME_STORAGE);
     if (stored) {
@@ -80,7 +81,8 @@ const killerResults = document.getElementById('killerResults');
     }
   } catch (_) {}
 
-  populateKillerSelect(activeKillers, 'fallback');
+  // No data yet — show empty state
+  populateKillerSelect([], 'empty');
   checkKeyBanner();
 })();
 
@@ -116,13 +118,13 @@ syncBtn.addEventListener('click', () => {
   syncStatus.innerHTML = '';
   syncStartBtn.disabled = false;
   syncStartBtn.textContent = '⟳ Start Sync';
+  syncStartBtn.style.display = '';
   syncModal.classList.add('open');
 });
 syncCancelBtn.addEventListener('click', () => syncModal.classList.remove('open'));
 syncModal.addEventListener('click', e => { if (e.target === syncModal) syncModal.classList.remove('open'); });
 syncStartBtn.addEventListener('click', runSync);
 
-// Save PAT when changed
 patInput.addEventListener('change', () => {
   const val = patInput.value.trim();
   if (val && !val.startsWith('•')) {
@@ -140,46 +142,57 @@ function logSync(msg, cls = '') {
   syncStatus.scrollTop = syncStatus.scrollHeight;
 }
 
+// ── Main Sync ─────────────────────────────────────────────────────────────────
 async function runSync() {
   const pat = githubPAT;
-  if (!pat) {
-    logSync('✗ No GitHub PAT set — enter it above.', 'err');
-    return;
-  }
+  if (!pat) { logSync('✗ No GitHub PAT set.', 'err'); return; }
 
   syncStartBtn.disabled = true;
   syncStatus.innerHTML = '';
 
   try {
-    logSync('Fetching killer list from wiki…', 'working');
+    // Step 1: fetch killer list from wiki categories
+    logSync('Fetching killer list…', 'working');
     const killerNames = await fetchKillerList();
     logSync(`✓ Found ${killerNames.length} killers`, 'ok');
 
+    // Step 2: fetch Module:Datatable for power names + killer IDs
+    logSync('Fetching killer metadata…', 'working');
+    const killerMeta = await fetchKillerMeta();
+    logSync(`✓ Metadata for ${Object.keys(killerMeta).length} killers`, 'ok');
+
+    // Step 3: fetch Module:Datatable/Loadout for all addon data
+    logSync('Fetching add-on data…', 'working');
+    const allAddons = await fetchAllAddons();
+    logSync(`✓ ${allAddons.length} add-ons loaded`, 'ok');
+
+    // Step 4: for each killer, fetch power description from character page
     const results = [];
-    for (const name of killerNames) {
-      logSync(`Parsing: ${name}…`, 'working');
+    for (const killerTitle of killerNames) {
+      logSync(`Parsing: ${killerTitle}…`, 'working');
+      const meta = killerMeta[firstTwo(killerTitle)];
+      const power = meta?.power || '';
+      const killerId = meta?.id;
+      const charPage = meta?.charPage;
 
-      // Match fallback power data using first-two-words comparison
-      const fallback = window.DBD_KILLERS.find(k => firstTwo(k.name) === firstTwo(name))
-        || { power: '', powerDesc: '' };
+      // Get addons for this killer by ID
+      const addons = killerId
+        ? allAddons.filter(a => a.killerId === String(killerId))
+        : [];
 
-      if (!fallback.power) {
-        logSync(`  ⚠ No power data for ${name}`, 'err');
+      // Fetch power description from character page
+      let powerDesc = '';
+      if (charPage) {
+        try {
+          powerDesc = await fetchPowerDesc(charPage, power);
+        } catch (_) {}
       }
 
-      try {
-        const result = await fetchKillerAddons(name, fallback.power);
-        const addons = result.addons || [];
-        const powerDesc = result.powerDesc || fallback.powerDesc || '';
-        results.push({ name, power: fallback.power, powerDesc, addons });
-        logSync(`  ✓ ${addons.length} add-ons`, 'ok');
-        if (addons.length > 0) logSync(`    e.g. ${addons[0].name || addons[0]}`, '');
-      } catch (err) {
-        logSync(`  ✗ Add-ons failed: ${err.message}`, 'err');
-        results.push({ name, power: fallback.power, powerDesc: fallback.powerDesc || '', addons: [] });
-      }
+      results.push({ name: killerTitle, power, powerDesc, addons });
+      logSync(`  ✓ ${addons.length} add-ons`, 'ok');
     }
 
+    // Step 5: save and push
     const compact = JSON.stringify(results);
     localStorage.setItem(FEEDME_STORAGE, compact);
     activeKillers = results;
@@ -189,7 +202,7 @@ async function runSync() {
     await pushFeedmeToGithub(compact, pat);
     logSync('✓ FEEDME committed to repo!', 'ok');
 
-    logSync('✓ Sync complete! Review above then click Push & Refresh.', 'ok');
+    logSync('✓ Sync complete!', 'ok');
     syncStartBtn.style.display = 'none';
     const pushBtn = document.createElement('button');
     pushBtn.className = 'btn-primary';
@@ -208,6 +221,127 @@ async function runSync() {
   }
 }
 
+// ── Wiki API ──────────────────────────────────────────────────────────────────
+async function wikiGet(params) {
+  const url = new URL(WORKER_URL);
+  url.search = new URLSearchParams({ ...params, format: 'json' }).toString();
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Worker HTTP ${res.status}`);
+  return res.json();
+}
+
+async function wikiGetHTML(page) {
+  const url = new URL(WORKER_URL);
+  url.searchParams.set('html', '1');
+  url.searchParams.set('page', page);
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Worker HTTP ${res.status}`);
+  return res.text();
+}
+
+async function wikiGetModule(title) {
+  const data = await wikiGet({
+    action: 'query',
+    prop: 'revisions',
+    titles: title,
+    rvprop: 'content',
+    rvslots: 'main'
+  });
+  const pages = data?.query?.pages || {};
+  const page = Object.values(pages)[0];
+  return page?.revisions?.[0]?.slots?.main?.['*']
+    || page?.revisions?.[0]?.['*'] || '';
+}
+
+function firstTwo(name) {
+  return name.split(' ').slice(0, 2).join(' ').toLowerCase();
+}
+
+// ── Fetch killer list from wiki categories ────────────────────────────────────
+async function fetchKillerList() {
+  const subcategories = ['Category:Easy_Killers', 'Category:Moderate_Killers', 'Category:Hard_Killers', 'Category:Very_Hard_Killers'];
+  const names = new Set();
+  for (const cat of subcategories) {
+    try {
+      const data = await wikiGet({ action: 'query', list: 'categorymembers', cmtitle: cat, cmlimit: '100', cmnamespace: '0' });
+      (data?.query?.categorymembers || []).forEach(m => names.add(m.title));
+    } catch (_) {}
+  }
+  return [...names].sort();
+}
+
+// ── Fetch killer metadata from Module:Datatable ───────────────────────────────
+// Returns map of firstTwo(killerTitle) -> { id, power, charPage }
+async function fetchKillerMeta() {
+  const lua = await wikiGetModule('Module:Datatable');
+  const meta = {};
+
+  // Match killer entries: {id=N, name="X", realName="Y", power="Z", ...}
+  const entryRe = /\{[^{}]*id\s*=\s*(\d+)[^{}]*\}/gs;
+  let m;
+  while ((m = entryRe.exec(lua)) !== null) {
+    const entry = m[0];
+    const powerM = entry.match(/power\s*=\s*"([^"]+)"/);
+    if (!powerM) continue; // not a killer entry
+    const nameM  = entry.match(/\bname\s*=\s*"([^"]+)"/);
+    const realM  = entry.match(/realName\s*=\s*"([^"]+)"/);
+    const idM    = entry.match(/\bid\s*=\s*(\d+)/);
+    if (!nameM || !idM) continue;
+
+    const killerTitle = 'The ' + nameM[1];
+    const realName    = realM ? realM[1] : nameM[1];
+    const charPage    = realName.replace(/ /g, '_');
+
+    meta[firstTwo(killerTitle)] = {
+      id:       parseInt(idM[1]),
+      power:    powerM[1],
+      charPage
+    };
+  }
+  return meta;
+}
+
+// ── Fetch all addons from Module:Datatable/Loadout ────────────────────────────
+// Returns array of { name, killerId, desc }
+async function fetchAllAddons() {
+  const lua = await wikiGetModule('Module:Datatable/Loadout');
+  const addons = [];
+
+  // Format: ["Addon Name"] = {id=N, rarity=N, killer=N, effect="...", ...}
+  const addonRe = /\["([^"]+)"\]\s*=\s*\{([^}]+)\}/g;
+  let m;
+  while ((m = addonRe.exec(lua)) !== null) {
+    const name  = m[1];
+    const props = m[2];
+    const killerM = /\bkiller\s*=\s*(\d+)/.exec(props);
+    if (!killerM) continue;
+    const effectM = /\beffect\s*=\s*"([^"]*)"/.exec(props);
+    const desc = effectM ? effectM[1] : '';
+    addons.push({ name, killerId: killerM[1], desc });
+  }
+  return addons;
+}
+
+// ── Fetch power description from character page HTML ──────────────────────────
+async function fetchPowerDesc(charPage, powerName) {
+  const html = await wikiGetHTML(charPage);
+  if (!html || html.length < 100) return '';
+
+  // Find the Power section and extract text before the addon table
+  const idSearchStr = 'id="Power"';
+  const powerPos = html.indexOf(idSearchStr);
+  if (powerPos < 0) return '';
+
+  const addonPos = html.indexOf('id="Add-ons_for_', powerPos);
+  const chunk = addonPos > 0 ? html.slice(powerPos, addonPos) : html.slice(powerPos, powerPos + 8000);
+
+  return chunk
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 1000);
+}
+
 // ── GitHub Push ───────────────────────────────────────────────────────────────
 async function pushFeedmeToGithub(content, pat) {
   const headers = {
@@ -216,255 +350,43 @@ async function pushFeedmeToGithub(content, pat) {
     'X-GitHub-Api-Version': '2022-11-28',
     'Content-Type': 'application/json'
   };
-
   const apiBase = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
 
-  // Always fetch current SHA — required for update, even if we think we know it
   let sha = null;
   try {
     const check = await fetch(apiBase, { headers });
-    if (check.ok) {
-      const data = await check.json();
-      sha = data.sha;
-    } else if (check.status !== 404) {
-      throw new Error('GitHub SHA fetch failed: ' + check.status);
-    }
-  } catch (e) {
-    if (!e.message.includes('SHA')) throw e;
-  }
-
-  const body = {
-    message: `chore: sync FEEDME from wiki [${new Date().toISOString().slice(0,10)}]`,
-    content: btoa(unescape(encodeURIComponent(content))),
-    ...(sha ? { sha } : {})
-  };
+    if (check.ok) sha = (await check.json()).sha;
+  } catch (_) {}
 
   const res = await fetch(apiBase, {
     method: 'PUT',
     headers,
-    body: JSON.stringify(body)
+    body: JSON.stringify({
+      message: `chore: sync FEEDME from wiki [${new Date().toISOString().slice(0, 10)}]`,
+      content: btoa(unescape(encodeURIComponent(content))),
+      ...(sha ? { sha } : {})
+    })
   });
-
   if (!res.ok) {
     const err = await res.json().catch(() => ({}));
     throw new Error(err.message || `GitHub API HTTP ${res.status}`);
   }
 }
 
-// ── Lock Overlay + Auto-refresh ───────────────────────────────────────────────
+// ── Lock Overlay ──────────────────────────────────────────────────────────────
 function showLockAndRefresh() {
-  if (!lockOverlay) {
-    // Fallback if overlay element missing for any reason
-    setTimeout(() => window.location.reload(), 120000);
-    return;
-  }
+  if (!lockOverlay) { setTimeout(() => window.location.reload(), 120000); return; }
   lockOverlay.classList.add('active');
   document.body.style.overflow = 'hidden';
   let seconds = 120;
-
   function tick() {
-    const m = Math.floor(seconds / 60);
-    const s = seconds % 60;
+    const m = Math.floor(seconds / 60), s = seconds % 60;
     if (lockCountdown) lockCountdown.textContent = `${m}:${s.toString().padStart(2, '0')}`;
-    if (seconds <= 0) {
-      if (lockStatus) lockStatus.textContent = 'Refreshing…';
-      window.location.reload();
-      return;
-    }
+    if (seconds <= 0) { if (lockStatus) lockStatus.textContent = 'Refreshing…'; window.location.reload(); return; }
     seconds--;
     setTimeout(tick, 1000);
   }
   tick();
-}
-
-// ── Wiki API helpers ──────────────────────────────────────────────────────────
-async function wikiGet(params) {
-  const url = new URL(WORKER_URL);
-  url.search = new URLSearchParams({ ...params, format: 'json' }).toString();
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`Worker/Wiki HTTP ${res.status}`);
-  return res.json();
-}
-
-// Static charPage + power map derived from Module:Datatable
-// Used as the primary source for addon fetching
-const KILLER_META = {
-  'the trapper':        { charPage: 'Evan_MacMillan',              power: 'Bear Traps' },
-  'the wraith':         { charPage: 'Philip_Ojomo',                power: 'Wailing Bell' },
-  'the hillbilly':      { charPage: 'Max_Thompson_Jr.',            power: 'Chainsaw' },
-  'the nurse':          { charPage: 'Sally_Smithson',              power: "Spencer's Last Breath" },
-  'the shape':          { charPage: 'Michael_Myers',               power: 'Evil Within' },
-  'the hag':            { charPage: 'Lisa_Sherwood',               power: 'Blackened Catalyst' },
-  'the doctor':         { charPage: 'Herman_Carter',               power: "Carter's Spark" },
-  'the huntress':       { charPage: 'Anna',                        power: 'Hunting Hatchets' },
-  'the cannibal':       { charPage: 'Bubba_Sawyer',               power: "Bubba's Chainsaw" },
-  'the nightmare':      { charPage: 'Freddy_Krueger',              power: 'Dream Demon' },
-  'the pig':            { charPage: 'Amanda_Young',                power: "Jigsaw's Baptism" },
-  'the clown':          { charPage: 'Kenneth_Chase_alias_Jeffrey_Hawk', power: 'The Afterpiece Tonic' },
-  'the spirit':         { charPage: 'Rin_Yamaoka',                 power: "Yamaoka's Haunting" },
-  'the legion':         { charPage: 'Frank,_Julie,_Susie,_Joey',   power: 'Feral Frenzy' },
-  'the plague':         { charPage: 'Adiris',                      power: 'Vile Purge' },
-  'the ghost':          { charPage: 'Danny_Johnson_alias_Jed_Olsen', power: 'Night Shroud' },
-  'the demogorgon':     { charPage: 'The_Demogorgon',              power: 'Of The Abyss' },
-  'the oni':            { charPage: 'Kazan_Yamaoka',               power: "Yamaoka's Wrath" },
-  'the deathslinger':   { charPage: 'Caleb_Quinn',                 power: 'The Redeemer' },
-  'the executioner':    { charPage: 'Pyramid_Head',                power: 'Rites of Judgment' },
-  'the blight':         { charPage: 'Talbot_Grimes',               power: 'Blighted Corruption' },
-  'the twins':          { charPage: 'Charlotte_&_Victor_Deshayes',   power: 'Blood Bond' },
-  'the trickster':      { charPage: 'Ji-Woon_Hak',                 power: 'Showstopper' },
-  'the nemesis':        { charPage: 'Nemesis_T-Type',              power: 'T-Virus' },
-  'the cenobite':       { charPage: 'Elliot_Spencer',              power: 'Summons of Pain' },
-  'the artist':         { charPage: 'Carmina_Mora',                power: 'Birds of Torment' },
-  'the onryo':          { charPage: 'Sadako_Yamamura',             power: 'Deluge of Fear' },
-  'the dredge':         { charPage: 'The_Dredge',                  power: 'Reign of Darkness' },
-  'the mastermind':     { charPage: 'Albert_Wesker',               power: 'Uroboros Infection' },
-  'the knight':         { charPage: 'The_Knight',                  power: 'Guardia Compagnia' },
-  'the skull':          { charPage: 'Adriana_Imai',                power: 'Tri-Surveillance' },
-  'the singularity':    { charPage: 'HUX-A7-13',                   power: 'Quantum Instantiation' },
-  'the xenomorph':      { charPage: 'The_Xenomorph',               power: 'Crawl Tunnel' },
-  'the good':           { charPage: 'Charles_Lee_Ray',             power: 'Hidey-Ho Mode' },
-  'the unknown':        { charPage: 'The_Unknown',                 power: 'UVX' },
-  'the lich':           { charPage: 'Vecna',                       power: 'Tome of Torment' },
-  'the dark':           { charPage: 'Dracula',                     power: 'Crimson Dark' },
-  'the houndmaster':    { charPage: 'Portia_Maye',                 power: 'The Hunt' },
-  'the ghoul':          { charPage: 'Ken_Kaneki',                  power: 'One-Eyed Terror' },
-  'the animatronic':    { charPage: 'William_Afton',               power: "Fazbear's Fright" },
-  'the krasue':         { charPage: 'Burong_Sukapat',               power: 'Unbodied Flesh' },
-  'the first':          { charPage: 'Henry_Creel',                     power: 'Worldeater' },
-  'the slasher':        { charPage: 'Jason_Voorhees',                  power: 'Voorhees' },
-};
-
-async function fetchDatatable() {
-  // Build meta from static map — no API call needed
-  const killers = Object.entries(KILLER_META).map(([key, val]) => ({
-    title: key.replace(/^the /, 'The '),
-    ...val
-  }));
-  return killers;
-}
-
-async function fetchKillerList() {
-  const datatableKillers = await fetchDatatable();
-
-  // Build a lookup: first two words of title -> { charPage, power }
-  window._wikiKillerMeta = {};
-  for (const k of datatableKillers) {
-    window._wikiKillerMeta[firstTwo(k.title)] = k;
-  }
-
-  // Return display names — use our fallback names where we have them,
-  // falling back to wiki titles for any we don't know
-  const allNames = new Set(window.DBD_KILLERS.map(k => k.name));
-  for (const k of datatableKillers) {
-    if (![...allNames].some(n => firstTwo(n) === firstTwo(k.title))) {
-      allNames.add(k.title);
-    }
-  }
-  return [...allNames].sort();
-}
-
-function firstTwo(name) {
-  return name.split(' ').slice(0, 2).join(' ').toLowerCase();
-}
-
-// Cache for the Loadout module data
-let _loadoutData = null;
-
-async function fetchLoadoutModule() {
-  if (_loadoutData) return _loadoutData;
-  const data = await wikiGet({
-    action: 'query',
-    prop: 'revisions',
-    titles: 'Module:Datatable/Loadout',
-    rvprop: 'content',
-    rvslots: 'main'
-  });
-  const pages = data?.query?.pages || {};
-  const page = Object.values(pages)[0];
-  const content = page?.revisions?.[0]?.slots?.main?.['*']
-    || page?.revisions?.[0]?.['*'] || '';
-  if (!content) throw new Error('Could not fetch Module:Datatable/Loadout');
-  _loadoutData = content;
-  return content;
-}
-
-async function fetchKillerAddons(killerName, powerName) {
-  const meta = KILLER_META[firstTwo(killerName)];
-  if (!meta) throw new Error('No datatable entry for ' + killerName);
-
-  const lua = await fetchLoadoutModule();
-  // Loadout format: ["Addon Name"] = {id=N, rarity=N, killer=N, ...}
-  // We need to find killer ID from Module:Datatable killers table
-  // But we can also match by looking at the killer number from KILLER_META
-  // For now parse all addons and their killer IDs, then filter by killer
-  
-  // First find killer ID by matching power name in the lua content
-  // Module:Datatable has: {id=N, name="Trapper", power="Bear Traps", ...}
-  const killerNameShort = killerName.replace(/^The /, '').replace(/\s*\([^)]+\)$/, '').trim();
-  const killerIdMatch = new RegExp('name\s*=\s*"' + killerNameShort.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '"[^}]*id\s*=\s*(\d+)', 'i').exec(lua)
-    || new RegExp('id\s*=\s*(\d+)[^}]*name\s*=\s*"' + killerNameShort.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '"', 'i').exec(lua);
-
-  // Parse addons from loadout: ["Name"] = {killer=N, ...}
-  const addons = [];
-  const addonRe = /\["([^"]+)"\]\s*=\s*\{([^}]+)\}/g;
-  let m;
-  while ((m = addonRe.exec(lua)) !== null) {
-    const name = m[1];
-    const props = m[2];
-    // Check if this addon belongs to this killer
-    const killerMatch = /killer\s*=\s*(\d+)/.exec(props);
-    if (!killerMatch) continue;
-    const killerId = killerMatch[1];
-    // Match killer by id if we found it, otherwise include all addons with description
-    const descMatch = /description\s*=\s*"([^"]*)"/.exec(props);
-    const effectMatch = /effect\s*=\s*"([^"]*)"/.exec(props);
-    const desc = descMatch ? descMatch[1] : (effectMatch ? effectMatch[1] : '');
-    addons.push({ name, killerId, desc });
-  }
-
-  // Filter to this killer's addons
-  // Use killer ID if found, otherwise use power name matching
-  let killerAddons;
-  if (killerIdMatch) {
-    const id = killerIdMatch[1];
-    killerAddons = addons.filter(a => a.killerId === id);
-  } else {
-    // Fallback: can't filter precisely, skip
-    killerAddons = [];
-  }
-
-  const powerDesc = fallback.powerDesc || '';
-  return { addons: killerAddons.slice(0, 20).map(a => ({ name: a.name, desc: a.desc })), powerDesc };
-}
-
-
-
-function parseAddonNames(wikitext) {
-  const names = [];
-  const patterns = [
-    /\|\s*\[\[([^\]|#]+?)(?:\|[^\]]*)?\]\]/g,
-    /^\|\s*([A-Z][^|{\n]{3,40}?)\s*\|/gm
-  ];
-  const seen = new Set();
-  for (const re of patterns) {
-    let m;
-    while ((m = re.exec(wikitext)) !== null) {
-      const name = m[1].trim();
-      if (
-        name.length > 2 &&
-        name.length < 60 &&
-        !name.startsWith('File:') &&
-        !name.startsWith('Category:') &&
-        !name.includes('=') &&
-        !name.includes('\n') &&
-        !seen.has(name)
-      ) {
-        seen.add(name);
-        names.push(name);
-      }
-    }
-  }
-  return names.slice(0, 20);
 }
 
 // ── Killer Dropdown ───────────────────────────────────────────────────────────
@@ -482,9 +404,10 @@ function populateKillerSelect(killers, source) {
   const badge = document.createElement('div');
   badge.id = 'dataSourceBadge';
   badge.className = 'data-source-badge' + (source === 'wiki' || source === 'cache' ? ' live' : '');
-  badge.textContent = source === 'wiki'    ? '● Live wiki data'
-    : source === 'cache'   ? '● Cached wiki data'
-    : '○ Fallback data — use Sync to update';
+  badge.textContent = source === 'wiki'   ? '● Live wiki data'
+    : source === 'cache'  ? '● Cached wiki data'
+    : source === 'empty'  ? '○ No data — run Sync to populate'
+    : '○ No data';
   killerSelect.closest('.form-group').appendChild(badge);
 }
 
@@ -495,20 +418,19 @@ function updatePowerPreview() {
   let html = '';
   if (k.power) html += `<span class="power-name">⚡ ${k.power}:</span>${k.powerDesc}`;
   if (k.addons && k.addons.length > 0) {
-    html += `<div style="margin-top:0.5rem;font-size:0.8rem;color:var(--text-dim)">Add-ons: ${k.addons.join(', ')}</div>`;
+    const names = k.addons.map(a => typeof a === 'object' ? a.name : a).join(', ');
+    html += `<div style="margin-top:0.5rem;font-size:0.8rem;color:var(--text-dim)">Add-ons: ${names}</div>`;
   }
   killerPowerPreview.innerHTML = html;
 }
 
 killerSelect.addEventListener('change', updatePowerPreview);
 
-// ── Surprise Me ───────────────────────────────────────────────────────────────
 surpriseMe.addEventListener('change', () => {
   killerPrompt.disabled = surpriseMe.checked;
   killerPromptGroup.style.opacity = surpriseMe.checked ? '0.4' : '1';
 });
 
-// ── Tabs ──────────────────────────────────────────────────────────────────────
 tabs.forEach(tab => {
   tab.addEventListener('click', () => {
     tabs.forEach(t => t.classList.remove('active'));
@@ -525,20 +447,15 @@ async function callGemini(prompt) {
   const res = await fetch(endpoint, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      contents: [{ parts: [{ text: prompt }] }],
-      generationConfig: { temperature: 0.9, maxOutputTokens: 2048 }
-    })
+    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }], generationConfig: { temperature: 0.9, maxOutputTokens: 2048 } })
   });
   if (!res.ok) {
     const err = await res.json().catch(() => ({}));
     throw new Error(`Gemini API error: ${err?.error?.message || `HTTP ${res.status}`}`);
   }
-  const data = await res.json();
-  return data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+  return (await res.json()).candidates?.[0]?.content?.parts?.[0]?.text || '';
 }
 
-// ── Rendering ─────────────────────────────────────────────────────────────────
 function setLoading(container, msg = 'Thinking…') {
   container.innerHTML = `<div class="loading-state"><div class="spinner"></div><span>${msg}</span></div>`;
 }
@@ -570,20 +487,9 @@ survivorGenBtn.addEventListener('click', async () => {
   }
   survivorGenBtn.disabled = true;
   setLoading(survivorResults, 'Generating survivor video ideas…');
-  const fullPrompt = `You are a creative YouTube content strategist who specializes in Dead by Daylight (DbD) gaming content.
-
-The user wants YouTube video ideas for survivor gameplay content based on the following request:
-"${prompt}"
-
-Generate 4-6 distinct YouTube video concepts. For each concept, provide:
-1. A compelling, click-worthy YouTube video title
-2. A brief description of what the video would cover (2-4 sentences)
-3. Why this would perform well on YouTube for the DbD community
-
-Make titles punchy and engaging — the kind that get clicks in the DbD community.`;
+  const fullPrompt = `You are a creative YouTube content strategist who specializes in Dead by Daylight (DbD) gaming content.\n\nThe user wants YouTube video ideas for survivor gameplay content based on the following request:\n"${prompt}"\n\nGenerate 4-6 distinct YouTube video concepts. For each concept, provide:\n1. A compelling, click-worthy YouTube video title\n2. A brief description of what the video would cover (2-4 sentences)\n3. Why this would perform well on YouTube for the DbD community\n\nMake titles punchy and engaging — the kind that get clicks in the DbD community.`;
   try {
-    const result = await callGemini(fullPrompt);
-    renderMarkdown(survivorResults, result);
+    renderMarkdown(survivorResults, await callGemini(fullPrompt));
   } catch (err) {
     setError(survivorResults, err.message);
   } finally {
@@ -613,9 +519,7 @@ killerGenBtn.addEventListener('click', async () => {
   let addonContext = '\n**Note: No add-on list available — use your best knowledge of this killer\'s real add-ons only.**';
   if (killer.addons && killer.addons.length > 0) {
     const addonList = killer.addons.map(a => {
-      if (typeof a === 'object' && a.name) {
-        return a.desc ? `- **${a.name}**: ${a.desc}` : `- ${a.name}`;
-      }
+      if (typeof a === 'object' && a.name) return a.desc ? `- **${a.name}**: ${a.desc}` : `- ${a.name}`;
       return `- ${a}`;
     }).join('\n');
     addonContext = `\n**${killer.name}'s add-ons (use ONLY these, no others):**\n${addonList}`;
@@ -625,28 +529,10 @@ killerGenBtn.addEventListener('click', async () => {
     ? 'Come up with genuinely creative, fun, and interesting builds that would make for entertaining YouTube content. Think outside the meta — find synergies, meme potential, unique playstyles, or high-skill-expression builds that viewers would find exciting to watch.'
     : `The user wants: "${buildRequest}"`;
 
-  const fullPrompt = `You are a Dead by Daylight build theorist and YouTube content strategist with deep mechanical knowledge of the game.
-
-**Killer:** ${killer.name}
-**Killer Power — ${killer.power}:** ${killer.powerDesc}${addonContext}
-
-**Critical mechanical rules:**
-- Killer power hits are SPECIAL ATTACKS, not basic attacks. Perks that require "basic attacks" do NOT synergize with power hits unless the perk explicitly says "any attack" or "special attacks".
-- Reason from what each perk DOES mechanically, not its name or flavor text.
-- Only recommend add-ons from the list provided above. Do not invent or substitute add-on names.
-
-${intent}
-
-Generate 3 distinct perk + add-on builds for ${killer.name}. For each build:
-1. Give the build a catchy name/title (suitable as a YouTube video title)
-2. List exactly 4 perks — for each, briefly explain what it does mechanically and why it fits
-3. List 2 add-ons from the provided list — explain the mechanical effect and why it fits
-4. Write a short "video pitch" (2-3 sentences) — why would viewers want to watch this?
-5. Rate: Difficulty (Beginner/Intermediate/Advanced), Fun Factor (1-5 🔪), Meme Potential (Low/Medium/High)`;
+  const fullPrompt = `You are a Dead by Daylight build theorist and YouTube content strategist with deep mechanical knowledge of the game.\n\n**Killer:** ${killer.name}\n**Killer Power — ${killer.power}:** ${killer.powerDesc}${addonContext}\n\n**Critical mechanical rules:**\n- Killer power hits are SPECIAL ATTACKS, not basic attacks. Perks that require "basic attacks" do NOT synergize with power hits unless the perk explicitly says "any attack" or "special attacks".\n- Reason from what each perk DOES mechanically, not its name or flavor text.\n- Only recommend add-ons from the list provided above. Do not invent or substitute add-on names.\n\n${intent}\n\nGenerate 3 distinct perk + add-on builds for ${killer.name}. For each build:\n1. Give the build a catchy name/title (suitable as a YouTube video title)\n2. List exactly 4 perks — for each, briefly explain what it does mechanically and why it fits\n3. List 2 add-ons from the provided list — explain the mechanical effect and why it fits\n4. Write a short "video pitch" (2-3 sentences) — why would viewers want to watch this?\n5. Rate: Difficulty (Beginner/Intermediate/Advanced), Fun Factor (1-5 🔪), Meme Potential (Low/Medium/High)`;
 
   try {
-    const result = await callGemini(fullPrompt);
-    renderMarkdown(killerResults, result);
+    renderMarkdown(killerResults, await callGemini(fullPrompt));
   } catch (err) {
     setError(killerResults, err.message);
   } finally {
