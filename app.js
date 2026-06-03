@@ -186,8 +186,18 @@ async function runSync() {
     await pushFeedmeToGithub(compact, pat);
     logSync('✓ FEEDME committed to repo!', 'ok');
 
-    syncModal.classList.remove('open');
-    showLockAndRefresh();
+    // Show push button instead of auto-refreshing
+    logSync('✓ Sync complete! Review above then push to repo.', 'ok');
+    syncStartBtn.style.display = 'none';
+    const pushBtn = document.createElement('button');
+    pushBtn.className = 'btn-primary';
+    pushBtn.textContent = '⬆ Push & Refresh';
+    pushBtn.style.marginTop = '0.5rem';
+    pushBtn.addEventListener('click', () => {
+      syncModal.classList.remove('open');
+      showLockAndRefresh();
+    });
+    syncStatus.appendChild(pushBtn);
 
   } catch (err) {
     logSync(`✗ Sync failed: ${err.message}`, 'err');
