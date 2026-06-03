@@ -264,30 +264,22 @@ function firstTwo(name) {
 
 // ── Fetch killer list from Module:Datatable ──────────────────────────────────
 // Returns killer titles e.g. "The Trapper", "The Wraith" etc.
-// We derive these from fetchKillerMeta which parses Module:Datatable
-async function fetchKillerList() {
-  const meta = await fetchKillerMeta();
-  // meta keys are firstTwo() — reconstruct full titles from the stored data
-  return Object.values(meta).map(m => m.title).sort();
-}
-
-// ── Fetch killer metadata from Module:Datatable ───────────────────────────────
-// Returns map of firstTwo(killerTitle) -> { id, title, power, charPage }
 async function fetchKillerMeta() {
   const lua = await wikiGetModule('Module:Datatable');
   const meta = {};
 
-  // Each killer entry is a single-line table entry like:
-  // {id = 1, name = "Trapper", realName = "Evan MacMillan", power = "Bear Trap", ...},
-  // Find each entry by scanning for {id = N, ... } boundaries
-  // then extract fields only from within that entry.
-  let i = 0;
+  // Find the killers = { } block first, then parse entries within it
+  const killersStart = lua.indexOf('killers = {');
+  if (killersStart < 0) return meta;
+
+  // Walk the killers block extracting each {id=N, name="X", power="Y", ...} entry
+  const blockStart = lua.indexOf('{', killersStart);
+  let i = blockStart + 1; // skip the outer {
   while (i < lua.length) {
-    // Find next { that starts a killer entry (has id = N inside)
     const braceOpen = lua.indexOf('{', i);
     if (braceOpen < 0) break;
 
-    // Find the matching closing brace
+    // Find matching } by depth
     let depth = 1, j = braceOpen + 1;
     while (j < lua.length && depth > 0) {
       if (lua[j] === '{') depth++;
@@ -297,24 +289,22 @@ async function fetchKillerMeta() {
     const entry = lua.slice(braceOpen, j);
     i = j;
 
-    // Only process killer entries: must have id and power fields
+    // If we closed the outer block, stop
+    if (depth < 0) break;
+
     const idM    = /\bid\s*=\s*(\d+)/.exec(entry);
     const powerM = /\bpower\s*=\s*"([^"]+)"/.exec(entry);
     const nameM  = /\bname\s*=\s*"([^"]+)"/.exec(entry);
     const realM  = /\brealName\s*=\s*"([^"]+)"/.exec(entry);
-
     if (!idM || !powerM || !nameM) continue;
-    // Skip entries that look like they're from other tables (survivors, realms, etc.)
-    // Killer entries always have a power field
+
     const killerTitle = 'The ' + nameM[1];
     const realName    = realM ? realM[1] : nameM[1];
-    const charPage    = realName.replace(/ /g, '_');
-
     meta[firstTwo(killerTitle)] = {
       id:       parseInt(idM[1]),
       title:    killerTitle,
       power:    powerM[1],
-      charPage
+      charPage: realName.replace(/ /g, '_')
     };
   }
   return meta;
