@@ -121,7 +121,7 @@
       },
       {
         "name": "Ink Egg",
-        "desc": ""
+        "desc": "An unusual egg that seems to be nothing but a ball of semi-solid ink.\nIncreases the number of Dire Crows The Artist is able to hold by +1 Dire Crow.\nReduces the Idle time of Dire Crows before they disintegrate by -2 seconds."
       },
       {
         "name": "Iridescent Feather",
@@ -161,7 +161,7 @@
       },
       {
         "name": "Thorny Nest",
-        "desc": ""
+        "desc": "A nest that remained empty near Carmina's home.There are sharp thorns embedded in it.\nSurvivors suffer from the '''Haemorrhage and Mangled Status Effects for 70 seconds after being damaged by Dire Crows'''."
       },
       {
         "name": "Untitled Agony",
@@ -173,7 +173,7 @@
       },
       {
         "name": "Vibrant Obituary",
-        "desc": ""
+        "desc": "Scrap newspaper, speckled with bright, eye-catching paint.It seems tragedy is a daily thing.\nIncreases the Killer Instinct duration of Dire Crows by +3 seconds."
       },
       {
         "name": "Birds of Torment",
@@ -188,7 +188,7 @@
     "addons": [
       {
         "name": "Adrenaline Vial",
-        "desc": ""
+        "desc": "A hormone removed from an unwilling subject's adrenal gland.Though it provides a jolt of energy, it can fatigue its user.\nIncreases the number of available Power Tokens by +2.\nIncreases your Movement speed during a Rush by +5 %.\nIncreases your maximum Look angle during a Rush by +20 °."
       },
       {
         "name": "Alchemist's Ring",
@@ -196,11 +196,11 @@
       },
       {
         "name": "Blighted Crow",
-        "desc": ""
+        "desc": "A dead crow that has been grotesquely mutated by Putrid Serum.\nIncreases your Movement speed during a Rush by a stack-able +3 % for each consecutive Lethal Rush."
       },
       {
         "name": "Blighted Rat",
-        "desc": ""
+        "desc": "A rat that briefly returned to life when injected with Putrid Serum, becoming aggressive and uncontrollable.\nIncreases your Movement speed during a Rush by a stack-able +2 % for each consecutive Lethal Rush."
       },
       {
         "name": "Canker Thorn",
@@ -216,11 +216,11 @@
       },
       {
         "name": "Compound Thirty-Three",
-        "desc": ""
+        "desc": "Talbot's penultimate attempt at a serum.\nThough it did not facilitate his escape, it did have powerful side effects.\nBlighted Corruption is capped at 5 Tokens.\nIncreases your Turn rate during a Rush by +11 %.\nIncreases the duration of a Rush by +11 %."
       },
       {
         "name": "Compound Twenty-One",
-        "desc": ""
+        "desc": "A serum that's fatal to humans. It evokes beneficial qualities in those who are... something more.\nWhen initiating a Slam, reveal the  of Survivors within 8 metres of the collision location for 3.5 seconds."
       },
       {
         "name": "Foxglove",
@@ -228,7 +228,7 @@
       },
       {
         "name": "Iridescent Blight Tag",
-        "desc": ""
+        "desc": "A glass-like laboratory tag, moulded from The Fog itself.Either a gift from The Entity or a cruel jest to tag The Blight as he once did to others.\nBlighted Corruption is capped at 3 Tokens.\nIncreases your Movement speed during a Rush by +10 %.\nIncreases the maximum Look angle during a Rush by +20 °."
       },
       {
         "name": "Placebo Tablet",
@@ -248,15 +248,15 @@
       },
       {
         "name": "Shredded Notes",
-        "desc": ""
+        "desc": "The remnants of Talbot's notes, they still contain some valuable information within.\nReduces the Recharge time per Power Token by -0.33 seconds."
       },
       {
         "name": "Soul Chemical",
-        "desc": ""
+        "desc": "A chemical squeezed from the pineal gland of a recently deceased Survivor.\nIncreases the initial Movement speed of a Rush by +5 %."
       },
       {
         "name": "Summoning Stone",
-        "desc": ""
+        "desc": "Talbot used this stone to carve what he believed was his research into the Opium Den's walls.\nIncreases the initial duration of a Rush by +0.5 seconds."
       },
       {
         "name": "Umbra Salts",
@@ -279,11 +279,11 @@
     "addons": [
       {
         "name": "Speed Limiter",
-        "desc": ""
+        "desc": "A mechanical device that limits the amount of fuel small engines can intake at one time, forcing a constant and safe speed.\nGrants 100 % Bonus Bloodpoints for Chainsaw Hit Score Events in the Deviousness Category.\nHits with either ''Bubba's Chainsaw or the Chainsaw'' do not automatically trigger the Dying State."
       },
       {
         "name": "Award-winning Chilli",
-        "desc": ""
+        "desc": "A big bowl of spicy Chilli made famous thanks to prime meat.\nIncreases the duration of the Chainsaw Dash by +0.2 seconds per consumed Token.\nIncreases the duration of the Chainsaw Dash Window by +0.2 seconds."
       },
       {
         "name": "Begrimed Chains (Bubba's Chainsaw)",
@@ -295,55 +295,55 @@
       },
       {
         "name": "Chainsaw File",
-        "desc": ""
+        "desc": "A file whose purpose is to hone Chainsaw chains.\nReduces the duration of a Tantrum by -0.25 seconds."
       },
       {
         "name": "Chilli",
-        "desc": ""
+        "desc": "A big bowl of steaming Chilli to keep you fresh and strong.\nIncreases the duration of the Chainsaw Dash by +0.15 seconds per consumed Token.\nIncreases the duration of the Chainsaw Dash Window by +0.15 seconds."
       },
       {
         "name": "Depth Gauge Rake",
-        "desc": ""
+        "desc": "Tool that increases the angle of the depth gauge, making the chain eat more \"wood\".\nIncreases available Tokens by 1 Token.\nDecreases Charge speed of the Chainsaw Sweep by -18 %.\nDecreases the Chainsaw Dash Movement speed by -2 %."
       },
       {
         "name": "Grisly Chains",
-        "desc": ""
+        "desc": "A chain with unusually hefty cutter teeth that leaves victims crippled even after being healed.\nSurvivors hit by ''Bubba's Chainsaw suffer from the 'Mangled Status Effect''' for 70 seconds."
       },
       {
         "name": "Homemade Muffler",
-        "desc": ""
+        "desc": "A makeshift exhaust system made of black gas pipes.\nReduces the duration of a Tantrum by -0.5 seconds."
       },
       {
         "name": "Iridescent Flesh",
-        "desc": ""
+        "desc": "A thin slice of smooth, young flesh.The veins shimmer with luminescent glow, as if life still flows within.\nReplenishes all Tokens when hitting a Survivor with ''Bubba's Chainsaw.\nLimits the maximum duration of the Tantrum'' to 3 seconds."
       },
       {
         "name": "Knife Scratches",
-        "desc": ""
+        "desc": "Scratches cover the Chainsaw's body, caused by a searing blade.Memories of reprimands fill its holder with the fear of failure.\nIncreases the Movement speed during a Chainsaw Dash by +1.5 %.\nIncreases the Power Charge time by +10 %."
       },
       {
         "name": "Light Chassis",
-        "desc": ""
+        "desc": "A light and durable Chainsaw chassis with a shorter guide bar.Makes the Chainsaw easier to handle.\nThe Auras of Survivors within 8 metres are revealed to you while revving Bubba's Chainsaw."
       },
       {
         "name": "Long Guide Bar",
-        "desc": ""
+        "desc": "A sturdy iron replacement bar for long chains.\nIncreases Revving threshold before triggering a Tantrum by +2 seconds."
       },
       {
         "name": "Primer Bulb",
-        "desc": ""
+        "desc": "Pumps more gas in the ignition system to ensure a quick and powerful start.\nReduces the Power Recharge time by -1 second."
       },
       {
         "name": "Rusted Chains",
-        "desc": ""
+        "desc": "This chain is covered with crusty and volatile rust spots that make injuries particularly difficult to heal.\nSurvivors hit by Bubba's Chainsaw suffer from the Broken Status Effect for 90 seconds."
       },
       {
         "name": "Shop Lubricant",
-        "desc": ""
+        "desc": "An oil specifically formulated for Chainsaws.A special additive prevents oil throw off.\nThe Auras of Survivors downed by Bubba's Chainsaw, if no other Survivors were within the Terror Radius, are hidden to other Survivors for 20 seconds."
       },
       {
         "name": "Spark Plug",
-        "desc": ""
+        "desc": "A clean spark plug fitted for a Chainsaw.\nReduces the Power Recharge time by -0.5 seconds."
       },
       {
         "name": "The Beast's Marks",
@@ -351,11 +351,11 @@
       },
       {
         "name": "The Grease",
-        "desc": ""
+        "desc": "A thick yellowish ooze, concocted by the Sawyers.Used for all-purpose lubrication around their house.\nIncreases Revving threshold before triggering a Tantrum by +3 seconds."
       },
       {
         "name": "Vegetable Oil",
-        "desc": ""
+        "desc": "A rancid oil used as a poor quality lubricant.\nReduces the Cool-down duration of Bubba's Chainsaw by -0.3 seconds."
       },
       {
         "name": "Bubba's Chainsaw",
@@ -465,7 +465,7 @@
       },
       {
         "name": "Cheap Gin Bottle",
-        "desc": ""
+        "desc": "When the night is rough and the day is rougher, a little hair of the dog will give you a boost.\nIncreases the strength of the '''Haste Status Effect from Invigoration''' by +3 %."
       },
       {
         "name": "Cigar Box",
@@ -485,7 +485,7 @@
       },
       {
         "name": "Fingerless Parade Gloves",
-        "desc": ""
+        "desc": "Part of the standard Clown apparel, the cut fingers allow for dexterous manipulations.\nChanges the '''Bottle's''' Throw arc."
       },
       {
         "name": "Flask of Bleach",
@@ -493,7 +493,7 @@
       },
       {
         "name": "Garish Make-Up Kit",
-        "desc": ""
+        "desc": "Some for the face and some for the Antidote.The unknown compound intensifies the ''Antidote's effect.\n' Invigorated''' duration."
       },
       {
         "name": "Kerosene Can",
@@ -501,7 +501,7 @@
       },
       {
         "name": "Party Bottle",
-        "desc": ""
+        "desc": "Be the life of the party!\nParty Bottles emit confetti when they break, in addition to their usual Gas effect.\nHitting a Survivor directly with a Party Bottle interrupts their actions as usual, and additionally awards 100 bonus Bloodpoints in the Deviousness Category."
       },
       {
         "name": "Redhead's Pinkie Finger",
@@ -509,7 +509,7 @@
       },
       {
         "name": "Robin Feather",
-        "desc": ""
+        "desc": "A warm orange feather, soft to the touch.\nReduces the Cool-down time between Bottle Throws by -40 %."
       },
       {
         "name": "Smelly Inner Soles",
@@ -517,11 +517,11 @@
       },
       {
         "name": "Solvent Jug",
-        "desc": ""
+        "desc": "A chemical volatile compound that irritates the respiratory tract, but increases absorption of the Afterpiece Antidote.\nIncreases the Invigoration duration by +1 second."
       },
       {
         "name": "Spirit of Hartshorn",
-        "desc": ""
+        "desc": "A pungent chemical compound consisting of ammonia.One whiff is enough to jolt even the most sluggish of minds.\n'''' the Afterpiece Antidote Gas Area of Effect.\n'' the Afterpiece Antidote'' Gas Spread velocity."
       },
       {
         "name": "Starling Feather",
@@ -529,11 +529,11 @@
       },
       {
         "name": "Sticky Soda Bottle",
-        "desc": ""
+        "desc": "It's sugary sweet, with only a little blood on the label.\nIncreases the strength of the '''Haste Status Effect from Invigoration''' by +2 %."
       },
       {
         "name": "Sulphuric Acid Vial",
-        "desc": ""
+        "desc": "A thin and clear combustible liquid which numbs the mind when inhaled.\nSurvivors affected by Intoxication suffer from the '''Mangled Status Effect''' for 70 seconds."
       },
       {
         "name": "Tattoo's Middle Finger",
@@ -541,7 +541,7 @@
       },
       {
         "name": "Thick Cork Stopper",
-        "desc": ""
+        "desc": "A sturdy cork fitting The Afterpiece Tonic bottles marvellously.\n'''''' Reload time."
       },
       {
         "name": "VHS Porn",
@@ -663,27 +663,27 @@
       },
       {
         "name": "Chewing Tobacco",
-        "desc": ""
+        "desc": "A can of clipped and sweetened tobacco leaves lifted from a gutted body in Glenvale.\nStimulates the nervous system. \nReduces the Stun duration when Survivors break free from The Redeemer by -0.25 seconds."
       },
       {
         "name": "Gold Creek Whiskey",
-        "desc": ""
+        "desc": "Warm comfort in a bottle that quelled Caleb's anger and slowed his step.\nDecreases  by -8 metres during ADS."
       },
       {
         "name": "Hellshire Iron",
-        "desc": ""
+        "desc": "The Hellshire's Gang branding iron.Despite folklore, it never made its mark on new initiates, instead having been used to brand particularly quarrelsome bounties. \nFor as long as a Survivor is speared, The Deathslinger is granted the ''''' Status Effect.\nThis effect persists for 10 seconds after the Survivor is no longer speared.\n|} \n\n== Change Log ==\n=== Patch 5.3.0 ===\n: now applies the Undetectable Status Effect'.\n\nCategory: Visceral Add-ons\n\nit: Marchio Hellshire\nfr: Fer de Hellshire\nes: Hie"
       },
       {
         "name": "Honey Locust Thorn",
-        "desc": ""
+        "desc": "Angered with a bounty who fled twice before, Caleb twisted thorn branches onto a spear and let it loose.\nSpeared Survivors breaking free from the The Redeemer suffer from the '''Mangled Status Effect''' for 70 seconds."
       },
       {
         "name": "Iridescent Coin",
-        "desc": ""
+        "desc": "A glass-like coin moulded from the Fog itself.A payment to the bounty hunter for the services rendered.\nSurvivors speared from at least 12 metres away are inflicted with the ''''' Status Effect' for as long as they remain speared."
       },
       {
         "name": "Jaw Smasher",
-        "desc": ""
+        "desc": "The bullet that ripped through Caleb's jaw during a frenzy shootout.It brings back burning desire for revenge.\nIncreases the Movement speed while Aiming Down Sights by +1.5 %."
       },
       {
         "name": "Marshal's Badge",
@@ -707,11 +707,11 @@
       },
       {
         "name": "Rusted Spike",
-        "desc": ""
+        "desc": "A railroad spike that Caleb fastened to the front of the Speargun during a moment of morbid curiosity.The dull tip prevents it from cleanly piercing its target.\nSpeared Survivors hit with The Redeemer suffer from the '''Mangled Status Effect''' for 60 seconds."
       },
       {
         "name": "Snake Oil",
-        "desc": ""
+        "desc": "A tincture of oils and extracts purchased from a travelling salesman.\nPurported to cure all that ails you. \nIncreases the Reeling speed of The Redeemer by +2.5 %."
       },
       {
         "name": "Spit Polish Rag",
@@ -723,7 +723,7 @@
       },
       {
         "name": "Wanted Poster",
-        "desc": ""
+        "desc": "The yellowed remains of a wanted poster for Mason Kelly.It kept Caleb focused on the hunt. \nIncreases the Movement speed while Aiming Down Sights by +3 %."
       },
       {
         "name": "Warden's Keys",
@@ -746,15 +746,15 @@
       },
       {
         "name": "Black Heart",
-        "desc": ""
+        "desc": "A black fermented heart ripped from the chest of a tentacled creature in the Upside Down.\nReduces the Attack cool-down of successful Shred Attacks used to hit Survivors by -10 %."
       },
       {
         "name": "Brass Case Lighter",
-        "desc": ""
+        "desc": "A lighter used to ignite trouble.\nSurvivors under the effect of an activated Portal suffer from the ''''' Status Effect.\nThis effect lingers for 60 seconds'."
       },
       {
         "name": "Deer Lung",
-        "desc": ""
+        "desc": "A raw, rubbery lung that reinvigorates The Demogorgon.\nIncreases your Teleportation speed by +30 %.\nReduces the number of available Portals by -2."
       },
       {
         "name": "Eleven's Soda",
@@ -762,7 +762,7 @@
       },
       {
         "name": "Leprose Lichen",
-        "desc": ""
+        "desc": "A potent lichen that grows like dust on the rocks in the Upside Down.\nWhile traversing the Upside Down, the Auras of all Survivors are revealed to you.\nAfter emerging from a Portal, the Auras of all Survivors within 16 metres of an active Portal are revealed to you for 3 seconds."
       },
       {
         "name": "Lifeguard Whistle",
@@ -778,7 +778,7 @@
       },
       {
         "name": "Rat Tail",
-        "desc": ""
+        "desc": "A chewy rat tail for The Demogorgon to consume.\nIncreases the Opening speed of Portals by +50 %."
       },
       {
         "name": "Red Moss",
@@ -786,15 +786,15 @@
       },
       {
         "name": "Rotten Green Tripe",
-        "desc": ""
+        "desc": "Rotten tripe that fuels The Demogorgon.\nIncreases your Teleportation speed by +15 %."
       },
       {
         "name": "Rotten Pumpkin",
-        "desc": ""
+        "desc": "Pumpkin flesh infected by the rotten soil in Hawkins.\nTraversing the Upside Down will destroy the Portal you entered.\n\nRotten Pumpkin grants an additional 200 Bloodpoints for traversing the Upside Down."
       },
       {
         "name": "Sticky Lining",
-        "desc": ""
+        "desc": "A fetid, viscous layer that covers and expands the interdimensional tunnels.\nIncreases the Area of Effect of active Portals by +2.5 metres."
       },
       {
         "name": "Thorny Vines",
@@ -802,7 +802,7 @@
       },
       {
         "name": "Unknown Egg",
-        "desc": ""
+        "desc": "A large, warm egg coated in gruesome webbing.\nReduces the Power Recovery time by -2.5 seconds."
       },
       {
         "name": "Upside Down Resin",
@@ -833,7 +833,7 @@
     "addons": [
       {
         "name": "High Stimulus Electrode",
-        "desc": ""
+        "desc": "An experimental electrode that can withstand very high charges for a longer period of time.\n'''' Shock Therapy'' Attack range."
       },
       {
         "name": "Interview Tape",
@@ -841,7 +841,7 @@
       },
       {
         "name": "Iridescent King",
-        "desc": ""
+        "desc": "A glass-like king chess piece moulded from The Fog itself. The Entity's trace reverberating within can break the most powerful minds.\n\nSurvivors with '''''''' suffer from all available Afflictions: Calm, Discipline, Order, and Restraint.\nSurvivors ' hear a distant Illusionary Terror Radius.\nDuring a Chase, Survivors perceive an Illusionary Red Stain and Terror Radius as though The Doctor were directly behind them.\nThis effect persists for 6 seconds' after the Chase ends in Madness II and is cons"
       },
       {
         "name": "Iridescent Queen",
@@ -853,11 +853,11 @@
       },
       {
         "name": "Mouldy Electrode",
-        "desc": ""
+        "desc": "A mouldy electrode which can nevertheless conduct a weak electrical current.\n'''' Shock Therapy'' Attack range."
       },
       {
         "name": "Polished Electrode",
-        "desc": ""
+        "desc": "A like-new standard electrode equipment to conduct electro-convulsive treatments.\n'''' Shock Therapy'' Attack range."
       },
       {
         "name": "Scrapped Tape",
@@ -940,7 +940,7 @@
       },
       {
         "name": "Tilling Blade",
-        "desc": ""
+        "desc": "The island was self-sufficient, and followers tilled the tough soil to grow crops during the warm season.\nSurvivors suffer from the '''Blindness, Haemorrhage and Mangled Status Effects' for 80 seconds after becoming injured during Nightfall''."
       },
       {
         "name": "War Helmet",
@@ -1149,15 +1149,15 @@
     "addons": [
       {
         "name": "Cheap Cologne",
-        "desc": ""
+        "desc": "Dollar store cologne with a pungent scent of rubbing alcohol.Worn by The Ghost Face to make his presence known.Reserved for impromptu visits.\nIncreases the time Survivors stay Marked by +10 seconds.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: increased the bonus Marked duration from +5 seconds to +10 seconds.\n\nCategory: Common Add-ons\n\nit: Boccetta di Profumo da Due Soldi\nzh: 廉價古龍水\nfr: Eau de Cologne Bon Marché\nes: Colonia Barata"
       },
       {
         "name": "Chewed Pen",
-        "desc": ""
+        "desc": "A blue pen with a chewed cap that holds traces of Danny's DNA.Incriminating evidence that was never found. \nIncreases the time dying Survivors take to reveal The Ghost Face to 3 seconds.\n|} \n\n== Change Log ==\n=== Patch 5.3.0 ===\n: reduced the Night Shroud Recovery Time reduction from -8 seconds to -4 seconds.\nThis change was done to compensate for a general reduction in Recovery Time.\n=== Patch 5.7.0 ===\n: now causes Survivors in the Dying State to take 3 seconds to reveal The Ghost Face.\n\nCateg"
       },
       {
         "name": "Cinch Straps",
-        "desc": ""
+        "desc": "Black straps that keep everything in place while on the prowl.\nNight Shround remains active after missing a Basic Attack.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: now causes Night Shroud to remain active after missing a Basic Attack.\n\nCategory: Uncommon Add-ons\n\nit: Cinghie\nzh: 再利用腰帶\nfr: Sangles\nes: Correas"
       },
       {
         "name": "Driver's License",
@@ -1165,31 +1165,31 @@
       },
       {
         "name": "Drop-Leg Knife Sheath",
-        "desc": ""
+        "desc": "A sheath allowing for a full motion range: ideal to inflict quick and powerful wounds while moving freely.Stolen from a patrol officer the night Danny left Philadelphia.\nGrants a +10 % ''''' Status Effect for 5 seconds' after Marking a Survivor.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: now gives The Ghost Face a +10 % Haste Status Effect for 5 seconds when Marking a Survivor.\n\n== Trivia ==\nThe Haste effect stacks with itself when Marking multiple Survivors.\n\n== 3.0.0 Developer Build Trivia =="
       },
       {
         "name": "Headline Cut-Outs",
-        "desc": ""
+        "desc": "Cut-outs of articles covering unsolved murder cases from Utah to Pennsylvania.While Ghost Face just authored some of the headlines, he committed all of the murders.Compiling your success makes you proud and boosts your confidence. \nIncreases Movement speed while Stalking by +40 %.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: increased the bonus Stalking Movement speed from 10% to 40%.\n\n== Trivia ==\nOne of the headlines features a typo, spelling \"Florida\" as \"Flordia\".\n\n== 3.0.0 Developer Build Tr"
       },
       {
         "name": "Knife Belt Clip",
-        "desc": ""
+        "desc": "A perfect belt clip to scout carry your blade discreetly.No one knows what you are planning to do tonight. \nReduces the Terror Radius of The Ghost Face by -12 metres while crouching.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: now reduces '''The Ghost Face's Terror Radius by 8 metres while Crouched.\n=== Patch 7.0.0 ===\n: increased the Terror Radius reduction from -8 metres to -12 metres.\n\n== 3.0.0 Developer Build Trivia ==\nThis Add-on originally used the  rarity. It had the same effect as the re"
       },
       {
         "name": "Lasting Perfume",
-        "desc": ""
+        "desc": "An overpowering musky fragrance worn by Ghost Face to announce his presence.Reserved for the victims he planned to write about.\nIncreases the time hooked Survivors take to reveal The Ghost Face to 3 seconds.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: now causes Survivors on a Hook to take 3 seconds to reveal The Ghost Face.\n\nCategory: Rare Add-ons\n\nit: Profumo Duraturo\nzh: 持久香水\nfr: Parfum Durable\nes: Perfume Duradero"
       },
       {
         "name": "Leather Knife Sheath",
-        "desc": ""
+        "desc": "A quiet and flexible sheath to carry your blade.Movement is easier when things are fastened into place.\nIncreases Crouch Movement speed by +10 %.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: increased the bonus Crouch Movement speed from +5.6 % to +10 %.\n\n== 3.0.0 Developer Build Trivia ==\nThis Add-on originally used the  rarity. It had the effect of simply increasing crouched movement speed by +10 %, this effect would be given to  on 3.0.0 PTB.\nDeveloper build name and description:\nLeather Knife"
       },
       {
         "name": "Marked Map",
-        "desc": ""
+        "desc": "The annotated map of Northern Roseville, Florida.Each 'X' represents a victim of The Ghost Face.Mapping out your targets allows you to roam the streets undetected. \nIncreases Killer Instinct duration when The Ghost Face is revealed by +2 seconds.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: increased the Killer Instinct duration from +1 second to +2 seconds.\n\n== 3.0.0 Developer Build Trivia ==\nThis Add-on was originally named \"Marked Map of Floridian Neighborhood\". It had the effect of decreasing"
       },
       {
         "name": "Night Vision Monocular",
-        "desc": ""
+        "desc": "Night vision lens enabling sharp photos even when shrouded in darkness.Ideal for discreet, impromptu visits late at night.\nWhenever a Survivor reveals The Ghost Face, they suffer from the Exhausted Status Effect for 10 seconds."
       },
       {
         "name": "Olsen's Address Book",
@@ -1205,11 +1205,11 @@
       },
       {
         "name": "Outdoor Security Camera",
-        "desc": ""
+        "desc": "A small surveillance camera that filmed Ghost Face breaking into a house on Belleview Road in Northern Roseville.The camera was positioned at the perfect angle to catch a glimpse of Ghost Face without providing any real clue to the police.\nPutting a Marked Survivor into the  reveals the  of all Survivors for 7 seconds.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: increased the Aura reveal time from 4 seconds to 7 seconds.\n: now reveals all Survivors.\n\nCategory: Visceral Add-ons\n\nit: Telecamera di"
       },
       {
         "name": "Telephoto Lens",
-        "desc": ""
+        "desc": "A manual focus lens to remain undetected while taking pictures from afar.\nWhenever a Survivor reveals The Ghost Face, they suffer the ''''' Status Effect for 60 seconds.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: now inflicts the Oblivious Status Effect on Survivors that reveal The Ghost Face for 60 seconds'.\n\nCategory: Uncommon Add-ons\n\nit: Lente per Teleobiettivo\nzh: 遠距鏡頭\nfr: Téléobjectif\nes: Teleobjetivo"
       },
       {
         "name": "Victim's Detailed Routine",
@@ -1323,7 +1323,7 @@
     "addons": [
       {
         "name": "Automatic Screwdriver",
-        "desc": ""
+        "desc": "A good way to make mechanical adjustments on the fly.\nReduces the Cool-down duration of Hidey-Ho Mode by -8 % after missing a Slice & Dice Attack."
       },
       {
         "name": "Doll Eyes",
@@ -1343,7 +1343,7 @@
       },
       {
         "name": "Hard Hat",
-        "desc": ""
+        "desc": "Keeps the dome intact while performing high-impact activities.\nInstantly breaks Pallets when performing a Scamper under them."
       },
       {
         "name": "Iridescent Amulet",
@@ -1359,7 +1359,7 @@
       },
       {
         "name": "Pile of Nails",
-        "desc": ""
+        "desc": "It is a lot easier to stay hidden when your target is worried about a pile of nails flying at their head. \nGrants the '''Undetectable Status Effect''' for 3 seconds after manually ending Hidey-Ho Mode."
       },
       {
         "name": "Plastic Bag",
@@ -1371,7 +1371,7 @@
       },
       {
         "name": "Power Drill",
-        "desc": ""
+        "desc": "Comes with a dozen convenient drill tips.They all make a big mess when applied to people.\nReduces the Cool-down duration of Hidey-Ho Mode by -10 % after missing a Slice & Dice Attack."
       },
       {
         "name": "Rat Poison",
@@ -1387,11 +1387,11 @@
       },
       {
         "name": "Straight Razor",
-        "desc": ""
+        "desc": "For when a close shave needs to be really, really close.\nSurvivors hit with a successful Slice & Dice Attack suffer from the '''Haemorrhage and Mangled Status Effects''' for 80 seconds."
       },
       {
         "name": "Strobing Light",
-        "desc": ""
+        "desc": "With the right training, it can be used to make people more suggestible.\nReduces your Terror Radius by -8 metres, when Hidey-Ho Mode is on cool-down."
       },
       {
         "name": "Tiny Scalpel",
@@ -1399,7 +1399,7 @@
       },
       {
         "name": "Yardstick",
-        "desc": ""
+        "desc": "Good for measuring distance.\nEven better for laying down a beating. \nPerforming a Scamper reveals the Auras of all Survivors within 16 metres of you for 3 seconds."
       },
       {
         "name": "Playtime's Over",
@@ -1414,39 +1414,39 @@
     "addons": [
       {
         "name": "Bloodied Mud",
-        "desc": ""
+        "desc": "64px\nA handful of mud with veins of deep crimson.The bloody layers empower the mud.\nReduces the Trigger range of Phantasm Traps by -30 %."
       },
       {
         "name": "Bloodied Water",
-        "desc": ""
+        "desc": "64px\nTainted water contained in a folded water lily leaf.\nReduces the Trigger range of Phantasm Traps by -20 %."
       },
       {
         "name": "Bog Water",
-        "desc": ""
+        "desc": "64px\nMurky water contained in a glass pill bottle from another time.\nReduces the Trigger range of Phantasm Traps by -10 %."
       },
       {
         "name": "Cracked Turtle Egg",
-        "desc": ""
+        "desc": "64px\nA pale orange turtle egg, cracked and emptied of its content.\nIncreases the Tripped duration of Phantasm Traps by +30 %."
       },
       {
         "name": "Cypress Necklet",
-        "desc": ""
+        "desc": "64px\nA rigid ornament worn around the neck made from dead plants adorned with crudely attached cypress bark and swamp moss.\nIncreases the Setting speed of Phantasm Traps by +15 %."
       },
       {
         "name": "Dead Fly Mud",
-        "desc": ""
+        "desc": "64px\nA small lump of mud, black with the remains of flies.Devoured to increase stamina.\nIncreases the Teleport range to tripped Phantasm Traps by +10 %."
       },
       {
         "name": "Disfigured Ear",
-        "desc": ""
+        "desc": "64px\nNo\nThe cannibal village deaf boy's ear.Deformed due to several hits to the head.The trapped life essence within unlocks tremendous potential in '''The Hag's power.\nSurvivors who trigger a Phantasm Trap are deafened for 6 seconds'''."
       },
       {
         "name": "Dragonfly Wings",
-        "desc": ""
+        "desc": "64px\nA handful of yellowish wings, dry and crisp.Devoured to increase stamina.\nIncreases the Teleport range to tripped Phantasm Traps by +12.5 %."
       },
       {
         "name": "Dried Cicada",
-        "desc": ""
+        "desc": "64px\nA large swamp cicada covered in a fine layer of ash; crispy.Devoured to increase stamina.\nIncreases the Teleport range to tripped Phantasm Traps by +15 %."
       },
       {
         "name": "Grandma's Heart",
@@ -1454,23 +1454,23 @@
       },
       {
         "name": "Half Eggshell",
-        "desc": ""
+        "desc": "64px\nOne half of a perfectly round hollow eggshell.\nIncreases the Tripped duration of Phantasm Traps by +25 %."
       },
       {
         "name": "Mint Rag",
-        "desc": ""
+        "desc": "A small piece of cotton torn from the dress worn by Lisa Sherwood on the day she disappeared.\nThe trapped life essence within unlocks tremendous potential in '''The Hag's' power. \nGrants The Hag the ability to teleport to any untripped Phantasm Trap at will.\nMint Rag'' applies a cool-down of 10 seconds to teleports between un-tripped Phantasm Traps.\nThis cool-down does not extend to regular teleports to tripped Phantasm Traps."
       },
       {
         "name": "Powdered Eggshell",
-        "desc": ""
+        "desc": "64px\nMinuscule eggshell fragments shimmering with a pale golden hue.\nIncreases the Tripped duration of Phantasm Traps by +20 %."
       },
       {
         "name": "Pussy Willow Catkins",
-        "desc": ""
+        "desc": "64px\nNo\nA handful of small, pristine flower clusters covered in a fine greyish fur.\nReveals the Survivor's Aura for 3 seconds when they trip the Phantasm trap."
       },
       {
         "name": "Rope Necklet",
-        "desc": ""
+        "desc": "64px\nMinuscule eggshell fragments shimmering with a pale golden hue.\nIncreases the Setting speed of Phantasm Traps by +10 %."
       },
       {
         "name": "Rusty Shackles",
@@ -1478,19 +1478,19 @@
       },
       {
         "name": "Scarred Hand",
-        "desc": ""
+        "desc": "The cut up, severed hand of the cannibal village butcher.The trapped life essence within unlocks tremendous potential in The Hag's power.\nMud Phantasms have collision.\nRemoves '''The Hag's ability to teleport to her traps.\nGrants 300 %' Bloodpoints from Deviousness'' Score Events.\nTrumps all other Add-ons."
       },
       {
         "name": "Swamp Orchid Necklet",
-        "desc": ""
+        "desc": "64px\nA rigid ornament worn around the neck made from dead plants adorned with withered orchid petals and leaves.\nIncreases the Setting speed of Phantasm Traps by +20 %."
       },
       {
         "name": "Waterlogged Shoe",
-        "desc": ""
+        "desc": "A child's shoe, long lost in the bog's waters.The trapped life essence within unlocks tremendous potential in The Hag's power.\nIncreases '''The Hag's base Movement speed by +7.5 % to 4.73 m/s.\nSurvivors within the Phantasm Trap range suffer from the Hindered Status Effect, reducing their movement speed by -9 %.\nRemoves The Hag's ability to teleport to triggered Phantasm Traps'''."
       },
       {
         "name": "Willow Wreath",
-        "desc": ""
+        "desc": "64px\nNo\nThree frail willow branches attached to form a triangular wreath.\nReveals the Survivor's Aura for 5 seconds when they trip the Phantasm Trap."
       },
       {
         "name": "Blackened Catalyst",
@@ -1505,11 +1505,11 @@
     "addons": [
       {
         "name": "Apex Muffler",
-        "desc": ""
+        "desc": "A masterfully crafted chainsaw muffler that outperforms all others.\nThe Chainsaw is silent for Survivors outside of the Terror Radius."
       },
       {
         "name": "Begrimed Chains (Chainsaw)",
-        "desc": ""
+        "desc": "A foul yet oddly familiar chain, coated with something unpleasant.\nSurvivors hit with the Chainsaw suffer from the Haemorrhage and '''Mangled Status Effects''' for 70 seconds."
       },
       {
         "name": "The Thompsons' Mix",
@@ -1521,27 +1521,27 @@
       },
       {
         "name": "Clogged Intake",
-        "desc": ""
+        "desc": "Modifying the airflow is key to modifying the ''Chainsaw's power.\nExtends the duration of Overdrive'' by +15 %."
       },
       {
         "name": "Iridescent Engravings",
-        "desc": ""
+        "desc": "Engravings found on the Chainsaw body representing the dark beast that lives in The Fog.Fills the user with determination.\nIncreases your Movement speed during a Chainsaw Sprint by +20 %.\nIncreases the Charge time of the Chainsaw by +12 %."
       },
       {
         "name": "Counterweight",
-        "desc": ""
+        "desc": "Adds weight to the base, for stability.\nReduces the initial Turn rate of the Chainsaw during a Chainsaw Sprint by -70 %."
       },
       {
         "name": "Filthy Slippers",
-        "desc": ""
+        "desc": "Max sometimes struggled to hear his mother's footfalls.\nGain the '''Undetectable Status Effect' until you stop sprinting after maintaining a Chainsaw Sprint'' for at least 2 seconds."
       },
       {
         "name": "Greased Throttle",
-        "desc": ""
+        "desc": "A lubricated trigger.One twitch of the finger brings the Chainsaw back to life.\nReduces the Cool-down time after using the Chainsaw by -5 %, when not in Overdrive."
       },
       {
         "name": "Ragged Engine",
-        "desc": ""
+        "desc": "Some would say it needs a tune-up.Max would say it is tuned-up.\nReduces the Dissipation speed of the Overdrive Meter when not using the Chainsaw by -30 %."
       },
       {
         "name": "LoPro Chains",
@@ -1549,7 +1549,7 @@
       },
       {
         "name": "Low Kickback Chains",
-        "desc": ""
+        "desc": "A specialised chain that reduces the likelihood of kickback.\nReduces the Cool-down time after hitting an obstacle during a Chainsaw Sprint by -15 %."
       },
       {
         "name": "Discarded Air Filter",
@@ -1557,7 +1557,7 @@
       },
       {
         "name": "Off-Brand Motor Oil",
-        "desc": ""
+        "desc": "Affordable oil that can be used to lubricate noisy chains.\nIncreases the Charge rate of the Overdrive Meter by +15 %."
       },
       {
         "name": "High-Speed Idler Screw",
@@ -1565,7 +1565,7 @@
       },
       {
         "name": "Thermal Casing",
-        "desc": ""
+        "desc": "A thicker case that allows the user to control the conservation of energy.\nReduces the Dissipation speed of the Overdrive Meter when not using the Chainsaw by -20 %."
       },
       {
         "name": "Spiked Boots",
@@ -1573,7 +1573,7 @@
       },
       {
         "name": "Steel Toe Boots",
-        "desc": ""
+        "desc": "Boots with a reinforced toe that offer protection from impact.\nReduces the Cool-down time after hitting an obstacle during a Chainsaw Sprint by -10 %."
       },
       {
         "name": "Tuned Carburettor",
@@ -1581,7 +1581,7 @@
       },
       {
         "name": "Cracked Primer Bulb",
-        "desc": ""
+        "desc": "A button that clears air from the fuel lines.This machine needs to be fed.\nIncreases the Charge rate of the Overdrive Meter by +15 %.\nSurvivors hit with the Chainsaw are only damaged for a single Health State."
       },
       {
         "name": "Thompson's Moonshine",
@@ -1691,7 +1691,7 @@
     "addons": [
       {
         "name": "Amanita Toxin",
-        "desc": ""
+        "desc": "A toxin from the Amanita mushroom, applied to the '''Hatchet's blade.It numbs the mind.\nSurvivors hit with Hunting Hatchets suffer from the Blindness Status Effect for 60 seconds'''."
       },
       {
         "name": "Bandaged Haft",
@@ -1699,7 +1699,7 @@
       },
       {
         "name": "Begrimed Head",
-        "desc": ""
+        "desc": "This Hatchet head is stained with a foul substance that afflicts anyone who it touches with debilities.\nSurvivors hit by Hatchets suffer from the '''Haemorrhage and Mangled Status Effects''' for 80 seconds."
       },
       {
         "name": "Berus Toxin",
@@ -1707,11 +1707,11 @@
       },
       {
         "name": "Coarse Stone",
-        "desc": ""
+        "desc": "This stone is too coarse to do any good.A blade damaged by it inflicts awful open wounds.\nGrunts of Pain of Survivors hit with Hunting Hatchets are increased by +50 % until fully healed."
       },
       {
         "name": "Deerskin Gloves",
-        "desc": ""
+        "desc": "Cured leather gloves that protect the hands and give a sure grip.\n'''' Reload'' time at ."
       },
       {
         "name": "Fine Stone",
@@ -1727,19 +1727,19 @@
       },
       {
         "name": "Infantry Belt",
-        "desc": ""
+        "desc": "A sturdy utility belt pillaged from a soldier.\nHe was quick in combat, but she was quicker. \nSuccessfully hitting a Survivor with a Hatchet grants a +3 % '''Haste Status Effect''' for 5 seconds."
       },
       {
         "name": "Iridescent Head",
-        "desc": ""
+        "desc": "A glass-like Hatchet head moulded from The Fog itself.The blade is warm and reverberating with The Entity's power.\nSurvivors hit with Hatchets are put into the .\nCaps the Carrying capacity of Hatchets at 1 Hatchet.\n\nIridescent Head does not stack with Add-ons increasing the Carrying capacity of Hatchets."
       },
       {
         "name": "Leather Loop",
-        "desc": ""
+        "desc": "The right tool in the right hands is key to a successful hunt. \nSuccessfully hitting a Survivor with a Hatchet grants a +2 % '''Haste Status Effect''' for 5 seconds."
       },
       {
         "name": "Manna Grass Braid",
-        "desc": ""
+        "desc": "A circular decorative braid made from manna grass.This memory of a lost little one fills The Huntress with rage and focus.\nReduces Wind-up time by ''''''."
       },
       {
         "name": "Oak Haft",
@@ -1755,7 +1755,7 @@
       },
       {
         "name": "Rusty Head",
-        "desc": ""
+        "desc": "This Hatchet head is covered with crusty and volatile rust spots that make injuries particularly difficult to heal from.\nSurvivors hit by Hatchets suffer from the '''Mangled Status Effect''' for 70 seconds."
       },
       {
         "name": "Shiny Pin",
@@ -1767,7 +1767,7 @@
       },
       {
         "name": "Venomous Concoction",
-        "desc": ""
+        "desc": "A toxic concoction, applied to the '''Hatchet's blade.The murky concoction is mainly composed of Berus Snake venom, which gives it fatiguing capabilities.\nSurvivors hit with Hunting Hatchets suffer from the '' Status Effect for 5 seconds'."
       },
       {
         "name": "Yellowed Cloth",
@@ -1787,7 +1787,7 @@
       },
       {
         "name": "Wooden Fox",
-        "desc": ""
+        "desc": "Roughly carved, this fox statuette is no more than a few inches.A reminder that stealth and cunning is as effective as raw power.\nGrants the ''''' Status Effect for 30 seconds' when reloading."
       },
       {
         "name": "Hunting Hatchets",
@@ -1802,7 +1802,7 @@
     "addons": [
       {
         "name": "Battle Axe Head",
-        "desc": ""
+        "desc": "Sander Rault was a tower of a man, terrifying in form and demeanour.\nReduces the Cool-down time after summoning The Carnifex by -20 %."
       },
       {
         "name": "Blacksmith's Hammer",
@@ -1810,7 +1810,7 @@
       },
       {
         "name": "Broken Hilt",
-        "desc": ""
+        "desc": "A fresh weapon is clean, even surgical; an attack with a broken one is malicious and desperate.\nSurvivors damaged by a Guard suffer from the '''Haemorrhage and Mangled Status Effects''' for 70 seconds."
       },
       {
         "name": "Call to Arms",
@@ -1822,7 +1822,7 @@
       },
       {
         "name": "Cold Steel Manacles",
-        "desc": ""
+        "desc": "Alejandro Santiago apprenticed as an armourer and showed no remorse.\nReduces the Cool-down time after summoning The Jailer by -20 %."
       },
       {
         "name": "Dried Horsemeat",
@@ -1830,11 +1830,11 @@
       },
       {
         "name": "Flint and Steel",
-        "desc": ""
+        "desc": "Attacks at night were not uncommon.Fear was often their greatest ally.\nSummoning The Carnifex has the following effect:\nThe Auras of all Survivors within 24 metres of unbroken Pallets are revealed to you for 8 seconds."
       },
       {
         "name": "Grim Iron Mask",
-        "desc": ""
+        "desc": "No method of torture was too base for Guardia Compagnia.\nPain and humiliation went hand-in-hand.\nSurvivors detected by a Guard during the Patrol Phase suffer from the '''Blindness Status Effect''' for 75 seconds."
       },
       {
         "name": "Gritty Lump",
@@ -1842,11 +1842,11 @@
       },
       {
         "name": "Healing Poultice",
-        "desc": ""
+        "desc": "Their reputation was so large, so horrible, that the mere knowledge that they were coming was enough to bring people to their knees.\nSummoning The Assassin has the following effect:\nThe Auras of all Survivors within 8 metres of his Spawn location are revealed to you for 8 seconds."
       },
       {
         "name": "Iridescent Company Banner",
-        "desc": ""
+        "desc": "Where this banner was raised, those who called themselves 'civilised' ran and hid, because for all their codes and laws, they had nothing resembling actual strength.\nCauses all Windows on the Patrol Path to be blocked to all Survivors for 25 seconds after summoning a Guard.\nCauses all Windows vaulted by the Hunted Survivor to be blocked to all other Survivors for the duration of the Hunt.\nCauses the Exit Gates to be blocked to the Hunted Survivor for the duration of the Hunt."
       },
       {
         "name": "Ironworker's Tongs",
@@ -1866,11 +1866,11 @@
       },
       {
         "name": "Map of the Realm",
-        "desc": ""
+        "desc": "These unique leather maps were not easy to come by, but when they could not be purchased, they could be taken by force.\nIncreases the Vision range of a Guard during the Patrol Phase by +2 metres."
       },
       {
         "name": "Pillaged Mead",
-        "desc": ""
+        "desc": "Drinks taken from their victims tasted sweet, but such frivolities were often short-lived.\nReduces the Break or Damage Action duration of Guards by -10 %."
       },
       {
         "name": "Jailer's Chimes",
@@ -1878,7 +1878,7 @@
       },
       {
         "name": "Tattered Tabard",
-        "desc": ""
+        "desc": "Cloaked in heavy fabrics, neither human nor nature could stop them once they had their target.\nIncreases the Patrol duration of Guards by +6 seconds."
       },
       {
         "name": "Town Watch's Torch",
@@ -1886,7 +1886,7 @@
       },
       {
         "name": "Treated Blade",
-        "desc": ""
+        "desc": "Durkos Malecek stuck to the shadows, and was an efficient slaughterer.\nReduces the Cool-down time after summoning The Assassin by -20 %."
       },
       {
         "name": "Guardia Compagnia",
@@ -1992,23 +1992,23 @@
     "addons": [
       {
         "name": "BFFs",
-        "desc": ""
+        "desc": "An unnaturally cold silver necklace split into four, one for each best friend.\nHitting Survivors with chained Feral Slashes grants Tokens.The more Feral Slashes are chained together, the higher the amount of awarded Tokens:\nFirst Feral Slash: grants no Tokens\nSecond Feral Slash: +2 Tokens\nThird Feral Slash: +3 Tokens\nFourth Feral Slash: +4 Tokens\nFifth Feral Slash: +5 Tokens\n\nOnce the Exit Gates are powered and only if 15 or more Tokens have been acquired, The Legion benefits from the following "
       },
       {
         "name": "Cold Dirt",
-        "desc": ""
+        "desc": "A handful of dirt collected from the janitor's final resting place.It is unnaturally cold.\nConsiderably decreases the cool-down duration of Feral Frenzy (0.6 seconds)."
       },
       {
         "name": "Defaced Smiley Pin",
-        "desc": ""
+        "desc": "A once friendly looking, bright yellow button of a defaced smiley.A signature icon of The Legion.\nSurvivors who perform a Self-Mend from the '''Deep Wound Status Effect applied by The Legion suffer from the Mangled Status Effect''' for 60 seconds."
       },
       {
         "name": "Etched Ruler",
-        "desc": ""
+        "desc": "A wooden ruler deeply etched with the names of enemies.\nSurvivors hit with a Feral Slash suffer from the ''''' Status Effect for 60 seconds'."
       },
       {
         "name": "Filthy Blade",
-        "desc": ""
+        "desc": "This blade is stained with foul spots of blood and grime that make injuries particularly difficult to mend.\nIncreases Mending time by +4 seconds."
       },
       {
         "name": "Frank's Mix Tape",
@@ -2016,15 +2016,15 @@
       },
       {
         "name": "Friendship Bracelet",
-        "desc": ""
+        "desc": "A wide grey and red braided rope bracelet.The inscription \"F. J. S. J.\" can be seen, crudely written in bold black ink.\nExtends the Lunge duration of Feral Slashes by +0.3 seconds."
       },
       {
         "name": "Fuming Mix Tape",
-        "desc": ""
+        "desc": "Dark beats, violent shreds and unfathomable vocals from another world fill the mind with a vibrating sixth sense.\nThe Repair Progression of  can be determined by the intensity of their  during Feral Frenzy.\nGenerators not being repaired start regressing.\nUnlocks an additional music layer in the  and Chase Music of The Legion.\nCan be combined with other Mix Tapes to unlock multiple layers."
       },
       {
         "name": "Iridescent Button",
-        "desc": ""
+        "desc": "A glass-like button moulded from The Fog that captures The Legion's likeness.The surface is warm and reverberating with The Entity's power.\nFeral Vaults immediately break the vaulted ."
       },
       {
         "name": "Joey's Mix Tape",
@@ -2044,27 +2044,27 @@
       },
       {
         "name": "Nasty Blade",
-        "desc": ""
+        "desc": "This blade is stained with unsanitary spots of grime that make injuries particularly difficult to mend.\nSlightly increases the amount of time required for Survivors to complete the Mend action (1.5 seconds)."
       },
       {
         "name": "Never-Sleep Pills",
-        "desc": ""
+        "desc": "Highly caffeinated tablets to make you extra sharp for exams or draining activities.\nReduces the base Movement speed of Feral Frenzy to 4.6 m/s.\nIncreases the duration of Feral Frenzy by +10 seconds.\nGrants a stack-able additional +100 Bloodpoints for successful Feral Slashes, up to a maximum of +500 Bloodpoints."
       },
       {
         "name": "Scratched Ruler",
-        "desc": ""
+        "desc": "A wooden ruler deeply scratched with hash marks.\nReduces Power Recovery time by -5 seconds."
       },
       {
         "name": "Smiley Face Pin",
-        "desc": ""
+        "desc": "A friendly looking, bright yellow button used as a sarcastic statement.\nSurvivors who perform a Self-Mend from the ''''' Status Effect applied by The Legion suffer from the  Status Effect for 60 seconds'."
       },
       {
         "name": "Stab Wounds Study",
-        "desc": ""
+        "desc": "A printed medical article stolen from Ormond's public library, vulgarising a study on lesions and stab wounds.\nSurvivors who perform a Self-Mend from the ''''' Status Effect applied by The Legion have their  revealed for 4 seconds'."
       },
       {
         "name": "Stolen Sketch Book",
-        "desc": ""
+        "desc": "A sketch book with imaginative and evocative, if not slightly bizarre sketches.\nFrom the second Feral Slash onwards, Survivors drop their  when hit."
       },
       {
         "name": "Stylish Sunglasses",
@@ -2076,7 +2076,7 @@
       },
       {
         "name": "The Legion Pin",
-        "desc": ""
+        "desc": "A handmade button with the face of The Legion.To use exclusively on intimidation dares.\nSurvivors who perform a Self-Mend from the ''''' Status Effect applied by The Legion suffer from the  Status Effect for 60 seconds'."
       },
       {
         "name": "Feral Frenzy",
@@ -2289,7 +2289,7 @@
       },
       {
         "name": "Damaged Syringe",
-        "desc": ""
+        "desc": "Medical equipment that fared poorly during the chaos that overwhelmed Raccoon City.\nIncreases Vaccine Injection time for Survivors by +5 seconds."
       },
       {
         "name": "Depleted Ink Ribbon",
@@ -2297,7 +2297,7 @@
       },
       {
         "name": "Iridescent Umbrella Badge",
-        "desc": ""
+        "desc": "A glass-like badge moulded from The Fog itself.It represents a corporation that pushed far beyond ethical and humane science.\nAfter using a , Survivors suffer from the ''''' Status Effect for 60 seconds'."
       },
       {
         "name": "Jill's Sandwich",
@@ -2329,7 +2329,7 @@
       },
       {
         "name": "Shattered S.T.A.R.S. Badge",
-        "desc": ""
+        "desc": "A symbol of hope for Raccoon City, utterly destroyed.\nIncreases Zombie Movement speed by +1.5 m/s for 60 seconds whenever a  is completed."
       },
       {
         "name": "Shredded Fedora",
@@ -2345,7 +2345,7 @@
       },
       {
         "name": "Tyrant Gore",
-        "desc": ""
+        "desc": "A damaged sample from a T-002 Tyrant that died in combat.There are signs of severe burns.\nIncreases Mutation Rate when destroying Zombies with a Tentacle Strike by +0.75 Contamination Points.\nReduces Zombie Respawn time by -7.5 seconds."
       },
       {
         "name": "Visitor Wristband",
@@ -2353,7 +2353,7 @@
       },
       {
         "name": "Zombie Heart",
-        "desc": ""
+        "desc": "The heart of an eviscerated zombie.It is considered hazardous waste as it is certainly teeming with viruses.\nIncreases the Mutation Rate when destroying Zombies with a Tentacle Strike by +0.75 Contamination Points."
       },
       {
         "name": "T-Virus",
@@ -2380,7 +2380,7 @@
       },
       {
         "name": "Class Photo",
-        "desc": ""
+        "desc": "A large photograph taken at Badham Preschool showing the cheerful class of '94-95.\nGrants the ability to use Dream Projection on the .\nSurvivors who are opening an Exit Gate trigger Killer Instinct."
       },
       {
         "name": "Garden Rake",
@@ -2416,7 +2416,7 @@
       },
       {
         "name": "Pill Bottle",
-        "desc": ""
+        "desc": "An empty pill bottle which once contained a medicine called Zoneral.\nSurvivors who fall asleep will have their next Microsleep timer reduced by a stack-able -10 %.\nThis effect can stack up to a maximum reduction of -50 %."
       },
       {
         "name": "Prototype Claws",
@@ -2424,7 +2424,7 @@
       },
       {
         "name": "Red Paint Brush",
-        "desc": ""
+        "desc": "A large paint brush, wet with crimson paint.\nAsleep Survivors further than 32 metres will have their Aura revealed to The Nightmare.\nIncreases the Microsleep timers of all Survivors by +50 %."
       },
       {
         "name": "Sheep Block",
@@ -2432,11 +2432,11 @@
       },
       {
         "name": "Swing Chains",
-        "desc": ""
+        "desc": "Rusty, but sturdy chains used to securely attach a swing seat.\nUsing Dream Projection will block all Vault Locations within 16 metres of The Nightmare for 6 seconds."
       },
       {
         "name": "Unicorn Block",
-        "desc": ""
+        "desc": "A white and red wooden block depicting a prancing unicorn and the letter \"U\".\nIncreases the explosion radius of rupturing Dream Pallets by +1 metre."
       },
       {
         "name": "Wool Shirt",
@@ -2455,15 +2455,15 @@
     "addons": [
       {
         "name": "Anxious Gasp",
-        "desc": ""
+        "desc": "The gasp of surprise collected from the \"Anxious Girl\", which The Nurse was fond of.Twitches vigorously at The Nurse's touch.\nBlinking past a Survivor causes them to scream, awarding 200 Bloodpoints in the Deviousness Category."
       },
       {
         "name": "Ataxic Respiration",
-        "desc": ""
+        "desc": "The irregular and deteriorating breath collected from the \"Catatonic Boy\".Normally stable and calm, becomes incredibly agitated at The Nurse's touch.\nReduces Fatigue duration from Blinks by -7 %."
       },
       {
         "name": "Bad Man Keepsake",
-        "desc": ""
+        "desc": "A rotten molar ripped from the ''\"Bad Man's\" cold dead hand.\nAfter hitting a Survivor with a Blink Attack'', the  of that Survivor, when healing or being healed, is revealed to The Nurse within 28 metres for 60 seconds."
       },
       {
         "name": "Campbell's Last Breath",
@@ -2475,15 +2475,15 @@
       },
       {
         "name": "Dark Cincture",
-        "desc": ""
+        "desc": "A black rope used as a belt in times of mourning.Taken from Father Campbell's body.\nIncreases the Movement speed of The Nurse during the Chain Blink Window and before succumbing to Fatigue by +30 %."
       },
       {
         "name": "Dull Bracelet",
-        "desc": ""
+        "desc": "A worthless piece of jewellery that might have an important significance to someone.Taken from the ''\"Anxious Girl's\" body.\nGrants 100 % bonus Bloodpoints for Precise Blink Score Events.\n'' maximum Blink'' range."
       },
       {
         "name": "Fragile Wheeze",
-        "desc": ""
+        "desc": "The whistling and rattling breath stolen from Father Campbell.Silently curves and bends at The Nurse's touch.\nSurvivors hit with a Blink Attack suffer from the '''Mangled Status Effect''' for 70 seconds."
       },
       {
         "name": "Heavy Panting",
@@ -2499,15 +2499,15 @@
       },
       {
         "name": "Matchbox",
-        "desc": ""
+        "desc": "A matchbox containing an odd collection of mismatched buttons.Serves as a reminder of a horrible place.\nIncreases The Nurse's Movement speed to 4.4 m/s for the entire Trial.\nRestricts the Power of The Nurse to 1 Blink.\nThis cannot be altered by other Add-ons."
       },
       {
         "name": "Metal Spoon",
-        "desc": ""
+        "desc": "A dull, partially rusted and stained metallic spoon.Confiscated from Room 202's patient, the \"Bad Man\".\nAfter hitting a Survivor with a Blink Attack that Survivor's Grunts of Pain are 100 % louder for 60 seconds."
       },
       {
         "name": "Plaid Flannel",
-        "desc": ""
+        "desc": "A torn piece of red and black plaid flannel.The scrap of fabric imbues The Nurse with devastating focus.\nThe Nurse can see the Target location of her Blink."
       },
       {
         "name": "Pocket Watch (Spencer's Last Breath)",
@@ -2515,19 +2515,19 @@
       },
       {
         "name": "Spasmodic Breath",
-        "desc": ""
+        "desc": "The twitchy and tremulous breath stolen from the \"Bad Man\".Aggressively pulses and jumps at The Nurse's touch.\nAfter hitting a Survivor with a Blink Attack, ''Spencer's Last Breath'' is temporarily disabled and The Nurse's Movement speed is increased to 4.6 m/s for 60 seconds."
       },
       {
         "name": "Torn Bookmark",
-        "desc": ""
+        "desc": "A white and pristine piece of ribbon once attached to a sacred book.Serves as the symbol of a dispute.\nAdds 1 Blink Charge.\nExtends the Power Recharge duration to 130 %."
       },
       {
         "name": "White Nit Comb",
-        "desc": ""
+        "desc": "A parasitic nit comb taken from the clinic.Once the symbol of a deep connection between an anxious patient and her nurse.\nGrants 100 % bonus Bloodpoints for Blink Attack Score Events.\n'''' Blink Lunge'' range."
       },
       {
         "name": "Wooden Horse",
-        "desc": ""
+        "desc": "An unpainted toy carved out of cheap wood to resemble a horse.Once the symbol of a deep connection between a catatonic patient and his nurse.\n'''' additional Blink Fatigue duration from missed Blink Attacks''."
       },
       {
         "name": "Spencer's Last Breath",
@@ -2546,11 +2546,11 @@
       },
       {
         "name": "Blackened Toenail",
-        "desc": ""
+        "desc": "Fell off during one of Kazan's hundred winter treks to the temple.Despite his pilgrimage, Akito's leg would never heal.\n'''Increases' The Oni's Movement speed while absorbing Blood Orbs by +0.4 m/s'''."
       },
       {
         "name": "Bloody Sash",
-        "desc": ""
+        "desc": "Blood from a boy who called Kazan \"The Noble Impostor\".Kazan hid evidence of the fight from his father, often revelling at the sash in secret.\n'''Increases' The Oni's Movement speed while absorbing Blood Orbs by +0.7 m/s'''."
       },
       {
         "name": "Child's Wooden Sword",
@@ -2570,7 +2570,7 @@
       },
       {
         "name": "Iridescent Family Crest",
-        "desc": ""
+        "desc": "A crest that denotes its owner as being a part of the Yamaoka family.\nMissing a Demon Strike will cause all Survivors within 24 metres of your location to scream and reveal their location to you."
       },
       {
         "name": "Kanai-Anzen Talisman",
@@ -2582,7 +2582,7 @@
       },
       {
         "name": "Paper Lantern",
-        "desc": ""
+        "desc": "Perhaps a memento of simpler times, before rage fully enveloped him.\nIncreases the Movement speed of Blood Orbs while attracted to The Oni by +4 m/s."
       },
       {
         "name": "Polished Maedate",
@@ -2598,7 +2598,7 @@
       },
       {
         "name": "Scalped Topknot",
-        "desc": ""
+        "desc": "The topknot of a samurai who questioned Kazan's honour. The roots cling to a thin strip of bloody skin.\nReduces Demon Dash Activation time by -0.5 seconds."
       },
       {
         "name": "Shattered Wakizashi",
@@ -2637,7 +2637,7 @@
       },
       {
         "name": "Cabin Sign",
-        "desc": ""
+        "desc": "The cabin where both Tomoko and Reiko watched the tape.\nCarries the memory of those first curses. \nReduces the time it takes for a TV to turn on after Projection by -4.5 seconds."
       },
       {
         "name": "Clump of Hair",
@@ -2645,11 +2645,11 @@
       },
       {
         "name": "Distorted Photo",
-        "desc": ""
+        "desc": "Those who have watched the tape find all photos of themselves distorted, a reminder of their impending doom.\nSurvivors witnessing The Onryō Manifest within 16 metres of them scream, revealing their  for 4 seconds."
       },
       {
         "name": "Iridescent Videotape",
-        "desc": ""
+        "desc": "The original tape containing Sadako's curse.\nProjection no longer turns off TVs, but also no longer applies any Condemned.\nIncreases the time required for TVs to turn back on after having been turned off by Survivors by +20 %."
       },
       {
         "name": "Mother's Comb",
@@ -2669,7 +2669,7 @@
       },
       {
         "name": "Remote Control",
-        "desc": ""
+        "desc": "A remote for the VCR at the cabin.It allows Sadako to focus on those enemies at a distance.\nAfter using Projection, the  of Survivors, who are within 12 metres of a powered TV are revealed to you for 7 seconds."
       },
       {
         "name": "Rickety Pinwheel",
@@ -2677,7 +2677,7 @@
       },
       {
         "name": "Ring Drawing",
-        "desc": ""
+        "desc": "A drawing of the view from inside the well, as drawn by a young Yoichi.Helping those cursed by the tape can only bring misfortune.\nHooking a Survivor carrying a VHS Tape causes all other Survivors to gain +1 Stack of Condemned."
       },
       {
         "name": "Sea-Soaked Cloth",
@@ -2685,7 +2685,7 @@
       },
       {
         "name": "Tape Editing Deck",
-        "desc": ""
+        "desc": "The editing deck used by Reiko and Ryuji to analyse and copy the tape.Copying and sharing the tape is the only way to survive the curse.\nCauses all Survivors start the Trial with a VHS Tape.\nAll Survivors must bring their VHS Tape to the TV that is farthest from their current location.\nThe Auras of Survivors inserting a VHS Tape into a TV are revealed to you for 6 seconds."
       },
       {
         "name": "Telephone",
@@ -2697,11 +2697,11 @@
       },
       {
         "name": "Videotape Copy",
-        "desc": ""
+        "desc": "A copy of the deadly videotape imprinted upon by Sadako.\nIt dampens the desire for vengeance. \nExtends the radius around TVs within which Survivors gain Condemned from Projection by +2 metres."
       },
       {
         "name": "Well Stone",
-        "desc": ""
+        "desc": "A piece of the well where Sadako was trapped, an image burned into the mind of all those who have watched the tape.\nReduces the time it takes for a TV to turn on after having been turned off by a Survivor by -7 seconds."
       },
       {
         "name": "Well Water",
@@ -2748,7 +2748,7 @@
       },
       {
         "name": "Interlocking Razor",
-        "desc": ""
+        "desc": "A modification to the Jigsaw Box:The addition of interlocking razor blades makes it impossible to move suddenly in the Jigsaw Box without slitting one's wrists.\nFailing a  at  will apply ''''' Status Effect' to  Survivors."
       },
       {
         "name": "Jigsaw's Annotated Plan",
@@ -2768,15 +2768,15 @@
       },
       {
         "name": "Razor Wires",
-        "desc": ""
+        "desc": "A modification to the Jigsaw Box: the addition of razor sharp wires makes it extra difficult and potentially painful to search them.\nFailing a  at  will injure  survivors.\nIncreases the difficulty of Skill Checks by +20 %."
       },
       {
         "name": "Rules Set No.2",
-        "desc": ""
+        "desc": "Not all games need to have the same rules.\nDisables the ability of Survivors to see the  of  until their  is activated."
       },
       {
         "name": "Rusty Attachments",
-        "desc": ""
+        "desc": "A modification to the Reverse Bear Trap:mouth spikes, covered with crusty and volatile rust spots that make injuries particularly difficult to heal.\nSurvivors caught in a Reverse Bear Trap suffer from the '''Mangled Status Effect''' for 70 seconds."
       },
       {
         "name": "Shattered Syringe",
@@ -2788,15 +2788,15 @@
       },
       {
         "name": "Tampered Timer",
-        "desc": ""
+        "desc": "A timer that has been fiddled with.A spring in the mechanism forces the gears to turn faster.\nReduces the default Death Timer duration of  by ''''''."
       },
       {
         "name": "Utility Blades",
-        "desc": ""
+        "desc": "A modification to the Reverse Bear Trap:Sharp blades attached to the Trap's interior lacerate the victim with every movement.\nSurvivors caught in a Reverse Bear Trap suffer from the '''Haemorrhage Status Effect''' whenever they are injured by any means."
       },
       {
         "name": "Video Tape",
-        "desc": ""
+        "desc": "A recording of Jigsaw, explaining the game's rules to Amanda.Reminiscing about her past-self hardens her determination.\nAll Survivors start the Trial with  installed."
       },
       {
         "name": "Workshop Grease",
@@ -2815,11 +2815,11 @@
     "addons": [
       {
         "name": "Ashen Apple",
-        "desc": ""
+        "desc": "64px\nA peeled apple rolled into sanctified ashes.Eating such a fruit warded off the malignantly envious spirits of the deceased.\nStart the trial with 1 additional  already corrupted.\nIncreases the number of Pools of Devotion by '''1."
       },
       {
         "name": "Black Incense",
-        "desc": ""
+        "desc": "64px\nA dark paste made of sharp osseous shavings.The inhaling of its foul fumes sharpens the mind's eye.\nSurvivors'  are revealed to you for 3 seconds when they vomit."
       },
       {
         "name": "Blessed Apple",
@@ -2831,15 +2831,15 @@
       },
       {
         "name": "Emetic Potion",
-        "desc": ""
+        "desc": "64px\nA mustard-water based syrup that induces vomiting when consumed.Used to purge evil from the body.\nIncreases effectiveness of Vile Purge by 30 %."
       },
       {
         "name": "Exorcism Amulet",
-        "desc": ""
+        "desc": "64px\nAn obsidian amulet to ward off sickness during exorcism rituals.Inscribed with a prayer to the God of Mayhem and Pestilence.Fills the wearer with fierce devotion.\nIncreases Corrupt Purge duration by 10 seconds."
       },
       {
         "name": "Haematite Seal",
-        "desc": ""
+        "desc": "64px\nA cylindrical seal forged from a metallic hard-stone, engraved with bird-headed beings that stood next to strange machines.Used as a container for sanctified ashes.\nIncreases Infection duration on objects by 30 seconds."
       },
       {
         "name": "Healing Salve",
@@ -2847,23 +2847,23 @@
       },
       {
         "name": "Incensed Ointment",
-        "desc": ""
+        "desc": "64px\nA dark waxy paste, laced with cedar sap that diffuses a sweet and earthy aroma.Applied directly on infected skin.\nIngesting Corruption at a  causes all  within '''The Plague's'''  to scream and reveal their locations."
       },
       {
         "name": "Infected Emetic",
-        "desc": ""
+        "desc": "64px\nA disgusting syrup of unknown origin.The thick yellow liquid is consumed to induce vomiting.Used to purge evil from the body.\nIncreases Effectiveness of Vile Purge by 40 %."
       },
       {
         "name": "Iridescent Seal",
-        "desc": ""
+        "desc": "64px\nA translucent cylindrical seal moulded from The Fog itself with the effigy of The Plague.Its surface is warm and pulsates with The Entity's power.\nVile Purge becomes Corrupt Purge every time a  is completed.\nDecreases Corrupt Purge duration by 20 seconds."
       },
       {
         "name": "Limestone Seal",
-        "desc": ""
+        "desc": "64px\nA cylindrical seal made from porous stone that displays a ritualic scene with winged deities.\nIncreases object Infection duration by 20 seconds."
       },
       {
         "name": "Olibanum Incense",
-        "desc": ""
+        "desc": "64px\nPrecious resin extracted from Boswellia trees, used during ceremonies for their sweet citrusy fragrance.\nSurvivors who cleanse at  have their  revealed to you for 4 seconds."
       },
       {
         "name": "Potent Tincture",
@@ -2871,15 +2871,15 @@
       },
       {
         "name": "Prayer Tablet Fragment",
-        "desc": ""
+        "desc": "64px\nA fragmented stone tablet with a corrupted incantation originally used to purge illnesses and feelings of general malaise.\nGrants 100 % Bonus Bloodpoints for Score Events in the  Category.\nVile Purge no longer affects survivors.\nIncreases object Infection duration by 40 seconds.\nIncreases Infection from Infected objects by 100%."
       },
       {
         "name": "Prophylactic Amulet",
-        "desc": ""
+        "desc": "64px\nA soapstone amulet crudely engraved with a winged deity that wards off sickness.Fills the wearer with devotion.\nDecreases the number of  in the Trial by 2."
       },
       {
         "name": "Rubbing Oil",
-        "desc": ""
+        "desc": "64px\nA beaker of rubbing oil with expectorant quality.Exudes the evergreen scent of laurel and rosemary.\nIncreases Charge rate of Vile Purge and Corrupt Purge by 50 %."
       },
       {
         "name": "Severed Toe",
@@ -2887,11 +2887,11 @@
       },
       {
         "name": "Vile Emetic",
-        "desc": ""
+        "desc": "64px\nA foul-smelling and half-congealed potion of unidentifiable ingredients.Consumed to rapidly induce vomiting.Used to purge evil from the body.\nIncreases velocity of vomit Projectiles by 10 %."
       },
       {
         "name": "Worship Tablet",
-        "desc": ""
+        "desc": "A stone tablet adorned with gold, showing the drawings and writings of a corrupted incantation used originally to worship forgotten deities.\nIncreases Ingestion speed by +100 %.\nIncreases Movement speed while holding Corrupt Purge by +4.4 %."
       },
       {
         "name": "Vile Purge",
@@ -2997,7 +2997,7 @@
     "addons": [
       {
         "name": "Android Arm",
-        "desc": ""
+        "desc": "Destroying the other HUX units not only made its extermination of humans easier, it also gave it more parts to work with.\nIncreases the Spreading distance of Temporal Slipstream between Survivors by +2 metres.\nIncreases the Spreading speed of Temporal Slipstream between Survivors by +25 %."
       },
       {
         "name": "Broken Security Key",
@@ -3005,7 +3005,7 @@
       },
       {
         "name": "Cremated Remains",
-        "desc": ""
+        "desc": "After extracting the other colonists' DNA, he burned their remains.\nSurvivors within 12 metres of a Biopod suffer from the ''''' Status Effect.\nThis effect lingers for 3 seconds' after leaving the Area of Effect."
       },
       {
         "name": "Crew Manifest",
@@ -3013,23 +3013,23 @@
       },
       {
         "name": "Cryo Gel",
-        "desc": ""
+        "desc": "A no-friction gel applied to crew members before entering deep cryo sleep.\nCauses Slipstreamed Survivors hit with a Basic Attack to suffer from the '''Haemorrhage Status Effect''' for 60 seconds."
       },
       {
         "name": "Denied Requisition Form",
-        "desc": ""
+        "desc": "Despite the advent of light speed technology, it seemed nothing could make bureaucracy any faster.\nAll Survivors start the Trial afflicted by Temporal Slipstream.\nSupply Cases take 30 additional seconds to print an EMP at the start of the Trial."
       },
       {
         "name": "Diagnostic Tool (Construction)",
-        "desc": ""
+        "desc": "A device that gives highly accurate information on the lay of the land.\nThe Auras of Survivors picking up an EMP are revealed to you for 8 seconds."
       },
       {
         "name": "Diagnostic Tool (Repair)",
-        "desc": ""
+        "desc": "A device that can find the flaws in constructed objects.Intended to help with repair.\nIncreases the Targeting range of Biopods by +4 metres."
       },
       {
         "name": "Foreign Plant Fibres",
-        "desc": ""
+        "desc": "Xenobotanists would have a field day with these strange samples of alien plant life.\nReduces the duration of the Movement Speed penalty after being hit with a Pallet during Overclock Mode by +20 %."
       },
       {
         "name": "Heavy Water",
@@ -3045,7 +3045,7 @@
       },
       {
         "name": "Iridescent Crystal Shard",
-        "desc": ""
+        "desc": "A crystal from the alien structure that gave it sentience.\nThe Auras of Survivors within 10 metres of a newly placed Biopod are revealed to you for 6 seconds."
       },
       {
         "name": "Kid's Ball Glove",
@@ -3057,7 +3057,7 @@
       },
       {
         "name": "Nanomachine Gel",
-        "desc": ""
+        "desc": "A gel that can heal wounds extremely quickly.However, the machines in it have a history of being hacked to hurt people too. \nReduces the Cool-down time of Biopods by -15 % after Slipstreaming a Survivor."
       },
       {
         "name": "Nutritional Slurry",
@@ -3073,7 +3073,7 @@
       },
       {
         "name": "Ultrasonic Sensor",
-        "desc": ""
+        "desc": "A limitation of organic hearing is a limited aural spectrum.Expanding that range is like gaining an entirely new sense.\nExiting a Biopod within 2 seconds of afflicting a Survivor with Temporal Slipstream reduces your Terror Radius by -12 metres for 12 seconds."
       },
       {
         "name": "Quantum Instantiation",
@@ -3088,19 +3088,19 @@
     "addons": [
       {
         "name": "Adaptive Lighting",
-        "desc": ""
+        "desc": "The Drone takes account of the surrounding area and casts lights in a bewildering manner that obscures movement.\nIncreases the Linger duration of the '''Undetectable Status Effect by +20 %'''."
       },
       {
         "name": "Adi Valente Issue 1",
-        "desc": ""
+        "desc": "An original copy of the first issue of Adi Valente, the comic her father made while Adriana was a child.\nReduces the Success Zone size of Skill Checks for Claw-Trapped Survivors by -20 % for Survivors inside the Area of Effect of a Drone.\nThis effect lingers for 15 seconds after leaving the Area of Effect."
       },
       {
         "name": "Advanced Movement Prediction",
-        "desc": ""
+        "desc": "Even after they leave the zone of influenced, a refined AI programme predicts with high accuracy where a person will go next.\nThe Aura of a Survivor is revealed to you for 6 seconds when they are inside the Area of Effect of a Drone."
       },
       {
         "name": "Brown Noise Generator",
-        "desc": ""
+        "desc": "An ominous hum disseminates from the Drone, blanketing the soundscape and making it difficult to hear anything else.\nSurvivors inside the Area of Effect of a Drone suffer from the ''''' Status Effect.\nThis effect lingers for 15 seconds' after leaving the Area of Effect."
       },
       {
         "name": "Expired Batteries",
@@ -3108,15 +3108,15 @@
       },
       {
         "name": "Geographical Readout",
-        "desc": ""
+        "desc": "The Drones generate and communicate a detailed three-dimensional map of the terrain, making traversal easier.\nWhile inside the Area of Effect of a Drone, you benefit from the following effects:\nGrants a +2 % Haste Status Effect.\nIncreases the Action speeds of breaking Breakable Walls and Pallets, and damaging Generators by +15 % each.\nBoth effects linger for 15 seconds after leaving the Area of Effect."
       },
       {
         "name": "High-Current Upgrade",
-        "desc": ""
+        "desc": "A wider cable with low resistance that allows faster recharging of batteries.\nReduces the Power Cool-down duration after manually activating a Drone by -10 %."
       },
       {
         "name": "High-Power Floodlight",
-        "desc": ""
+        "desc": "A sudden and overwhelming light that discombobulates anyone foolish enough to approach.\nSurvivors inside the Area of Effect of a Drone suffer from the ''''' Status Effect.\nThis effect lingers for 15 seconds' after leaving the Area of Effect."
       },
       {
         "name": "Infrared Upgrade",
@@ -3128,35 +3128,35 @@
       },
       {
         "name": "Loose Screw",
-        "desc": ""
+        "desc": "A bone-chilling rattling emanates from the Drone, and it seems like it may fall at any moment, distracting Survivors from complicated tasks.\nSurvivors inside the Area of Effect of a Drone suffer from the Exhausted Status Effect.\nThis effect lingers for 3 seconds after leaving the Area of Effect."
       },
       {
         "name": "Low-Power Mode",
-        "desc": ""
+        "desc": "By intermittently powering on and off non-vital components, the Drone can stay on for longer.\nExtends the duration of Active Mode in Drones by +10 %."
       },
       {
         "name": "Powdered Glass",
-        "desc": ""
+        "desc": "Once used on the strings used for battle kites, this powdered glass took on a much more nefarious purpose on her blade.\nClaw-Trapped Survivors suffer from the '''Haemorrhage and Mangled Status Effects' for 70 seconds, when hit with a Basic Attack''."
       },
       {
         "name": "Prototype Rotor",
-        "desc": ""
+        "desc": "The cutting-edge design allows the Drone to move with razor-sharp precision.\nWhile inside the Area of Effect of a Drone activated by a Survivor's presence, The Skull Merchant benefits from the following effect:\nGrants a +5 % Haste Status Effect.\nThis effect does not stack and can only be triggered once per active Drone.\nThis effect is lost upon hitting a Survivor."
       },
       {
         "name": "Randomised Strobes",
-        "desc": ""
+        "desc": "Lights flash randomly on the ground, making it harder to find purchase on the uneven terrain.\nSurvivors entering the Area of Effect of a Drone suffer from a '-5 % Hindered Status Effect for 3 seconds'."
       },
       {
         "name": "Shotgun Speakers",
-        "desc": ""
+        "desc": "Capable of directing high-frequency noises in a single direction over great distances, the Drones can focus in on one individual and distract them from danger for some time.\nSuppresses the Warning sound of Skill Checks for Survivors inside the Area of Effect of a Drone.\nThis effect lingers for 15 seconds after leaving the Area of Effect."
       },
       {
         "name": "Stereo Remote Mic",
-        "desc": ""
+        "desc": "An upgrade that allows increased three-dimensional audio tracking.\nIncreases the duration of the Unhackable State of Drones by +10 %."
       },
       {
         "name": "Supercharge",
-        "desc": ""
+        "desc": "The batteries may run a little hot, but removing the safety protocols from the cells makes them last a little longer.\nExtends the Battery life of Claw Traps by +12 %."
       },
       {
         "name": "Ultrasonic Speaker",
@@ -3270,7 +3270,7 @@
     "addons": [
       {
         "name": "Bloody Hair Brooch",
-        "desc": ""
+        "desc": "A silken bow to tame wild hair.\nConsiderably increases ''Yamaoka's Haunting'' Activation Charge speed (30 %)."
       },
       {
         "name": "Dirty Uwabaki",
@@ -3278,7 +3278,7 @@
       },
       {
         "name": "Dried Cherry Blossom",
-        "desc": ""
+        "desc": "A crumbling, dried cherry flower.Once the symbol of mortality.\nTriggers Killer Instinct when coming within 3 metres of a Survivor during a Phase-Walk.\nScratch Marks are no longer visible during a Phase-Walk."
       },
       {
         "name": "Father's Glasses",
@@ -3294,15 +3294,15 @@
       },
       {
         "name": "Juniper Bonsai",
-        "desc": ""
+        "desc": "Dark blue-green foliage bonsai tree.Once the symbol of Yamaoka family tradition.\nReduces the Passive Phasing cool-down by -1 second.\nIncreases the Passive Phasing duration by +50 %."
       },
       {
         "name": "Kaiun Talisman",
-        "desc": ""
+        "desc": "A Talisman to get luck on your side.\nIncreases the maximum Duration of the Phase-Walk by +1 second."
       },
       {
         "name": "Katana Tsuba",
-        "desc": ""
+        "desc": "The handguard of an ancestral blade. Crafted for the Yamaoka family.\nSlightly increases Yamaoka's Haunting Reappearance duration (0.2 seconds).\nSlightly increases Yamaoka's Haunting Reappearance Movement speed (5 %)."
       },
       {
         "name": "Katsumori Talisman",
@@ -3318,7 +3318,7 @@
       },
       {
         "name": "Mother-Daughter Ring",
-        "desc": ""
+        "desc": "A silver ring engraved with \"for my precious daughter\".\nIncreases the Movement speed during the Phase-Walk by +25 %.\nScratch Marks are no longer visible while using ''Yamaoka's Haunting''."
       },
       {
         "name": "Muddy Sports Day Cap",
@@ -3326,11 +3326,11 @@
       },
       {
         "name": "Origami Crane",
-        "desc": ""
+        "desc": "One of the one thousand Orizuru for your wish to come true.\nIncreases the Recovery rate of ''Yamaoka's Haunting'' by +20 %."
       },
       {
         "name": "Prayer Beads Bracelet",
-        "desc": ""
+        "desc": "A powerful bracelet that reads a sacred mantra.\nThe Phasing sound emission is heard by all Survivors outside of '''The Spirit's''' ."
       },
       {
         "name": "Rin's Broken Watch",
@@ -3338,7 +3338,7 @@
       },
       {
         "name": "Rusty Flute",
-        "desc": ""
+        "desc": "A rusty transverse flute with a haunting sound.\nIncreases the Power Recovery rate by +40 %."
       },
       {
         "name": "Senko Hanabi",
@@ -3346,7 +3346,7 @@
       },
       {
         "name": "Shiawase Amulet",
-        "desc": ""
+        "desc": "A Talisman that makes one happy and enthusiastic.\nIncreases the maximum Duration of the Phase-Walk by +0.5 seconds."
       },
       {
         "name": "Uchiwa",
@@ -3354,15 +3354,15 @@
       },
       {
         "name": "Wakizashi Saya",
-        "desc": ""
+        "desc": "The scabbard of an ancestral blade.Once crafted for the Yamaoka family.\nDuring a Phase-Walk, press the Active Ability button to immediately return to the Husk."
       },
       {
         "name": "White Hair Ribbon",
-        "desc": ""
+        "desc": "A silken bow to tame wild hair.\nModerately increases ''Yamaoka's Haunting'' Activation Charge speed (20 %)."
       },
       {
         "name": "Yakuyoke Amulet",
-        "desc": ""
+        "desc": "A powerful Talisman to protect your endeavours from being hindered by suspicious circumstances.\nIncreases the maximum Duration of the Phase-Walk by +3.5 seconds.\nReduces the Movement speed during the Phase-Walk by -15 %."
       },
       {
         "name": "Zōri",
@@ -3381,7 +3381,7 @@
     "addons": [
       {
         "name": "4-Coil Spring Kit",
-        "desc": ""
+        "desc": "A replacement kit for Bear Traps which changes the usual dual spring system to 4 coil springs, adding a great amount of strength to a Bear Trap's hold.\nIncreases the Bear Trap Disarm time by +33 %."
       },
       {
         "name": "Bear Oil",
@@ -3389,7 +3389,7 @@
       },
       {
         "name": "Bloody Coil",
-        "desc": ""
+        "desc": "Part sticky, part slippery, this grim liquid makes handling the Bear Traps spring more dangerous.\nWhen a healthy Survivor disarms a Bear Trap, the Bloody Coil exacts its price, putting the Survivor into the Injured State."
       },
       {
         "name": "Coffee Grounds",
@@ -3397,15 +3397,15 @@
       },
       {
         "name": "Fastening Tools",
-        "desc": ""
+        "desc": "A specialised set of tools used to fasten Bear Traps to ensure their effectiveness.\nModerately increases Bear Trap Setting speed. (50 %).\nModerately increases Bear Trap rescue or escape time. (25 %)."
       },
       {
         "name": "Honing Stone",
-        "desc": ""
+        "desc": "When used with the Bear Trap, the Honing Stone sharpens its blades.The razor-sharp blades inflict deep wounds aimed at bleeding the victim as fast as possible.\nInflicts the Dying State upon the trapped victim if they free themselves."
       },
       {
         "name": "Iridescent Stone",
-        "desc": ""
+        "desc": "Traps sharpened with this sickly gleaming stone seem to gain a life of their own.\nEvery 30 seconds, one closed Bear Trap chosen at random becomes set."
       },
       {
         "name": "Lengthened Jaws",
@@ -3413,7 +3413,7 @@
       },
       {
         "name": "Logwood Dye",
-        "desc": ""
+        "desc": "Boiled wood ash used to dye Bear Traps, making them less noticeable.\n' the Bear Trap'."
       },
       {
         "name": "Makeshift Wrap",
@@ -3421,7 +3421,7 @@
       },
       {
         "name": "Oily Coil",
-        "desc": ""
+        "desc": "An oiled spring that marks the hands of those who meddle with a Bear Trap.\nResetting a Bear Trap reveals the Aura of the last Survivor to have disarmed it for 5 seconds."
       },
       {
         "name": "Padded Jaws",
@@ -3429,31 +3429,31 @@
       },
       {
         "name": "Rusted Jaws",
-        "desc": ""
+        "desc": "64px\nThese Bear Trap jaws are covered with crusty and volatile rust spots that make injuries particularly difficult to heal.\nSurvivors injured by a Bear Trap suffer from the '''Mangled Status Effect''' for 70 seconds."
       },
       {
         "name": "Secondary Coil",
-        "desc": ""
+        "desc": "A secondary coil which keeps a Bear Trap functional in times when the primary coil becomes unusable.\nIncreases the Bear Trap Disarm time by +50 %."
       },
       {
         "name": "Serrated Jaws",
-        "desc": ""
+        "desc": "64px\nThese replacement Bear Trap jaws have saw-like blades which cause awful open wounds when they snap.\nSurvivors injured by a Bear Trap suffer from the Haemorrhage Status Effect until healed."
       },
       {
         "name": "Setting Tools",
-        "desc": ""
+        "desc": "Specialised tools designed to quickly and effortlessly set Bear Traps.\nConsiderably increases Bear Trap Setting speed.\nModerately increases Bear Trap Rescue and Escape times."
       },
       {
         "name": "Stitched Bag",
-        "desc": ""
+        "desc": "Skin pieces of all sorts crudely stitched together making for a very large bag.\nStart with 2 additional Bear Traps.\nIncreases Bear Trap Carrying capacity by 2 Bear Traps."
       },
       {
         "name": "Strong Coil Spring",
-        "desc": ""
+        "desc": "A large and heavy coil spring which adds a good amount of strength to the Bear Trap's hold.\nSlightly increases Bear Trap Disarm speed (20 %)."
       },
       {
         "name": "Tar Bottle",
-        "desc": ""
+        "desc": "A black, matte and sticky substance that when applied to Bear Traps, makes them far less noticeable.\n' the Bear Trap'."
       },
       {
         "name": "Tension Spring",
@@ -3461,15 +3461,15 @@
       },
       {
         "name": "Trap Setters",
-        "desc": ""
+        "desc": "Simple tools designed to quickly and safely set Bear Traps.\n' Bear Trap' Setting speed."
       },
       {
         "name": "Trapper Bag",
-        "desc": ""
+        "desc": "64px\nA cured leather waist bag. Large and sturdy to transport hunting equipment.\nStart with 1 extra Bear Trap.\nAllows the transportation of 1 extra Bear Trap."
       },
       {
         "name": "Trapper Gloves",
-        "desc": ""
+        "desc": "Protective padded leather gloves.\n' Bear Trap' Setting speed."
       },
       {
         "name": "Trapper Sack",
@@ -3481,7 +3481,7 @@
       },
       {
         "name": "Wax Brick",
-        "desc": ""
+        "desc": "64px\nA block of wax used to lower friction and facilitate movement in mechanical parts.\nBear Trap Rescue and Escape time."
       },
       {
         "name": "Bear Trap",
@@ -3591,7 +3591,7 @@
     "addons": [
       {
         "name": "Baby Teeth",
-        "desc": ""
+        "desc": "Two teeth that Victor lost long ago.They're unusually sharp.\nSurvivors removing Victor suffer from the ''''' Status Effect for 30 seconds'."
       },
       {
         "name": "Bloody Black Hood",
@@ -3607,7 +3607,7 @@
       },
       {
         "name": "Ceremonial Candelabrum",
-        "desc": ""
+        "desc": "The candelabrum that Victor tipped over, causing his captors to burn.A symbol of his tenacity.\nIncreases the time needed by Survivors to crush Victor by +0.2 seconds."
       },
       {
         "name": "Drop of Perfume",
@@ -3619,7 +3619,7 @@
       },
       {
         "name": "Iridescent Pendant",
-        "desc": ""
+        "desc": "A glass-like pendant moulded from The Fog itself.There's a portrait of Madeleine Deshayes upon it, though something about her depiction seems unsettling.\nIf a Survivor crushes Victor while he's idle, they suffer from the '''Exposed Status Effect''' for 45 seconds."
       },
       {
         "name": "Madeleine's Glove",
@@ -3631,15 +3631,15 @@
       },
       {
         "name": "Rusted Needle",
-        "desc": ""
+        "desc": "A needle Madeleine used to sew up her children's tattered clothes.\nRemoving a latched-on Victor causes the Survivor to suffer from the '''Haemorrhage Status Effect''' until fully healed."
       },
       {
         "name": "Sewer Sludge",
-        "desc": ""
+        "desc": "A disgusting, sticky mixture that covered the Deshayes during an escape attempt through the city sewers.\nIncreases the time required to remove a latched-on Victor by +2 seconds."
       },
       {
         "name": "Silencing Cloth",
-        "desc": ""
+        "desc": "A coarse strip of cloth that a five-year-old Charlotte would put in her mouth.Stopped her from screaming when witch hunters were nearby.\nAfter waking from her Dormant State, Charlotte is granted the '''Undetectable Status Effect''' for 20 seconds."
       },
       {
         "name": "Soured Milk",
@@ -3651,15 +3651,15 @@
       },
       {
         "name": "Stale Biscuit",
-        "desc": ""
+        "desc": "A hard, unleavened biscuit that Madeleine stole from a town's market.It was not much, but it was better than most meals.\nDecreases Pounce cool-down time by -0.4 seconds."
       },
       {
         "name": "Tiny Fingernail",
-        "desc": ""
+        "desc": "Charlotte had many ways to mourn Victor's death.\nAs the fingernails loosened from his rotting hands, she took one in remembrance.\nReduces the Unbinding time of Victor by -0.25 seconds."
       },
       {
         "name": "Toy Sword",
-        "desc": ""
+        "desc": "A minuscule toy sword, only a few inches long.Holding it brought out a violent enthusiasm in Victor.\nReduces the Charge time of a Pounce by -0.1 second."
       },
       {
         "name": "Victor's Soldier",
@@ -3667,7 +3667,7 @@
       },
       {
         "name": "Weighty Rattle",
-        "desc": ""
+        "desc": "A shoddily carved rattle that Victor cried over until his mother stole it for him.\nIt is entirely too heavy to be trusted to a child.\nRemoving a latched-on Victor causes the Survivor to suffer from the '''Broken Status Effect''' for 20 seconds."
       },
       {
         "name": "Blood Bond",
@@ -3773,11 +3773,11 @@
     "addons": [
       {
         "name": "Bone Clapper",
-        "desc": ""
+        "desc": "A Bell clapper made from a highly polished piece of bone. Causes the sounds of the Wailing Bell to echo and warp chaotically.\nSurvivors can no longer discern the ''Wailing Bell's'' distance or direction."
       },
       {
         "name": "Coxcombed Clapper",
-        "desc": ""
+        "desc": "A simple coxcomb knotted rope wrapped around the Bell Clapper to muffle its sound. A malevolent Aura emanates from it.\nRenders the Wailing Bell completely silent."
       },
       {
         "name": "Wailing Bell",
@@ -3804,7 +3804,7 @@
       },
       {
         "name": "Cat Carrier",
-        "desc": ""
+        "desc": "Saving the cat is a noble goal.It's also very distracting.\nGrants the '''Undetectable Status Effect for 20 seconds, when a Remote Flame Turret' knocks you out of Crawler Mode''."
       },
       {
         "name": "Cereal Rations",
