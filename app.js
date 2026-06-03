@@ -268,29 +268,33 @@ async function fetchKillerMeta() {
   const lua = await wikiGetModule('Module:Datatable');
   const meta = {};
 
-  // Find the killers = { } block first, then parse entries within it
-  const killersStart = lua.indexOf('killers = {');
+  // Find the killers = { } block
+  const killersStart = lua.indexOf('\nkillers = {');
   if (killersStart < 0) return meta;
 
-  // Walk the killers block extracting each {id=N, name="X", power="Y", ...} entry
+  // Find the end of the killers block by counting braces
   const blockStart = lua.indexOf('{', killersStart);
-  let i = blockStart + 1; // skip the outer {
-  while (i < lua.length) {
-    const braceOpen = lua.indexOf('{', i);
-    if (braceOpen < 0) break;
+  let blockEnd = blockStart + 1, depth = 1;
+  while (blockEnd < lua.length && depth > 0) {
+    if (lua[blockEnd] === '{') depth++;
+    else if (lua[blockEnd] === '}') depth--;
+    blockEnd++;
+  }
+  const killersBlock = lua.slice(blockStart + 1, blockEnd - 1); // contents inside outer { }
 
-    // Find matching } by depth
+  // Parse each entry within the killers block
+  let i = 0;
+  while (i < killersBlock.length) {
+    const braceOpen = killersBlock.indexOf('{', i);
+    if (braceOpen < 0) break;
     let depth = 1, j = braceOpen + 1;
-    while (j < lua.length && depth > 0) {
-      if (lua[j] === '{') depth++;
-      else if (lua[j] === '}') depth--;
+    while (j < killersBlock.length && depth > 0) {
+      if (killersBlock[j] === '{') depth++;
+      else if (killersBlock[j] === '}') depth--;
       j++;
     }
-    const entry = lua.slice(braceOpen, j);
+    const entry = killersBlock.slice(braceOpen, j);
     i = j;
-
-    // If we closed the outer block, stop
-    if (depth < 0) break;
 
     const idM    = /\bid\s*=\s*(\d+)/.exec(entry);
     const powerM = /\bpower\s*=\s*"([^"]+)"/.exec(entry);
@@ -298,7 +302,6 @@ async function fetchKillerMeta() {
     const realM  = /\brealName\s*=\s*"([^"]+)"/.exec(entry);
     if (!idM || !powerM || !nameM) continue;
 
-    // name field is the full title e.g. "The Trapper" — use as-is
     const killerTitle = nameM[1];
     const realName    = realM ? realM[1] : nameM[1];
     meta[firstTwo(killerTitle)] = {
@@ -310,8 +313,6 @@ async function fetchKillerMeta() {
   }
   return meta;
 }
-
-
 // ── Fetch all addons from Module:Datatable/Loadout ────────────────────────────
 // Returns array of { name, killerId, desc }
 async function fetchAllAddons() {
