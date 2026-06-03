@@ -168,12 +168,14 @@ async function runSync() {
       }
 
       try {
-        const addons = await fetchKillerAddons(name, fallback.power);
-        results.push({ name, power: fallback.power, powerDesc: fallback.powerDesc, addons });
+        const result = await fetchKillerAddons(name, fallback.power);
+        const addons = result.addons || [];
+        const powerDesc = result.powerDesc || fallback.powerDesc || '';
+        results.push({ name, power: fallback.power, powerDesc, addons });
         logSync(`  ✓ ${addons.length} add-ons`, 'ok');
       } catch (err) {
         logSync(`  ✗ Add-ons failed: ${err.message}`, 'err');
-        results.push({ name, power: fallback.power, powerDesc: fallback.powerDesc, addons: [] });
+        results.push({ name, power: fallback.power, powerDesc: fallback.powerDesc || '', addons: [] });
       }
     }
 
@@ -293,37 +295,37 @@ const KILLER_META = {
   'the cannibal':       { charPage: 'Bubba_Sawyer',               power: "Bubba's Chainsaw" },
   'the nightmare':      { charPage: 'Freddy_Krueger',              power: 'Dream Demon' },
   'the pig':            { charPage: 'Amanda_Young',                power: "Jigsaw's Baptism" },
-  'the clown':          { charPage: 'Jeffrey_Hawk',                power: 'The Afterpiece Tonic' },
+  'the clown':          { charPage: 'Kenneth_Chase_alias_Jeffrey_Hawk', power: 'The Afterpiece Tonic' },
   'the spirit':         { charPage: 'Rin_Yamaoka',                 power: "Yamaoka's Haunting" },
-  'the legion':         { charPage: 'Frank_Morrison',              power: 'Feral Frenzy' },
+  'the legion':         { charPage: 'Frank,_Julie,_Susie,_Joey',   power: 'Feral Frenzy' },
   'the plague':         { charPage: 'Adiris',                      power: 'Vile Purge' },
-  'the ghost':          { charPage: 'Danny_Johnson',               power: 'Night Shroud' },
-  'the demogorgon':     { charPage: 'Demogorgon',                  power: 'Of The Abyss' },
+  'the ghost':          { charPage: 'Danny_Johnson_alias_Jed_Olsen', power: 'Night Shroud' },
+  'the demogorgon':     { charPage: 'The_Demogorgon',              power: 'Of The Abyss' },
   'the oni':            { charPage: 'Kazan_Yamaoka',               power: "Yamaoka's Wrath" },
   'the deathslinger':   { charPage: 'Caleb_Quinn',                 power: 'The Redeemer' },
   'the executioner':    { charPage: 'Pyramid_Head',                power: 'Rites of Judgment' },
   'the blight':         { charPage: 'Talbot_Grimes',               power: 'Blighted Corruption' },
-  'the twins':          { charPage: 'Charlotte_Deshayes',          power: 'Blood Bond' },
+  'the twins':          { charPage: 'Charlotte_%26_Victor_Deshayes', power: 'Blood Bond' },
   'the trickster':      { charPage: 'Ji-Woon_Hak',                 power: 'Showstopper' },
   'the nemesis':        { charPage: 'Nemesis_T-Type',              power: 'T-Virus' },
   'the cenobite':       { charPage: 'Elliot_Spencer',              power: 'Summons of Pain' },
   'the artist':         { charPage: 'Carmina_Mora',                power: 'Birds of Torment' },
   'the onryo':          { charPage: 'Sadako_Yamamura',             power: 'Deluge of Fear' },
-  'the dredge':         { charPage: 'Dredge',                      power: 'Reign of Darkness' },
+  'the dredge':         { charPage: 'The_Dredge',                  power: 'Reign of Darkness' },
   'the mastermind':     { charPage: 'Albert_Wesker',               power: 'Uroboros Infection' },
-  'the knight':         { charPage: 'Tarhos_Kovacs',               power: 'Guardia Compagnia' },
+  'the knight':         { charPage: 'The_Knight',                  power: 'Guardia Compagnia' },
   'the skull':          { charPage: 'Adriana_Imai',                power: 'Tri-Surveillance' },
   'the singularity':    { charPage: 'HUX-A7-13',                   power: 'Quantum Instantiation' },
-  'the xenomorph':      { charPage: 'Xenomorph',                   power: 'Crawl Tunnel' },
+  'the xenomorph':      { charPage: 'The_Xenomorph',               power: 'Crawl Tunnel' },
   'the good':           { charPage: 'Charles_Lee_Ray',             power: 'Hidey-Ho Mode' },
-  'the unknown':        { charPage: 'Unknown',                     power: 'UVX' },
+  'the unknown':        { charPage: 'The_Unknown',                 power: 'UVX' },
   'the lich':           { charPage: 'Vecna',                       power: 'Tome of Torment' },
   'the dark':           { charPage: 'Dracula',                     power: 'Crimson Dark' },
   'the houndmaster':    { charPage: 'Portia_Maye',                 power: 'The Hunt' },
   'the ghoul':          { charPage: 'Ken_Kaneki',                  power: 'One-Eyed Terror' },
   'the animatronic':    { charPage: 'William_Afton',               power: "Fazbear's Fright" },
-  'the krasue':         { charPage: 'Usa_Srichai',                 power: 'Unbodied Flesh' },
-  'the first':          { charPage: 'Vecna_(Stranger_Things)',     power: 'Worldeater' },
+  'the krasue':         { charPage: 'The_Krasue',                  power: 'Unbodied Flesh' },
+  'the first':          { charPage: 'The_First',                   power: 'Worldeater' },
 };
 
 async function fetchDatatable() {
@@ -385,15 +387,34 @@ async function fetchKillerAddons(killerName, powerName) {
   if (!wikitext) throw new Error('Empty wikitext for ' + charPage);
 
   // Find the === Add-ons for [PowerName] === section
-  const parts = wikitext.split(/(?====[^=])/);
-  const section = parts.find(p => p.toLowerCase().includes('add-ons for ' + wikiPower.toLowerCase()))
-    || parts.find(p => p.toLowerCase().includes('add-on'))
-    || wikitext;
+  // Split on === headers ===
+  const parts = wikitext.split(/(?=====[^=])/);
 
-  // Debug: log first 500 chars of section and wikitext length
-  console.log('[addon debug]', killerName, '| wikitext length:', wikitext.length, '| section snippet:', section.slice(0, 500));
+  // Find add-ons section
+  const addonSection = parts.find(p => /===\s*Add-ons for/i.test(p));
 
-  return parseAddonNames(section);
+  // Find power description section — the one containing the power stats
+  // It sits just before the add-ons section and contains mechanical info
+  const addonIdx = parts.findIndex(p => /===\s*Add-ons for/i.test(p));
+  let powerDesc = '';
+  if (addonIdx > 0) {
+    const powerSection = parts[addonIdx - 1];
+    // Strip wiki markup: templates {{...}}, links [[...]], bold/italic, HTML tags
+    powerDesc = powerSection
+      .replace(/\{\{[^}]*\}\}/g, '')
+      .replace(/\[\[(?:[^|\]]+\|)?([^\]]+)\]\]/g, '$1')
+      .replace(/'''([^']+)'''/g, '$1')
+      .replace(/''([^']+)''/g, '$1')
+      .replace(/<[^>]+>/g, '')
+      .replace(/^===.*===\s*/m, '')
+      .replace(/:\s*/g, ' ')
+      .replace(/\*+\s*/g, '• ')
+      .replace(/\n{3,}/g, '\n\n')
+      .trim()
+      .slice(0, 800); // cap at 800 chars
+  }
+
+  return { addons: addonSection ? parseAddonNames(addonSection) : [], powerDesc };
 }
 
 function parseAddonNames(wikitext) {
