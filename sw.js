@@ -1,4 +1,4 @@
-const CACHE_NAME = 'aliveatnight-v13';
+const CACHE_NAME = 'aliveatnight-v21';
 const ASSETS = [
   '/',
   '/index.html',
@@ -18,24 +18,24 @@ self.addEventListener('install', e => {
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => {
-        console.log('[SW] Deleting old cache:', k);
-        return caches.delete(k);
-      }))
+      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
     )
   );
   self.clients.claim();
 });
 
 self.addEventListener('fetch', e => {
-  // Always network-first for FEEDME and wiki API
-  if (e.request.url.includes('FEEDME') || e.request.url.includes('fandom.com') || e.request.url.includes('api.github.com')) {
+  // Always network-first for JS/HTML so updates land immediately
+  if (e.request.url.match(/\.(js|html)$/) ||
+      e.request.url.includes('FEEDME') ||
+      e.request.url.includes('workers.dev') ||
+      e.request.url.includes('api.github.com')) {
     e.respondWith(
       fetch(e.request).catch(() => caches.match(e.request))
     );
     return;
   }
-  // Cache-first for static assets
+  // Cache-first for CSS, fonts, images
   e.respondWith(
     caches.match(e.request).then(cached => cached || fetch(e.request))
   );

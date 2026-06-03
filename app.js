@@ -186,8 +186,7 @@ async function runSync() {
     await pushFeedmeToGithub(compact, pat);
     logSync('✓ FEEDME committed to repo!', 'ok');
 
-    // Show push button instead of auto-refreshing
-    logSync('✓ Sync complete! Review above then push to repo.', 'ok');
+    logSync('✓ Sync complete! Review above then click Push & Refresh.', 'ok');
     syncStartBtn.style.display = 'none';
     const pushBtn = document.createElement('button');
     pushBtn.className = 'btn-primary';
@@ -280,43 +279,59 @@ async function wikiGet(params) {
   return res.json();
 }
 
-// Fetches Module:Datatable raw wikitext and parses out killer entries.
-// Returns array of { title, charPage, power } where:
-//   title    = "The Trapper", "The Nemesis" etc (wiki killer title)
-//   charPage = "Evan_MacMillan", "Nemesis_T-Type" etc (wiki page name)
-//   power    = "Bear Traps", "T-Virus" etc
-async function fetchDatatable() {
-  const data = await wikiGet({
-    action: 'query',
-    prop: 'revisions',
-    titles: 'Module:Datatable',
-    rvprop: 'content',
-    rvslots: 'main'
-  });
-  const pages = data?.query?.pages || {};
-  const pageData = Object.values(pages)[0];
-  const content = pageData?.revisions?.[0]?.slots?.main?.['*']
-    || pageData?.revisions?.[0]?.['*']
-    || '';
-  if (!content) throw new Error('Could not fetch Module:Datatable');
+// Static charPage + power map derived from Module:Datatable
+// Used as the primary source for addon fetching
+const KILLER_META = {
+  'the trapper':        { charPage: 'Evan_MacMillan',              power: 'Bear Traps' },
+  'the wraith':         { charPage: 'Philip_Ojomo',                power: 'Wailing Bell' },
+  'the hillbilly':      { charPage: 'Max_Thompson_Jr.',            power: 'Chainsaw' },
+  'the nurse':          { charPage: 'Sally_Smithson',              power: "Spencer's Last Breath" },
+  'the shape':          { charPage: 'Michael_Myers',               power: 'Evil Within' },
+  'the hag':            { charPage: 'Lisa_Sherwood',               power: 'Blackened Catalyst' },
+  'the doctor':         { charPage: 'Herman_Carter',               power: "Carter's Spark" },
+  'the huntress':       { charPage: 'Anna',                        power: 'Hunting Hatchets' },
+  'the cannibal':       { charPage: 'Bubba_Sawyer',               power: "Bubba's Chainsaw" },
+  'the nightmare':      { charPage: 'Freddy_Krueger',              power: 'Dream Demon' },
+  'the pig':            { charPage: 'Amanda_Young',                power: "Jigsaw's Baptism" },
+  'the clown':          { charPage: 'Jeffrey_Hawk',                power: 'The Afterpiece Tonic' },
+  'the spirit':         { charPage: 'Rin_Yamaoka',                 power: "Yamaoka's Haunting" },
+  'the legion':         { charPage: 'Frank_Morrison',              power: 'Feral Frenzy' },
+  'the plague':         { charPage: 'Adiris',                      power: 'Vile Purge' },
+  'the ghost':          { charPage: 'Danny_Johnson',               power: 'Night Shroud' },
+  'the demogorgon':     { charPage: 'Demogorgon',                  power: 'Of The Abyss' },
+  'the oni':            { charPage: 'Kazan_Yamaoka',               power: "Yamaoka's Wrath" },
+  'the deathslinger':   { charPage: 'Caleb_Quinn',                 power: 'The Redeemer' },
+  'the executioner':    { charPage: 'Pyramid_Head',                power: 'Rites of Judgment' },
+  'the blight':         { charPage: 'Talbot_Grimes',               power: 'Blighted Corruption' },
+  'the twins':          { charPage: 'Charlotte_Deshayes',          power: 'Blood Bond' },
+  'the trickster':      { charPage: 'Ji-Woon_Hak',                 power: 'Showstopper' },
+  'the nemesis':        { charPage: 'Nemesis_T-Type',              power: 'T-Virus' },
+  'the cenobite':       { charPage: 'Elliot_Spencer',              power: 'Summons of Pain' },
+  'the artist':         { charPage: 'Carmina_Mora',                power: 'Birds of Torment' },
+  'the onryo':          { charPage: 'Sadako_Yamamura',             power: 'Deluge of Fear' },
+  'the dredge':         { charPage: 'Dredge',                      power: 'Reign of Darkness' },
+  'the mastermind':     { charPage: 'Albert_Wesker',               power: 'Uroboros Infection' },
+  'the knight':         { charPage: 'Tarhos_Kovacs',               power: 'Guardia Compagnia' },
+  'the skull':          { charPage: 'Adriana_Imai',                power: 'Tri-Surveillance' },
+  'the singularity':    { charPage: 'HUX-A7-13',                   power: 'Quantum Instantiation' },
+  'the xenomorph':      { charPage: 'Xenomorph',                   power: 'Crawl Tunnel' },
+  'the good':           { charPage: 'Charles_Lee_Ray',             power: 'Hidey-Ho Mode' },
+  'the unknown':        { charPage: 'Unknown',                     power: 'UVX' },
+  'the lich':           { charPage: 'Vecna',                       power: 'Tome of Torment' },
+  'the dark':           { charPage: 'Dracula',                     power: 'Crimson Dark' },
+  'the houndmaster':    { charPage: 'Portia_Maye',                 power: 'The Hunt' },
+  'the ghoul':          { charPage: 'Ken_Kaneki',                  power: 'One-Eyed Terror' },
+  'the animatronic':    { charPage: 'William_Afton',               power: "Fazbear's Fright" },
+  'the krasue':         { charPage: 'Usa_Srichai',                 power: 'Unbodied Flesh' },
+  'the first':          { charPage: 'Vecna_(Stranger_Things)',     power: 'Worldeater' },
+};
 
-  // Parse Lua table entries: {id=N, name="Trapper", realName="Evan MacMillan", power="Bear Traps", ...}
-  const killers = [];
-  const entryRe = /\{[^{}]*?id\s*=\s*(\d+)[^{}]*?\}/gs;
-  let m;
-  while ((m = entryRe.exec(content)) !== null) {
-    const entry = m[0];
-    // Only killer entries have a power field
-    const powerMatch = entry.match(/power\s*=\s*"([^"]+)"/);
-    if (!powerMatch) continue;
-    const nameMatch = entry.match(/name\s*=\s*"([^"]+)"/);
-    const realNameMatch = entry.match(/realName\s*=\s*"([^"]+)"/);
-    if (!nameMatch) continue;
-    const killerTitle = 'The ' + nameMatch[1];
-    const realName = realNameMatch ? realNameMatch[1] : nameMatch[1];
-    const charPage = realName.replace(/ /g, '_');
-    killers.push({ title: killerTitle, charPage, power: powerMatch[1] });
-  }
+async function fetchDatatable() {
+  // Build meta from static map — no API call needed
+  const killers = Object.entries(KILLER_META).map(([key, val]) => ({
+    title: key.replace(/^the /, 'The '),
+    ...val
+  }));
   return killers;
 }
 
