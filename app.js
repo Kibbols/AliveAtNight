@@ -300,6 +300,7 @@ async function runSync() {
           addonDescCache.set(addon.name, '');
         }
         addonCount++;
+        await new Promise(r => setTimeout(r, 150));
       }
     }
     logSync(`✓ ${addonCount} add-on descriptions fetched`, 'ok');
