@@ -4,9 +4,7 @@
 const API_KEY_STORAGE    = 'dbd_gemini_api_key';
 const GITHUB_PAT_STORAGE = 'dbd_github_pat';
 const FEEDME_STORAGE     = 'dbd_feedme_data';
-// Set this to your Cloudflare Worker URL after deploying worker.js
-// e.g. 'https://aliveatnight-proxy.YOUR-SUBDOMAIN.workers.dev'
-const WORKER_URL = localStorage.getItem('dbd_worker_url') || '';
+const WORKER_URL = 'https://aliveatnight-proxy.portgamingsttv.workers.dev';
 const WIKI_API   = 'https://deadbydaylight.fandom.com/api.php'; // fallback reference only
 const GITHUB_REPO        = 'Kibbols/AliveAtNight';
 const GITHUB_FILE        = 'FEEDME';
@@ -20,7 +18,6 @@ let activeKillers = window.DBD_KILLERS;
 const apiModal        = document.getElementById('apiModal');
 const apiToggleBtn    = document.getElementById('apiToggleBtn');
 const apiKeyInput     = document.getElementById('apiKeyInput');
-const workerUrlInput  = document.getElementById('workerUrlInput');
 const apiSaveBtn      = document.getElementById('apiSaveBtn');
 const apiCancelBtn    = document.getElementById('apiCancelBtn');
 const noKeyBanner     = document.getElementById('noKeyBanner');
@@ -90,21 +87,15 @@ const killerResults = document.getElementById('killerResults');
 // ── API Key Modal ─────────────────────────────────────────────────────────────
 function openApiModal() {
   apiKeyInput.value = apiKey;
-  const savedWorker = localStorage.getItem('dbd_worker_url') || '';
-  workerUrlInput.value = savedWorker;
   apiModal.classList.add('open');
   setTimeout(() => apiKeyInput.focus(), 50);
 }
 function closeApiModal() { apiModal.classList.remove('open'); }
 function saveApiKey() {
-  const keyVal = apiKeyInput.value.trim();
-  if (keyVal) {
-    apiKey = keyVal;
-    localStorage.setItem(API_KEY_STORAGE, keyVal);
-  }
-  const workerVal = workerUrlInput.value.trim();
-  if (workerVal) {
-    localStorage.setItem('dbd_worker_url', workerVal);
+  const val = apiKeyInput.value.trim();
+  if (val) {
+    apiKey = val;
+    localStorage.setItem(API_KEY_STORAGE, val);
   }
   checkKeyBanner();
   closeApiModal();
@@ -272,9 +263,7 @@ function showLockAndRefresh() {
 
 // ── Wiki API helpers ──────────────────────────────────────────────────────────
 async function wikiGet(params) {
-  const workerUrl = localStorage.getItem('dbd_worker_url') || '';
-  if (!workerUrl) throw new Error('No Worker URL set. Add it in ⚙ Settings.');
-  const url = new URL(workerUrl);
+  const url = new URL(WORKER_URL);
   url.search = new URLSearchParams({ ...params, format: 'json' }).toString();
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Worker/Wiki HTTP ${res.status}`);
