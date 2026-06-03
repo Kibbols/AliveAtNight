@@ -329,7 +329,7 @@ const KILLER_META = {
   'the houndmaster':    { charPage: 'Portia_Maye',                 power: 'The Hunt' },
   'the ghoul':          { charPage: 'Ken_Kaneki',                  power: 'One-Eyed Terror' },
   'the animatronic':    { charPage: 'William_Afton',               power: "Fazbear's Fright" },
-  'the krasue':         { charPage: 'Burong_Sukapat',               power: 'Unbodied Flesh' },
+  'the krasue':         { charPage: 'The_Krasue',               power: 'Unbodied Flesh' },
   'the first':          { charPage: 'Vecna',                        power: 'Worldeater' },
 };
 
@@ -412,19 +412,24 @@ async function fetchKillerAddons(killerName, powerName) {
 
   const addons = [];
   if (addonTable) {
+    // Each row: <th>icon</th> <td>name</td> <td>description</td>
+    // Icon is in a <th>, name and desc are in <td>s
     const rowRe = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
     let rowMatch;
     while ((rowMatch = rowRe.exec(addonTable)) !== null) {
       const row = rowMatch[1];
-      const cells = [];
-      const cellRe = /<td[^>]*>([\s\S]*?)<\/td>/gi;
-      let cellMatch;
-      while ((cellMatch = cellRe.exec(row)) !== null) {
-        cells.push(cellMatch[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim());
+      // Skip header rows (all <th>)
+      if (!/<td/i.test(row)) continue;
+      const tds = [];
+      const tdRe = /<td[^>]*>([\s\S]*?)<\/td>/gi;
+      let tdMatch;
+      while ((tdMatch = tdRe.exec(row)) !== null) {
+        tds.push(tdMatch[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim());
       }
-      if (cells.length >= 3) {
-        const name = cells[1].trim();
-        const desc = cells[2].trim();
+      // First td = name, second td = description
+      if (tds.length >= 2) {
+        const name = tds[0].trim();
+        const desc = tds[1].trim();
         if (name.length >= 3 && name.length <= 60 && /^["A-Z']/.test(name)) {
           addons.push({ name, desc });
         }
