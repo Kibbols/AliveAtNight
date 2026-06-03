@@ -433,6 +433,7 @@ async function fetchKillerAddons(killerName, powerName) {
     killerAddons = [];
   }
 
+  const powerDesc = fallback.powerDesc || '';
   return { addons: killerAddons.slice(0, 20).map(a => ({ name: a.name, desc: a.desc })), powerDesc };
 }
 
