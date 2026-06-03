@@ -268,50 +268,33 @@ async function fetchKillerMeta() {
   const lua = await wikiGetModule('Module:Datatable');
   const meta = {};
 
-  // The killers table entries look like:
-  //   {id = 1, name = "Trapper", realName = "Evan MacMillan", power = "Bear Traps", ...},
-  // We find the killers = { ... } block then parse each entry line by line.
-  // Since entries can span multiple lines with nested tables (altSpeed etc),
-  // we scan for lines containing both a name and a power field.
+  // Entries are single-line, e.g.:
+  // {id = 1, name = "Trapper", realName = "Evan MacMillan", power = "Bear Trap", ...},
+  // Scan for each power = "..." and grab id/name/realName from the surrounding context
+  const powerRe = /\bpower\s*=\s*"([^"]+)"/g;
+  let m;
+  while ((m = powerRe.exec(lua)) !== null) {
+    const center = m.index;
+    const ctx = lua.slice(Math.max(0, center - 400), center + 100);
+    const idM   = /\bid\s*=\s*(\d+)/.exec(ctx);
+    const nameM = /\bname\s*=\s*"([^"]+)"/.exec(ctx);
+    const realM = /\brealName\s*=\s*"([^"]+)"/.exec(ctx);
+    if (!idM || !nameM) continue;
 
-  // Split on entry boundaries: look for lines starting a new {id = N, ...} block
-  const lines = lua.split('\n');
-  let currentEntry = '';
-  for (const line of lines) {
-    const trimmed = line.trim();
-    // New entry starts when we see {id = N,
-    if (/^\{id\s*=\s*\d+/.test(trimmed)) {
-      currentEntry = trimmed;
-    } else if (currentEntry) {
-      currentEntry += ' ' + trimmed;
-    }
+    const killerTitle = 'The ' + nameM[1];
+    const realName    = realM ? realM[1] : nameM[1];
+    const charPage    = realName.replace(/ /g, '_');
 
-    // Entry ends at }, or },
-    if (currentEntry && /\},?\s*$/.test(trimmed)) {
-      const entry = currentEntry;
-      currentEntry = '';
-
-      const powerM  = entry.match(/power\s*=\s*"([^"]+)"/);
-      if (!powerM) continue; // not a killer entry
-      const nameM   = entry.match(/name\s*=\s*"([^"]+)"/);
-      const realM   = entry.match(/realName\s*=\s*"([^"]+)"/);
-      const idM     = entry.match(/id\s*=\s*(\d+)/);
-      if (!nameM || !idM) continue;
-
-      const killerTitle = 'The ' + nameM[1];
-      const realName    = realM ? realM[1] : nameM[1];
-      const charPage    = realName.replace(/ /g, '_');
-
-      meta[firstTwo(killerTitle)] = {
-        id:       parseInt(idM[1]),
-        title:    killerTitle,
-        power:    powerM[1],
-        charPage
-      };
-    }
+    meta[firstTwo(killerTitle)] = {
+      id:       parseInt(idM[1]),
+      title:    killerTitle,
+      power:    m[1],
+      charPage
+    };
   }
   return meta;
 }
+
 
 // ── Fetch all addons from Module:Datatable/Loadout ────────────────────────────
 // Returns array of { name, killerId, desc }
