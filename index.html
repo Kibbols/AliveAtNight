@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0c" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>AliveAtNight</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="bg-atmosphere"></div>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-hook">⚓</span>
+        <span class="logo-text">ALIVE<span class="logo-accent">AT</span>NIGHT</span>
+      </div>
+      <p class="header-sub">DbD Video Idea Generator</p>
+      <div class="header-actions">
+        <button class="api-btn sync-btn" id="syncBtn" title="Sync killer data from wiki">⟳ Sync</button>
+        <button class="api-btn" id="apiToggleBtn" title="Configure API Key">⚙ API Key</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- API Key Modal -->
+  <div class="modal-overlay" id="apiModal">
+    <div class="modal">
+      <h2>Gemini API Key</h2>
+      <p>Your key is stored in localStorage and never leaves your device.</p>
+      <input type="password" id="apiKeyInput" placeholder="AIza..." autocomplete="off" />
+      <div class="modal-actions">
+        <button class="btn-secondary" id="apiCancelBtn">Cancel</button>
+        <button class="btn-primary" id="apiSaveBtn">Save Key</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sync Modal -->
+  <div class="modal-overlay" id="syncModal">
+    <div class="modal">
+      <h2>Sync from Wiki</h2>
+      <p>Fetches the latest killer list, powers, and add-ons from the Dead by Daylight wiki. When done, downloads a <strong>FEEDME</strong> file — drop it in the repo root and push to keep everyone up to date.</p>
+      <div class="sync-status" id="syncStatus"></div>
+      <div class="modal-actions">
+        <button class="btn-secondary" id="syncCancelBtn">Cancel</button>
+        <button class="btn-primary" id="syncStartBtn">⟳ Start Sync</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- No API Key Banner -->
+  <div class="no-key-banner" id="noKeyBanner">
+    <span>⚠ No Gemini API key set.</span>
+    <button id="setKeyBannerBtn">Set API Key</button>
+  </div>
+
+  <main>
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-tab="survivor">
+        <span class="tab-icon">🏃</span> Survivor
+      </button>
+      <button class="tab" data-tab="killer">
+        <span class="tab-icon">🔪</span> Killer
+      </button>
+    </div>
+
+    <!-- Survivor Panel -->
+    <div class="panel active" id="panel-survivor">
+      <div class="panel-header">
+        <h2>Survivor Video Ideas</h2>
+        <p>Describe the kind of content you're looking to make — playstyle, meta, challenge runs, guides, anything goes.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="survivorPrompt">What kind of survivor content?</label>
+        <textarea id="survivorPrompt" rows="4" placeholder="e.g. aggressive looping builds, beginner-friendly guides, no-perk challenge runs, ranked sweat content..."></textarea>
+      </div>
+
+      <button class="generate-btn" id="survivorGenBtn">
+        <span class="btn-icon">✦</span> Generate Video Ideas
+      </button>
+
+      <div class="results-area" id="survivorResults"></div>
+    </div>
+
+    <!-- Killer Panel -->
+    <div class="panel" id="panel-killer">
+      <div class="panel-header">
+        <h2>Killer Build Ideas</h2>
+        <p>Select a killer, describe your vibe, and get YouTube-ready build concepts complete with perks and add-ons.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="killerSelect">Select Killer</label>
+        <div class="select-wrap">
+          <select id="killerSelect">
+            <option value="">Loading killers...</option>
+          </select>
+          <span class="select-arrow">▾</span>
+        </div>
+        <div class="killer-power-preview" id="killerPowerPreview"></div>
+      </div>
+
+      <div class="surprise-row">
+        <label class="surprise-toggle">
+          <input type="checkbox" id="surpriseMe" />
+          <span class="toggle-track">
+            <span class="toggle-thumb"></span>
+          </span>
+          <span class="surprise-label">Surprise Me</span>
+        </label>
+        <span class="surprise-hint">Let Gemini cook something fun and unexpected</span>
+      </div>
+
+      <div class="form-group" id="killerPromptGroup">
+        <label for="killerPrompt">What kind of build?</label>
+        <textarea id="killerPrompt" rows="4" placeholder="e.g. oppressive gen-regression build, snowball nonstop chase build, meme build for entertainment value..."></textarea>
+      </div>
+
+      <button class="generate-btn" id="killerGenBtn">
+        <span class="btn-icon">✦</span> Generate Build Ideas
+      </button>
+
+      <div class="results-area" id="killerResults"></div>
+    </div>
+  </main>
+
+  <script src="killers.js"></script>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+  </script>
+</body>
+</html>
