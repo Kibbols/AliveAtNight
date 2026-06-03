@@ -17,6 +17,16 @@
 
   <div class="bg-atmosphere"></div>
 
+  <!-- Lock overlay shown after successful sync -->
+  <div class="lock-overlay" id="lockOverlay">
+    <div class="lock-inner">
+      <div class="lock-spinner"></div>
+      <p class="lock-status" id="lockStatus">FEEDME committed to repo. Refreshing in…</p>
+      <p class="lock-countdown" id="lockCountdown">2:00</p>
+      <p class="lock-hint">The page will reload automatically to pull the updated data.</p>
+    </div>
+  </div>
+
   <header>
     <div class="header-inner">
       <div class="logo">
@@ -48,7 +58,10 @@
   <div class="modal-overlay" id="syncModal">
     <div class="modal">
       <h2>Sync from Wiki</h2>
-      <p>Fetches the latest killer list, powers, and add-ons from the Dead by Daylight wiki. When done, downloads a <strong>FEEDME</strong> file — drop it in the repo root and push to keep everyone up to date.</p>
+      <p>Fetches the latest killer list, powers, and add-ons from the DBD wiki, then commits <strong>FEEDME</strong> directly to the repo.</p>
+      <label style="display:block;margin-top:1rem;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:0.4rem;">GitHub Fine-Grained PAT</label>
+      <input type="password" id="patInput" placeholder="github_pat_..." autocomplete="off" />
+      <p style="font-size:0.78rem;color:var(--text-dim);margin-top:0.35rem;">Needs <em>Contents: Read & Write</em> on AliveAtNight only. Stored in localStorage.</p>
       <div class="sync-status" id="syncStatus"></div>
       <div class="modal-actions">
         <button class="btn-secondary" id="syncCancelBtn">Cancel</button>
@@ -64,14 +77,9 @@
   </div>
 
   <main>
-    <!-- Tabs -->
     <div class="tabs">
-      <button class="tab active" data-tab="survivor">
-        <span class="tab-icon">🏃</span> Survivor
-      </button>
-      <button class="tab" data-tab="killer">
-        <span class="tab-icon">🔪</span> Killer
-      </button>
+      <button class="tab active" data-tab="survivor"><span class="tab-icon">🏃</span> Survivor</button>
+      <button class="tab" data-tab="killer"><span class="tab-icon">🔪</span> Killer</button>
     </div>
 
     <!-- Survivor Panel -->
@@ -80,16 +88,11 @@
         <h2>Survivor Video Ideas</h2>
         <p>Describe the kind of content you're looking to make — playstyle, meta, challenge runs, guides, anything goes.</p>
       </div>
-
       <div class="form-group">
         <label for="survivorPrompt">What kind of survivor content?</label>
         <textarea id="survivorPrompt" rows="4" placeholder="e.g. aggressive looping builds, beginner-friendly guides, no-perk challenge runs, ranked sweat content..."></textarea>
       </div>
-
-      <button class="generate-btn" id="survivorGenBtn">
-        <span class="btn-icon">✦</span> Generate Video Ideas
-      </button>
-
+      <button class="generate-btn" id="survivorGenBtn"><span class="btn-icon">✦</span> Generate Video Ideas</button>
       <div class="results-area" id="survivorResults"></div>
     </div>
 
@@ -99,38 +102,27 @@
         <h2>Killer Build Ideas</h2>
         <p>Select a killer, describe your vibe, and get YouTube-ready build concepts complete with perks and add-ons.</p>
       </div>
-
       <div class="form-group">
         <label for="killerSelect">Select Killer</label>
         <div class="select-wrap">
-          <select id="killerSelect">
-            <option value="">Loading killers...</option>
-          </select>
+          <select id="killerSelect"><option value="">Loading killers...</option></select>
           <span class="select-arrow">▾</span>
         </div>
         <div class="killer-power-preview" id="killerPowerPreview"></div>
       </div>
-
       <div class="surprise-row">
         <label class="surprise-toggle">
           <input type="checkbox" id="surpriseMe" />
-          <span class="toggle-track">
-            <span class="toggle-thumb"></span>
-          </span>
+          <span class="toggle-track"><span class="toggle-thumb"></span></span>
           <span class="surprise-label">Surprise Me</span>
         </label>
         <span class="surprise-hint">Let Gemini cook something fun and unexpected</span>
       </div>
-
       <div class="form-group" id="killerPromptGroup">
         <label for="killerPrompt">What kind of build?</label>
         <textarea id="killerPrompt" rows="4" placeholder="e.g. oppressive gen-regression build, snowball nonstop chase build, meme build for entertainment value..."></textarea>
       </div>
-
-      <button class="generate-btn" id="killerGenBtn">
-        <span class="btn-icon">✦</span> Generate Build Ideas
-      </button>
-
+      <button class="generate-btn" id="killerGenBtn"><span class="btn-icon">✦</span> Generate Build Ideas</button>
       <div class="results-area" id="killerResults"></div>
     </div>
   </main>

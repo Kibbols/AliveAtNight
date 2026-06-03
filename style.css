@@ -700,3 +700,108 @@ textarea::placeholder {
   margin-top: 0.4rem;
 }
 .data-source-badge.live { color: #6dbf6d; }
+
+/* Header actions group */
+.header-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Sync button variant */
+.sync-btn { color: var(--yellow) !important; border-color: rgba(240,192,64,0.3) !important; }
+.sync-btn:hover { border-color: var(--yellow) !important; color: var(--text) !important; }
+.sync-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* Sync status log */
+.sync-status {
+  max-height: 180px;
+  overflow-y: auto;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+.sync-status .ok      { color: #6dbf6d; }
+.sync-status .err     { color: var(--accent2); }
+.sync-status .working { color: var(--yellow); }
+
+/* PAT input inside modal */
+.modal input[type="password"] {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 0.65rem 0.9rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+  margin-bottom: 0;
+}
+.modal input[type="password"]:focus { border-color: var(--accent); }
+
+/* Data source badge */
+.data-source-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-top: 0.4rem;
+}
+.data-source-badge.live { color: #6dbf6d; }
+
+/* Lock overlay */
+.lock-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(10,10,12,0.97);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.lock-overlay.active { display: flex; }
+
+.lock-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.lock-spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--border-strong);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.lock-status {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
+
+.lock-countdown {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.lock-hint {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  max-width: 320px;
+}

@@ -1,13 +1,17 @@
 'use strict';
 
 // ── Constants ─────────────────────────────────────────────────────────────────
-const API_KEY_STORAGE  = 'dbd_gemini_api_key';
-const FEEDME_STORAGE   = 'dbd_feedme_data';
-const WIKI_API         = 'https://deadbydaylight.fandom.com/api.php';
+const API_KEY_STORAGE    = 'dbd_gemini_api_key';
+const GITHUB_PAT_STORAGE = 'dbd_github_pat';
+const FEEDME_STORAGE     = 'dbd_feedme_data';
+const WIKI_API           = 'https://deadbydaylight.fandom.com/api.php';
+const GITHUB_REPO        = 'Kibbols/AliveAtNight';
+const GITHUB_FILE        = 'FEEDME';
 
 // ── State ─────────────────────────────────────────────────────────────────────
-let apiKey = localStorage.getItem(API_KEY_STORAGE) || '';
-let activeKillers = window.DBD_KILLERS; // start with fallback
+let apiKey    = localStorage.getItem(API_KEY_STORAGE)    || '';
+let githubPAT = localStorage.getItem(GITHUB_PAT_STORAGE) || '';
+let activeKillers = window.DBD_KILLERS;
 
 // ── DOM refs ──────────────────────────────────────────────────────────────────
 const apiModal        = document.getElementById('apiModal');
@@ -18,11 +22,16 @@ const apiCancelBtn    = document.getElementById('apiCancelBtn');
 const noKeyBanner     = document.getElementById('noKeyBanner');
 const setKeyBannerBtn = document.getElementById('setKeyBannerBtn');
 
-const syncBtn         = document.getElementById('syncBtn');
-const syncModal       = document.getElementById('syncModal');
-const syncStatus      = document.getElementById('syncStatus');
-const syncCancelBtn   = document.getElementById('syncCancelBtn');
-const syncStartBtn    = document.getElementById('syncStartBtn');
+const syncBtn       = document.getElementById('syncBtn');
+const syncModal     = document.getElementById('syncModal');
+const syncStatus    = document.getElementById('syncStatus');
+const syncCancelBtn = document.getElementById('syncCancelBtn');
+const syncStartBtn  = document.getElementById('syncStartBtn');
+const patInput      = document.getElementById('patInput');
+
+const lockOverlay   = document.getElementById('lockOverlay');
+const lockStatus    = document.getElementById('lockStatus');
+const lockCountdown = document.getElementById('lockCountdown');
 
 const tabs        = document.querySelectorAll('.tab');
 const panels      = document.querySelectorAll('.panel');
@@ -40,14 +49,14 @@ const survivorResults = document.getElementById('survivorResults');
 const killerGenBtn  = document.getElementById('killerGenBtn');
 const killerResults = document.getElementById('killerResults');
 
-// ── Init: load FEEDME if available ────────────────────────────────────────────
+// ── Init ──────────────────────────────────────────────────────────────────────
 (async function init() {
-  // Try repo FEEDME file first
+  if (githubPAT) patInput.value = '••••••••••••••••';
+
   try {
     const res = await fetch('FEEDME');
     if (res.ok) {
-      const text = await res.text();
-      const data = JSON.parse(text);
+      const data = JSON.parse(await res.text());
       if (Array.isArray(data) && data.length > 0) {
         activeKillers = data;
         populateKillerSelect(activeKillers, 'wiki');
@@ -57,7 +66,6 @@ const killerResults = document.getElementById('killerResults');
     }
   } catch (_) {}
 
-  // Try localStorage cache
   try {
     const stored = localStorage.getItem(FEEDME_STORAGE);
     if (stored) {
@@ -71,7 +79,6 @@ const killerResults = document.getElementById('killerResults');
     }
   } catch (_) {}
 
-  // Fall back to hardcoded
   populateKillerSelect(activeKillers, 'fallback');
   checkKeyBanner();
 })();
@@ -82,9 +89,7 @@ function openApiModal() {
   apiModal.classList.add('open');
   setTimeout(() => apiKeyInput.focus(), 50);
 }
-
 function closeApiModal() { apiModal.classList.remove('open'); }
-
 function saveApiKey() {
   const val = apiKeyInput.value.trim();
   if (val) {
@@ -94,7 +99,6 @@ function saveApiKey() {
     closeApiModal();
   }
 }
-
 function checkKeyBanner() {
   noKeyBanner.classList.toggle('visible', !apiKey);
 }
@@ -117,45 +121,52 @@ syncCancelBtn.addEventListener('click', () => syncModal.classList.remove('open')
 syncModal.addEventListener('click', e => { if (e.target === syncModal) syncModal.classList.remove('open'); });
 syncStartBtn.addEventListener('click', runSync);
 
+// Save PAT when changed
+patInput.addEventListener('change', () => {
+  const val = patInput.value.trim();
+  if (val && !val.startsWith('•')) {
+    githubPAT = val;
+    localStorage.setItem(GITHUB_PAT_STORAGE, val);
+    patInput.value = '••••••••••••••••';
+  }
+});
+
 function logSync(msg, cls = '') {
   const line = document.createElement('div');
   if (cls) line.className = cls;
   line.textContent = msg;
   syncStatus.appendChild(line);
+  syncStatus.scrollTop = syncStatus.scrollHeight;
 }
 
 async function runSync() {
+  const pat = githubPAT;
+  if (!pat) {
+    logSync('✗ No GitHub PAT set — enter it above.', 'err');
+    return;
+  }
+
   syncStartBtn.disabled = true;
   syncStatus.innerHTML = '';
 
   try {
-    // Step 1: fetch killer list from wiki category
     logSync('Fetching killer list from wiki…', 'working');
     const killerNames = await fetchKillerList();
     logSync(`✓ Found ${killerNames.length} killers`, 'ok');
 
-    // Step 2: fetch add-ons for each killer
     const results = [];
     for (const name of killerNames) {
       logSync(`Fetching add-ons: ${name}…`, 'working');
       try {
         const addons = await fetchKillerAddons(name);
-        // Find matching fallback entry for power description
         const fallback = window.DBD_KILLERS.find(k =>
           k.name.toLowerCase().includes(name.toLowerCase().replace('the ', '')) ||
           name.toLowerCase().includes(k.name.toLowerCase().replace('the ', ''))
         ) || { power: '', powerDesc: '' };
-
-        results.push({
-          name,
-          power: fallback.power,
-          powerDesc: fallback.powerDesc,
-          addons
-        });
+        results.push({ name, power: fallback.power, powerDesc: fallback.powerDesc, addons });
         logSync(`  ✓ ${addons.length} add-ons`, 'ok');
       } catch (err) {
         logSync(`  ✗ Failed: ${err.message}`, 'err');
-        // Push with no addons rather than skip
         const fallback = window.DBD_KILLERS.find(k =>
           k.name.toLowerCase().includes(name.toLowerCase().replace('the ', ''))
         ) || { power: '', powerDesc: '' };
@@ -163,30 +174,82 @@ async function runSync() {
       }
     }
 
-    // Step 3: save to localStorage
     const compact = JSON.stringify(results);
     localStorage.setItem(FEEDME_STORAGE, compact);
     activeKillers = results;
     populateKillerSelect(activeKillers, 'wiki');
 
-    // Step 4: download FEEDME file
-    logSync('Downloading FEEDME file…', 'working');
-    const blob = new Blob([compact], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'FEEDME';
-    a.click();
-    URL.revokeObjectURL(url);
+    logSync('Pushing FEEDME to GitHub…', 'working');
+    await pushFeedmeToGithub(compact, pat);
+    logSync('✓ FEEDME committed to repo!', 'ok');
 
-    logSync('✓ Done! Drop FEEDME in the repo root and push.', 'ok');
-    syncStartBtn.textContent = '✓ Complete';
+    syncModal.classList.remove('open');
+    showLockAndRefresh();
 
   } catch (err) {
     logSync(`✗ Sync failed: ${err.message}`, 'err');
     syncStartBtn.disabled = false;
     syncStartBtn.textContent = '⟳ Retry';
   }
+}
+
+// ── GitHub Push ───────────────────────────────────────────────────────────────
+async function pushFeedmeToGithub(content, pat) {
+  const headers = {
+    'Authorization': `Bearer ${pat}`,
+    'Accept': 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28',
+    'Content-Type': 'application/json'
+  };
+
+  const apiBase = `https://api.github.com/repos/${GITHUB_REPO}/contents/${GITHUB_FILE}`;
+
+  // Get current SHA if file exists (needed for update)
+  let sha = null;
+  try {
+    const check = await fetch(apiBase, { headers });
+    if (check.ok) {
+      const data = await check.json();
+      sha = data.sha;
+    }
+  } catch (_) {}
+
+  const body = {
+    message: `chore: sync FEEDME from wiki [${new Date().toISOString().slice(0,10)}]`,
+    content: btoa(unescape(encodeURIComponent(content))),
+    ...(sha ? { sha } : {})
+  };
+
+  const res = await fetch(apiBase, {
+    method: 'PUT',
+    headers,
+    body: JSON.stringify(body)
+  });
+
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.message || `GitHub API HTTP ${res.status}`);
+  }
+}
+
+// ── Lock Overlay + Auto-refresh ───────────────────────────────────────────────
+function showLockAndRefresh() {
+  lockOverlay.classList.add('active');
+  let seconds = 120;
+
+  function tick() {
+    const m = Math.floor(seconds / 60);
+    const s = seconds % 60;
+    lockCountdown.textContent = `${m}:${s.toString().padStart(2, '0')}`;
+    if (seconds <= 0) {
+      lockStatus.textContent = 'Refreshing…';
+      window.location.reload();
+      return;
+    }
+    seconds--;
+    setTimeout(tick, 1000);
+  }
+  tick();
 }
 
 // ── Wiki API helpers ──────────────────────────────────────────────────────────
@@ -199,7 +262,6 @@ async function wikiGet(params) {
 }
 
 async function fetchKillerList() {
-  // Use the wiki category for killers
   const data = await wikiGet({
     action: 'query',
     list: 'categorymembers',
@@ -214,33 +276,27 @@ async function fetchKillerList() {
 }
 
 async function fetchKillerAddons(killerName) {
-  // Fetch the killer's add-on page
-  const pageTitle = `${killerName}/Add-ons`;
   const data = await wikiGet({
     action: 'parse',
-    page: pageTitle,
+    page: `${killerName}/Add-ons`,
     prop: 'wikitext',
     section: '0'
   });
-
   const wikitext = data?.parse?.wikitext?.['*'] || '';
   return parseAddonNames(wikitext);
 }
 
 function parseAddonNames(wikitext) {
   const names = [];
-  // Match addon names from wiki table rows: | [[Name]] or | Name |
   const patterns = [
-    /\|\s*\[\[([^\]|#]+?)(?:\|[^\]]*)?\]\]/g,   // [[Name]] or [[Name|display]]
-    /^\|\s*([A-Z][^|{\n]{3,40}?)\s*\|/gm         // bare table cell that looks like a name
+    /\|\s*\[\[([^\]|#]+?)(?:\|[^\]]*)?\]\]/g,
+    /^\|\s*([A-Z][^|{\n]{3,40}?)\s*\|/gm
   ];
-
   const seen = new Set();
   for (const re of patterns) {
     let m;
     while ((m = re.exec(wikitext)) !== null) {
       const name = m[1].trim();
-      // Filter out obvious non-addon entries
       if (
         name.length > 2 &&
         name.length < 60 &&
@@ -255,7 +311,7 @@ function parseAddonNames(wikitext) {
       }
     }
   }
-  return names.slice(0, 20); // cap at 20 — each killer has exactly 20 add-ons
+  return names.slice(0, 20);
 }
 
 // ── Killer Dropdown ───────────────────────────────────────────────────────────
@@ -268,24 +324,20 @@ function populateKillerSelect(killers, source) {
     killerSelect.appendChild(opt);
   });
 
-  // Show data source badge
   const existing = document.getElementById('dataSourceBadge');
   if (existing) existing.remove();
   const badge = document.createElement('div');
   badge.id = 'dataSourceBadge';
   badge.className = 'data-source-badge' + (source === 'wiki' || source === 'cache' ? ' live' : '');
-  badge.textContent = source === 'wiki' ? '● Live wiki data'
-    : source === 'cache' ? '● Cached wiki data'
+  badge.textContent = source === 'wiki'    ? '● Live wiki data'
+    : source === 'cache'   ? '● Cached wiki data'
     : '○ Fallback data — use Sync to update';
   killerSelect.closest('.form-group').appendChild(badge);
 }
 
 function updatePowerPreview() {
   const idx = killerSelect.value;
-  if (idx === '' || idx === null) {
-    killerPowerPreview.innerHTML = '';
-    return;
-  }
+  if (idx === '' || idx === null) { killerPowerPreview.innerHTML = ''; return; }
   const k = activeKillers[parseInt(idx)];
   let html = '';
   if (k.power) html += `<span class="power-name">⚡ ${k.power}:</span>${k.powerDesc}`;
@@ -297,7 +349,7 @@ function updatePowerPreview() {
 
 killerSelect.addEventListener('change', updatePowerPreview);
 
-// ── Surprise Me Toggle ────────────────────────────────────────────────────────
+// ── Surprise Me ───────────────────────────────────────────────────────────────
 surpriseMe.addEventListener('change', () => {
   killerPrompt.disabled = surpriseMe.checked;
   killerPromptGroup.style.opacity = surpriseMe.checked ? '0.4' : '1';
@@ -316,9 +368,7 @@ tabs.forEach(tab => {
 // ── Gemini API ────────────────────────────────────────────────────────────────
 async function callGemini(prompt) {
   if (!apiKey) throw new Error('No API key set. Click ⚙ API Key to add your Gemini key.');
-
   const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${apiKey}`;
-
   const res = await fetch(endpoint, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -327,25 +377,21 @@ async function callGemini(prompt) {
       generationConfig: { temperature: 0.9, maxOutputTokens: 2048 }
     })
   });
-
   if (!res.ok) {
     const err = await res.json().catch(() => ({}));
     throw new Error(`Gemini API error: ${err?.error?.message || `HTTP ${res.status}`}`);
   }
-
   const data = await res.json();
   return data.candidates?.[0]?.content?.parts?.[0]?.text || '';
 }
 
-// ── Rendering helpers ─────────────────────────────────────────────────────────
+// ── Rendering ─────────────────────────────────────────────────────────────────
 function setLoading(container, msg = 'Thinking…') {
   container.innerHTML = `<div class="loading-state"><div class="spinner"></div><span>${msg}</span></div>`;
 }
-
 function setError(container, msg) {
   container.innerHTML = `<div class="error-state">⚠ ${msg}</div>`;
 }
-
 function renderMarkdown(container, text) {
   let html = text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   html = html.replace(/^#{1,3} (.+)$/gm, '<h3>$1</h3>');
@@ -369,10 +415,8 @@ survivorGenBtn.addEventListener('click', async () => {
     setTimeout(() => survivorPrompt.style.borderColor = '', 1500);
     return;
   }
-
   survivorGenBtn.disabled = true;
   setLoading(survivorResults, 'Generating survivor video ideas…');
-
   const fullPrompt = `You are a creative YouTube content strategist who specializes in Dead by Daylight (DbD) gaming content.
 
 The user wants YouTube video ideas for survivor gameplay content based on the following request:
@@ -383,8 +427,7 @@ Generate 4-6 distinct YouTube video concepts. For each concept, provide:
 2. A brief description of what the video would cover (2-4 sentences)
 3. Why this would perform well on YouTube for the DbD community
 
-Format each idea clearly. Make titles punchy and engaging — the kind that get clicks in the DbD community.`;
-
+Make titles punchy and engaging — the kind that get clicks in the DbD community.`;
   try {
     const result = await callGemini(fullPrompt);
     renderMarkdown(survivorResults, result);
