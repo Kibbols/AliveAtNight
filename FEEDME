@@ -2,7 +2,7 @@
   {
     "name": "The Animatronic",
     "power": "Fazbear's Fright",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Performing an Axe Throw: 2.76 m/s Winding up an Axe Throw: 3.68 m/s Walking: 4.4 m/s Walking without the Fire Axe equipped: 4.6 m/s If The Animatronic's Fire Axe is embedded on the environment or on a survivor, he will walk at this movement speed. Fire Axe: Winding up a Throw: 1 second Winding up grace period: 0.15 seconds The grace period is part of the winding up phase and starts as soon as the input for it is initiated, making the wind up action seem shorter than it actually is. Cancel Wind up: 1 second Recall Duration: 1.5 seconds Post-Throw Cool-down Duration: 2 seconds This cool-down starts after the projectile launch phase is finished. Missed Fire Axe Recharge: 6 seconds Successful Fire Axe Recharge: 8 seconds The cooldown starts as soon as the projectile lands on a player or the environment. Projectile Launch: 0.25 seconds Projectile Speed: 30 m/s Projectile Gravity: 68.6 m/s2 Projectile Maximum Range: 16 metres Hitboxes: Environmental Collision Ra",
     "addons": [
       {
         "name": "Access Panel",
@@ -93,7 +93,7 @@
   {
     "name": "The Artist",
     "power": "Birds of Torment",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Summon, Charge, Cool-down, Fire: 3.68 m/s Projectile on Flight Path (initially): 20 m/s Projectile on Flight Path (eventually, after 0.3 seconds): 35 m/s Projectile off Flight Path: 35 m/s Dire Crows: Projectile speed on Flight Path: 20 m/s initially; 35 m/s after 0.3 seconds Projectile speed off Flight Path: 35 m/s Fire Cool-down duration: 1 second This refers to how long The Artist must wait after summoning a Dire Crow before it can be launched. Aura visibility for Survivors: 0.75 seconds This refers to how long Survivors see the Aura of Dire Crow that was just launched. Audio range: 12 metres This refers to the radius in which a nearby Dire Crow will emit sound effects that can be heard by Survivors. Idle timer: 10 seconds This refers to how long Dire Crows can stay idle before they disintegrate.The timer is reset whenever The Artist places another Dire Crow. Invincibility buffer: 0.75 seconds This refers to how long Survivors are immune from second Dir",
     "addons": [
       {
         "name": "Automatic Drawing",
@@ -184,7 +184,7 @@
   {
     "name": "The Blight",
     "power": "Blighted Corruption",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Rush and Rush Attacks: 9.2 m/s Blighted Corruption: Recharge Rate: 2 seconds per Token Fatigue duration: 2.5 seconds Rush & Lethal Rush: Rush and Lethal Rush duration: 3 seconds each Rush and Lethal Rush Movement speed: 9.2 m/s or 230 % Rush and Lethal Rush Turn rate: 0.9 °/s Lethal Rush Turn rate during an Attack: 1.6 °/s Lethal Rush duration during an Attack: 4 seconds Lethal Rush Survivor Dodge parameters: within 1 metre of a missed Lethal Rush. This refers to the conditions a Survivor must meet to trigger the Lethal Rush Dodged Score Event. Lethal Rush Attack Open time: 0.5 seconds Lethal Rush Attack Hitting time: 0.3 seconds NOTE: based on in-game observations, it appears that in addition to the comparatively low values in degrees per second mentioned above, other unknown variables must also factor into The Blight's final Turn rate during a Rush, as it appears to be greater than just the values mentioned above. Slam: Minimum Angle of Attack: 45 ° This",
     "addons": [
       {
         "name": "Adrenaline Vial",
@@ -275,7 +275,7 @@
   {
     "name": "The Cannibal",
     "power": "Bubba's Chainsaw",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Walking during a Tantrum: 0.46 m/s Walking while Charging (eventual): 3.45 m/s The Cannibal reaches this speed after 1 second. Walking while Charging (initial): 4.37 m/s The Cannibal reaches this speed after 0.3 seconds. Walking during a Chainsaw Dash (eventual): 5.45 m/s The Cannibal continuously accelerates until he reaches this top speed. Bubba's Chainsaw: Chainsaw Recharge rate: 0.25 c/s by default. It therefore takes 4 seconds to replenish 1 Charge by default. Chainsaw Dash duration: 2.5 seconds by default. Chainsaw Sweep Missed Hit Cool-down: 1.5 seconds. The missed Cool-down duration is increased by 1 second for each consumed Charge up to a maximum of 4.5 seconds. Chainsaw Sweep Successful Hit Cool-down: 2 seconds. Chainsaw Sweep Obstructed Hit Cool-down: 3 seconds (Tantrum). Chainsaw Sweep Cool-down on breaking Pallets or Breakable Walls: 1 second. Each use of a Charge is considered an individual attack by the Game. This mainly affects the use of P",
     "addons": [
       {
         "name": "Speed Limiter",
@@ -366,7 +366,7 @@
   {
     "name": "The Cenobite",
     "power": "Summons of Pain",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Chain Strike: 3.68 m/s Uncontrolled Projectile: 10 m/s Controlled Projectile (initially): 10 m/s Controlled Projectile (intermittently; after 0.4 seconds): 15 m/s Controlled Projectile (intermittently, after 0.7 seconds): 37.5 m/s Controlled Projectile (eventually, after 4 seconds): 40 m/s Gateway: The Gateway works the same as The Nurse's Blink indicator when using Plaid Flannel Minimum Placement distance: 1.5 metres Maximum Placement distance: 16 metres Placement speed: 8 m/s This refers to the speed at which the Gateway is moving away from The Cenobite during the Placement phase. Placement Cancellation cool-down time: 1.5 seconds Gateway Possession: Camera Pan time: 0.5 seconds Field of View Change time: 0.75 seconds Possession Cancellation cool-down time: 3 seconds Killer Repossession Fade-in time: 0.25 seconds Maximum Possession duration: 6 seconds After this time elapses, control will revert back to The Cenobite. Gateway Pitch Angles: Maximum/Minimum",
     "addons": [
       {
         "name": "Bent Nail",
@@ -457,7 +457,7 @@
   {
     "name": "The Clown",
     "power": "The Afterpiece Tonic",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Reloading: 2.3 m/s Invigorated Reloading: 2.57 m/s Invigorated Carrying: 4.12 m/s Walking: 4.6 m/s Invigorated Walking: 5.152 m/s Bottles: Carrying capacity: 6 Bottles This capacity is shared between the Tonic and the Antidote. Cancellation Cool-down duration: 1 second Wind-up and Throw durations: 0.25 seconds Reloading duration: 2.5 seconds Minimum Velocity: 8.5 m/s When Bottles are thrown uncharged (button released ASAP). Maximum velocity: 14 m/s When Bottles are thrown charged (holding them for at least 1 second) Tonic: Gas Cloud Linger duration: 10 seconds If Survivors move through the Gas Cloud, it starts dissipating faster after a buffer of 0.4 seconds. Survivor-Afflictions Linger durations: Impaired vision: 4 seconds (but weakens in strength over time). Involuntary coughing: 2 seconds Hindered duration: 1.6 seconds Hindered strength: -14 % Inability to perform Fast Vaults: 1 seconds Antidote: Activation delay: 1.6 seconds. Invigorated Effects durati",
     "addons": [
       {
         "name": "Bottle of Chloroform",
@@ -548,7 +548,7 @@
   {
     "name": "The Dark Lord",
     "power": "Vampiric Shift",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Walking after casting Hellfire: 2 m/s Walking while shapeshifting out of Bat Form: 2.3 m/s (x0.5) Walking while charging Hellfire: 3.68 m/s (x0.8) Walking in Wolf Form while charging Pounce: 3.91 m/s (x0.85) Walking in Vampire/Wolf Form: 4.6 m/s Walking in Wolf Form with Scent Orb bonus: 4.8 m/s (x1.04348) Flying in Bat Form: 6.5 m/s Teleporting in Bat Form: 12 m/s Pouncing (during the Open Phase): 13.34 m/s (x2.9) Shapeshifting: Shapeshifting out of Wolf Form and Vampire Form: 1 second Shapeshifting out of Bat Form: 1.5 seconds Cool-down time: 3.5 seconds Vampire Form: Terror Radius: 32 metres Lullaby Radius: n/a Footstep Volume bonus: n/a Killer Instinct duration: n/a Wolf Form: Terror Radius: 32 metres Lullaby Radius: n/a Footstep Volume bonus: n/a Killer Instinct duration: 2 seconds Bat Form: While Survivors are invisible in this Form, Static Illusions created by Perks such as Mirrored Illusion remain visible, immediately betraying their trickery natur",
     "addons": [
       {
         "name": "Alucard's Shield",
@@ -639,7 +639,7 @@
   {
     "name": "The Deathslinger",
     "power": "The Redeemer",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Walking while Reloading: 3.08 m/s This is achieved by applying a multiplier of x0.7 to his Walking speed. Walking while Aiming Down Sights: 3.74 m/s This is achieved by applying a multiplier of x0.85 to his Walking speed. Walking: 4.4 m/s Linked Movement Speeds: This refers to any situation in which The Deathslinger is literally linked to the Impaled Survivor through the chain of The Redeemer.As with the speeds listed above, these are achieved by applying a multiplier to the default Movement speed, rather than a fixed value: Harpoon: Launch speed: 40 m/s Return speed: 25 m/s This applies when a shot is missed and the Harpoon returns automatically. Reeling speed: 2.76 m/s The speed at which The Deathslinger manually reels back the Harpoon when a Survivor is impaled on it. Range: 18 metres Firing delay: 0.5 seconds Delay before the projectile is launched after pressing the Attack button. Reload time: 2.6 seconds Cool-down time for successful hits: 0.5 second",
     "addons": [
       {
         "name": "Barbed Wire",
@@ -730,7 +730,7 @@
   {
     "name": "The Demogorgon",
     "power": "Of the Abyss",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Channelling Of the Abyss: 3.86 m/s Walking: 4.6 m/s Shred attack: 18.4 m/s Traversing the Upside Down: 32 m/s Shred: Charge time: 1 second Shred must be charged to at least 65 %, otherwise The Demogorgon will perform a normal Lunge attack instead. Cancelling a fully charged Shred results in a cool-down of 0.45 seconds, during this time The Demogorgon cannot interact or attack. Field of View bonus angle: +15 ° Attack Cool-downs: Shredding a Pallet or a Breakable Wall: 1.8 seconds Missed Shred Attack: 2.25 seconds Successful Shred Attack: 2.7 seconds Portals: Capacity: 6 Portals Setting time: 0.85 second Entering time: 1.35 seconds Area of Effect radius: 4 metres Noise radius: 8 metres Sealing times: 1 Survivor: 12 seconds (1 c/s each; no efficiency penalty) 2 Survivors: ~9 seconds (0.67 c/s each; 33 % efficiency penalty) 3 Survivors: 8 seconds (0.5 c/s each, 50 % efficiency penalty) 4 Survivors: 6 seconds (0.5 c/s each, 50 % efficiency penalty) Sealing a Po",
     "addons": [
       {
         "name": "Barb's Glasses",
@@ -821,7 +821,7 @@
   {
     "name": "The Doctor",
     "power": "Carter's Spark",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Charging Static Blast: 2.99 m/s Charging Shock Therapy: 3.08 m/s Walking: 4.6 m/s Madness: Additional, detailed information can be found in the separate Madness Article. Madness thresholds: Tier I: 1 Madness point Tier II: 2 Madness points Tier III: 3 Madness points Shock Therapy Madness gain: +0.5 Madness points This is equal to half a Tier. Static Blast Madness gain: +1 Madness point This is equal to a full Tier. Shock Therapy: Range: 12 metres This distance is calculated from the centre of The Doctor's hitbox capsule. Charge time: 1 second Detonation delay: 0.65 seconds This refers to how long it takes the attack to shock Survivors after releasing it. Cool-down duration: 1.5 seconds This refers to how long after the attack The Doctor is prohibited from initiating another attack or from interacting with Props. Survivor-Interactions Cool-down duration: 2.5 seconds This refers to how long after receiving a shock Survivors are prohibited from interacting wi",
     "addons": [
       {
         "name": "\"Calm\" - Class I",
@@ -912,7 +912,7 @@
   {
     "name": "The Dredge",
     "power": "Reign of Darkness",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Charging/Holding Reign of Darkness: 4.0 m/s Walking: 4.6 m/s Teleportation speed during Daytime: 19 m/s Teleportation speed during Nightfall: 38 m/s Gloaming Ability: Initial Charge time: 10 seconds This refers to how long it takes for the Power to become available after loading into a Trial. Cool-down time during Daytime: 10 seconds Cool-down time during Nightfall: 4 seconds Activation time: 0.5 seconds Fade-in / Fade-out time for Remnant: 0.25 seconds Grabbing Survivor in teleported-to Locker: 3 seconds Restrictions: Minimum distance to hooked Survivors: 12 metres Minimum distance to Locker: 3 metres Locks: Time to lock: 0.1 seconds Time to break: 1.5 seconds This is identical to the cool-down time of an Obstructed Hit.While The Dredge does use a Basic Attack to hit the Locker, it hitting a prop instead of a Survivor causes it to apply that cool-down instead. This is also the reason Perks such as Save the Best for Last have no effect on this interaction.",
     "addons": [
       {
         "name": "Air Freshener",
@@ -1003,7 +1003,7 @@
   {
     "name": "The Executioner",
     "power": "Rites of Judgement",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Walking while initiating or cancelling Punishment of the Damned: 3.68 m/s Walking while performing Rites of Judgement: 4.2 m/s Walking: 4.6 m/s Rites of Judgement / Torment Mode: Power Activation time: 1 second Power Cancellation time: 1 second Power Capacity: 10 Charges This refers to for how long The Executioner can draw Torment Trails before the Power runs out and he needs to recharge it. Power Depletion rate: -1 c/s This results in a Depletion time of 10 seconds. Power Recharge rate: +0.25 c/s This results in a Recharge time of 40 seconds. Killer Instinct duration: 3 seconds Cages of Atonement: Main article: Cages of Atonement Interaction time: 1 second Auto-relocation Trigger radius: 10 metres Auto-relocation Trigger timer: 3.5 seconds Auto-relocation Entity-Progression Cool-down duration: 10 seconds Attack Trail: Initial Spawn delay: 0.267 seconds Delay after initiating the attack before the Attack Trail spawns. Spawn interval per segment: 0.033 seco",
     "addons": [
       {
         "name": "Black Strap",
@@ -1094,7 +1094,7 @@
   {
     "name": "The First",
     "power": "Test Subject #001",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Walking: 4.4 m/s Traversing the Upside Down: 8 m/s Walking movement speed multiplier while charging Vine Attack: x0.681818 This results in a walking movement speed of 2.99m/s Walking movement speed multiplier while casting Vine Attack: x0.40909 This results in a walking movement speed of 1.79m/s Vine Attack: Cooldown: 3 seconds Charge time: 0.4 seconds Casting time: 0.6 seconds Cancel cooldown time: 1.5 seconds Vine Attack - Area Of Effect: Area of Effect delay: 0.6 seconds Area of Effect linger time: 0.3 seconds Area of Effect radius: 1.46 metres Area of Effect height: 5 metres Anti-camp range = 8 metres Anti-camp Area of Effect delay: 6 seconds Upside Down: Cooldown: 35 seconds Trial start cooldown: 50% of base cooldown Transition to Upside Down time: 1.5 seconds Delay before reaching Upside Down walking movement speed: 0.32 seconds Delay before reaching normal walking movement speed after performing Undergate Attack: 2.5 seconds Upside Down - Undergate Attack: Time ",
     "addons": [
       {
         "name": "Bead Maze",
@@ -1185,7 +1185,7 @@
   {
     "name": "The Ghost Face",
     "power": "Night Shroud",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Active Stalking while crouched: 0.76 m/s Active Stalking while standing: 0.92 m/s The Ghost Face enters this mode as soon as a Survivor enters his Field of View and is within Stalking range while Stalking. Passive Stalking while crouched: 1.9 m/s Passive Stalking while standing: 2.3 m/s The Ghost Face is in this mode whenever he is Stalking without seeing any Survivor in his Field of View or who is within Stalking range. Crouching: 4.0 m/s Reveal Mechanic: Reveal range: 32 metres Reveal time: 1.5 seconds Reveal Progression/Regression rate: ±1 c/s Horizontal Ratio of Visibility Zone: 60 % Vertical Ratio of Visibility Zone: 90 % The Visibility Zone refers to a screen area that is designated as the zone in which The Ghost Face is considered visible to the Survivor, which is a prerequisite to be able to reveal him. Minimum In-Zone percentage: 0.05 % This refers to how much of the screen must be occupied by The Ghost Face for him to be considered seen, when his",
     "addons": [
       {
         "name": "Cheap Cologne",
@@ -1276,7 +1276,7 @@
   {
     "name": "The Ghoul",
     "power": "One-Eyed Terror",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Leap Cool-down: 1.6 m/s Walking while charging or adjusting Kagune Leap: 3.68 m/s Walking: 4.6 m/s Performing the First Leap on any Survivor or a Consecutive Leap on Survivors holding a Kagune Mark: 10 m/s Performing a Leap: 14 m/s Sliding after a Leap: 23 m/s Kagune Leap: Power Charge time: 0.35 seconds Power Charge-cancellation threshold: 0.25 seconds Below this threshold, The Ghoul will not enter the charge-cancellation cool-down. Power Recharge time out of Enraged Mode: 4 seconds per Token Grab-Attack distance: 3.5 metres When The Ghoul enters this radius near targeted Survivors and under the right conditions, The Ghoul will Grab-Attack them. Minimum Leap distance: Minimum survivor distance: 2 metres Minimum environmental distance: 5 metres Below these thresholds, a Leap will not be initiated. Maximum Leap distance: 14 metres Kagune Leap's trajectory endpoint is pre-determined at every use (same principle doesn't apply for its duration) — making The Gh",
     "addons": [
       {
         "name": "Amon's Necktie",
@@ -1367,7 +1367,7 @@
   {
     "name": "The Good Guy",
     "power": "Playtime's Over",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Walking (both Modes): 4.4 m/s Slice & Dice: 8 m/s Footsteps: Spawn interval: 0.15 seconds Lifetime: 0.85 seconds This refers to the time how long an individual footstep remains visible for. Maximum Visibility range: 16 metres Illusory Footfalls: Distraction Lifetime: 10 seconds Maximum simultaneous distractions per Survivor: 2 Maximum idle timer: 0.2 seconds Chance to randomly turn back on path (mind-game): 15 % Chance to randomly change direction: 1 % Chance to randomly stop for the maximum idle timer: 10 % Hidey-Ho Mode: Duration: 14 seconds Cool-down: 12 seconds Transition time between modes: 1 second Duration penalty per Attack attempt: -50 % This only applies while in Hidey-Ho Mode. Warning threshold: 1 second before exiting the Mode Camera: Spring Arm length: 130 centimetres Spring Arm length in Hidey-Ho Mode: 95 centimetres Height: 110 centimetres Height in Hidey-Ho Mode: 95 centimetres Slice & Dice + Scamper: Scamper Charge-up duration: 1 second Sc",
     "addons": [
       {
         "name": "Automatic Screwdriver",
@@ -1458,7 +1458,7 @@
   {
     "name": "The Hag",
     "power": "Blackened Catalyst",
-    "powerDesc": "",
+    "powerDesc": "Main Article Walking: 4.4 m/s Phantasm Traps: Maximum Teleportation range: 48 metres Capacity: 10 This refers to how many Phantasm Traps can co-exist in the environment.Placing an additional Phantasm Trap at this point will recycle the oldest one. Setting time: 1.9 seconds Trigger radius: 2.7 metres Loud Noise Notification range (when tripped): 1,000 metres Tripped duration: 6 seconds Score Event timer: 10 seconds If The Hag lands a hit on the Survivor who tripped the Phantasm Trap specifically or on any Survivor after teleporting to a Phantasm Trap within that timeframe, special Score Events are triggered. Post-Teleport Stun duration: 0.01 second This refers to the time during which The Hag cannot attack or move. Post-Teleport Slow-down duration: 1 second Tripped-Event range: 16 metres This is only used for Survivor Bots and refers to the maximum audible range at which they can detect a tripped Phantasm Trap. Wipe-away time: 4 seconds Mud Phantasm: After spawning, Mud Phantasms keep t",
     "addons": [
       {
         "name": "Bloodied Mud",
@@ -1549,7 +1549,7 @@
   {
     "name": "The Hillbilly",
     "power": "",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Walking during the Chainsaw's Cool-down: 1.84 m/s Charging the Chainsaw: 3.68 m/s Walking: 4.6 m/s Chainsaw Sprint: 10.12 m/s Turn rate: Initial Turn rate: 412 °/s This phase lasts for 1 second Eventual Turn rate: 32 °/s Chainsaw: Charge time: 2.5 seconds Long Chainsaw Sprint duration: 2 seconds Attack Zone Scale factor: x0.9 Obstruction Zone Scale factor: x0.5 Overdrive: Duration: 20 seconds Activation threshold: 20 Charges Accumulation rate when revving the Chainsaw: +1.5 c/s Accumulation rate during the Chainsaw Sprint: +1.5 c/s Dissipation rate when not using the Chainsaw: -1 c/s Decay delay: 8 seconds This refers to how long it takes after stopping to use the Chainsaw before the Overdrive Meter starts discharging. Rev Buffer time: 0.5 seconds This buffer prevents The Hillbilly from slowly accumulating Overdrive by repeatedly tapping the Power button without properly revving the Chainsaw. Overdrive Bonuses: Chainsaw Sprint speed: 12 m/s Transition time",
     "addons": [
       {
         "name": "Apex Muffler",
@@ -1640,7 +1640,7 @@
   {
     "name": "The Houndmaster",
     "power": "Scent of Blood",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Charging Command (The Houndmaster): 3.68 m/s Walking (The Houndmaster): 4.6 m/s Slipstream-Walking (The Houndmaster): 6.0 m/s Following (The Dog): 9.2 m/s Returning (The Dog): 18.4 m/s Patrolling (The Dog): 22.5 m/s Dashing (The Dog): 35 m/s Pouncing (Unused) (The Dog): 50 m/s Chase Command: Power triggered cool-down: 3 seconds Power cancelled cool-down: 1 second Search Command: Power triggered cool-down: 0.5 seconds Power cancelled cool-down: 1 second Target Location minimum distance: 5 metres Target Location maximum distance: 40 metres It should be noted that this only applies to Searches that are not directed at a specific Prop. Slipstream: The mechanic that unlocks a Movement Speed after walking along the Search Path is internally referred to as Slipstream.Walking along the Search Path grants The Houndmaster so-called Slipstream points at a given rate per travelled metre.Once she reaches a specific threshold, she is granted the Movement Speed bonus. Sl",
     "addons": [
       {
         "name": "Barley Meal",
@@ -1731,7 +1731,7 @@
   {
     "name": "The Huntress",
     "power": "Hunting Hatchets",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Wind-up phase: 3.08 m/s Throw Cool-down phase: 3.74 m/s Walking: 4.4 m/s Minimum Flight speed of Hatchets: 25 m/s Maximum Flight speed of Hatchets: 40 m/s Hatchets: Wind-up time: 0.9 seconds This describes the minimum time it takes The Huntress to be ready to launch a Hatchet when releasing the Power button. If she releases a Hatchet right after this phase concludes, the Hatchet will be uncharged and thrown with the minimum Flight speed. If she continues to hold the Power button, she will enter the next phase, allowing her to charge the Hatchet (see next Bullet point). Throw Charge time: 1 second This describes the phase that immediately follows the Wind-up phase This phase allows The Huntress to charge her Hatchets for increased Flight speed. Charging Hatchets for the full duration (announced with an audio cue) will throw them with the maximum Flight speed. Throw Cool-down duration: 2 seconds Reload time at Lockers: 3 seconds Hitboxes: Environmental colli",
     "addons": [
       {
         "name": "Amanita Toxin",
@@ -1822,7 +1822,7 @@
   {
     "name": "The Knight",
     "power": "Guardia Compagnia",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Walking: 4.6 m/s Drawing the Patrol Path: 15 m/s The Carnifex: Patrol speed: 3.4 m/s (default) Break or Damage Action duration: 1.8 seconds (shortest) Patrol duration: 12 seconds (default) Hunt speed: 4.1 m/s (default) Attacks cause Deep Wound: no (default) Flag Materialisation time: 5 seconds (default) Hunt duration: 12 seconds (default) Spawn Vision range: 2 metres (default) Patrol Vision range: 10 metres (default) Cool-down duration: 20 seconds (shortest) The Assassin: Patrol speed: 3.4 m/s (default) Break or Damage Action duration: 5 seconds (default) Patrol duration: 12 seconds (default) Hunt speed: 4.4 m/s (fastest) Attacks cause Deep Wound: yes (damages) Flag Materialisation time: 5 seconds (default) Hunt duration: 12 seconds (default) Spawn Vision range: 2 metres (default) Patrol Vision range: 10 metres (default) Cool-down duration: 30 seconds (longest) The Jailer: Patrol speed: 4.1 m/s (fastest) Break or Damage Action duration: 5 seconds (default)",
     "addons": [
       {
         "name": "Battle Axe Head",
@@ -1913,7 +1913,7 @@
   {
     "name": "The Krasue",
     "power": "Unbodied Flesh",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Head to Body Form transition: 1.15 m/s Body to Head Form transition: 3.68 m/s Exiting Headlong Flight: 3.7 m/s Charging and using Regurgitate: 3.8 m/s Walking in Body Mode: 4.6 m/s Walking in Head Mode: 4.8 m/s Using Headlong Flight: 7 m/s Using Intestinal Whip: 14.4* m/s This is not a constant value and is only the maximum speed value of Intestinal Whip. Corporeal Weave: Body-to-Head Transition time: 1.2 seconds Head-to-Body Transition time: 2.2 seconds Cool-down: 3.5 seconds Initial cool-down: 5 seconds Applied at the start of a Trial. Leeched: Maximum Leeched levels: 2 Maximum charges per level: 100 charges Leeched I progression from Intestinal Whip: +34 charges Leeched I progression from Regurgitate: +100 charges Passive Leached II progression: +1.665 c/s This results in a minute-long timer to passively reach Leeched II. Glowing Fungus: Survivor Movement speed while eating a Glowing Fungus: 2.832 m/s Eat Glowing Fungus interaction time: 3 seconds Passi",
     "addons": [
       {
         "name": "Broken Tiara",
@@ -2004,7 +2004,7 @@
   {
     "name": "The Legion",
     "power": "Feral Frenzy",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Fatigue: 2.3 m/s Frenzy: 5.2 m/s Bonus movement speed gained per-hit: 0.24 m/s Feral Frenzy: Duration: 11 seconds Recharge: 15 seconds Fatigue: 2.5 seconds Bonus Field of View angle: +15 ° Bonus Field of View angle gained per-hit: +1 ° Bonus Terror Radius: +8 metres Feral Vaults: Action duration: 0.9 seconds Feral Slashes: Attack Open time: 0.5 seconds Attack Hitting time: 0.3 seconds Successful Attack cool-down: 1 second Obstructed Attack cool-down: 0.225 seconds Missed Attack cool-down: 0.225 seconds Killer Instinct: The detection radius is directly tied to The Legion's Terror Radius. This has the consequence that any effects altering their Terror Radius also affect Killer Instinct, including the Undetectable and Oblivious status effects. Unlike The Doctor, the Oblivious status effect is not negated by the power, despite being tied to the Terror Radius. Deep Wound: Bleed-out timer lasts 20 seconds and cannot be modified by the use of Add-ons. Self Mendin",
     "addons": [
       {
         "name": "BFFs",
@@ -2095,7 +2095,7 @@
   {
     "name": "The Lich",
     "power": "Vile Darkness",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Post-Fly Cool-down: 1.012 m/s Post-Casting Spells: 3.68 m/s Charging Spells: 4.0 m/s Walking: 4.6 m/s Flying: 8.0 m/s Spells: Charge time: 0.2 seconds How long it takes to charge a Spell before it can be cast. Cool-down Charge threshold: 0.1 seconds Buffer that prevents any cool-downs from applying by accidentally tapping the button. Cancellation Cool-down duration: 1.25 seconds Applies after cancelling a Spell after charging it, instead of casting it. Individual Recharge durations: These cool-downs are applied individually to each Spell after casting and are not shared.Any Spell not currently recharging may be used at any time. Dispelling Sphere: 30 seconds Flight of the Damned: 30 seconds Fly: 20 seconds Mage Hand: 35 seconds Spell Cast Cool-down after casting: 2 seconds Fly is an exception with an increased Cool-down duration of 2.75 seconds Spell Cast Cool-down after cancelling: 1 second Magic Item Aura-reveal duration: 2 seconds The time the Aura of T",
     "addons": [
       {
         "name": "Bag of Holding",
@@ -2186,7 +2186,7 @@
   {
     "name": "The Mastermind",
     "power": "Virulent Bound",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Walking in the Chain Bound Window: 2.76 m/s Charging Virulent Bound: 3.68 m/s Walking: 4.6 m/s Performing a Virulent Bound: 14 m/s Bound: Power Charge time: 1.5 seconds Power Recharge time: 5.5 seconds per Charge Reduced Power Recharge Time bonus for each Infected Survivor: -0.5 seconds Minimum Bound distance: 1 metre Below this threshold, a Bound will not be initiated. Chain Bound Window duration: 2 seconds This refers to for how long after a first Bound, a second one can be initiated. Bound Vault duration: 1 second This duration only refers to The Mastermind's Bound Vault animation time and does not take into account its following cool-down. Bound Survivor-Grab duration: 0.86 seconds Bound Durations: First Bound duration: 0.5 seconds Second Bound duration: 1 second This Bound is also referred to as the Chain Bound, since The Mastermind can chain it to the first Bound. Bound Ranges: The Mastermind's Bounds do not have a fixed range, only their individual ",
     "addons": [
       {
         "name": "Bullhorn",
@@ -2277,7 +2277,7 @@
   {
     "name": "The Nemesis",
     "power": "T-Virus",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Charging/Holding Tentacle Strike while in MR1/MR2: 3.8 m/s Charging/Holding Tentacle Strike while in MR3: 4.0 m/s Tentacle Strike cool-down: 4.2 m/s This applies to cancelling the attack. Tentacle Strike: Charge time: 0.35 seconds Charge and hold Movement speed: 3.8 m/s Cancellation Cool-down time: 1.5 seconds Cool-down Movement speed: 4.2 m/s Attack ranges: Mutation Rates 1 & 2: 5 metres Mutation Rate 3: 6.5 metres Attack Open time: 0.25 seconds Attack Hit time: 0.333 seconds Attack Cool-down: 2.25 seconds Tentacle Strike is able to hit Survivors and destroy Pallets or Walls at the same time: disabled feature Mutation Rate: Thresholds: MR1 to MR2: 5 Contamination Points MR2 to MR3: 9 Contamination Points MR Total Requirement: 14 Contamination Points The total requirement refers to how many Contamination points are required to reach MR3 from MR1. Contamination Points: Contaminating Survivors with a Tentacle Strike: +3 Contamination Points Hitting contamina",
     "addons": [
       {
         "name": "Admin Wristband",
@@ -2368,7 +2368,7 @@
   {
     "name": "The Nightmare",
     "power": "Dream Demon",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Walking while charging Dream Projection: 3.86 m/s Walking while placing Dream Snares: 4.0 m/s Walking while placing Dream Pallets: 4.6 m/s Dream Snares: Charge time: 0.35 seconds Ability cooldown: 7 seconds Travel speed: 12 m/s Range: 18 metres Penalties for Asleep Survivors: Suffer from a -12 % Hindered Status Effect for 4.5 seconds. Penalty for Awake Survivors: Have their Microsleep timer advanced by +30 seconds. Dream Pallets: Token count: 8 Tokens Aura range: 24 metres Indicator and Placement range: 24 metres Placement angle: 40 ° Rupture Detonation delay: 1.5 seconds Rupture Detonation radius: 3.5 metres Rupture Detonation cooldown: 1.5 seconds Dream Pallet Shimmer Maximum Distance: 6 metres This applies to Survivors only. The Shimmer effect will scale in intensity within this distance. Beyond this distance, they will appear as a normal Pallet. Penalty for Asleep Survivors: Are damaged for 1 Health State. Penalty for Awake Survivors: Have their Micros",
     "addons": [
       {
         "name": "Black Box",
@@ -2459,7 +2459,7 @@
   {
     "name": "The Nurse",
     "power": "",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Fatigue: 0.96 m/s Charging during Chain Blink Window: 1.16 m/s Walking during Chain Blink Window: 1.54 m/s Charging Blink: 2.89 m/s Walking: 3.85 m/s Blink Lunge: 6.16 m/s Blink: 13.33 m/s This assumes a default Blink of 20 metres in 1.5 seconds, as this speed value is derived from those parameters. Blink: Maximum Blink range: 20 metres Minimum Blink range: 1.5 metres Maximum Blink duration: 1.5 seconds Minimum Blink duration: 0.25 seconds Fastest Blink speed: 13.33 m/s This is calculated based on maximum range using the maximum duration. Slowest Blink speed: 6 m/s This is calculated based on minimum range using the minimum duration. Maximum Blink charges: 2 Charges Blink Recharge time: 3 seconds per Charge Blink Charge time: 2 seconds The Charge duration determines the maximum available Blink distance and duration: the longer one charges, the farther she can Blink, up to her maximum distance and the longer that Blink will take to complete. The Nurse can c",
     "addons": [
       {
         "name": "Anxious Gasp",
@@ -2550,7 +2550,7 @@
   {
     "name": "The Oni",
     "power": "Yamaoka's Wrath",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Absorption: 3.45 m/s Demon Strike: 4.6 m/s Demon Dash: 7.82 m/s Absorption Mode: This is whenever The Oni is not in Blood Fury. Absorption range: 0.5 metres When within this range, Blood Orbs are absorbed by The Oni, filling his Power gauge. Attraction range: 6 metres When within this range, Blood Orbs start moving towards The Oni, if they are within a 45 ° cone in his Field of View. Attraction speed: 10 m/s Forced Drop range: 8 metres When within this range, Survivors are forced to drop Blood Orbs, if they are within a 45 ° cone in The Oni's Field of View. Movement speed: 3.45 m/s or 86.25 % Blood Orbs: Visibility range: 35 metres Blood Orbs are invisible to Survivors with the exception of a short glimpse upon spawning or if The Oni uses Renjiro's Bloody Glove. Blood Orbs are invisible to The Oni during Blood Fury and cannot be absorbed. Aura range: 8 metres If obscured by an obstacle, Blood Orbs within this range will reveal their Aura to The Oni. Drop r",
     "addons": [
       {
         "name": "Akito's Crutch",
@@ -2641,7 +2641,7 @@
   {
     "name": "The Onryō",
     "power": "Deluge of Fear",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Walking while Manifesting: 4.0 m/s Walking in general: 4.6 m/s Walking while Demanifesting: 4.6 m/s Walking after Projection: 6.9 m/s for 2 seconds Condemned: Activation threshold: 7 Stacks At this point, Survivors will have filled their Condemned Meter. Stacks gained from hooking a Survivor with a Cursed Tape: +1 Stack This only applies to the other Survivors and only when using the Ring Drawing Add-on. Stacks gained from Projection: +1 Stack This only applies to Survivors who are within 16 metres of any powered TV. Stacks gained from turning off a TV: +1 Stack Stacks gained from retrieving a Cursed Tape from a TV: +0 Stacks Stacks lost from inserting a Cursed Tape into a TV: -3 Stacks Duration of Killer Instinct when fully Condemned: 6 seconds Passive Condemned (unused mechanic): Stacks gained passively while carrying a Cursed Tape: +0 Stacks per second Paused while being chased. Pause-Buffer after a Chase: 16 metres If the Killer remained within that ra",
     "addons": [
       {
         "name": "Bloody Fingernails",
@@ -2732,7 +2732,7 @@
   {
     "name": "The Pig",
     "power": "Jigsaw's Baptism",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Walking while Crouched: 4 m/s Ambush Dash: 7.1 m/s Reverse Bear Traps: Time to attach to Survivors: 3.3 seconds Death Timer duration: 150 seconds Jigsaw Boxes: Time to search for Survivors: 12 seconds Trigger odds for a Skill Check: 80 % The odds are rolled once per second while searching the box. Crouched State: Transition time: 0.8 second Terror Radius fade-out timer: 3 seconds Terror Radius fade-in timer: 1.4 seconds Ambush Dash: Charge time: 0.75 seconds Duration: 2.3 seconds Cool-down durations: Successful hit: 2.7 seconds Missed/obstructed hit: 1.5 seconds Death Timer Behaviour:",
     "addons": [
       {
         "name": "Amanda's Letter",
@@ -2823,7 +2823,7 @@
   {
     "name": "The Plague",
     "power": "Vile Purge",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Vomit Charging & Cool-down: 3.6 m/s Vomit Holding & Vomiting: 4.4 m/s Vomit Projectiles: 10.55 m/s Vile Purge & Corrupt Purge: Approximate maximum range: 13 metres Charges: 1.5 Charges Charge rate: 1 c/s Charge time: 1.5 seconds Activation Charge threshold: 25 % Tapping the Power button will cause The Plague to charge up to this threshold, then vomit automatically. Drain rate: 0.8 c/s Vomit time: 1.875 seconds Vomit Cool-down duration: 1.5 seconds Infection time of Interactables: 40 seconds This refers to how long vomited-on Props stay infected before becoming uninfected again. Corrupt Purge: deals damage: Yes deals double damage: No Damage Immunity duration after being hit by Corrupt Purge: 3 seconds When The Plague is stunned with a Pallet or Decisive Strike, Head On, etc., she will lose Corrupt Purge. Vomit Projectiles: Sickness additive: 1.25 % Amount of Killer momentum added to projectile speed: 100 % Launch rate: 1 Projectile every 0.03 seconds for 1",
     "addons": [
       {
         "name": "Ashen Apple",
@@ -2914,7 +2914,7 @@
   {
     "name": "The Shape",
     "power": "",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Walking after breaking a Pallet or Breakable wall using Slaughtering Strike: 1.84 m/s Walking while Active or Passive Stalking: 2.52 m/s Charging Slaughtering Strike: 3.22 m/s Walking while in Stalker Mode: 4.2 m/s Walking while in Pursuer and Evil Incarnate modes: 4.6 m/s Slaughtering Strike: 7.5 m/s Evil Within: Switching between Stalker/Pursuer Mode cool-down: 3 seconds Stalker Mode: Terror Radius: 0 metres Stalk range: 2.5 to 32 metres Stalk Points (SP): Evil Incarnate Tier-up threshold: 5 SP Stalk rate while standing still: 1 SP/s Stalk rate while moving: 0.75 SP/s This is achieved by applying a multiplier of x0.75 to his Stalking rate. Stalk-Depletion Mechanic: This mechanic automatically drains the Stalk meter at a rate of -1 SP/s under these conditions: The Shape did not stalk any Survivor in the last 20 seconds. The Stalk meter is filled between 50% and 100%. The Hedge sound cue play conditions: The Shape has been continuously stalking a Survivor ",
     "addons": [
       {
         "name": "Blond Hair",
@@ -3005,7 +3005,7 @@
   {
     "name": "The Singularity",
     "power": "Quantum Instantiation",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Walking while Overheated: 2.3 m/s Overheat applies a Hindered penalty of -50 % Walking: 4.6 m/s Walking in Overclock Mode: 4.738 m/s Overclock Mode applies a speed multiplier of x1.03 Biopod Projectile: 50 m/s Biopods: Disabled duration: 45 seconds This applies to when an EMP detonates within range of the Biopod currently being controlled by The Singularity. Audio Delay duration: 0.2 seconds After possessing a Biopod for this amount of time, The Singularity can hear all nearby sounds through it. Aura-Linger duration of Last Controlled Pod: 10 seconds Within this close of a range, a Biopod is considered to be removed when aiming at it. Minimum Removal Range: 1.3 metres Maximum Spawn range: 22 metres Maximum Height offset: 5 metres Biopods may not be spawned any higher than this, compared to the Killer's location. Surface offset: 0.75 metres Biopods spawn with this offset on surfaces. Charge time: 0.15 seconds Reload time: 0.5 seconds Projectile speed: 50 m/",
     "addons": [
       {
         "name": "Android Arm",
@@ -3096,7 +3096,7 @@
   {
     "name": "The Skull Merchant",
     "power": "Eyes in the Sky",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Placing a Drone: 4.4 m/s Inspecting her Radar: 4.6 m/s Walking: 4.6 m/s Drones: Power Cool-down: 7 seconds Triggers whenever a new Drone is placed. Initialisation time: 0.3 seconds This is a buffer between placing a Drone and it starting to scan its surroundings. Disabled duration: 45 seconds Triggers when a Drone is hacked. Recall duration: 1 second Maximum Hacking timer: 30 seconds If a Survivor takes longer than this to hack a Drone, the mini-game will automatically fail. Drone Detection: Consecutive-Scans Immunity: 2.5 seconds This is a buffer that applies whenever a Survivor is scanned. Drone Placement: Minimum distance to other Drones or hooked Survivors: 12 metres Minimum height offset to other Drones or hooked Survivors: 2.5 metres Minimum clearance: 35 centimetres Minimum height above ground (after being placed): 1.5 metres Maximum height above ground (after being placed): 2.5 metres Drone Beam Colours: The colour of the Beams emitted by Drones sh",
     "addons": [
       {
         "name": "Adaptive Lighting",
@@ -3187,7 +3187,7 @@
   {
     "name": "The Slasher",
     "power": "Omnipresent Evil",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Omnipresent Evil: 7.24 m/s Charging and cancelling a Throwing Spike: 2.88 m/s Throwing a Throwing Spike: 1.8 m/s Omnipresent Evil: Starting cool-down: 3 seconds Cool-down applied at the start of the Trial. Jump Scare cool-down: 12 seconds Cool-down applied after a Jump Scare. Interaction time: 0.15 seconds Speed curve time: 0.5 seconds Refers to the amount of time it takes for Omnipresent Evil's movement speed curve to take effect after enterning Omnipresent Evil. Jump Scare activation delay: 2 seconds Omnipresent Evil - Survivor Sensing: Survivor sensing range: 16 metres Refers to the range in which Survivors will be sensed either by the fog or footsteps. Footstep minimum distance: 1.1 metres Refers to the distance needed between footsteps to trigger sensing. Footstep linger time: 1.5 seconds Footstep lifetime: 2.5 seconds Refers to the duration of the sensing effect after it is ended. Omnipresent Evil - Husk Attack: When enterning Omnipresent Evil, a husk is left at ",
     "addons": [
       {
         "name": "Orderly's Shoe",
@@ -3278,7 +3278,7 @@
   {
     "name": "The Spirit",
     "power": "Yamaoka's Haunting",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Walking: 4.4 m/s Phase-Walking: 7.04 m/s Phase-Walking: Charge time: 1.5 seconds Power Gauge: 5 Charges Depletion rate: -1 c/s By default, this makes Yamaoka's Haunting last for 5 seconds. Recharge rate: +0.333333 c/s By default, this makes Yamaoka's Haunting recharge over 15 seconds. Linger duration of Power effects: 1 second This refers to visual effects of Phase-Walking as well as the increased Movement speed. Cool-down duration: 0 seconds This allows The Spirit to instantly attack after ending her Phase-Walk. Movement Speed multiplier: x1.6 Passive Phasing: Duration: 0.5 seconds This refers to the duration of the visual effects causing The Spirit to flicker in-and-out of view from the Survivors' POV. Cool-down duration (minimum): 1 second This refers to the Cool-down duration between two instances of Passive Phasing. Cool-down duration (maximum): 5 seconds Ditto. Husk: Perks tracking The Spirit are unable to track her ethereal form and will only track ",
     "addons": [
       {
         "name": "Dried Cherry Blossom",
@@ -3369,7 +3369,7 @@
   {
     "name": "The Trapper",
     "power": "",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Walking: 4.6 m/s Bear Traps: Setting time: 2.5 seconds The animation is split into three phases, with only the second phase being affected by Add-ons: Crouching down: 0.5 seconds Setting: 1.5 seconds Standing up: 0.5 seconds Disarm time: 3.5 seconds Escape Attempt time: 1.8 seconds Rescue time: 1.5 seconds Escape Attempt chance: 16.67 % This is per attempt, but capped at a maximum of 6 attempts, after which the action will always succeed. Setting buffer: 1.5 metres This refers to the minimum distance in-between two Bear Traps Self-Catch Grace period: 3 seconds This prevents The Trapper from getting caught in his own Bear Trap right after setting one. Trap Pick-Up time: 1 second Colouring: Bear Trap can be darkened by using the Tar Bottle Add-on, which makes them more difficult to spot for Survivors and more viable to place them in open spaces with few grass patches.",
     "addons": [
       {
         "name": "4-Coil Spring Kit",
@@ -3460,7 +3460,7 @@
   {
     "name": "The Trickster",
     "power": "Showstopper",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Walking while throwing Blades: 3.86 m/s After throwing 5 Blades: 3.53 m/s After throwing 10 Blades: 3.16 m/s Walking while performing Main Event: 3.92 m/s Showstopper: Time to enter Throw State: 0.3 seconds Time to exit Throw State: 1.15 second Showstopper Charge time: 0.35 seconds Cool-down time between throws: 0.33 seconds Cool-down multiplier after 5 Blades: 1.05x Cool-down multiplier after 10 Blades: 1.1x Reload time at Lockers: 3 seconds Style Rank: E-Rank: Blade throw rate multiplier: 0.95x D-Rank: Style Points requirement: 2 Points Decay delay: 30 seconds Blade throw rate multiplier: 1.05x Blade reload speed modifier: +5% C-Rank: Style Points requirement: 2 Points Decay delay: 27.35 seconds Blade throw rate multiplier: 1.13x Blade reload speed modifier: +15% B-Rank: Style Points requirement: 3 Points Decay delay: 23.65 seconds Blade throw rate multiplier: 1.16x Blade reload speed modifier: +23% A-Rank: Style Points requirement: 3 Points Decay delay:",
     "addons": [
       {
         "name": "Bloody Boa",
@@ -3551,7 +3551,7 @@
   {
     "name": "The Twins",
     "power": "Blood Bond",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Walking as Victor with a charged Pounce: 2.4 m/s Walking as Charlotte: 4.6 m/s Walking as Victor: 6.0 m/s Charlotte: Killer Instinct Linger duration: 1.5 seconds This applies when a Survivor leaves Victor's Shriek range or attached to a Survivor. Collision-Retention timer after becoming Dormant: 30 seconds After this timer elapses, Survivors can pass freely through Charlotte. Victor: Gate Blocker Linger duration: 5 seconds Unbinding time: 0.75 seconds Pounce Cancellation cool-down: 0.25 seconds Pounce Charge time: 0.85 seconds Inspecting empty Lockers: 3 seconds Inspecting occupied Lockers: 2 seconds Aura Linger duration after attaching to a Survivor: 5 seconds Landing height: 80 centimetres max If Victor lands on a Prop or obstacle that is taller than this threshold, he will automatically be destroyed. Crush Interaction duration: 0.35 seconds Remove/Push Interaction duration: 10 seconds The latter applies to when Victor holds a Survivor hostage in a Locke",
     "addons": [
       {
         "name": "Baby Teeth",
@@ -3642,7 +3642,7 @@
   {
     "name": "The Unknown",
     "power": "UVX",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Walking: 4.6 m/s Charging UVX: 4.002 m/s Hallucinations (General): Spawn requirement: 45 Charges Charge rates: Default, no Weakened Survivors: +1 c/s = 45 seconds 1 Weakened Survivor: +1.25 c/s = 36 seconds 2 Weakened Survivors: +1.75 c/s ≈ 26 seconds 3 Weakened Survivors: +2.375 c/s ≈ 19 seconds 4 Weakened Survivors: +3.5 c/s ≈ 13 seconds Charge-Time reduction: -10 seconds This bonus is applied whenever either of the following occurs: A Survivor becomes Weakened or is injured by the UVX Projectile. A Hallucination is refunded, which can occur when the Spawn restriction zone around a Hook extends by hooking a Survivor onto it and now encompasses a Hallucination placed earlier. Spawn duration: 3 seconds This refers to the period after the Spawning timer has been filled, in which the indicators on the sides of the HUD quickly rise to the top of the screen. Post-Spawn inactivity: 5 seconds Aura Reveal range: 8 metres This refers to the Auras of Hallucinations",
     "addons": [
       {
         "name": "Blurry Photo",
@@ -3733,7 +3733,7 @@
   {
     "name": "The Wraith",
     "power": "",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Walking: 4.6 m/s Cloaked Walking: 6.0 m/s Uncloaking: 1.6 m/s Post-Uncloak Boost: 6.9 m/s Cloaking: 4.6 m/s Surprise Attack: The Surprise Attack is a Score Event in the Deviousness Category that is triggered each time The Wraith successfully hits any Survivor within 5 seconds after uncloaking with a regular Basic Attack.The Surprise Attack is not a Special Attack, but rather just a Score Event the game checks for to trigger certain effects (e.g. \"The Beast\" - Soot, \"Blind Warrior\" - Mud and \"Blind Warrior\" - White). Cloaking: Action duration: 1.5 seconds The Wailing Bell rings throughout the animation. Starting to cloak triggers a rattling noise. No Movement Speed penalty. The Wailing Bell rings throughout the animation. Uncloaking: Action duration: 3 seconds The Wailing Bell only starts ringing after 1.5 seconds. Uncloak Movement speed: 1.6 m/s Post-Uncloak Speed burst: 1 second at 6 m/s Stuns: Getting stunned while The Wraith is Cloaked forces him to unc",
     "addons": [
       {
         "name": "\"All Seeing\" - Blood",
@@ -3824,7 +3824,7 @@
   {
     "name": "The Xenomorph",
     "power": "Hidden Pursuit",
-    "powerDesc": "",
+    "powerDesc": "Movement Speeds: Main Article Tail Attack Cool-down: 1.2 m/s Walking (outside the Tunnels): 4.6 m/s Walking (inside the Tunnels): 18 m/s Crawler Mode: Activation threshold: 35 Charges Charge rate outside of Tunnels: +1 c/s Charge rate inside of Tunnels: +8 c/s De-Charge rate through Turret attack: -1.5 c/s Maximum remaining Charge after picking up a Survivor: 75 % Tail Attack: Charge time: 0.3 seconds Attack range: 4.8 metres Hitting time: 0.4 seconds Cool-down on missed attacks: 2.5 seconds Cool-down on successful attacks: 2.7 seconds Speed Penalty duration upon cancellation: 1 second It is possible to cancel the Tail Strike, though only during an incredibly brief window right after initiating the attack. Tunnel System: Time to enter a tunnel: 0.3 seconds Transition time: 0.25 seconds This refers to the time it takes for the normal Map to transition to the Tunnel System after finishing the interaction of entering the tunnels. Maximum acceleration: x100.0 Maximum detection distance: 16",
     "addons": [
       {
         "name": "Acidic Blood",
