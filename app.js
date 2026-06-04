@@ -101,68 +101,89 @@ async function wikiGetModule(title) {
   return page?.revisions?.[0]?.slots?.main?.['*'] || page?.revisions?.[0]?.['*'] || '';
 }
 
-// Fetch raw wikitext for a page, following #REDIRECT if present
-async function wikiGetRaw(pageTitle) {
-  const lua = await wikiGetModule(pageTitle);
-  if (lua.startsWith('#REDIRECT')) {
-    const m = /\[\[([^\]]+)\]\]/.exec(lua);
-    if (m) return wikiGetModule(m[1]);
+// Fetch rendered HTML for a wiki page via the worker
+async function wikiGetHTML(page) {
+  const url = new URL(WORKER_URL);
+  url.searchParams.set('html', '1');
+  url.searchParams.set('page', page);
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`Worker HTTP ${res.status} for ${page}`);
+  return res.text();
+}
+
+// Resolve redirect and fetch power desc + addon descs from rendered killer page HTML
+async function fetchPageData(rawPage) {
+  // Resolve any #REDIRECT via raw API
+  const url = new URL(WORKER_URL);
+  url.search = new URLSearchParams({ action: 'query', prop: 'revisions', titles: rawPage, rvprop: 'content', rvslots: 'main', format: 'json' }).toString();
+  const res = await fetch(url);
+  const data = await res.json();
+  const pages = data?.query?.pages || {};
+  const pageData = Object.values(pages)[0];
+  const raw = pageData?.revisions?.[0]?.slots?.main?.['*'] || pageData?.revisions?.[0]?.['*'] || '';
+  let resolvedPage = rawPage;
+  if (raw.startsWith('#REDIRECT')) {
+    const m = /\[\[([^\]]+)\]\]/.exec(raw);
+    if (m) resolvedPage = m[1].replace(/ /g, '_');
   }
-  return lua;
-}
 
-// Strip {{#Invoke:Utils|clr*|...|VALUE}} → VALUE, and other wiki markup
-function stripWikiMarkup(text) {
-  return text
-    .replace(/\{\{#Invoke:[^|]+\|clro[^|]*\|([^}]+)\}\}/gi, '$1')  // clror, clro, etc.
-    .replace(/\{\{#Invoke:[^|]+\|clr\|[^|]+\|([^}]+)\}\}/gi, '$1') // clr|N|VALUE
-    .replace(/\{\{[^}]+\}\}/g, '')   // remaining templates
-    .replace(/\[\[(?:[^\]|]+\|)?([^\]]+)\]\]/g, '$1') // [[link|text]] → text
-    .replace(/'''([^']+)'''/g, '$1') // bold
-    .replace(/''([^']+)''/g, '$1')   // italic
-    .replace(/<[^>]+>/g, '')         // HTML tags
-    .replace(/^\s*[:*#]+\s*/gm, '')  // list markers
-    .replace(/\n{3,}/g, '\n\n')
-    .trim();
-}
+  // Fetch rendered HTML
+  const html = await wikiGetHTML(resolvedPage);
+  if (!html || html.length < 100) return { powerDesc: '', addonDescs: {} };
 
-// Parse power description from raw wikitext (Power Trivia section)
-function parsePowerDesc(wikitext, powerName) {
-  // Find ==== Power Trivia ==== or === Power === section
-  const triviaMatch = wikitext.match(/={3,4}\s*Power(?:\s+Trivia)?\s*={3,4}([\s\S]*?)(?===+\s*Add-ons for|==+\s*Achievements|==+\s*Innate Skill)/);
-  if (!triviaMatch) return '';
-  return stripWikiMarkup(triviaMatch[1]).slice(0, 1000);
-}
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, 'text/html');
 
-// Parse addon description from raw wikitext using patch version
-function parseAddonDesc(wikitext, patch) {
-  // Find |-|PATCH= section in the History tabber
-  const marker = '|-|' + patch + '=';
-  let idx = wikitext.indexOf(marker);
-  // Fallback: use last section if patch not found
-  if (idx < 0) {
-    const lastMarker = wikitext.lastIndexOf('|-|');
-    if (lastMarker < 0) return '';
-    idx = lastMarker;
-  }
-  // Find the next |-| or end of tabber
-  const nextSection = wikitext.indexOf('\n|-|', idx + 1);
-  const section = wikitext.slice(idx, nextSection > 0 ? nextSection : wikitext.length);
-  // Extract description lines: | text (not |- or |} or ! lines)
-  const lines = section.split('\n');
-  const descLines = [];
-  let inDesc = false;
-  for (const line of lines) {
-    if (!inDesc && line.startsWith('| ') && !line.startsWith('|-')) {
-      inDesc = true;
+  // Power description
+  let powerDesc = '';
+  const powerHeading = doc.getElementById('Power') || doc.querySelector('[id^="Power"]');
+  if (powerHeading) {
+    let powerContent = '';
+    let currentElement = powerHeading.parentElement;
+    if (powerHeading.tagName !== 'H2' && powerHeading.tagName !== 'H3') currentElement = powerHeading;
+    let nextNode = currentElement.nextElementSibling;
+    while (nextNode) {
+      if (nextNode.querySelector && nextNode.querySelector('[id^="Add-ons_for_"]')) break;
+      if (nextNode.id && nextNode.id.startsWith('Add-ons_for_')) break;
+      if (['P', 'DIV', 'UL'].includes(nextNode.tagName)) powerContent += ' ' + nextNode.textContent;
+      nextNode = nextNode.nextElementSibling;
     }
-    if (inDesc) {
-      if (line === '|}') break;
-      descLines.push(line.replace(/^\| /, ''));
+    powerDesc = powerContent.replace(/\s+/g, ' ').trim().slice(0, 1000);
+  }
+
+  // Addon descriptions
+  const addonDescs = {};
+  const addonHeading = doc.querySelector('[id^="Add-ons_for_"]');
+  if (addonHeading) {
+    let tableEl = addonHeading;
+    while (tableEl && tableEl.tagName !== 'TABLE') {
+      if (tableEl.querySelector && tableEl.querySelector('table')) {
+        tableEl = tableEl.querySelector('table');
+        break;
+      }
+      tableEl = tableEl.nextElementSibling;
+    }
+    if (tableEl && tableEl.tagName === 'TABLE') {
+      tableEl.querySelectorAll('tr').forEach(row => {
+        const cells = row.querySelectorAll('td');
+        if (cells.length >= 2) {
+          const nameCell = cells.length >= 3 ? cells[1] : cells[0];
+          const descCell = cells.length >= 3 ? cells[2] : cells[1];
+          if (nameCell && descCell) {
+            const name = nameCell.textContent.replace(/\s+/g, ' ').trim();
+            const desc = descCell.textContent.replace(/'+/g, '').replace(/\s+/g, ' ').trim();
+            if (name.length >= 2 && name.length <= 60 && desc.length > 0) {
+              addonDescs[name] = desc;
+            }
+          }
+        }
+      });
     }
   }
-  return stripWikiMarkup(descLines.join('\n')).slice(0, 500);
+
+  return { powerDesc, addonDescs };
 }
+
 
 // ── Parse killers from Module:Datatable ──────────────────────────────────────
 function parseKillersFromLua(lua) {
@@ -253,6 +274,7 @@ function parseLoadout(lua) {
     const killerM = /\bkiller\s*=\s*(\d+)/.exec(props);
     const patchM  = /\bpatch\s*=\s*"([^"]+)"/.exec(props);
     if (!killerM) continue;
+    if (/\bdecom\s*=\s*true/.test(props) || /\bunused\s*=\s*true/.test(props)) continue;
     addons.push({ name, killerId: killerM[1], patch: patchM ? patchM[1] : '' });
   }
   return addons;
@@ -285,60 +307,26 @@ async function runSync() {
       killerAddonsMap.get(addon.killerId).push(addon);
     }
 
-    // Step 3: fetch power descriptions from killer pages (raw wikitext)
-    logSync('Fetching power descriptions from killer pages…', 'working');
-    const results = [];
+    // Step 3: fetch power desc + addon descs from each killer's rendered HTML page
+    logSync('Fetching killer pages (power + add-on descriptions)…', 'working');
+    const feedme = [];
     for (const killer of killerList.sort((a, b) => a.title.localeCompare(b.title))) {
       logSync(`  ${killer.title}…`, 'working');
       let powerDesc = '';
-      let resolvedPage = killer.rawPage;
+      let addonDescs = {};
       try {
-        const raw = await wikiGetRaw(killer.rawPage);
-        powerDesc = parsePowerDesc(raw, killer.power);
-        // If redirect resolved, note the real page
-        if (raw.startsWith('#REDIRECT') && killer.realPage) resolvedPage = killer.realPage;
+        const pageData = await fetchPageData(killer.rawPage);
+        powerDesc = pageData.powerDesc;
+        addonDescs = pageData.addonDescs;
       } catch (e) {
-        logSync(`  ⚠ Power fetch failed: ${e.message}`, 'warn');
+        logSync(`  ⚠ Page fetch failed: ${e.message}`, 'warn');
       }
 
       const addonEntries = killerAddonsMap.get(String(killer.id)) || [];
-      results.push({
-        killer,
-        powerDesc,
-        addonEntries
-      });
-      logSync(`  ✓ power desc: ${powerDesc.length} chars, ${addonEntries.length} add-ons`, 'ok');
+      const addons = addonEntries.map(a => ({ name: a.name, desc: addonDescs[a.name] || '' }));
+      feedme.push({ name: killer.title, power: killer.power, powerDesc, addons });
+      logSync(`  ✓ ${addons.length} add-ons, powerDesc: ${powerDesc.length} chars`, 'ok');
     }
-
-    // Step 4: fetch addon descriptions from individual addon pages
-    logSync('Fetching add-on descriptions (this will take a few minutes)…', 'working');
-    let addonCount = 0;
-    const addonDescCache = new Map(); // name → desc
-
-    for (const { killer, powerDesc, addonEntries } of results) {
-      for (const addon of addonEntries) {
-        if (addonDescCache.has(addon.name)) continue;
-        const pageName = addon.name.replace(/ /g, '_').replace(/'/g, '%27');
-        try {
-          const raw = await wikiGetRaw(pageName);
-          const desc = parseAddonDesc(raw, addon.patch);
-          addonDescCache.set(addon.name, desc);
-        } catch (_) {
-          addonDescCache.set(addon.name, '');
-        }
-        addonCount++;
-        await new Promise(r => setTimeout(r, 150));
-      }
-    }
-    logSync(`✓ ${addonCount} add-on descriptions fetched`, 'ok');
-
-    // Step 5: assemble final FEEDME
-    const feedme = results.map(({ killer, powerDesc, addonEntries }) => ({
-      name: killer.title,
-      power: killer.power,
-      powerDesc,
-      addons: addonEntries.map(a => ({ name: a.name, desc: addonDescCache.get(a.name) || '' }))
-    }));
 
     // Step 6: push
     const json = JSON.stringify(feedme, null, 2);
