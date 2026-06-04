@@ -150,16 +150,19 @@ async function fetchPageData(rawPage) {
     powerDesc = powerContent.replace(/\s+/g, ' ').trim().slice(0, 1000);
   }
 
-  // Addon descriptions — id is "Add-ons_for_the_POWERNAME" in parsed HTML
+  // Addon descriptions — span with id "Add-ons_for_..." is inside an h3,
+  // and the table is the next sibling of that h3
   const addonDescs = {};
-  const addonHeading = doc.querySelector('[id^="Add-ons_for_"]');
-  if (addonHeading) {
-    let tableEl = addonHeading;
+  const addonSpan = doc.querySelector('[id^="Add-ons_for_"]');
+  if (addonSpan) {
+    // Walk up to the h3/h2/h4 heading element
+    let heading = addonSpan;
+    while (heading && !['H1','H2','H3','H4'].includes(heading.tagName)) {
+      heading = heading.parentElement;
+    }
+    // Find the next sibling table
+    let tableEl = heading ? heading.nextElementSibling : null;
     while (tableEl && tableEl.tagName !== 'TABLE') {
-      if (tableEl.querySelector && tableEl.querySelector('table')) {
-        tableEl = tableEl.querySelector('table');
-        break;
-      }
       tableEl = tableEl.nextElementSibling;
     }
     if (tableEl && tableEl.tagName === 'TABLE') {
