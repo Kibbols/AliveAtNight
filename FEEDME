@@ -2,7 +2,7 @@
   {
     "name": "The Animatronic",
     "power": "Fazbear's Fright",
-    "powerDesc": "Movement Speeds:\nMain Article\nPerforming an Axe Throw: 2.76 m/s\nWinding up an Axe Throw: 3.68 m/s\nWalking: 4.4 m/s\nWalking without the Fire Axe equipped: 4.6 m/s\nIf '''The Animatronic's Fire Axe is embedded on the environment or on a survivor, he will walk at this movement speed.\n\nFire Axe:\nWinding up a Throw: 1 second\nWinding up grace period: 0.15 seconds\nThe grace period is part of the winding up phase and starts as soon as the input for it is initiated, making the wind up action seem shorter than it actually is.\nCancel Wind up: 1 second\nRecall Duration: 1.5 seconds\nPost-Throw Cool-down Duration: 2 seconds\nThis cool-down starts after the projectile launch phase is finished.\nMissed Fire Axe Recharge: 6 seconds\nSuccessful Fire Axe Recharge: 8 seconds\nThe cooldown starts as soon as the projectile lands on a player or the environment.\nProjectile Launch: 0.25 seconds\nProjectile Speed: 30 m/s\nProjectile Gravity: 68.6 m/s2\nProjectile Maximum Range: 16 metres\nHitboxes:\nEnvironmental Collisio",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Access Panel",
@@ -93,7 +93,7 @@
   {
     "name": "The Artist",
     "power": "Birds of Torment",
-    "powerDesc": "Movement Speeds:\nMain Article\nSummon, Charge, Cool-down, Fire: 3.68 m/s\nProjectile on Flight Path (initially): 20 m/s\nProjectile on Flight Path (eventually, after 0.3 seconds): 35 m/s\nProjectile off Flight Path: 35 m/s\n\nDire Crows:\nProjectile speed on Flight Path: 20 m/s initially; 35 m/s after 0.3 seconds\nProjectile speed off Flight Path: 35 m/s\nFire Cool-down duration: 1 second\nThis refers to how long The Artist must wait after summoning a Dire Crow before it can be launched.\nAura visibility for Survivors: 0.75 seconds\nThis refers to how long Survivors see the Aura of Dire Crow that was just launched.\nAudio range: 12 metres\nThis refers to the radius in which a nearby Dire Crow will emit sound effects that can be heard by Survivors.\nIdle timer: 10 seconds\nThis refers to how long Dire Crows can stay idle before they disintegrate.The timer is reset whenever The Artist places another Dire Crow.\nInvincibility buffer: 0.75 seconds\nThis refers to how long Survivors are immune from second Di",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Automatic Drawing",
@@ -121,7 +121,7 @@
       },
       {
         "name": "Ink Egg",
-        "desc": "An unusual egg that seems to be nothing but a ball of semi-solid ink.\nIncreases the number of Dire Crows The Artist is able to hold by +1 Dire Crow.\nReduces the Idle time of Dire Crows before they disintegrate by -2 seconds."
+        "desc": ""
       },
       {
         "name": "Iridescent Feather",
@@ -161,7 +161,7 @@
       },
       {
         "name": "Thorny Nest",
-        "desc": "A nest that remained empty near Carmina's home.There are sharp thorns embedded in it.\nSurvivors suffer from the '''Haemorrhage and Mangled Status Effects for 70 seconds after being damaged by Dire Crows'''."
+        "desc": ""
       },
       {
         "name": "Untitled Agony",
@@ -173,7 +173,7 @@
       },
       {
         "name": "Vibrant Obituary",
-        "desc": "Scrap newspaper, speckled with bright, eye-catching paint.It seems tragedy is a daily thing.\nIncreases the Killer Instinct duration of Dire Crows by +3 seconds."
+        "desc": ""
       },
       {
         "name": "Birds of Torment",
@@ -184,11 +184,11 @@
   {
     "name": "The Blight",
     "power": "Blighted Corruption",
-    "powerDesc": "Movement Speeds:\nMain Article\nRush and Rush Attacks: 9.2 m/s\n\nBlighted Corruption:\nRecharge Rate: 2 seconds per Token\nFatigue duration: 2.5 seconds\n\nRush & Lethal Rush:\nRush and Lethal Rush duration: 3 seconds each\nRush and Lethal Rush Movement speed: 9.2 m/s or 230 %\nRush and Lethal Rush Turn rate: 0.9 °/s\nLethal Rush Turn rate during an Attack: 1.6 °/s\nLethal Rush duration during an Attack: 4 seconds\nLethal Rush Survivor Dodge parameters: within 1 metre of a missed Lethal Rush.\nThis refers to the conditions a Survivor must meet to trigger the Lethal Rush Dodged Score Event.\nLethal Rush Attack Open time: 0.5 seconds\nLethal Rush Attack Hitting time: 0.3 seconds\n\nNOTE: based on in-game observations, it appears that in addition to the comparatively low values in degrees per second mentioned above, other unknown variables must also factor into '''The Blight's' final Turn rate during a Rush, as it appears to be greater than just the values mentioned above.\n\nSlam:\nMinimum Angle of Attack'':",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Adrenaline Vial",
-        "desc": "A hormone removed from an unwilling subject's adrenal gland.Though it provides a jolt of energy, it can fatigue its user.\nIncreases the number of available Power Tokens by +2.\nIncreases your Movement speed during a Rush by +5 %.\nIncreases your maximum Look angle during a Rush by +20 °."
+        "desc": ""
       },
       {
         "name": "Alchemist's Ring",
@@ -196,11 +196,11 @@
       },
       {
         "name": "Blighted Crow",
-        "desc": "A dead crow that has been grotesquely mutated by Putrid Serum.\nIncreases your Movement speed during a Rush by a stack-able +3 % for each consecutive Lethal Rush."
+        "desc": ""
       },
       {
         "name": "Blighted Rat",
-        "desc": "A rat that briefly returned to life when injected with Putrid Serum, becoming aggressive and uncontrollable.\nIncreases your Movement speed during a Rush by a stack-able +2 % for each consecutive Lethal Rush."
+        "desc": ""
       },
       {
         "name": "Canker Thorn",
@@ -216,11 +216,11 @@
       },
       {
         "name": "Compound Thirty-Three",
-        "desc": "Talbot's penultimate attempt at a serum.\nThough it did not facilitate his escape, it did have powerful side effects.\nBlighted Corruption is capped at 5 Tokens.\nIncreases your Turn rate during a Rush by +11 %.\nIncreases the duration of a Rush by +11 %."
+        "desc": ""
       },
       {
         "name": "Compound Twenty-One",
-        "desc": "A serum that's fatal to humans. It evokes beneficial qualities in those who are... something more.\nWhen initiating a Slam, reveal the  of Survivors within 8 metres of the collision location for 3.5 seconds."
+        "desc": ""
       },
       {
         "name": "Foxglove",
@@ -228,7 +228,7 @@
       },
       {
         "name": "Iridescent Blight Tag",
-        "desc": "A glass-like laboratory tag, moulded from The Fog itself.Either a gift from The Entity or a cruel jest to tag The Blight as he once did to others.\nBlighted Corruption is capped at 3 Tokens.\nIncreases your Movement speed during a Rush by +10 %.\nIncreases the maximum Look angle during a Rush by +20 °."
+        "desc": ""
       },
       {
         "name": "Placebo Tablet",
@@ -248,15 +248,15 @@
       },
       {
         "name": "Shredded Notes",
-        "desc": "The remnants of Talbot's notes, they still contain some valuable information within.\nReduces the Recharge time per Power Token by -0.33 seconds."
+        "desc": ""
       },
       {
         "name": "Soul Chemical",
-        "desc": "A chemical squeezed from the pineal gland of a recently deceased Survivor.\nIncreases the initial Movement speed of a Rush by +5 %."
+        "desc": ""
       },
       {
         "name": "Summoning Stone",
-        "desc": "Talbot used this stone to carve what he believed was his research into the Opium Den's walls.\nIncreases the initial duration of a Rush by +0.5 seconds."
+        "desc": ""
       },
       {
         "name": "Umbra Salts",
@@ -275,15 +275,15 @@
   {
     "name": "The Cannibal",
     "power": "Bubba's Chainsaw",
-    "powerDesc": "Movement Speeds:\nMain Article\nWalking during a Tantrum: 0.46 m/s\nWalking while Charging (eventual): 3.45 m/s\nThe Cannibal reaches this speed after 1 second.\nWalking while Charging (initial): 4.37 m/s\nThe Cannibal reaches this speed after 0.3 seconds.\nWalking during a Chainsaw Dash (eventual): 5.45 m/s\nThe Cannibal continuously accelerates until he reaches this top speed.\n\n'''Bubba's Chainsaw:\nChainsaw Recharge rate: 0.25 c/s by default.\nIt therefore takes 4 seconds to replenish 1 Charge' by default.\nChainsaw Dash duration: 2.5 seconds by default.\nChainsaw Sweep Missed Hit Cool-down: 1.5 seconds.\nThe missed Cool-down duration is increased by 1 second for each consumed Charge up to a maximum of 4.5 seconds.\nChainsaw Sweep Successful Hit Cool-down: 2 seconds.\nChainsaw Sweep Obstructed Hit Cool-down: '3 seconds (Tantrum)'.\nChainsaw Sweep Cool-down on breaking  or : 1 second.\nEach use of a Charge is considered an individual attack by the Game.\nThis mainly affects the use of .\nChainsaw Charg",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Speed Limiter",
-        "desc": "A mechanical device that limits the amount of fuel small engines can intake at one time, forcing a constant and safe speed.\nGrants 100 % Bonus Bloodpoints for Chainsaw Hit Score Events in the Deviousness Category.\nHits with either ''Bubba's Chainsaw or the Chainsaw'' do not automatically trigger the Dying State."
+        "desc": ""
       },
       {
         "name": "Award-winning Chilli",
-        "desc": "A big bowl of spicy Chilli made famous thanks to prime meat.\nIncreases the duration of the Chainsaw Dash by +0.2 seconds per consumed Token.\nIncreases the duration of the Chainsaw Dash Window by +0.2 seconds."
+        "desc": ""
       },
       {
         "name": "Begrimed Chains (Bubba's Chainsaw)",
@@ -295,55 +295,55 @@
       },
       {
         "name": "Chainsaw File",
-        "desc": "A file whose purpose is to hone Chainsaw chains.\nReduces the duration of a Tantrum by -0.25 seconds."
+        "desc": ""
       },
       {
         "name": "Chilli",
-        "desc": "A big bowl of steaming Chilli to keep you fresh and strong.\nIncreases the duration of the Chainsaw Dash by +0.15 seconds per consumed Token.\nIncreases the duration of the Chainsaw Dash Window by +0.15 seconds."
+        "desc": ""
       },
       {
         "name": "Depth Gauge Rake",
-        "desc": "Tool that increases the angle of the depth gauge, making the chain eat more \"wood\".\nIncreases available Tokens by 1 Token.\nDecreases Charge speed of the Chainsaw Sweep by -18 %.\nDecreases the Chainsaw Dash Movement speed by -2 %."
+        "desc": ""
       },
       {
         "name": "Grisly Chains",
-        "desc": "A chain with unusually hefty cutter teeth that leaves victims crippled even after being healed.\nSurvivors hit by ''Bubba's Chainsaw suffer from the 'Mangled Status Effect''' for 70 seconds."
+        "desc": ""
       },
       {
         "name": "Homemade Muffler",
-        "desc": "A makeshift exhaust system made of black gas pipes.\nReduces the duration of a Tantrum by -0.5 seconds."
+        "desc": ""
       },
       {
         "name": "Iridescent Flesh",
-        "desc": "A thin slice of smooth, young flesh.The veins shimmer with luminescent glow, as if life still flows within.\nReplenishes all Tokens when hitting a Survivor with ''Bubba's Chainsaw.\nLimits the maximum duration of the Tantrum'' to 3 seconds."
+        "desc": ""
       },
       {
         "name": "Knife Scratches",
-        "desc": "Scratches cover the Chainsaw's body, caused by a searing blade.Memories of reprimands fill its holder with the fear of failure.\nIncreases the Movement speed during a Chainsaw Dash by +1.5 %.\nIncreases the Power Charge time by +10 %."
+        "desc": ""
       },
       {
         "name": "Light Chassis",
-        "desc": "A light and durable Chainsaw chassis with a shorter guide bar.Makes the Chainsaw easier to handle.\nThe Auras of Survivors within 8 metres are revealed to you while revving Bubba's Chainsaw."
+        "desc": ""
       },
       {
         "name": "Long Guide Bar",
-        "desc": "A sturdy iron replacement bar for long chains.\nIncreases Revving threshold before triggering a Tantrum by +2 seconds."
+        "desc": ""
       },
       {
         "name": "Primer Bulb",
-        "desc": "Pumps more gas in the ignition system to ensure a quick and powerful start.\nReduces the Power Recharge time by -1 second."
+        "desc": ""
       },
       {
         "name": "Rusted Chains",
-        "desc": "This chain is covered with crusty and volatile rust spots that make injuries particularly difficult to heal.\nSurvivors hit by Bubba's Chainsaw suffer from the Broken Status Effect for 90 seconds."
+        "desc": ""
       },
       {
         "name": "Shop Lubricant",
-        "desc": "An oil specifically formulated for Chainsaws.A special additive prevents oil throw off.\nThe Auras of Survivors downed by Bubba's Chainsaw, if no other Survivors were within the Terror Radius, are hidden to other Survivors for 20 seconds."
+        "desc": ""
       },
       {
         "name": "Spark Plug",
-        "desc": "A clean spark plug fitted for a Chainsaw.\nReduces the Power Recharge time by -0.5 seconds."
+        "desc": ""
       },
       {
         "name": "The Beast's Marks",
@@ -351,11 +351,11 @@
       },
       {
         "name": "The Grease",
-        "desc": "A thick yellowish ooze, concocted by the Sawyers.Used for all-purpose lubrication around their house.\nIncreases Revving threshold before triggering a Tantrum by +3 seconds."
+        "desc": ""
       },
       {
         "name": "Vegetable Oil",
-        "desc": "A rancid oil used as a poor quality lubricant.\nReduces the Cool-down duration of Bubba's Chainsaw by -0.3 seconds."
+        "desc": ""
       },
       {
         "name": "Bubba's Chainsaw",
@@ -366,7 +366,7 @@
   {
     "name": "The Cenobite",
     "power": "Summons of Pain",
-    "powerDesc": "Movement Speeds:\nMain Article\nChain Strike: 3.68 m/s\nUncontrolled Projectile: 10 m/s\nControlled Projectile (initially): 10 m/s\nControlled Projectile (intermittently; after 0.4 seconds): 15 m/s\nControlled Projectile (intermittently, after 0.7 seconds): 37.5 m/s\nControlled Projectile (eventually, after 4 seconds): 40 m/s\n\nGateway:\n''The Gateway works the same as The Nurse's Blink indicator when using \nMinimum Placement distance: 1.5 metres\nMaximum Placement distance: 16 metres\nPlacement speed: 8 m/s\nThis refers to the speed at which the Gateway is moving away from The Cenobite during the Placement phase.\nPlacement Cancellation cool-down time: 1.5 seconds\n\nGateway Possession:\nCamera Pan time: 0.5 seconds\nField of View Change time: 0.75 seconds\nPossession Cancellation cool-down time: 3 seconds\nKiller Repossession Fade-in time: 0.25 seconds\nMaximum Possession duration: 6 seconds\nAfter this time elapses, control will revert back to The Cenobite.\n\nGateway Pitch Angles:\nMaximum/Minimum Pitch A",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Bent Nail",
@@ -457,7 +457,7 @@
   {
     "name": "The Clown",
     "power": "The Afterpiece Tonic",
-    "powerDesc": "Movement Speeds:\nMain Article\nReloading: 2.3 m/s\nReloading: 2.57 m/s\nCarrying: 4.12 m/s\nWalking: 4.6 m/s\nWalking: 5.152 m/s\n\nBottles:\nCarrying capacity: 6 Bottles\nThis capacity is shared between the Tonic and the Antidote.\nCancellation Cool-down duration: 1 second\nWind-up and Throw durations: 0.25 seconds\nReloading duration: 2.5 seconds\nMinimum Velocity: 8.5 m/s\nWhen Bottles are thrown uncharged (button released ASAP).\nMaximum velocity: 14 m/s\nWhen Bottles are thrown charged (holding them for at least 1 second)\n\nTonic:\nGas Cloud Linger duration: 10 seconds\nIf Survivors move through the Gas Cloud, it starts dissipating faster after a buffer of 0.4 seconds.\nSurvivor-Afflictions Linger durations:\nImpaired vision: 4 seconds (but weakens in strength over time).\nInvoluntary coughing: 2 seconds\nHindered duration: 1.6 seconds\nHindered strength: -14 %\nInability to perform Fast Vaults: 1 seconds\n\nAntidote:\nActivation delay: 1.6 seconds.\nInvigorated Effects duration: 6 seconds\nHaste strength: +14",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Bottle of Chloroform",
@@ -465,18 +465,10 @@
       },
       {
         "name": "Cheap Gin Bottle",
-        "desc": "When the night is rough and the day is rougher, a little hair of the dog will give you a boost.\nIncreases the strength of the '''Haste Status Effect from Invigoration''' by +3 %."
+        "desc": ""
       },
       {
         "name": "Cigar Box",
-        "desc": ""
-      },
-      {
-        "name": "Ether 5 Vol%",
-        "desc": ""
-      },
-      {
-        "name": "Ether 10 Vol%",
         "desc": ""
       },
       {
@@ -485,7 +477,7 @@
       },
       {
         "name": "Fingerless Parade Gloves",
-        "desc": "Part of the standard Clown apparel, the cut fingers allow for dexterous manipulations.\nChanges the '''Bottle's''' Throw arc."
+        "desc": ""
       },
       {
         "name": "Flask of Bleach",
@@ -493,7 +485,7 @@
       },
       {
         "name": "Garish Make-Up Kit",
-        "desc": "Some for the face and some for the Antidote.The unknown compound intensifies the ''Antidote's effect.\n' Invigorated''' duration."
+        "desc": ""
       },
       {
         "name": "Kerosene Can",
@@ -501,7 +493,7 @@
       },
       {
         "name": "Party Bottle",
-        "desc": "Be the life of the party!\nParty Bottles emit confetti when they break, in addition to their usual Gas effect.\nHitting a Survivor directly with a Party Bottle interrupts their actions as usual, and additionally awards 100 bonus Bloodpoints in the Deviousness Category."
+        "desc": ""
       },
       {
         "name": "Redhead's Pinkie Finger",
@@ -509,7 +501,7 @@
       },
       {
         "name": "Robin Feather",
-        "desc": "A warm orange feather, soft to the touch.\nReduces the Cool-down time between Bottle Throws by -40 %."
+        "desc": ""
       },
       {
         "name": "Smelly Inner Soles",
@@ -517,11 +509,11 @@
       },
       {
         "name": "Solvent Jug",
-        "desc": "A chemical volatile compound that irritates the respiratory tract, but increases absorption of the Afterpiece Antidote.\nIncreases the Invigoration duration by +1 second."
+        "desc": ""
       },
       {
         "name": "Spirit of Hartshorn",
-        "desc": "A pungent chemical compound consisting of ammonia.One whiff is enough to jolt even the most sluggish of minds.\n'''' the Afterpiece Antidote Gas Area of Effect.\n'' the Afterpiece Antidote'' Gas Spread velocity."
+        "desc": ""
       },
       {
         "name": "Starling Feather",
@@ -529,11 +521,11 @@
       },
       {
         "name": "Sticky Soda Bottle",
-        "desc": "It's sugary sweet, with only a little blood on the label.\nIncreases the strength of the '''Haste Status Effect from Invigoration''' by +2 %."
+        "desc": ""
       },
       {
         "name": "Sulphuric Acid Vial",
-        "desc": "A thin and clear combustible liquid which numbs the mind when inhaled.\nSurvivors affected by Intoxication suffer from the '''Mangled Status Effect''' for 70 seconds."
+        "desc": ""
       },
       {
         "name": "Tattoo's Middle Finger",
@@ -541,7 +533,7 @@
       },
       {
         "name": "Thick Cork Stopper",
-        "desc": "A sturdy cork fitting The Afterpiece Tonic bottles marvellously.\n'''''' Reload time."
+        "desc": ""
       },
       {
         "name": "VHS Porn",
@@ -556,7 +548,7 @@
   {
     "name": "The Dark Lord",
     "power": "Vampiric Shift",
-    "powerDesc": "Movement Speeds:\nMain Article\nWalking after casting Hellfire: 2 m/s\nWalking while shapeshifting out of Bat Form: 2.3 m/s (x0.5)\nWalking while charging Hellfire: 3.68 m/s (x0.8)\nWalking in Wolf Form while charging Pounce: 3.91 m/s (x0.85)\nWalking in Vampire/Wolf Form: 4.6 m/s\nWalking in Wolf Form with Scent Orb bonus: 4.8 m/s (x1.04348)\nFlying in Bat Form: 6.5 m/s\nTeleporting in Bat Form: 12 m/s\nPouncing (during the Open Phase): 13.34 m/s (x2.9)\n\nShapeshifting:\nShapeshifting out of Wolf Form and Vampire Form: 1 second\nShapeshifting out of Bat Form: 1.5 seconds\nCool-down time: 3.5 seconds\n256px\n\nVampire Form:\nTerror Radius: 32 metres\nLullaby Radius: n/a\nFootstep Volume bonus: n/a\nKiller Instinct duration: n/a\n\nWolf Form:\nTerror Radius: 32 metres\nLullaby Radius: n/a\nFootstep Volume bonus: n/a\nKiller Instinct duration: 2 seconds\n\nBat Form:\nWhile Survivors are invisible in this Form, Static Illusions created by Perks such as  remain visible, immediately betraying their trickery nature.\nTerr",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Alucard's Shield",
@@ -647,7 +639,7 @@
   {
     "name": "The Deathslinger",
     "power": "The Redeemer",
-    "powerDesc": "Movement Speeds:\nMain Article\nWalking while Reloading: 3.08 m/s\nThis is achieved by applying a multiplier of x0.7 to his Walking speed.\nWalking while Aiming Down Sights: 3.74 m/s\nThis is achieved by applying a multiplier of x0.85 to his Walking speed.\nWalking: 4.4 m/s\n\nLinked Movement Speeds:\nThis refers to any situation in which The Deathslinger is literally linked to the Impaled Survivor through the chain of The Redeemer.As with the speeds listed above, these are achieved by applying a multiplier to the default Movement speed, rather than a fixed value:\n{| class=\"wikitable\"\n|-\n!\n! colspan=\"2\" | The Deathslinger\n! colspan=\"2\" | Impaled Survivor\n! rowspan=\"2\" | Situation\n|-\n!  !! Multiplier !! Result !! Multiplier !! Result\n|-\n! Linked, default\n| x0.5 || 2.2 m/s || x0.75 || 1.695 m/s || Walking in any other direction than backwards.\n|-\n! Linked, walking backwards\n| x0.7 || 3.08 m/s || x0.66 || 1.4916 m/s || Walking while the chain is colliding with an obstacle or another Player.\n|-\n! L",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Barbed Wire",
@@ -663,27 +655,27 @@
       },
       {
         "name": "Chewing Tobacco",
-        "desc": "A can of clipped and sweetened tobacco leaves lifted from a gutted body in Glenvale.\nStimulates the nervous system. \nReduces the Stun duration when Survivors break free from The Redeemer by -0.25 seconds."
+        "desc": ""
       },
       {
         "name": "Gold Creek Whiskey",
-        "desc": "Warm comfort in a bottle that quelled Caleb's anger and slowed his step.\nDecreases  by -8 metres during ADS."
+        "desc": ""
       },
       {
         "name": "Hellshire Iron",
-        "desc": "The Hellshire's Gang branding iron.Despite folklore, it never made its mark on new initiates, instead having been used to brand particularly quarrelsome bounties. \nFor as long as a Survivor is speared, The Deathslinger is granted the ''''' Status Effect.\nThis effect persists for 10 seconds after the Survivor is no longer speared.\n|} \n\n== Change Log ==\n=== Patch 5.3.0 ===\n: now applies the Undetectable Status Effect'.\n\nCategory: Visceral Add-ons\n\nit: Marchio Hellshire\nfr: Fer de Hellshire\nes: Hie"
+        "desc": ""
       },
       {
         "name": "Honey Locust Thorn",
-        "desc": "Angered with a bounty who fled twice before, Caleb twisted thorn branches onto a spear and let it loose.\nSpeared Survivors breaking free from the The Redeemer suffer from the '''Mangled Status Effect''' for 70 seconds."
+        "desc": ""
       },
       {
         "name": "Iridescent Coin",
-        "desc": "A glass-like coin moulded from the Fog itself.A payment to the bounty hunter for the services rendered.\nSurvivors speared from at least 12 metres away are inflicted with the ''''' Status Effect' for as long as they remain speared."
+        "desc": ""
       },
       {
         "name": "Jaw Smasher",
-        "desc": "The bullet that ripped through Caleb's jaw during a frenzy shootout.It brings back burning desire for revenge.\nIncreases the Movement speed while Aiming Down Sights by +1.5 %."
+        "desc": ""
       },
       {
         "name": "Marshal's Badge",
@@ -707,11 +699,11 @@
       },
       {
         "name": "Rusted Spike",
-        "desc": "A railroad spike that Caleb fastened to the front of the Speargun during a moment of morbid curiosity.The dull tip prevents it from cleanly piercing its target.\nSpeared Survivors hit with The Redeemer suffer from the '''Mangled Status Effect''' for 60 seconds."
+        "desc": ""
       },
       {
         "name": "Snake Oil",
-        "desc": "A tincture of oils and extracts purchased from a travelling salesman.\nPurported to cure all that ails you. \nIncreases the Reeling speed of The Redeemer by +2.5 %."
+        "desc": ""
       },
       {
         "name": "Spit Polish Rag",
@@ -723,7 +715,7 @@
       },
       {
         "name": "Wanted Poster",
-        "desc": "The yellowed remains of a wanted poster for Mason Kelly.It kept Caleb focused on the hunt. \nIncreases the Movement speed while Aiming Down Sights by +3 %."
+        "desc": ""
       },
       {
         "name": "Warden's Keys",
@@ -738,7 +730,7 @@
   {
     "name": "The Demogorgon",
     "power": "Of the Abyss",
-    "powerDesc": "Movement Speeds:\nMain Article\nChannelling Of the Abyss: 3.86 m/s\nWalking: 4.6 m/s\nShred attack: 18.4 m/s\nTraversing the Upside Down: 32 m/s\n\nShred:\nCharge time: 1 second\nShred must be charged to at least 65 %, otherwise The Demogorgon will perform a normal Lunge attack instead.\nCancelling a fully charged Shred results in a cool-down of 0.45 seconds, during this time The Demogorgon cannot interact or attack.\nField of View bonus angle: +15 °\n\nAttack Cool-downs:\nShredding a Pallet or a Breakable Wall: 1.8 seconds\nMissed Shred Attack: 2.25 seconds\nSuccessful Shred Attack: 2.7 seconds\n\nPortals:\nCapacity: 6 Portals\nSetting time: 0.85 second\nEntering time: 1.35 seconds\nArea of Effect radius: 4 metres\nNoise radius: 8 metres\nSealing times:\n1 Survivor: 12 seconds (1 c/s each; no efficiency penalty)\n2 Survivors: ~9 seconds (0.67 c/s each; 33 % efficiency penalty)\n3 Survivors: 8 seconds (0.5 c/s each, 50 % efficiency penalty)\n4 Survivors: 6 seconds (0.5 c/s each, 50 % efficiency penalty)\nSealing a",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Barb's Glasses",
@@ -746,15 +738,15 @@
       },
       {
         "name": "Black Heart",
-        "desc": "A black fermented heart ripped from the chest of a tentacled creature in the Upside Down.\nReduces the Attack cool-down of successful Shred Attacks used to hit Survivors by -10 %."
+        "desc": ""
       },
       {
         "name": "Brass Case Lighter",
-        "desc": "A lighter used to ignite trouble.\nSurvivors under the effect of an activated Portal suffer from the ''''' Status Effect.\nThis effect lingers for 60 seconds'."
+        "desc": ""
       },
       {
         "name": "Deer Lung",
-        "desc": "A raw, rubbery lung that reinvigorates The Demogorgon.\nIncreases your Teleportation speed by +30 %.\nReduces the number of available Portals by -2."
+        "desc": ""
       },
       {
         "name": "Eleven's Soda",
@@ -762,7 +754,7 @@
       },
       {
         "name": "Leprose Lichen",
-        "desc": "A potent lichen that grows like dust on the rocks in the Upside Down.\nWhile traversing the Upside Down, the Auras of all Survivors are revealed to you.\nAfter emerging from a Portal, the Auras of all Survivors within 16 metres of an active Portal are revealed to you for 3 seconds."
+        "desc": ""
       },
       {
         "name": "Lifeguard Whistle",
@@ -778,7 +770,7 @@
       },
       {
         "name": "Rat Tail",
-        "desc": "A chewy rat tail for The Demogorgon to consume.\nIncreases the Opening speed of Portals by +50 %."
+        "desc": ""
       },
       {
         "name": "Red Moss",
@@ -786,15 +778,15 @@
       },
       {
         "name": "Rotten Green Tripe",
-        "desc": "Rotten tripe that fuels The Demogorgon.\nIncreases your Teleportation speed by +15 %."
+        "desc": ""
       },
       {
         "name": "Rotten Pumpkin",
-        "desc": "Pumpkin flesh infected by the rotten soil in Hawkins.\nTraversing the Upside Down will destroy the Portal you entered.\n\nRotten Pumpkin grants an additional 200 Bloodpoints for traversing the Upside Down."
+        "desc": ""
       },
       {
         "name": "Sticky Lining",
-        "desc": "A fetid, viscous layer that covers and expands the interdimensional tunnels.\nIncreases the Area of Effect of active Portals by +2.5 metres."
+        "desc": ""
       },
       {
         "name": "Thorny Vines",
@@ -802,7 +794,7 @@
       },
       {
         "name": "Unknown Egg",
-        "desc": "A large, warm egg coated in gruesome webbing.\nReduces the Power Recovery time by -2.5 seconds."
+        "desc": ""
       },
       {
         "name": "Upside Down Resin",
@@ -829,15 +821,15 @@
   {
     "name": "The Doctor",
     "power": "Carter's Spark",
-    "powerDesc": "Movement Speeds:\nMain Article\nCharging Static Blast: 2.99 m/s\nCharging Shock Therapy: 3.08 m/s\nWalking: 4.6 m/s\n\nMadness:\nAdditional, detailed information can be found in the separate  Article.\nMadness thresholds: \nTier I: 1 Madness point\nTier II: 2 Madness points\nTier III: 3 Madness points\nShock Therapy Madness gain: +0.5 Madness points\nThis is equal to half a Tier.\nStatic Blast Madness gain: +1 Madness point\nThis is equal to a full Tier.\n\nShock Therapy:\nRange: 12 metres\nThis distance is calculated from the centre of '''The Doctor's hitbox capsule.\nCharge time: 1 second\nDetonation delay: 0.65 seconds\nThis refers to how long it takes the attack to shock Survivors after releasing it.\nCool-down duration: 1.5 seconds\nThis refers to how long after the attack The Doctor is prohibited from initiating another attack or from interacting with Props.\nSurvivor-Interactions Cool-down duration: 2.5 seconds\nThis refers to how long after receiving a shock Survivors are prohibited from interacting wit",
+    "powerDesc": "",
     "addons": [
       {
         "name": "\"Calm\" - Class I",
-        "desc": "An ECT procedure using a deep wavelength that soothes various mental illnesses. With Carter's Spark as its source, this procedure can cause mild anxiety in the patient.\n'''' Terror Radius while Static Blast is ready.\n'' Terror Radius while Static Blast is on cool-down.\n\nSurvivors with Madness suffer from the Affliction of Calm:\nMadness II: '  causes Survivors to hear a distant Illusionary Terror Radius.\nMadness III: Constantly causes Survivors to hear a distant Illusionary Terror Radius'''."
+        "desc": ""
       },
       {
         "name": "\"Calm\" - Class II",
-        "desc": "A risky ECT procedure using a deep wavelength that soothes various mental illnesses.With Carter's Spark as its source, this procedure can cause moderate anxiety in the patient.\n'''' Terror Radius while Static Blast is ready.\n'' Terror Radius while Static Blast is on cool-down.\n\nSurvivors with '''''' suffer from the Affliction of Calm:\nMadness II: ' causes Survivors to hear a distant Illusionary Terror Radius.\nMadness III: Constantly causes Survivors to hear a distant Illusionary Terror Radius'''"
+        "desc": ""
       },
       {
         "name": "\"Calm\" - Carter\\'s Notes",
@@ -857,7 +849,7 @@
       },
       {
         "name": "High Stimulus Electrode",
-        "desc": "An experimental electrode that can withstand very high charges for a longer period of time.\n'''' Shock Therapy'' Attack range."
+        "desc": ""
       },
       {
         "name": "Interview Tape",
@@ -865,7 +857,7 @@
       },
       {
         "name": "Iridescent King",
-        "desc": "A glass-like king chess piece moulded from The Fog itself. The Entity's trace reverberating within can break the most powerful minds.\n\nSurvivors with '''''''' suffer from all available Afflictions: Calm, Discipline, Order, and Restraint.\nSurvivors ' hear a distant Illusionary Terror Radius.\nDuring a Chase, Survivors perceive an Illusionary Red Stain and Terror Radius as though The Doctor were directly behind them.\nThis effect persists for 6 seconds' after the Chase ends in Madness II and is cons"
+        "desc": ""
       },
       {
         "name": "Iridescent Queen",
@@ -877,19 +869,15 @@
       },
       {
         "name": "Mouldy Electrode",
-        "desc": "A mouldy electrode which can nevertheless conduct a weak electrical current.\n'''' Shock Therapy'' Attack range."
-      },
-      {
-        "name": "\"Obedience\" - Class III",
-        "desc": "An experimental ECT procedure developed within the Fog, crudely annotated. The extra surge of power causes extreme muscle tension which depletes the patient's energy.\nSnap Out of It takes 2 seconds longer for Survivors to complete.\n\nSurvivors with Madness II or III suffer from the following Affliction:\nSkill Checks have a considerable chance to turn counter-clockwise.\n\nAfflictions of the same type do not stack."
+        "desc": ""
       },
       {
         "name": "\"Order\" - Class I",
-        "desc": "A conventional ECT procedure, part of a patient's daily routine at the Léry's Memorial Institute.Can cause a state of mild confusion in the patient.\nReduces Cool-down duration of Static Blast by -2 seconds.\n\nSurvivors with '''''''' suffer from the Affliction of Order:\nBroken  have a chance to become replaced with Illusionary Pallets that persist until approached.\nEvery 20 seconds, a new Illusionary Pallet'' is generated at the location of a random Broken Pallet.\n\nThe Doctor shares in his patient"
+        "desc": ""
       },
       {
         "name": "\"Order\" - Class II",
-        "desc": "A high stimulus ECT procedure, part of a patient's daily routine at the Léry's Memorial Institute.Can cause a state of moderate confusion in the patient.\n' ''' inflicted by Static Blast.\n\nSurvivors with Madness II or III suffer from the following Afflictions:\nBroken Pallets may appear to be replaced with Illusionary Pallets that persist until approached.\nIllusionary Pallets'' are generated every 20 seconds at the location of a Broken Pallet within 64 metres of The Doctor.\nThe Doctor shares in hi"
+        "desc": ""
       },
       {
         "name": "\"Order\" - Carter\\'s Notes",
@@ -897,15 +885,15 @@
       },
       {
         "name": "Polished Electrode",
-        "desc": "A like-new standard electrode equipment to conduct electro-convulsive treatments.\n'''' Shock Therapy'' Attack range."
+        "desc": ""
       },
       {
         "name": "\"Restraint\" - Class II",
-        "desc": "An experimental ECT procedure developed within The Fog.Uses a wavelength that links the patient's and '''The Doctor's''' minds.This procedure is known to cause mild cases of hallucination in the patient.\nReveals Survivors'  for 1 second when their ''''' Tier increases.\n\nSurvivors with Madness''' suffer from the Affliction of Restraint:\n' Illusionary Doctor duration.\n\nThe Doctor''' shares in his patients' Madness in order to read the Auras of Illusionary Doctors."
+        "desc": ""
       },
       {
         "name": "\"Restraint\" - Class III",
-        "desc": "An experimental ECT procedure developed within The Fog.Uses a high stimulus wavelength to link the patient's and '''The Doctor's''' minds.This procedure is known to cause serious cases of hallucinations in the patient.\nReveals Survivors'  for 2 seconds when their Madness Tier increases.\n\nSurvivors with Madness suffer from the Affliction of Restraint:\n' Illusionary Doctor duration.\n\nThe Doctor' shares in his patients' Madness in order to read the Auras of Illusionary Doctors."
+        "desc": ""
       },
       {
         "name": "\"Restraint\" - Carter\\'s Notes",
@@ -924,7 +912,7 @@
   {
     "name": "The Dredge",
     "power": "Reign of Darkness",
-    "powerDesc": "Movement Speeds:\nMain Article\nCharging/Holding Reign of Darkness: 4.0 m/s\nWalking: 4.6 m/s\nTeleportation speed during Daytime: 19 m/s\nTeleportation speed during Nightfall: 38 m/s\n\nGloaming Ability:\nInitial Charge time: 10 seconds\nThis refers to how long it takes for the Power to become available after loading into a Trial.\nCool-down time during Daytime: 10 seconds\nCool-down time during Nightfall: 4 seconds\nActivation time: 0.5 seconds\nFade-in / Fade-out time for Remnant: 0.25 seconds\nGrabbing Survivor in teleported-to Locker: 3 seconds\n\nRestrictions:\nMinimum distance to hooked Survivors: 12 metres\nMinimum distance to Locker: 3 metres\n\nLocks:\nTime to lock: 0.1 seconds\nTime to break: 1.5 seconds\nThis is identical to the cool-down time of an Obstructed Hit.While The Dredge does use a Basic Attack to hit the Locker, it hitting a prop instead of a Survivor causes it to apply that cool-down instead.\nThis is also the reason Perks such as  have no effect on this interaction.\n\nLockers:\nExit Loc",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Air Freshener",
@@ -992,7 +980,7 @@
       },
       {
         "name": "Tilling Blade",
-        "desc": "The island was self-sufficient, and followers tilled the tough soil to grow crops during the warm season.\nSurvivors suffer from the '''Blindness, Haemorrhage and Mangled Status Effects' for 80 seconds after becoming injured during Nightfall''."
+        "desc": ""
       },
       {
         "name": "War Helmet",
@@ -1015,7 +1003,7 @@
   {
     "name": "The Executioner",
     "power": "Rites of Judgement",
-    "powerDesc": "Movement Speeds:\nMain Article\nWalking while initiating or cancelling Punishment of the Damned: 3.68 m/s\nWalking while performing Rites of Judgement: 4.2 m/s\nWalking: 4.6 m/s\n\nRites of Judgement / Torment Mode:\nPower Activation time: 1 second\nPower Cancellation time: 1 second\nPower Capacity: 10 Charges\nThis refers to for how long The Executioner can draw Torment Trails before the Power runs out and he needs to recharge it.\nPower Depletion rate: -1 c/s\nThis results in a Depletion time of 10 seconds.\nPower Recharge rate: +0.25 c/s\nThis results in a Recharge time of 40 seconds.\nKiller Instinct duration: 3 seconds\n\nCages of Atonement:\nInteraction time: 1 second\nAuto-relocation Trigger radius: 10 metres\nAuto-relocation Trigger timer: 3.5 seconds\nAuto-relocation Entity-Progression Cool-down duration: 10 seconds\n\nAttack Trail:\nInitial Spawn delay: 0.267 seconds\nDelay after initiating the attack before the Attack Trail spawns.\nSpawn interval per segment: 0.033 seconds\nInterval between the indiv",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Black Strap",
@@ -1106,7 +1094,7 @@
   {
     "name": "The First",
     "power": "Test Subject #001",
-    "powerDesc": "Movement Speeds:\nWalking: 4.4 m/s\nTraversing the Upside Down: 8 m/s\nWalking movement speed multiplier while charging Vine Attack: x0.681818\nThis results in a walking movement speed of 2.99m/s\nWalking movement speed multiplier while casting Vine Attack: x0.40909\nThis results in a walking movement speed of 1.79m/s\n\nVine Attack:\nCooldown: 3 seconds\nCharge time: 0.4 seconds\nCasting time: 0.6 seconds\nCancel cooldown time: 1.5 seconds\n\nVine Attack - Area Of Effect:\nArea of Effect delay: 0.6 seconds\nArea of Effect linger time: 0.3 seconds\nArea of Effect radius: 1.46 metres\nArea of Effect height: 5 metres\nAnti-camp range = 8 metres\nAnti-camp Area of Effect delay: 6 seconds\n\nUpside Down:\nCooldown: 35 seconds\nTrial start cooldown: 50% of base cooldown\nTransition to Upside Down time: 1.5 seconds\nDelay before reaching Upside Down walking movement speed: 0.32 seconds\nDelay before reaching normal walking movement speed after performing Undergate Attack: 2.5 seconds\n\nUpside Down - Undergate Attack:\nT",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Bead Maze",
@@ -1197,19 +1185,19 @@
   {
     "name": "The Ghost Face",
     "power": "Night Shroud",
-    "powerDesc": "Movement Speeds:\nMain Article\nActive Stalking while crouched: 0.76 m/s\nActive Stalking while standing: 0.92 m/s\nThe Ghost Face enters this mode as soon as a Survivor enters his Field of View and is within Stalking range while Stalking.\nPassive Stalking while crouched: 1.9 m/s\nPassive Stalking while standing: 2.3 m/s\nThe Ghost Face is in this mode whenever he is Stalking without seeing any Survivor in his Field of View or who is within Stalking range.\nCrouching: 4.0 m/s\n\nReveal Mechanic:\nReveal range: 32 metres\nReveal time: 1.5 seconds\nReveal Progression/Regression rate: ±1 c/s\nHorizontal Ratio of Visibility Zone: 60 %\nVertical Ratio of Visibility Zone: 90 %\nThe Visibility Zone refers to a screen area that is designated as the zone in which The Ghost Face is considered visible to the Survivor, which is a prerequisite to be able to reveal him.\nMinimum In-Zone percentage: 0.05 %\nThis refers to how much of the screen must be occupied by The Ghost Face for him to be considered seen, when hi",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Cheap Cologne",
-        "desc": "Dollar store cologne with a pungent scent of rubbing alcohol.Worn by The Ghost Face to make his presence known.Reserved for impromptu visits.\nIncreases the time Survivors stay Marked by +10 seconds.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: increased the bonus Marked duration from +5 seconds to +10 seconds.\n\nCategory: Common Add-ons\n\nit: Boccetta di Profumo da Due Soldi\nzh: 廉價古龍水\nfr: Eau de Cologne Bon Marché\nes: Colonia Barata"
+        "desc": ""
       },
       {
         "name": "Chewed Pen",
-        "desc": "A blue pen with a chewed cap that holds traces of Danny's DNA.Incriminating evidence that was never found. \nIncreases the time dying Survivors take to reveal The Ghost Face to 3 seconds.\n|} \n\n== Change Log ==\n=== Patch 5.3.0 ===\n: reduced the Night Shroud Recovery Time reduction from -8 seconds to -4 seconds.\nThis change was done to compensate for a general reduction in Recovery Time.\n=== Patch 5.7.0 ===\n: now causes Survivors in the Dying State to take 3 seconds to reveal The Ghost Face.\n\nCateg"
+        "desc": ""
       },
       {
         "name": "Cinch Straps",
-        "desc": "Black straps that keep everything in place while on the prowl.\nNight Shround remains active after missing a Basic Attack.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: now causes Night Shroud to remain active after missing a Basic Attack.\n\nCategory: Uncommon Add-ons\n\nit: Cinghie\nzh: 再利用腰帶\nfr: Sangles\nes: Correas"
+        "desc": ""
       },
       {
         "name": "Driver's License",
@@ -1217,35 +1205,35 @@
       },
       {
         "name": "Drop-Leg Knife Sheath",
-        "desc": "A sheath allowing for a full motion range: ideal to inflict quick and powerful wounds while moving freely.Stolen from a patrol officer the night Danny left Philadelphia.\nGrants a +10 % ''''' Status Effect for 5 seconds' after Marking a Survivor.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: now gives The Ghost Face a +10 % Haste Status Effect for 5 seconds when Marking a Survivor.\n\n== Trivia ==\nThe Haste effect stacks with itself when Marking multiple Survivors.\n\n== 3.0.0 Developer Build Trivia =="
+        "desc": ""
       },
       {
         "name": "\"Ghost Face Caught on Tape\"",
-        "desc": "A tape obtained by Olsen to write an article that terrorised Roseville.\nPutting a Survivor into the  with a Basic Attack immediately recharges Night Shroud.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: now immediately recharges Night Shroud when The Ghost Face puts a Survivor into the Dying State with a Basic Attack.\n\n== 3.0.0 Developer Build Trivia ==\nThis Add-on was originally named \"The Ghost Caught on Tape\". It had almost the same effect as the released Add-on, increasing lean stalk rate by 1"
+        "desc": ""
       },
       {
         "name": "Headline Cut-Outs",
-        "desc": "Cut-outs of articles covering unsolved murder cases from Utah to Pennsylvania.While Ghost Face just authored some of the headlines, he committed all of the murders.Compiling your success makes you proud and boosts your confidence. \nIncreases Movement speed while Stalking by +40 %.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: increased the bonus Stalking Movement speed from 10% to 40%.\n\n== Trivia ==\nOne of the headlines features a typo, spelling \"Florida\" as \"Flordia\".\n\n== 3.0.0 Developer Build Tr"
+        "desc": ""
       },
       {
         "name": "Knife Belt Clip",
-        "desc": "A perfect belt clip to scout carry your blade discreetly.No one knows what you are planning to do tonight. \nReduces the Terror Radius of The Ghost Face by -12 metres while crouching.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: now reduces '''The Ghost Face's Terror Radius by 8 metres while Crouched.\n=== Patch 7.0.0 ===\n: increased the Terror Radius reduction from -8 metres to -12 metres.\n\n== 3.0.0 Developer Build Trivia ==\nThis Add-on originally used the  rarity. It had the same effect as the re"
+        "desc": ""
       },
       {
         "name": "Lasting Perfume",
-        "desc": "An overpowering musky fragrance worn by Ghost Face to announce his presence.Reserved for the victims he planned to write about.\nIncreases the time hooked Survivors take to reveal The Ghost Face to 3 seconds.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: now causes Survivors on a Hook to take 3 seconds to reveal The Ghost Face.\n\nCategory: Rare Add-ons\n\nit: Profumo Duraturo\nzh: 持久香水\nfr: Parfum Durable\nes: Perfume Duradero"
+        "desc": ""
       },
       {
         "name": "Leather Knife Sheath",
-        "desc": "A quiet and flexible sheath to carry your blade.Movement is easier when things are fastened into place.\nIncreases Crouch Movement speed by +10 %.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: increased the bonus Crouch Movement speed from +5.6 % to +10 %.\n\n== 3.0.0 Developer Build Trivia ==\nThis Add-on originally used the  rarity. It had the effect of simply increasing crouched movement speed by +10 %, this effect would be given to  on 3.0.0 PTB.\nDeveloper build name and description:\nLeather Knife"
+        "desc": ""
       },
       {
         "name": "Marked Map",
-        "desc": "The annotated map of Northern Roseville, Florida.Each 'X' represents a victim of The Ghost Face.Mapping out your targets allows you to roam the streets undetected. \nIncreases Killer Instinct duration when The Ghost Face is revealed by +2 seconds.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: increased the Killer Instinct duration from +1 second to +2 seconds.\n\n== 3.0.0 Developer Build Trivia ==\nThis Add-on was originally named \"Marked Map of Floridian Neighborhood\". It had the effect of decreasing"
+        "desc": ""
       },
       {
         "name": "Night Vision Monocular",
-        "desc": "Night vision lens enabling sharp photos even when shrouded in darkness.Ideal for discreet, impromptu visits late at night.\nWhenever a Survivor reveals The Ghost Face, they suffer from the Exhausted Status Effect for 10 seconds."
+        "desc": ""
       },
       {
         "name": "Olsen's Address Book",
@@ -1261,7 +1249,7 @@
       },
       {
         "name": "Outdoor Security Camera",
-        "desc": "A small surveillance camera that filmed Ghost Face breaking into a house on Belleview Road in Northern Roseville.The camera was positioned at the perfect angle to catch a glimpse of Ghost Face without providing any real clue to the police.\nPutting a Marked Survivor into the  reveals the  of all Survivors for 7 seconds.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: increased the Aura reveal time from 4 seconds to 7 seconds.\n: now reveals all Survivors.\n\nCategory: Visceral Add-ons\n\nit: Telecamera di"
+        "desc": ""
       },
       {
         "name": "\"Philly\"",
@@ -1269,7 +1257,7 @@
       },
       {
         "name": "Telephoto Lens",
-        "desc": "A manual focus lens to remain undetected while taking pictures from afar.\nWhenever a Survivor reveals The Ghost Face, they suffer the ''''' Status Effect for 60 seconds.\n|} \n\n== Change Log ==\n=== Patch 5.7.0 ===\n: now inflicts the Oblivious Status Effect on Survivors that reveal The Ghost Face for 60 seconds'.\n\nCategory: Uncommon Add-ons\n\nit: Lente per Teleobiettivo\nzh: 遠距鏡頭\nfr: Téléobjectif\nes: Teleobjetivo"
+        "desc": ""
       },
       {
         "name": "Victim's Detailed Routine",
@@ -1288,7 +1276,7 @@
   {
     "name": "The Ghoul",
     "power": "One-Eyed Terror",
-    "powerDesc": "Movement Speeds:\nMain Article\nLeap Cool-down: 1.6 m/s\nWalking while charging or adjusting Kagune Leap: 3.68 m/s\nWalking: 4.6 m/s\nPerforming the First Leap on any Survivor or a Consecutive Leap on Survivors holding a Kagune Mark: 10 m/s\nPerforming a Leap: 14 m/s\nSliding after a Leap: 23 m/s\n\nKagune Leap:\nPower Charge time: 0.35 seconds\nPower Charge-cancellation threshold: 0.25 seconds\nBelow this threshold, The Ghoul will not enter the charge-cancellation cool-down.\nPower Recharge time out of Enraged Mode: 4 seconds per Token\nGrab-Attack distance: 3.5 metres\nWhen The Ghoul enters this radius near targeted Survivors and under the right conditions, The Ghoul will Grab-Attack them.\nMinimum Leap distance:\nMinimum survivor distance: 2 metres\nMinimum environmental distance: 5 metres\nBelow these thresholds, a Leap will not be initiated.\nMaximum Leap distance: 14 metres\nKagune Leap's trajectory endpoint is pre-determined at every use (same principle doesn't apply for its duration) — making The G",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Amon's Necktie",
@@ -1379,11 +1367,11 @@
   {
     "name": "The Good Guy",
     "power": "Playtime's Over",
-    "powerDesc": "Movement Speeds:\nMain Article\nWalking (both Modes): 4.4 m/s\nSlice & Dice: 8 m/s\n\nFootsteps:\nSpawn interval: 0.15 seconds\nLifetime: 0.85 seconds\nThis refers to the time how long an individual footstep remains visible for.\nMaximum Visibility range: 16 metres\n\nIllusory Footfalls:\nDistraction Lifetime: 10 seconds\nMaximum simultaneous distractions per Survivor: 2\nMaximum idle timer: 0.2 seconds\nChance to randomly turn back on path (mind-game): 15 %\nChance to randomly change direction: 1 %\nChance to randomly stop for the maximum idle timer: 10 %\n\nHidey-Ho Mode:\nDuration: 14 seconds\nCool-down: 12 seconds\nTransition time between modes: 1 second\nDuration penalty per Attack attempt: -50 %\nThis only applies while in Hidey-Ho Mode.\nWarning threshold: 1 second before exiting the Mode\n\nCamera:\nSpring Arm length: 130 centimetres\nSpring Arm length in Hidey-Ho Mode: 95 centimetres\nHeight: 110 centimetres\nHeight in Hidey-Ho Mode: 95 centimetres\n\nSlice & Dice + Scamper:\nScamper Charge-up duration: 1 seco",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Automatic Screwdriver",
-        "desc": "A good way to make mechanical adjustments on the fly.\nReduces the Cool-down duration of Hidey-Ho Mode by -8 % after missing a Slice & Dice Attack."
+        "desc": ""
       },
       {
         "name": "Doll Eyes",
@@ -1403,7 +1391,7 @@
       },
       {
         "name": "Hard Hat",
-        "desc": "Keeps the dome intact while performing high-impact activities.\nInstantly breaks Pallets when performing a Scamper under them."
+        "desc": ""
       },
       {
         "name": "Iridescent Amulet",
@@ -1419,7 +1407,7 @@
       },
       {
         "name": "Pile of Nails",
-        "desc": "It is a lot easier to stay hidden when your target is worried about a pile of nails flying at their head. \nGrants the '''Undetectable Status Effect''' for 3 seconds after manually ending Hidey-Ho Mode."
+        "desc": ""
       },
       {
         "name": "Plastic Bag",
@@ -1431,7 +1419,7 @@
       },
       {
         "name": "Power Drill",
-        "desc": "Comes with a dozen convenient drill tips.They all make a big mess when applied to people.\nReduces the Cool-down duration of Hidey-Ho Mode by -10 % after missing a Slice & Dice Attack."
+        "desc": ""
       },
       {
         "name": "Rat Poison",
@@ -1447,11 +1435,11 @@
       },
       {
         "name": "Straight Razor",
-        "desc": "For when a close shave needs to be really, really close.\nSurvivors hit with a successful Slice & Dice Attack suffer from the '''Haemorrhage and Mangled Status Effects''' for 80 seconds."
+        "desc": ""
       },
       {
         "name": "Strobing Light",
-        "desc": "With the right training, it can be used to make people more suggestible.\nReduces your Terror Radius by -8 metres, when Hidey-Ho Mode is on cool-down."
+        "desc": ""
       },
       {
         "name": "Tiny Scalpel",
@@ -1459,7 +1447,7 @@
       },
       {
         "name": "Yardstick",
-        "desc": "Good for measuring distance.\nEven better for laying down a beating. \nPerforming a Scamper reveals the Auras of all Survivors within 16 metres of you for 3 seconds."
+        "desc": ""
       },
       {
         "name": "Playtime's Over",
@@ -1470,43 +1458,43 @@
   {
     "name": "The Hag",
     "power": "Blackened Catalyst",
-    "powerDesc": "Main Article\nWalking: 4.4 m/s\n\nPhantasm Traps:\nMaximum Teleportation range: 48 metres\nCapacity: 10\nThis refers to how many Phantasm Traps can co-exist in the environment.Placing an additional Phantasm Trap at this point will recycle the oldest one.\nSetting time: 1.9 seconds\nTrigger radius: 2.7 metres\nLoud Noise Notification range (when tripped): 1,000 metres\nTripped duration: 6 seconds\nScore Event timer: 10 seconds\nIf The Hag lands a hit on the Survivor who tripped the Phantasm Trap specifically or on any Survivor after teleporting to a Phantasm Trap within that timeframe, special Score Events are triggered.\nPost-Teleport Stun duration: 0.01 second\nThis refers to the time during which The Hag cannot attack or move.\nPost-Teleport Slow-down duration: 1 second\nTripped-Event range: 16 metres\nThis is only used for Survivor Bots and refers to the maximum audible range at which they can detect a tripped Phantasm Trap.\nWipe-away time: 4 seconds\n\nMud Phantasm:\nAfter spawning, Mud Phantasms keep",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Bloodied Mud",
-        "desc": "64px\nA handful of mud with veins of deep crimson.The bloody layers empower the mud.\nReduces the Trigger range of Phantasm Traps by -30 %."
+        "desc": ""
       },
       {
         "name": "Bloodied Water",
-        "desc": "64px\nTainted water contained in a folded water lily leaf.\nReduces the Trigger range of Phantasm Traps by -20 %."
+        "desc": ""
       },
       {
         "name": "Bog Water",
-        "desc": "64px\nMurky water contained in a glass pill bottle from another time.\nReduces the Trigger range of Phantasm Traps by -10 %."
+        "desc": ""
       },
       {
         "name": "Cracked Turtle Egg",
-        "desc": "64px\nA pale orange turtle egg, cracked and emptied of its content.\nIncreases the Tripped duration of Phantasm Traps by +30 %."
+        "desc": ""
       },
       {
         "name": "Cypress Necklet",
-        "desc": "64px\nA rigid ornament worn around the neck made from dead plants adorned with crudely attached cypress bark and swamp moss.\nIncreases the Setting speed of Phantasm Traps by +15 %."
+        "desc": ""
       },
       {
         "name": "Dead Fly Mud",
-        "desc": "64px\nA small lump of mud, black with the remains of flies.Devoured to increase stamina.\nIncreases the Teleport range to tripped Phantasm Traps by +10 %."
+        "desc": ""
       },
       {
         "name": "Disfigured Ear",
-        "desc": "64px\nNo\nThe cannibal village deaf boy's ear.Deformed due to several hits to the head.The trapped life essence within unlocks tremendous potential in '''The Hag's power.\nSurvivors who trigger a Phantasm Trap are deafened for 6 seconds'''."
+        "desc": ""
       },
       {
         "name": "Dragonfly Wings",
-        "desc": "64px\nA handful of yellowish wings, dry and crisp.Devoured to increase stamina.\nIncreases the Teleport range to tripped Phantasm Traps by +12.5 %."
+        "desc": ""
       },
       {
         "name": "Dried Cicada",
-        "desc": "64px\nA large swamp cicada covered in a fine layer of ash; crispy.Devoured to increase stamina.\nIncreases the Teleport range to tripped Phantasm Traps by +15 %."
+        "desc": ""
       },
       {
         "name": "Grandma's Heart",
@@ -1514,23 +1502,23 @@
       },
       {
         "name": "Half Eggshell",
-        "desc": "64px\nOne half of a perfectly round hollow eggshell.\nIncreases the Tripped duration of Phantasm Traps by +25 %."
+        "desc": ""
       },
       {
         "name": "Mint Rag",
-        "desc": "A small piece of cotton torn from the dress worn by Lisa Sherwood on the day she disappeared.\nThe trapped life essence within unlocks tremendous potential in '''The Hag's' power. \nGrants The Hag the ability to teleport to any untripped Phantasm Trap at will.\nMint Rag'' applies a cool-down of 10 seconds to teleports between un-tripped Phantasm Traps.\nThis cool-down does not extend to regular teleports to tripped Phantasm Traps."
+        "desc": ""
       },
       {
         "name": "Powdered Eggshell",
-        "desc": "64px\nMinuscule eggshell fragments shimmering with a pale golden hue.\nIncreases the Tripped duration of Phantasm Traps by +20 %."
+        "desc": ""
       },
       {
         "name": "Pussy Willow Catkins",
-        "desc": "64px\nNo\nA handful of small, pristine flower clusters covered in a fine greyish fur.\nReveals the Survivor's Aura for 3 seconds when they trip the Phantasm trap."
+        "desc": ""
       },
       {
         "name": "Rope Necklet",
-        "desc": "64px\nMinuscule eggshell fragments shimmering with a pale golden hue.\nIncreases the Setting speed of Phantasm Traps by +10 %."
+        "desc": ""
       },
       {
         "name": "Rusty Shackles",
@@ -1538,19 +1526,19 @@
       },
       {
         "name": "Scarred Hand",
-        "desc": "The cut up, severed hand of the cannibal village butcher.The trapped life essence within unlocks tremendous potential in The Hag's power.\nMud Phantasms have collision.\nRemoves '''The Hag's ability to teleport to her traps.\nGrants 300 %' Bloodpoints from Deviousness'' Score Events.\nTrumps all other Add-ons."
+        "desc": ""
       },
       {
         "name": "Swamp Orchid Necklet",
-        "desc": "64px\nA rigid ornament worn around the neck made from dead plants adorned with withered orchid petals and leaves.\nIncreases the Setting speed of Phantasm Traps by +20 %."
+        "desc": ""
       },
       {
         "name": "Waterlogged Shoe",
-        "desc": "A child's shoe, long lost in the bog's waters.The trapped life essence within unlocks tremendous potential in The Hag's power.\nIncreases '''The Hag's base Movement speed by +7.5 % to 4.73 m/s.\nSurvivors within the Phantasm Trap range suffer from the Hindered Status Effect, reducing their movement speed by -9 %.\nRemoves The Hag's ability to teleport to triggered Phantasm Traps'''."
+        "desc": ""
       },
       {
         "name": "Willow Wreath",
-        "desc": "64px\nNo\nThree frail willow branches attached to form a triangular wreath.\nReveals the Survivor's Aura for 5 seconds when they trip the Phantasm Trap."
+        "desc": ""
       },
       {
         "name": "Blackened Catalyst",
@@ -1561,15 +1549,15 @@
   {
     "name": "The Hillbilly",
     "power": "",
-    "powerDesc": "Movement Speeds:\nMain Article\nWalking during the ''Chainsaw's Cool-down: 1.84 m/s\nCharging the Chainsaw: 3.68 m/s\nWalking: 4.6 m/s\nChainsaw Sprint: 10.12 m/s\n\nTurn rate:\nInitial Turn rate: 412 °/s\nThis phase lasts for 1 second\nEventual Turn rate: 32 °/s\n\nChainsaw:\nCharge time: 2.5 seconds\nLong Chainsaw Sprint duration: 2 seconds\nAttack Zone Scale factor: x0.9\nObstruction Zone Scale factor: x0.5\n\nOverdrive:\nDuration: 20 seconds\nActivation threshold: 20 Charges\nAccumulation rate when revving the Chainsaw: +1.5 c/s\nAccumulation rate during the Chainsaw Sprint: +1.5 c/s\nDissipation rate when not using the Chainsaw: -1 c/s\nDecay delay: 8 seconds\nThis refers to how long it takes after stopping to use the Chainsaw before the Overdrive Meter starts discharging.\nRev Buffer time: 0.5 seconds\nThis buffer prevents The Hillbilly from slowly accumulating Overdrive by repeatedly tapping the Power button without properly revving the Chainsaw.\n\nOverdrive Bonuses:\nChainsaw Sprint speed: 12 m/s\nTransitio",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Apex Muffler",
-        "desc": "A masterfully crafted chainsaw muffler that outperforms all others.\nThe Chainsaw is silent for Survivors outside of the Terror Radius."
+        "desc": ""
       },
       {
         "name": "Begrimed Chains (Chainsaw)",
-        "desc": "A foul yet oddly familiar chain, coated with something unpleasant.\nSurvivors hit with the Chainsaw suffer from the Haemorrhage and '''Mangled Status Effects''' for 70 seconds."
+        "desc": ""
       },
       {
         "name": "The Thompsons' Mix",
@@ -1581,27 +1569,27 @@
       },
       {
         "name": "Clogged Intake",
-        "desc": "Modifying the airflow is key to modifying the ''Chainsaw's power.\nExtends the duration of Overdrive'' by +15 %."
+        "desc": ""
       },
       {
         "name": "Iridescent Engravings",
-        "desc": "Engravings found on the Chainsaw body representing the dark beast that lives in The Fog.Fills the user with determination.\nIncreases your Movement speed during a Chainsaw Sprint by +20 %.\nIncreases the Charge time of the Chainsaw by +12 %."
+        "desc": ""
       },
       {
         "name": "Counterweight",
-        "desc": "Adds weight to the base, for stability.\nReduces the initial Turn rate of the Chainsaw during a Chainsaw Sprint by -70 %."
+        "desc": ""
       },
       {
         "name": "Filthy Slippers",
-        "desc": "Max sometimes struggled to hear his mother's footfalls.\nGain the '''Undetectable Status Effect' until you stop sprinting after maintaining a Chainsaw Sprint'' for at least 2 seconds."
+        "desc": ""
       },
       {
         "name": "Greased Throttle",
-        "desc": "A lubricated trigger.One twitch of the finger brings the Chainsaw back to life.\nReduces the Cool-down time after using the Chainsaw by -5 %, when not in Overdrive."
+        "desc": ""
       },
       {
         "name": "Ragged Engine",
-        "desc": "Some would say it needs a tune-up.Max would say it is tuned-up.\nReduces the Dissipation speed of the Overdrive Meter when not using the Chainsaw by -30 %."
+        "desc": ""
       },
       {
         "name": "LoPro Chains",
@@ -1609,7 +1597,7 @@
       },
       {
         "name": "Low Kickback Chains",
-        "desc": "A specialised chain that reduces the likelihood of kickback.\nReduces the Cool-down time after hitting an obstacle during a Chainsaw Sprint by -15 %."
+        "desc": ""
       },
       {
         "name": "Discarded Air Filter",
@@ -1617,7 +1605,7 @@
       },
       {
         "name": "Off-Brand Motor Oil",
-        "desc": "Affordable oil that can be used to lubricate noisy chains.\nIncreases the Charge rate of the Overdrive Meter by +15 %."
+        "desc": ""
       },
       {
         "name": "High-Speed Idler Screw",
@@ -1625,7 +1613,7 @@
       },
       {
         "name": "Thermal Casing",
-        "desc": "A thicker case that allows the user to control the conservation of energy.\nReduces the Dissipation speed of the Overdrive Meter when not using the Chainsaw by -20 %."
+        "desc": ""
       },
       {
         "name": "Spiked Boots",
@@ -1633,7 +1621,7 @@
       },
       {
         "name": "Steel Toe Boots",
-        "desc": "Boots with a reinforced toe that offer protection from impact.\nReduces the Cool-down time after hitting an obstacle during a Chainsaw Sprint by -10 %."
+        "desc": ""
       },
       {
         "name": "Tuned Carburettor",
@@ -1641,10 +1629,6 @@
       },
       {
         "name": "Cracked Primer Bulb",
-        "desc": "A button that clears air from the fuel lines.This machine needs to be fed.\nIncreases the Charge rate of the Overdrive Meter by +15 %.\nSurvivors hit with the Chainsaw are only damaged for a single Health State."
-      },
-      {
-        "name": "Thompson's Moonshine",
         "desc": ""
       },
       {
@@ -1656,7 +1640,7 @@
   {
     "name": "The Houndmaster",
     "power": "Scent of Blood",
-    "powerDesc": "Movement Speeds:\nMain Article\nCharging Command (The Houndmaster): 3.68 m/s\nWalking (The Houndmaster): 4.6 m/s\nSlipstream-Walking (The Houndmaster): 6.0 m/s\nFollowing (The Dog): 9.2 m/s\nReturning (The Dog): 18.4 m/s\nPatrolling (The Dog): 22.5 m/s\nDashing (The Dog): 35 m/s\nPouncing (Unused) (The Dog): 50 m/s\n\nChase Command:\nPower triggered cool-down: 3 seconds\nPower cancelled cool-down: 1 second\n\nSearch Command:\nPower triggered cool-down: 0.5 seconds\nPower cancelled cool-down: 1 second\nTarget Location minimum distance: 5 metres\nTarget Location maximum distance: 40 metres\nIt should be noted that this only applies to Searches that are not directed at a specific Prop.\n\nSlipstream:\nThe mechanic that unlocks a Movement Speed after walking along the Search Path is internally referred to as Slipstream.Walking along the Search Path grants The Houndmaster so-called Slipstream points at a given rate per travelled metre.Once she reaches a specific threshold, she is granted the Movement Speed bonus.",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Barley Meal",
@@ -1747,11 +1731,11 @@
   {
     "name": "The Huntress",
     "power": "Hunting Hatchets",
-    "powerDesc": "Movement Speeds:\nMain Article\nWind-up phase: 3.08 m/s\nThrow Cool-down phase: 3.74 m/s\nWalking: 4.4 m/s\nMinimum Flight speed of Hatchets: 25 m/s\nMaximum Flight speed of Hatchets: 40 m/s\n\nHatchets:\nWind-up time: 0.9 seconds\nThis describes the minimum time it takes The Huntress to be ready to launch a Hatchet when releasing the Power button.\nIf she releases a Hatchet right after this phase concludes, the Hatchet will be uncharged and thrown with the minimum Flight speed.\nIf she continues to hold the Power button, she will enter the next phase, allowing her to charge the Hatchet (see next Bullet point).\nThrow Charge time: 1 second\nThis describes the phase that immediately follows the Wind-up phase\nThis phase allows The Huntress to charge her Hatchets for increased Flight speed.\nCharging Hatchets for the full duration (announced with an audio cue) will throw them with the maximum Flight speed.\nThrow Cool-down duration: 2 seconds\nReload time at Lockers: 3 seconds\nHitboxes:\nEnvironmental coll",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Amanita Toxin",
-        "desc": "A toxin from the Amanita mushroom, applied to the '''Hatchet's blade.It numbs the mind.\nSurvivors hit with Hunting Hatchets suffer from the Blindness Status Effect for 60 seconds'''."
+        "desc": ""
       },
       {
         "name": "Bandaged Haft",
@@ -1759,22 +1743,14 @@
       },
       {
         "name": "Begrimed Head",
-        "desc": "This Hatchet head is stained with a foul substance that afflicts anyone who it touches with debilities.\nSurvivors hit by Hatchets suffer from the '''Haemorrhage and Mangled Status Effects''' for 80 seconds."
-      },
-      {
-        "name": "Berus Toxin",
         "desc": ""
       },
       {
         "name": "Coarse Stone",
-        "desc": "This stone is too coarse to do any good.A blade damaged by it inflicts awful open wounds.\nGrunts of Pain of Survivors hit with Hunting Hatchets are increased by +50 % until fully healed."
+        "desc": ""
       },
       {
         "name": "Deerskin Gloves",
-        "desc": "Cured leather gloves that protect the hands and give a sure grip.\n'''' Reload'' time at ."
-      },
-      {
-        "name": "Fine Stone",
         "desc": ""
       },
       {
@@ -1787,26 +1763,22 @@
       },
       {
         "name": "Infantry Belt",
-        "desc": "A sturdy utility belt pillaged from a soldier.\nHe was quick in combat, but she was quicker. \nSuccessfully hitting a Survivor with a Hatchet grants a +3 % '''Haste Status Effect''' for 5 seconds."
-      },
-      {
-        "name": "Iridescent Head",
-        "desc": "A glass-like Hatchet head moulded from The Fog itself.The blade is warm and reverberating with The Entity's power.\nSurvivors hit with Hatchets are put into the .\nCaps the Carrying capacity of Hatchets at 1 Hatchet.\n\nIridescent Head does not stack with Add-ons increasing the Carrying capacity of Hatchets."
-      },
-      {
-        "name": "Leather Loop",
-        "desc": "The right tool in the right hands is key to a successful hunt. \nSuccessfully hitting a Survivor with a Hatchet grants a +2 % '''Haste Status Effect''' for 5 seconds."
-      },
-      {
-        "name": "Manna Grass Braid",
-        "desc": "A circular decorative braid made from manna grass.This memory of a lost little one fills The Huntress with rage and focus.\nReduces Wind-up time by ''''''."
-      },
-      {
-        "name": "Oak Haft",
         "desc": ""
       },
       {
-        "name": "Pungent Phial",
+        "name": "Iridescent Head",
+        "desc": ""
+      },
+      {
+        "name": "Leather Loop",
+        "desc": ""
+      },
+      {
+        "name": "Manna Grass Braid",
+        "desc": ""
+      },
+      {
+        "name": "Oak Haft",
         "desc": ""
       },
       {
@@ -1815,7 +1787,7 @@
       },
       {
         "name": "Rusty Head",
-        "desc": "This Hatchet head is covered with crusty and volatile rust spots that make injuries particularly difficult to heal from.\nSurvivors hit by Hatchets suffer from the '''Mangled Status Effect''' for 70 seconds."
+        "desc": ""
       },
       {
         "name": "Shiny Pin",
@@ -1827,18 +1799,10 @@
       },
       {
         "name": "Venomous Concoction",
-        "desc": "A toxic concoction, applied to the '''Hatchet's blade.The murky concoction is mainly composed of Berus Snake venom, which gives it fatiguing capabilities.\nSurvivors hit with Hunting Hatchets suffer from the '' Status Effect for 5 seconds'."
+        "desc": ""
       },
       {
         "name": "Yellowed Cloth",
-        "desc": ""
-      },
-      {
-        "name": "Yew Seed Brew",
-        "desc": ""
-      },
-      {
-        "name": "Yew Seed Concoction",
         "desc": ""
       },
       {
@@ -1847,7 +1811,7 @@
       },
       {
         "name": "Wooden Fox",
-        "desc": "Roughly carved, this fox statuette is no more than a few inches.A reminder that stealth and cunning is as effective as raw power.\nGrants the ''''' Status Effect for 30 seconds' when reloading."
+        "desc": ""
       },
       {
         "name": "Hunting Hatchets",
@@ -1858,11 +1822,11 @@
   {
     "name": "The Knight",
     "power": "Guardia Compagnia",
-    "powerDesc": "Movement Speeds:\nMain Article\nWalking: \nDrawing the Patrol Path: 15 m/s\n\nThe Carnifex: 48px \nright|128px\nPatrol speed: 3.4 m/s (default)\nBreak or Damage Action duration: 1.8 seconds (shortest)\nPatrol duration: 12 seconds (default)\nHunt speed: 4.1 m/s (default)\nAttacks cause Deep Wound: no (default)\nFlag Materialisation time: 5 seconds (default)\nHunt duration: 12 seconds (default)\nSpawn Vision range: 2 metres (default)\nPatrol Vision range: 10 metres (default)\nCool-down duration: 20 seconds (shortest)\n\nThe Assassin: 48px \nright|128px\nPatrol speed: 3.4 m/s (default)\nBreak or Damage Action duration: 5 seconds (default)\nPatrol duration: 12 seconds (default)\nHunt speed: 4.4 m/s (fastest)\nAttacks cause Deep Wound: yes (damages)\nFlag Materialisation time: 5 seconds (default)\nHunt duration: 12 seconds (default)\nSpawn Vision range: 2 metres (default)\nPatrol Vision range: 10 metres (default)\nCool-down duration: 30 seconds (longest)\n\nThe Jailer: 48px \nright|128px\nPatrol speed: 4.1 m/s (fastest)\nBr",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Battle Axe Head",
-        "desc": "Sander Rault was a tower of a man, terrifying in form and demeanour.\nReduces the Cool-down time after summoning The Carnifex by -20 %."
+        "desc": ""
       },
       {
         "name": "Blacksmith's Hammer",
@@ -1870,19 +1834,15 @@
       },
       {
         "name": "Broken Hilt",
-        "desc": "A fresh weapon is clean, even surgical; an attack with a broken one is malicious and desperate.\nSurvivors damaged by a Guard suffer from the '''Haemorrhage and Mangled Status Effects''' for 70 seconds."
+        "desc": ""
       },
       {
         "name": "Call to Arms",
         "desc": ""
       },
       {
-        "name": "Chain Mail Fragment",
-        "desc": ""
-      },
-      {
         "name": "Cold Steel Manacles",
-        "desc": "Alejandro Santiago apprenticed as an armourer and showed no remorse.\nReduces the Cool-down time after summoning The Jailer by -20 %."
+        "desc": ""
       },
       {
         "name": "Dried Horsemeat",
@@ -1890,11 +1850,11 @@
       },
       {
         "name": "Flint and Steel",
-        "desc": "Attacks at night were not uncommon.Fear was often their greatest ally.\nSummoning The Carnifex has the following effect:\nThe Auras of all Survivors within 24 metres of unbroken Pallets are revealed to you for 8 seconds."
+        "desc": ""
       },
       {
         "name": "Grim Iron Mask",
-        "desc": "No method of torture was too base for Guardia Compagnia.\nPain and humiliation went hand-in-hand.\nSurvivors detected by a Guard during the Patrol Phase suffer from the '''Blindness Status Effect''' for 75 seconds."
+        "desc": ""
       },
       {
         "name": "Gritty Lump",
@@ -1902,11 +1862,11 @@
       },
       {
         "name": "Healing Poultice",
-        "desc": "Their reputation was so large, so horrible, that the mere knowledge that they were coming was enough to bring people to their knees.\nSummoning The Assassin has the following effect:\nThe Auras of all Survivors within 8 metres of his Spawn location are revealed to you for 8 seconds."
+        "desc": ""
       },
       {
         "name": "Iridescent Company Banner",
-        "desc": "Where this banner was raised, those who called themselves 'civilised' ran and hid, because for all their codes and laws, they had nothing resembling actual strength.\nCauses all Windows on the Patrol Path to be blocked to all Survivors for 25 seconds after summoning a Guard.\nCauses all Windows vaulted by the Hunted Survivor to be blocked to all other Survivors for the duration of the Hunt.\nCauses the Exit Gates to be blocked to the Hunted Survivor for the duration of the Hunt."
+        "desc": ""
       },
       {
         "name": "Ironworker's Tongs",
@@ -1921,16 +1881,12 @@
         "desc": ""
       },
       {
-        "name": "Lightweight Greaves",
+        "name": "Map of the Realm",
         "desc": ""
       },
       {
-        "name": "Map of the Realm",
-        "desc": "These unique leather maps were not easy to come by, but when they could not be purchased, they could be taken by force.\nIncreases the Vision range of a Guard during the Patrol Phase by +2 metres."
-      },
-      {
         "name": "Pillaged Mead",
-        "desc": "Drinks taken from their victims tasted sweet, but such frivolities were often short-lived.\nReduces the Break or Damage Action duration of Guards by -10 %."
+        "desc": ""
       },
       {
         "name": "Jailer's Chimes",
@@ -1938,7 +1894,7 @@
       },
       {
         "name": "Tattered Tabard",
-        "desc": "Cloaked in heavy fabrics, neither human nor nature could stop them once they had their target.\nIncreases the Patrol duration of Guards by +6 seconds."
+        "desc": ""
       },
       {
         "name": "Town Watch's Torch",
@@ -1946,7 +1902,7 @@
       },
       {
         "name": "Treated Blade",
-        "desc": "Durkos Malecek stuck to the shadows, and was an efficient slaughterer.\nReduces the Cool-down time after summoning The Assassin by -20 %."
+        "desc": ""
       },
       {
         "name": "Guardia Compagnia",
@@ -1957,7 +1913,7 @@
   {
     "name": "The Krasue",
     "power": "Unbodied Flesh",
-    "powerDesc": "Movement Speeds:\nMain Article\nHead to Body Form transition: 1.15 m/s\nBody to Head Form transition: 3.68 m/s\nExiting Headlong Flight: 3.7 m/s\nCharging and using Regurgitate: 3.8 m/s\nWalking in Body Mode: 4.6 m/s\nWalking in Head Mode: 4.8 m/s\nUsing Headlong Flight: 7 m/s\nUsing Intestinal Whip: 14.4* m/s\nThis is not a constant value and is only the maximum speed value of Intestinal Whip.\n\nCorporeal Weave:\nBody-to-Head Transition time: 1.2 seconds\nHead-to-Body Transition time: 2.2 seconds\nCool-down: 3.5 seconds\nInitial cool-down: 5 seconds\nApplied at the start of a Trial.\n\nLeeched:\nMaximum Leeched levels: 2\nMaximum charges per level: 100 charges\nLeeched I progression from Intestinal Whip: +34 charges\nLeeched I progression from Regurgitate: +100 charges\nPassive Leached II progression: +1.665 c/s\nThis results in a minute-long timer to passively reach Leeched II.\n\nGlowing Fungus:\nSurvivor Movement speed while eating a Glowing Fungus: 2.832 m/s\nEat Glowing Fungus interaction time: 3 seconds\nPa",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Broken Tiara",
@@ -2048,27 +2004,23 @@
   {
     "name": "The Legion",
     "power": "Feral Frenzy",
-    "powerDesc": "Movement Speeds:\nMain Article\nFatigue: 2.3 m/s\nFrenzy: 5.2 m/s\nBonus movement speed gained per-hit: 0.24 m/s\n\nFeral Frenzy:\nDuration: 11 seconds\nRecharge: 15 seconds\nFatigue: 2.5 seconds\nBonus Field of View angle: +15 °\nBonus Field of View angle gained per-hit: +1 °\nBonus Terror Radius: +8 metres\n\nFeral Vaults:\nAction duration: 0.9 seconds\n\nFeral Slashes:\nAttack Open time: 0.5 seconds\nAttack Hitting time: 0.3 seconds\nSuccessful Attack cool-down: 1 second\nObstructed Attack cool-down: 0.225 seconds\nMissed Attack cool-down: 0.225 seconds\n\nKiller Instinct:\nThe detection radius is directly tied to '''The Legion's' Terror Radius.\nThis has the consequence that any effects altering their Terror Radius also affect Killer Instinct, including the Undetectable and Oblivious status effects.\nUnlike The Doctor, the Oblivious status effect is not negated by the power, despite being tied to the Terror Radius.\n\nDeep Wound:\nBleed-out timer lasts 20 seconds and cannot be modified by the use of Add-ons.\nSe",
+    "powerDesc": "",
     "addons": [
       {
         "name": "BFFs",
-        "desc": "An unnaturally cold silver necklace split into four, one for each best friend.\nHitting Survivors with chained Feral Slashes grants Tokens.The more Feral Slashes are chained together, the higher the amount of awarded Tokens:\nFirst Feral Slash: grants no Tokens\nSecond Feral Slash: +2 Tokens\nThird Feral Slash: +3 Tokens\nFourth Feral Slash: +4 Tokens\nFifth Feral Slash: +5 Tokens\n\nOnce the Exit Gates are powered and only if 15 or more Tokens have been acquired, The Legion benefits from the following "
-      },
-      {
-        "name": "Cold Dirt",
-        "desc": "A handful of dirt collected from the janitor's final resting place.It is unnaturally cold.\nConsiderably decreases the cool-down duration of Feral Frenzy (0.6 seconds)."
+        "desc": ""
       },
       {
         "name": "Defaced Smiley Pin",
-        "desc": "A once friendly looking, bright yellow button of a defaced smiley.A signature icon of The Legion.\nSurvivors who perform a Self-Mend from the '''Deep Wound Status Effect applied by The Legion suffer from the Mangled Status Effect''' for 60 seconds."
+        "desc": ""
       },
       {
         "name": "Etched Ruler",
-        "desc": "A wooden ruler deeply etched with the names of enemies.\nSurvivors hit with a Feral Slash suffer from the ''''' Status Effect for 60 seconds'."
+        "desc": ""
       },
       {
         "name": "Filthy Blade",
-        "desc": "This blade is stained with foul spots of blood and grime that make injuries particularly difficult to mend.\nIncreases Mending time by +4 seconds."
+        "desc": ""
       },
       {
         "name": "Frank's Mix Tape",
@@ -2076,15 +2028,15 @@
       },
       {
         "name": "Friendship Bracelet",
-        "desc": "A wide grey and red braided rope bracelet.The inscription \"F. J. S. J.\" can be seen, crudely written in bold black ink.\nExtends the Lunge duration of Feral Slashes by +0.3 seconds."
+        "desc": ""
       },
       {
         "name": "Fuming Mix Tape",
-        "desc": "Dark beats, violent shreds and unfathomable vocals from another world fill the mind with a vibrating sixth sense.\nThe Repair Progression of  can be determined by the intensity of their  during Feral Frenzy.\nGenerators not being repaired start regressing.\nUnlocks an additional music layer in the  and Chase Music of The Legion.\nCan be combined with other Mix Tapes to unlock multiple layers."
+        "desc": ""
       },
       {
         "name": "Iridescent Button",
-        "desc": "A glass-like button moulded from The Fog that captures The Legion's likeness.The surface is warm and reverberating with The Entity's power.\nFeral Vaults immediately break the vaulted ."
+        "desc": ""
       },
       {
         "name": "Joey's Mix Tape",
@@ -2103,28 +2055,24 @@
         "desc": ""
       },
       {
-        "name": "Nasty Blade",
-        "desc": "This blade is stained with unsanitary spots of grime that make injuries particularly difficult to mend.\nSlightly increases the amount of time required for Survivors to complete the Mend action (1.5 seconds)."
-      },
-      {
         "name": "Never-Sleep Pills",
-        "desc": "Highly caffeinated tablets to make you extra sharp for exams or draining activities.\nReduces the base Movement speed of Feral Frenzy to 4.6 m/s.\nIncreases the duration of Feral Frenzy by +10 seconds.\nGrants a stack-able additional +100 Bloodpoints for successful Feral Slashes, up to a maximum of +500 Bloodpoints."
+        "desc": ""
       },
       {
         "name": "Scratched Ruler",
-        "desc": "A wooden ruler deeply scratched with hash marks.\nReduces Power Recovery time by -5 seconds."
+        "desc": ""
       },
       {
         "name": "Smiley Face Pin",
-        "desc": "A friendly looking, bright yellow button used as a sarcastic statement.\nSurvivors who perform a Self-Mend from the ''''' Status Effect applied by The Legion suffer from the  Status Effect for 60 seconds'."
+        "desc": ""
       },
       {
         "name": "Stab Wounds Study",
-        "desc": "A printed medical article stolen from Ormond's public library, vulgarising a study on lesions and stab wounds.\nSurvivors who perform a Self-Mend from the ''''' Status Effect applied by The Legion have their  revealed for 4 seconds'."
+        "desc": ""
       },
       {
         "name": "Stolen Sketch Book",
-        "desc": "A sketch book with imaginative and evocative, if not slightly bizarre sketches.\nFrom the second Feral Slash onwards, Survivors drop their  when hit."
+        "desc": ""
       },
       {
         "name": "Stylish Sunglasses",
@@ -2136,7 +2084,7 @@
       },
       {
         "name": "The Legion Pin",
-        "desc": "A handmade button with the face of The Legion.To use exclusively on intimidation dares.\nSurvivors who perform a Self-Mend from the ''''' Status Effect applied by The Legion suffer from the  Status Effect for 60 seconds'."
+        "desc": ""
       },
       {
         "name": "Feral Frenzy",
@@ -2147,7 +2095,7 @@
   {
     "name": "The Lich",
     "power": "Vile Darkness",
-    "powerDesc": "Movement Speeds:\nMain Article\nPost-Fly Cool-down:  1.012 m/s\nPost-Casting Spells: 3.68 m/s\nCharging Spells: 4.0 m/s\nWalking: \nFlying: 8.0 m/s\n\nSpells:\nCharge time: 0.2 seconds\nHow long it takes to charge a Spell before it can be cast.\nCool-down Charge threshold: 0.1 seconds\nBuffer that prevents any cool-downs from applying by accidentally tapping the button.\nCancellation Cool-down duration: 1.25 seconds\nApplies after cancelling a Spell after charging it, instead of casting it.\nIndividual Recharge durations: \nThese cool-downs are applied individually to each Spell after casting and are not shared.Any Spell not currently recharging may be used at any time.\nDispelling Sphere: 30 seconds\nFlight of the Damned: 30 seconds\nFly: 20 seconds\nMage Hand: 35 seconds\nSpell Cast Cool-down after casting: 2 seconds\nFly is an exception with an increased Cool-down duration of 2.75 seconds\nSpell Cast Cool-down after cancelling: 1 second\nMagic Item Aura-reveal duration: 2 seconds\nThe time the Aura of The L",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Bag of Holding",
@@ -2238,7 +2186,7 @@
   {
     "name": "The Mastermind",
     "power": "Virulent Bound",
-    "powerDesc": "Movement Speeds:\nMain Article\nWalking in the Chain Bound Window: 2.76 m/s\nCharging Virulent Bound: 3.68 m/s\nWalking: 4.6 m/s\nPerforming a Virulent Bound: 14 m/s\n\nBound:\nPower Charge time: 1.5 seconds\nPower Recharge time: 5.5 seconds per Charge\nReduced Power Recharge Time bonus for each Infected Survivor: -0.5 seconds\nMinimum Bound distance: 1 metre\nBelow this threshold, a Bound will not be initiated.\nChain Bound Window duration: 2 seconds\nThis refers to for how long after a first Bound, a second one can be initiated.\nBound Vault duration: 1 second\nThis duration only refers to '''The Mastermind's' Bound Vault animation time and does not take into account its following cool-down.\nBound Survivor-Grab duration: 0.86 seconds\n\nBound Durations:\nFirst Bound duration: 0.5 seconds\nSecond Bound duration: 1 second\nThis Bound is also referred to as the Chain Bound, since The Mastermind can chain it to the first Bound.\n\nBound Ranges:\n'The Mastermind's' Bounds do not have a fixed range, only their in",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Bullhorn",
@@ -2329,7 +2277,7 @@
   {
     "name": "The Nemesis",
     "power": "T-Virus",
-    "powerDesc": "Movement Speeds:\nMain Article\nCharging/Holding Tentacle Strike while in MR1/MR2: 3.8 m/s\nCharging/Holding Tentacle Strike while in MR3: 4.0 m/s\nTentacle Strike cool-down: 4.2 m/s\nThis applies to cancelling the attack.\n\nTentacle Strike:\nCharge time: 0.35 seconds\nCharge and hold Movement speed: 3.8 m/s\nCancellation Cool-down time: 1.5 seconds\nCool-down Movement speed: 4.2 m/s\nAttack ranges:\nMutation Rates 1 & 2: 5 metres\nMutation Rate 3: 6.5 metres\nAttack Open time: 0.25 seconds\nAttack Hit time: 0.333 seconds\nAttack Cool-down: 2.25 seconds\nTentacle Strike is able to hit Survivors and destroy Pallets or Walls at the same time: disabled feature\n\nMutation Rate:\nThresholds:\nMR1 to MR2: 5 Contamination Points\nMR2 to MR3: 9 Contamination Points\nMR Total Requirement: 14 Contamination Points \nThe total requirement refers to how many Contamination points are required to reach MR3 from MR1.\nContamination Points:\nContaminating Survivors with a Tentacle Strike: +3 Contamination Points\nHitting contam",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Admin Wristband",
@@ -2349,7 +2297,7 @@
       },
       {
         "name": "Damaged Syringe",
-        "desc": "Medical equipment that fared poorly during the chaos that overwhelmed Raccoon City.\nIncreases Vaccine Injection time for Survivors by +5 seconds."
+        "desc": ""
       },
       {
         "name": "Depleted Ink Ribbon",
@@ -2357,7 +2305,7 @@
       },
       {
         "name": "Iridescent Umbrella Badge",
-        "desc": "A glass-like badge moulded from The Fog itself.It represents a corporation that pushed far beyond ethical and humane science.\nAfter using a , Survivors suffer from the ''''' Status Effect for 60 seconds'."
+        "desc": ""
       },
       {
         "name": "Jill's Sandwich",
@@ -2389,10 +2337,6 @@
       },
       {
         "name": "Shattered S.T.A.R.S. Badge",
-        "desc": "A symbol of hope for Raccoon City, utterly destroyed.\nIncreases Zombie Movement speed by +1.5 m/s for 60 seconds whenever a  is completed."
-      },
-      {
-        "name": "Shredded Fedora",
         "desc": ""
       },
       {
@@ -2405,7 +2349,7 @@
       },
       {
         "name": "Tyrant Gore",
-        "desc": "A damaged sample from a T-002 Tyrant that died in combat.There are signs of severe burns.\nIncreases Mutation Rate when destroying Zombies with a Tentacle Strike by +0.75 Contamination Points.\nReduces Zombie Respawn time by -7.5 seconds."
+        "desc": ""
       },
       {
         "name": "Visitor Wristband",
@@ -2413,7 +2357,7 @@
       },
       {
         "name": "Zombie Heart",
-        "desc": "The heart of an eviscerated zombie.It is considered hazardous waste as it is certainly teeming with viruses.\nIncreases the Mutation Rate when destroying Zombies with a Tentacle Strike by +0.75 Contamination Points."
+        "desc": ""
       },
       {
         "name": "T-Virus",
@@ -2424,7 +2368,7 @@
   {
     "name": "The Nightmare",
     "power": "Dream Demon",
-    "powerDesc": "Movement Speeds:\nMain Article\nWalking while charging Dream Projection: 3.86 m/s\nWalking while placing Dream Snares: 4.0 m/s\nWalking while placing Dream Pallets: 4.6 m/s\n\nDream Snares:\nCharge time: 0.35 seconds\nAbility cooldown: 7 seconds\nTravel speed: 12 m/s\nRange: 18 metres\nPenalties for Asleep Survivors: \nSuffer from a -12 % '''Hindered Status Effect' for 4.5 seconds.\nPenalty for Awake Survivors:\nHave their Microsleep timer advanced by +30 seconds.\n\nDream Pallets:\nToken count: 8 Tokens\nAura range: 24 metres\nIndicator and Placement range: 24 metres\nPlacement angle: 40 °\nRupture Detonation delay: 1.5 seconds\nRupture Detonation radius: 3.5 metres\nRupture Detonation cooldown: 1.5 seconds\nDream Pallet Shimmer Maximum Distance: 6 metres\nThis applies to Survivors only.\nThe Shimmer effect will scale in intensity within this distance.\nBeyond this distance, they will appear as a normal Pallet. \nPenalty for Asleep Survivors:\nAre damaged for 1 Health State.\nPenalty for Awake Survivors:\nHave thei",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Black Box",
@@ -2440,7 +2384,7 @@
       },
       {
         "name": "Class Photo",
-        "desc": "A large photograph taken at Badham Preschool showing the cheerful class of '94-95.\nGrants the ability to use Dream Projection on the .\nSurvivors who are opening an Exit Gate trigger Killer Instinct."
+        "desc": ""
       },
       {
         "name": "Garden Rake",
@@ -2476,7 +2420,7 @@
       },
       {
         "name": "Pill Bottle",
-        "desc": "An empty pill bottle which once contained a medicine called Zoneral.\nSurvivors who fall asleep will have their next Microsleep timer reduced by a stack-able -10 %.\nThis effect can stack up to a maximum reduction of -50 %."
+        "desc": ""
       },
       {
         "name": "Prototype Claws",
@@ -2484,7 +2428,7 @@
       },
       {
         "name": "Red Paint Brush",
-        "desc": "A large paint brush, wet with crimson paint.\nAsleep Survivors further than 32 metres will have their Aura revealed to The Nightmare.\nIncreases the Microsleep timers of all Survivors by +50 %."
+        "desc": ""
       },
       {
         "name": "Sheep Block",
@@ -2492,11 +2436,11 @@
       },
       {
         "name": "Swing Chains",
-        "desc": "Rusty, but sturdy chains used to securely attach a swing seat.\nUsing Dream Projection will block all Vault Locations within 16 metres of The Nightmare for 6 seconds."
+        "desc": ""
       },
       {
         "name": "Unicorn Block",
-        "desc": "A white and red wooden block depicting a prancing unicorn and the letter \"U\".\nIncreases the explosion radius of rupturing Dream Pallets by +1 metre."
+        "desc": ""
       },
       {
         "name": "Wool Shirt",
@@ -2504,7 +2448,7 @@
       },
       {
         "name": "\"Z\" Block",
-        "desc": "A deeply scratched and burnt wooden block which's only recognisable feature is the letter \"Z\".\nReveals the Auras of Survivors affected by a Dream Snare or a Dream Pallet Rupture for 3 seconds."
+        "desc": ""
       },
       {
         "name": "Dream Demon",
@@ -2515,19 +2459,19 @@
   {
     "name": "The Nurse",
     "power": "",
-    "powerDesc": "Movement Speeds:\nMain Article\nFatigue: 0.96 m/s\nCharging during Chain Blink Window: 1.16 m/s\nWalking during Chain Blink Window: 1.54 m/s\nCharging Blink: 2.89 m/s\nWalking: 3.85 m/s\nBlink Lunge: 6.16 m/s\nBlink: 13.33 m/s\nThis assumes a default Blink of 20 metres in 1.5 seconds, as this speed value is derived from those parameters.\n\nBlink:\nMaximum Blink range: 20 metres\nMinimum Blink range: 1.5 metres\nMaximum Blink duration: 1.5 seconds\nMinimum Blink duration: 0.25 seconds\nFastest Blink speed: 13.33 m/s\nThis is calculated based on maximum range using the maximum duration.\nSlowest Blink speed: 6 m/s\nThis is calculated based on minimum range using the minimum duration.\nMaximum Blink charges: 2 Charges\nBlink Recharge time: 3 seconds per Charge\nBlink Charge time: 2 seconds\nThe Charge duration determines the maximum available Blink distance and duration: the longer one charges, the farther she can Blink, up to her maximum distance and the longer that Blink will take to complete.\nThe Nurse can ",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Anxious Gasp",
-        "desc": "The gasp of surprise collected from the \"Anxious Girl\", which The Nurse was fond of.Twitches vigorously at The Nurse's touch.\nBlinking past a Survivor causes them to scream, awarding 200 Bloodpoints in the Deviousness Category."
+        "desc": ""
       },
       {
         "name": "Ataxic Respiration",
-        "desc": "The irregular and deteriorating breath collected from the \"Catatonic Boy\".Normally stable and calm, becomes incredibly agitated at The Nurse's touch.\nReduces Fatigue duration from Blinks by -7 %."
+        "desc": ""
       },
       {
         "name": "Bad Man Keepsake",
-        "desc": "A rotten molar ripped from the ''\"Bad Man's\" cold dead hand.\nAfter hitting a Survivor with a Blink Attack'', the  of that Survivor, when healing or being healed, is revealed to The Nurse within 28 metres for 60 seconds."
+        "desc": ""
       },
       {
         "name": "\"Bad Man\\'s\" Last Breath",
@@ -2543,15 +2487,15 @@
       },
       {
         "name": "Dark Cincture",
-        "desc": "A black rope used as a belt in times of mourning.Taken from Father Campbell's body.\nIncreases the Movement speed of The Nurse during the Chain Blink Window and before succumbing to Fatigue by +30 %."
+        "desc": ""
       },
       {
         "name": "Dull Bracelet",
-        "desc": "A worthless piece of jewellery that might have an important significance to someone.Taken from the ''\"Anxious Girl's\" body.\nGrants 100 % bonus Bloodpoints for Precise Blink Score Events.\n'' maximum Blink'' range."
+        "desc": ""
       },
       {
         "name": "Fragile Wheeze",
-        "desc": "The whistling and rattling breath stolen from Father Campbell.Silently curves and bends at The Nurse's touch.\nSurvivors hit with a Blink Attack suffer from the '''Mangled Status Effect''' for 70 seconds."
+        "desc": ""
       },
       {
         "name": "Heavy Panting",
@@ -2567,15 +2511,15 @@
       },
       {
         "name": "Matchbox",
-        "desc": "A matchbox containing an odd collection of mismatched buttons.Serves as a reminder of a horrible place.\nIncreases The Nurse's Movement speed to 4.4 m/s for the entire Trial.\nRestricts the Power of The Nurse to 1 Blink.\nThis cannot be altered by other Add-ons."
+        "desc": ""
       },
       {
         "name": "Metal Spoon",
-        "desc": "A dull, partially rusted and stained metallic spoon.Confiscated from Room 202's patient, the \"Bad Man\".\nAfter hitting a Survivor with a Blink Attack that Survivor's Grunts of Pain are 100 % louder for 60 seconds."
+        "desc": ""
       },
       {
         "name": "Plaid Flannel",
-        "desc": "A torn piece of red and black plaid flannel.The scrap of fabric imbues The Nurse with devastating focus.\nThe Nurse can see the Target location of her Blink."
+        "desc": ""
       },
       {
         "name": "Pocket Watch (Spencer's Last Breath)",
@@ -2583,19 +2527,19 @@
       },
       {
         "name": "Spasmodic Breath",
-        "desc": "The twitchy and tremulous breath stolen from the \"Bad Man\".Aggressively pulses and jumps at The Nurse's touch.\nAfter hitting a Survivor with a Blink Attack, ''Spencer's Last Breath'' is temporarily disabled and The Nurse's Movement speed is increased to 4.6 m/s for 60 seconds."
+        "desc": ""
       },
       {
         "name": "Torn Bookmark",
-        "desc": "A white and pristine piece of ribbon once attached to a sacred book.Serves as the symbol of a dispute.\nAdds 1 Blink Charge.\nExtends the Power Recharge duration to 130 %."
+        "desc": ""
       },
       {
         "name": "White Nit Comb",
-        "desc": "A parasitic nit comb taken from the clinic.Once the symbol of a deep connection between an anxious patient and her nurse.\nGrants 100 % bonus Bloodpoints for Blink Attack Score Events.\n'''' Blink Lunge'' range."
+        "desc": ""
       },
       {
         "name": "Wooden Horse",
-        "desc": "An unpainted toy carved out of cheap wood to resemble a horse.Once the symbol of a deep connection between a catatonic patient and his nurse.\n'''' additional Blink Fatigue duration from missed Blink Attacks''."
+        "desc": ""
       },
       {
         "name": "Spencer's Last Breath",
@@ -2606,7 +2550,7 @@
   {
     "name": "The Oni",
     "power": "Yamaoka's Wrath",
-    "powerDesc": "Movement Speeds:\nMain Article\nAbsorption: 3.45 m/s\nDemon Strike: 4.6 m/s\nDemon Dash: 7.82 m/s\n\nAbsorption Mode:\nThis is whenever The Oni is  in .\nAbsorption range: 0.5 metres\nWhen within this range, Blood Orbs are absorbed by The Oni, filling his Power gauge.\nAttraction range: 6 metres\nWhen within this range, Blood Orbs start moving towards The Oni, if they are within a 45 ° cone in his Field of View.\nAttraction speed: 10 m/s\nForced Drop range: 8 metres\nWhen within this range, Survivors are forced to drop Blood Orbs, if they are within a 45 ° cone in '''The Oni's' Field of View.\nMovement speed: 3.45 m/s or 86.25 %\n\nBlood Orbs:\nVisibility range: 35 metres\nBlood Orbs are invisible to Survivors with the exception of a short glimpse upon spawning or if The Oni uses .\nBlood Orbs are invisible to The Oni during  and cannot be absorbed.\nAura range: 8 metres\nIf obscured by an obstacle, Blood Orbs within this range will reveal their Aura to The Oni.\nDrop rates (only applies to injured Survivors",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Akito's Crutch",
@@ -2614,11 +2558,11 @@
       },
       {
         "name": "Blackened Toenail",
-        "desc": "Fell off during one of Kazan's hundred winter treks to the temple.Despite his pilgrimage, Akito's leg would never heal.\n'''Increases' The Oni's Movement speed while absorbing Blood Orbs by +0.4 m/s'''."
+        "desc": ""
       },
       {
         "name": "Bloody Sash",
-        "desc": "Blood from a boy who called Kazan \"The Noble Impostor\".Kazan hid evidence of the fight from his father, often revelling at the sash in secret.\n'''Increases' The Oni's Movement speed while absorbing Blood Orbs by +0.7 m/s'''."
+        "desc": ""
       },
       {
         "name": "Child's Wooden Sword",
@@ -2638,7 +2582,7 @@
       },
       {
         "name": "Iridescent Family Crest",
-        "desc": "A crest that denotes its owner as being a part of the Yamaoka family.\nMissing a Demon Strike will cause all Survivors within 24 metres of your location to scream and reveal their location to you."
+        "desc": ""
       },
       {
         "name": "Kanai-Anzen Talisman",
@@ -2650,7 +2594,7 @@
       },
       {
         "name": "Paper Lantern",
-        "desc": "Perhaps a memento of simpler times, before rage fully enveloped him.\nIncreases the Movement speed of Blood Orbs while attracted to The Oni by +4 m/s."
+        "desc": ""
       },
       {
         "name": "Polished Maedate",
@@ -2666,7 +2610,7 @@
       },
       {
         "name": "Scalped Topknot",
-        "desc": "The topknot of a samurai who questioned Kazan's honour. The roots cling to a thin strip of bloody skin.\nReduces Demon Dash Activation time by -0.5 seconds."
+        "desc": ""
       },
       {
         "name": "Shattered Wakizashi",
@@ -2697,7 +2641,7 @@
   {
     "name": "The Onryō",
     "power": "Deluge of Fear",
-    "powerDesc": "Movement Speeds:\nMain Article\nWalking while Manifesting: 4.0 m/s\nWalking in general: \nWalking while Demanifesting: 4.6 m/s\nWalking after Projection: 6.9 m/s for 2 seconds\n\nCondemned:\nActivation threshold: 7 Stacks\nAt this point, Survivors will have filled their Condemned Meter.\nStacks gained from hooking a Survivor with a Cursed Tape: +1 Stack\nThis only applies to the other Survivors and only when using the  Add-on.\nStacks gained from Projection: +1 Stack\nThis only applies to Survivors who are within 16 metres of any powered TV.\nStacks gained from turning off a TV: +1 Stack\nStacks gained from retrieving a Cursed Tape from a TV: +0 Stacks\nStacks lost from inserting a Cursed Tape into a TV: -3 Stacks\nDuration of Killer Instinct when fully Condemned: 6 seconds\n\nPassive Condemned (unused mechanic):\nStacks gained passively while carrying a Cursed Tape: +0 Stacks per second\nPaused while being chased.\nPause-Buffer after a Chase: 16 metres\nIf the Killer remained within that range after ending ",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Bloody Fingernails",
@@ -2705,7 +2649,7 @@
       },
       {
         "name": "Cabin Sign",
-        "desc": "The cabin where both Tomoko and Reiko watched the tape.\nCarries the memory of those first curses. \nReduces the time it takes for a TV to turn on after Projection by -4.5 seconds."
+        "desc": ""
       },
       {
         "name": "Clump of Hair",
@@ -2713,11 +2657,11 @@
       },
       {
         "name": "Distorted Photo",
-        "desc": "Those who have watched the tape find all photos of themselves distorted, a reminder of their impending doom.\nSurvivors witnessing The Onryō Manifest within 16 metres of them scream, revealing their  for 4 seconds."
+        "desc": ""
       },
       {
         "name": "Iridescent Videotape",
-        "desc": "The original tape containing Sadako's curse.\nProjection no longer turns off TVs, but also no longer applies any Condemned.\nIncreases the time required for TVs to turn back on after having been turned off by Survivors by +20 %."
+        "desc": ""
       },
       {
         "name": "Mother's Comb",
@@ -2737,7 +2681,7 @@
       },
       {
         "name": "Remote Control",
-        "desc": "A remote for the VCR at the cabin.It allows Sadako to focus on those enemies at a distance.\nAfter using Projection, the  of Survivors, who are within 12 metres of a powered TV are revealed to you for 7 seconds."
+        "desc": ""
       },
       {
         "name": "Rickety Pinwheel",
@@ -2745,7 +2689,7 @@
       },
       {
         "name": "Ring Drawing",
-        "desc": "A drawing of the view from inside the well, as drawn by a young Yoichi.Helping those cursed by the tape can only bring misfortune.\nHooking a Survivor carrying a VHS Tape causes all other Survivors to gain +1 Stack of Condemned."
+        "desc": ""
       },
       {
         "name": "Sea-Soaked Cloth",
@@ -2753,7 +2697,7 @@
       },
       {
         "name": "Tape Editing Deck",
-        "desc": "The editing deck used by Reiko and Ryuji to analyse and copy the tape.Copying and sharing the tape is the only way to survive the curse.\nCauses all Survivors start the Trial with a VHS Tape.\nAll Survivors must bring their VHS Tape to the TV that is farthest from their current location.\nThe Auras of Survivors inserting a VHS Tape into a TV are revealed to you for 6 seconds."
+        "desc": ""
       },
       {
         "name": "Telephone",
@@ -2765,11 +2709,11 @@
       },
       {
         "name": "Videotape Copy",
-        "desc": "A copy of the deadly videotape imprinted upon by Sadako.\nIt dampens the desire for vengeance. \nExtends the radius around TVs within which Survivors gain Condemned from Projection by +2 metres."
+        "desc": ""
       },
       {
         "name": "Well Stone",
-        "desc": "A piece of the well where Sadako was trapped, an image burned into the mind of all those who have watched the tape.\nReduces the time it takes for a TV to turn on after having been turned off by a Survivor by -7 seconds."
+        "desc": ""
       },
       {
         "name": "Well Water",
@@ -2788,7 +2732,7 @@
   {
     "name": "The Pig",
     "power": "Jigsaw's Baptism",
-    "powerDesc": "Movement Speeds:\nMain Article\nWalking while Crouched: 4 m/s\nAmbush Dash: 7.1 m/s\n\nReverse Bear Traps:\nTime to attach to Survivors: 3.3 seconds\nDeath Timer duration: 150 seconds\n\nJigsaw Boxes:\nTime to search for Survivors: 12 seconds\nTrigger odds for a Skill Check: 80 %\nThe odds are rolled once per second while searching the box.\n\nCrouched State:\nTransition time: 0.8 second\nTerror Radius fade-out timer: 3 seconds\nTerror Radius fade-in timer: 1.4 seconds\n\nAmbush Dash:\nCharge time: 0.75 seconds\nDuration: 2.3 seconds\nCool-down durations:\nSuccessful hit: 2.7 seconds\nMissed/obstructed hit: 1.5 seconds\n\nDeath Timer Behaviour:\n{| class=\"wikitable\"\n|-\n! Timer Progression !! Light Colour !! Blinking Frequency\n|-\n! 0 - 25 %\n| rowspan=\"2\" | white\n| 0.5 Hz\n|-\n! 25 - 50 %\n| 1 Hz\n|-\n! 50 - 75 %\n| yellow\n| 2 Hz\n|-\n! 75 - 100 %\n| rowspan=\"2\" | red\n| 4 Hz\n|-\n! 100 %\n| Continuous Beep\n|}",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Amanda's Letter",
@@ -2816,7 +2760,7 @@
       },
       {
         "name": "Interlocking Razor",
-        "desc": "A modification to the Jigsaw Box:The addition of interlocking razor blades makes it impossible to move suddenly in the Jigsaw Box without slitting one's wrists.\nFailing a  at  will apply ''''' Status Effect' to  Survivors."
+        "desc": ""
       },
       {
         "name": "Jigsaw's Annotated Plan",
@@ -2836,15 +2780,15 @@
       },
       {
         "name": "Razor Wires",
-        "desc": "A modification to the Jigsaw Box: the addition of razor sharp wires makes it extra difficult and potentially painful to search them.\nFailing a  at  will injure  survivors.\nIncreases the difficulty of Skill Checks by +20 %."
+        "desc": ""
       },
       {
         "name": "Rules Set No.2",
-        "desc": "Not all games need to have the same rules.\nDisables the ability of Survivors to see the  of  until their  is activated."
+        "desc": ""
       },
       {
         "name": "Rusty Attachments",
-        "desc": "A modification to the Reverse Bear Trap:mouth spikes, covered with crusty and volatile rust spots that make injuries particularly difficult to heal.\nSurvivors caught in a Reverse Bear Trap suffer from the '''Mangled Status Effect''' for 70 seconds."
+        "desc": ""
       },
       {
         "name": "Shattered Syringe",
@@ -2856,15 +2800,15 @@
       },
       {
         "name": "Tampered Timer",
-        "desc": "A timer that has been fiddled with.A spring in the mechanism forces the gears to turn faster.\nReduces the default Death Timer duration of  by ''''''."
+        "desc": ""
       },
       {
         "name": "Utility Blades",
-        "desc": "A modification to the Reverse Bear Trap:Sharp blades attached to the Trap's interior lacerate the victim with every movement.\nSurvivors caught in a Reverse Bear Trap suffer from the '''Haemorrhage Status Effect''' whenever they are injured by any means."
+        "desc": ""
       },
       {
         "name": "Video Tape",
-        "desc": "A recording of Jigsaw, explaining the game's rules to Amanda.Reminiscing about her past-self hardens her determination.\nAll Survivors start the Trial with  installed."
+        "desc": ""
       },
       {
         "name": "Workshop Grease",
@@ -2879,15 +2823,15 @@
   {
     "name": "The Plague",
     "power": "Vile Purge",
-    "powerDesc": "Movement Speeds:\nMain Article\nVomit Charging & Cool-down: 3.6 m/s\nVomit Holding & Vomiting: 4.4 m/s\nVomit Projectiles: 10.55 m/s\n\nVile Purge & Corrupt Purge:\nApproximate maximum range: 13 metres\nCharges: 1.5 Charges\nCharge rate: 1 c/s\nCharge time: 1.5 seconds\nActivation Charge threshold: 25 %\nTapping the Power button will cause The Plague to charge up to this threshold, then vomit automatically.\nDrain rate: 0.8 c/s\nVomit time: 1.875 seconds\nVomit Cool-down duration: 1.5 seconds\nInfection time of Interactables: 40 seconds\nThis refers to how long vomited-on Props stay infected before becoming uninfected again. \nCorrupt Purge:\ndeals damage: Yes\ndeals double damage: No\nDamage Immunity duration after being hit by Corrupt Purge: 3 seconds\nWhen The Plague is stunned with a  or , , etc., she will lose Corrupt Purge.\n\nVomit Projectiles:\nSickness additive: 1.25 %\nAmount of Killer momentum added to projectile speed: 100 %\nLaunch rate: 1 Projectile every 0.03 seconds\nfor 1 second: ~33.3 Projectile",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Ashen Apple",
-        "desc": "64px\nA peeled apple rolled into sanctified ashes.Eating such a fruit warded off the malignantly envious spirits of the deceased.\nStart the trial with 1 additional  already corrupted.\nIncreases the number of Pools of Devotion by '''1."
+        "desc": ""
       },
       {
         "name": "Black Incense",
-        "desc": "64px\nA dark paste made of sharp osseous shavings.The inhaling of its foul fumes sharpens the mind's eye.\nSurvivors'  are revealed to you for 3 seconds when they vomit."
+        "desc": ""
       },
       {
         "name": "Blessed Apple",
@@ -2899,15 +2843,15 @@
       },
       {
         "name": "Emetic Potion",
-        "desc": "64px\nA mustard-water based syrup that induces vomiting when consumed.Used to purge evil from the body.\nIncreases effectiveness of Vile Purge by 30 %."
+        "desc": ""
       },
       {
         "name": "Exorcism Amulet",
-        "desc": "64px\nAn obsidian amulet to ward off sickness during exorcism rituals.Inscribed with a prayer to the God of Mayhem and Pestilence.Fills the wearer with fierce devotion.\nIncreases Corrupt Purge duration by 10 seconds."
+        "desc": ""
       },
       {
         "name": "Haematite Seal",
-        "desc": "64px\nA cylindrical seal forged from a metallic hard-stone, engraved with bird-headed beings that stood next to strange machines.Used as a container for sanctified ashes.\nIncreases Infection duration on objects by 30 seconds."
+        "desc": ""
       },
       {
         "name": "Healing Salve",
@@ -2915,23 +2859,23 @@
       },
       {
         "name": "Incensed Ointment",
-        "desc": "64px\nA dark waxy paste, laced with cedar sap that diffuses a sweet and earthy aroma.Applied directly on infected skin.\nIngesting Corruption at a  causes all  within '''The Plague's'''  to scream and reveal their locations."
+        "desc": ""
       },
       {
         "name": "Infected Emetic",
-        "desc": "64px\nA disgusting syrup of unknown origin.The thick yellow liquid is consumed to induce vomiting.Used to purge evil from the body.\nIncreases Effectiveness of Vile Purge by 40 %."
+        "desc": ""
       },
       {
         "name": "Iridescent Seal",
-        "desc": "64px\nA translucent cylindrical seal moulded from The Fog itself with the effigy of The Plague.Its surface is warm and pulsates with The Entity's power.\nVile Purge becomes Corrupt Purge every time a  is completed.\nDecreases Corrupt Purge duration by 20 seconds."
+        "desc": ""
       },
       {
         "name": "Limestone Seal",
-        "desc": "64px\nA cylindrical seal made from porous stone that displays a ritualic scene with winged deities.\nIncreases object Infection duration by 20 seconds."
+        "desc": ""
       },
       {
         "name": "Olibanum Incense",
-        "desc": "64px\nPrecious resin extracted from Boswellia trees, used during ceremonies for their sweet citrusy fragrance.\nSurvivors who cleanse at  have their  revealed to you for 4 seconds."
+        "desc": ""
       },
       {
         "name": "Potent Tincture",
@@ -2939,15 +2883,15 @@
       },
       {
         "name": "Prayer Tablet Fragment",
-        "desc": "64px\nA fragmented stone tablet with a corrupted incantation originally used to purge illnesses and feelings of general malaise.\nGrants 100 % Bonus Bloodpoints for Score Events in the  Category.\nVile Purge no longer affects survivors.\nIncreases object Infection duration by 40 seconds.\nIncreases Infection from Infected objects by 100%."
+        "desc": ""
       },
       {
         "name": "Prophylactic Amulet",
-        "desc": "64px\nA soapstone amulet crudely engraved with a winged deity that wards off sickness.Fills the wearer with devotion.\nDecreases the number of  in the Trial by 2."
+        "desc": ""
       },
       {
         "name": "Rubbing Oil",
-        "desc": "64px\nA beaker of rubbing oil with expectorant quality.Exudes the evergreen scent of laurel and rosemary.\nIncreases Charge rate of Vile Purge and Corrupt Purge by 50 %."
+        "desc": ""
       },
       {
         "name": "Severed Toe",
@@ -2955,11 +2899,11 @@
       },
       {
         "name": "Vile Emetic",
-        "desc": "64px\nA foul-smelling and half-congealed potion of unidentifiable ingredients.Consumed to rapidly induce vomiting.Used to purge evil from the body.\nIncreases velocity of vomit Projectiles by 10 %."
+        "desc": ""
       },
       {
         "name": "Worship Tablet",
-        "desc": "A stone tablet adorned with gold, showing the drawings and writings of a corrupted incantation used originally to worship forgotten deities.\nIncreases Ingestion speed by +100 %.\nIncreases Movement speed while holding Corrupt Purge by +4.4 %."
+        "desc": ""
       },
       {
         "name": "Vile Purge",
@@ -2970,7 +2914,7 @@
   {
     "name": "The Shape",
     "power": "",
-    "powerDesc": "Movement Speeds:\nMain Article\nWalking after breaking a Pallet or Breakable wall using Slaughtering Strike: 1.84 m/s\nWalking while Active or Passive Stalking: 2.52 m/s\nCharging Slaughtering Strike: 3.22 m/s\nWalking while in Stalker Mode: 4.2 m/s\nWalking while in Pursuer and Evil Incarnate modes: 4.6 m/s\nSlaughtering Strike: 7.5 m/s\n\nEvil Within:\nSwitching between Stalker/Pursuer Mode cool-down: 3 seconds\n\nStalker Mode:\nTerror Radius: 0 metres\nStalk range: 2.5 to 32 metres\nStalk Points (SP):\nEvil Incarnate Tier-up threshold: 5 SP\nStalk rate while standing still:  1 SP/s\nStalk rate while moving:  0.75 SP/s\nThis is achieved by applying a multiplier of x0.75 to his Stalking rate.\nStalk-Depletion Mechanic:\nThis mechanic automatically drains the Stalk meter at a rate of  -1 SP/s under these conditions:\nThe Shape did not stalk any Survivor in the last  20 seconds.\nThe Stalk meter is filled between  50% and  100%.\nThe Hedge sound cue play conditions:\nThe Shape has been continuously stalking a S",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Blond Hair",
@@ -3061,11 +3005,11 @@
   {
     "name": "The Singularity",
     "power": "Quantum Instantiation",
-    "powerDesc": "Movement Speeds:\nMain Article\nWalking while Overheated: 2.3 m/s\nOverheat applies a Hindered penalty of -50 %\nWalking: 4.6 m/s\nWalking in Overclock Mode: 4.738 m/s\nOverclock Mode applies a speed multiplier of x1.03\nBiopod Projectile: 50 m/s\n\nBiopods:\nDisabled duration: 45 seconds\nThis applies to when an EMP detonates within range of the Biopod currently being controlled by The Singularity.\nAudio Delay duration: 0.2 seconds\nAfter possessing a Biopod for this amount of time, The Singularity can hear all nearby sounds through it.\nAura-Linger duration of Last Controlled Pod: 10 seconds\nWithin this close of a range, a Biopod is considered to be removed when aiming at it.\nMinimum Removal Range: 1.3 metres\nMaximum Spawn range: 22 metres\nMaximum Height offset: 5 metres\nBiopods may not be spawned any higher than this, compared to the Killer's location.\nSurface offset: 0.75 metres\nBiopods spawn with this offset on surfaces.\nCharge time: 0.15 seconds\nReload time: 0.5 seconds\nProjectile speed: 50 m",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Android Arm",
-        "desc": "Destroying the other HUX units not only made its extermination of humans easier, it also gave it more parts to work with.\nIncreases the Spreading distance of Temporal Slipstream between Survivors by +2 metres.\nIncreases the Spreading speed of Temporal Slipstream between Survivors by +25 %."
+        "desc": ""
       },
       {
         "name": "Broken Security Key",
@@ -3073,7 +3017,7 @@
       },
       {
         "name": "Cremated Remains",
-        "desc": "After extracting the other colonists' DNA, he burned their remains.\nSurvivors within 12 metres of a Biopod suffer from the ''''' Status Effect.\nThis effect lingers for 3 seconds' after leaving the Area of Effect."
+        "desc": ""
       },
       {
         "name": "Crew Manifest",
@@ -3081,23 +3025,23 @@
       },
       {
         "name": "Cryo Gel",
-        "desc": "A no-friction gel applied to crew members before entering deep cryo sleep.\nCauses Slipstreamed Survivors hit with a Basic Attack to suffer from the '''Haemorrhage Status Effect''' for 60 seconds."
+        "desc": ""
       },
       {
         "name": "Denied Requisition Form",
-        "desc": "Despite the advent of light speed technology, it seemed nothing could make bureaucracy any faster.\nAll Survivors start the Trial afflicted by Temporal Slipstream.\nSupply Cases take 30 additional seconds to print an EMP at the start of the Trial."
+        "desc": ""
       },
       {
         "name": "Diagnostic Tool (Construction)",
-        "desc": "A device that gives highly accurate information on the lay of the land.\nThe Auras of Survivors picking up an EMP are revealed to you for 8 seconds."
+        "desc": ""
       },
       {
         "name": "Diagnostic Tool (Repair)",
-        "desc": "A device that can find the flaws in constructed objects.Intended to help with repair.\nIncreases the Targeting range of Biopods by +4 metres."
+        "desc": ""
       },
       {
         "name": "Foreign Plant Fibres",
-        "desc": "Xenobotanists would have a field day with these strange samples of alien plant life.\nReduces the duration of the Movement Speed penalty after being hit with a Pallet during Overclock Mode by +20 %."
+        "desc": ""
       },
       {
         "name": "Heavy Water",
@@ -3113,7 +3057,7 @@
       },
       {
         "name": "Iridescent Crystal Shard",
-        "desc": "A crystal from the alien structure that gave it sentience.\nThe Auras of Survivors within 10 metres of a newly placed Biopod are revealed to you for 6 seconds."
+        "desc": ""
       },
       {
         "name": "Kid's Ball Glove",
@@ -3125,7 +3069,7 @@
       },
       {
         "name": "Nanomachine Gel",
-        "desc": "A gel that can heal wounds extremely quickly.However, the machines in it have a history of being hacked to hurt people too. \nReduces the Cool-down time of Biopods by -15 % after Slipstreaming a Survivor."
+        "desc": ""
       },
       {
         "name": "Nutritional Slurry",
@@ -3141,7 +3085,7 @@
       },
       {
         "name": "Ultrasonic Sensor",
-        "desc": "A limitation of organic hearing is a limited aural spectrum.Expanding that range is like gaining an entirely new sense.\nExiting a Biopod within 2 seconds of afflicting a Survivor with Temporal Slipstream reduces your Terror Radius by -12 metres for 12 seconds."
+        "desc": ""
       },
       {
         "name": "Quantum Instantiation",
@@ -3152,23 +3096,23 @@
   {
     "name": "The Skull Merchant",
     "power": "Eyes in the Sky",
-    "powerDesc": "Movement Speeds:\nMain Article\nPlacing a Drone: 4.4 m/s\nInspecting her Radar: 4.6 m/s\nWalking: 4.6 m/s\n\nDrones:\nPower Cool-down: 7 seconds\nTriggers whenever a new Drone is placed.\nInitialisation time: 0.3 seconds\nThis is a buffer between placing a Drone and it starting to scan its surroundings.\nDisabled duration: 45 seconds\nTriggers when a Drone is hacked.\nRecall duration: 1 second\nMaximum Hacking timer: 30 seconds\nIf a Survivor takes longer than this to hack a Drone, the mini-game will automatically fail.\n\nDrone Detection:\nConsecutive-Scans Immunity: 2.5 seconds\nThis is a buffer that applies whenever a Survivor is scanned.\n\nDrone Placement:\nMinimum distance to other Drones or hooked Survivors: 12 metres\nMinimum height offset to other Drones or hooked Survivors: 2.5 metres\nMinimum clearance: 35 centimetres\nMinimum height above ground (after being placed): 1.5 metres\nMaximum height above ground (after being placed): 2.5 metres\n\nDrone Beam Colours:\nThe colour of the Beams emitted by Drone",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Adaptive Lighting",
-        "desc": "The Drone takes account of the surrounding area and casts lights in a bewildering manner that obscures movement.\nIncreases the Linger duration of the '''Undetectable Status Effect by +20 %'''."
+        "desc": ""
       },
       {
         "name": "Adi Valente Issue 1",
-        "desc": "An original copy of the first issue of Adi Valente, the comic her father made while Adriana was a child.\nReduces the Success Zone size of Skill Checks for Claw-Trapped Survivors by -20 % for Survivors inside the Area of Effect of a Drone.\nThis effect lingers for 15 seconds after leaving the Area of Effect."
+        "desc": ""
       },
       {
         "name": "Advanced Movement Prediction",
-        "desc": "Even after they leave the zone of influenced, a refined AI programme predicts with high accuracy where a person will go next.\nThe Aura of a Survivor is revealed to you for 6 seconds when they are inside the Area of Effect of a Drone."
+        "desc": ""
       },
       {
         "name": "Brown Noise Generator",
-        "desc": "An ominous hum disseminates from the Drone, blanketing the soundscape and making it difficult to hear anything else.\nSurvivors inside the Area of Effect of a Drone suffer from the ''''' Status Effect.\nThis effect lingers for 15 seconds' after leaving the Area of Effect."
+        "desc": ""
       },
       {
         "name": "Expired Batteries",
@@ -3176,15 +3120,15 @@
       },
       {
         "name": "Geographical Readout",
-        "desc": "The Drones generate and communicate a detailed three-dimensional map of the terrain, making traversal easier.\nWhile inside the Area of Effect of a Drone, you benefit from the following effects:\nGrants a +2 % Haste Status Effect.\nIncreases the Action speeds of breaking Breakable Walls and Pallets, and damaging Generators by +15 % each.\nBoth effects linger for 15 seconds after leaving the Area of Effect."
+        "desc": ""
       },
       {
         "name": "High-Current Upgrade",
-        "desc": "A wider cable with low resistance that allows faster recharging of batteries.\nReduces the Power Cool-down duration after manually activating a Drone by -10 %."
+        "desc": ""
       },
       {
         "name": "High-Power Floodlight",
-        "desc": "A sudden and overwhelming light that discombobulates anyone foolish enough to approach.\nSurvivors inside the Area of Effect of a Drone suffer from the ''''' Status Effect.\nThis effect lingers for 15 seconds' after leaving the Area of Effect."
+        "desc": ""
       },
       {
         "name": "Infrared Upgrade",
@@ -3196,35 +3140,35 @@
       },
       {
         "name": "Loose Screw",
-        "desc": "A bone-chilling rattling emanates from the Drone, and it seems like it may fall at any moment, distracting Survivors from complicated tasks.\nSurvivors inside the Area of Effect of a Drone suffer from the Exhausted Status Effect.\nThis effect lingers for 3 seconds after leaving the Area of Effect."
+        "desc": ""
       },
       {
         "name": "Low-Power Mode",
-        "desc": "By intermittently powering on and off non-vital components, the Drone can stay on for longer.\nExtends the duration of Active Mode in Drones by +10 %."
+        "desc": ""
       },
       {
         "name": "Powdered Glass",
-        "desc": "Once used on the strings used for battle kites, this powdered glass took on a much more nefarious purpose on her blade.\nClaw-Trapped Survivors suffer from the '''Haemorrhage and Mangled Status Effects' for 70 seconds, when hit with a Basic Attack''."
+        "desc": ""
       },
       {
         "name": "Prototype Rotor",
-        "desc": "The cutting-edge design allows the Drone to move with razor-sharp precision.\nWhile inside the Area of Effect of a Drone activated by a Survivor's presence, The Skull Merchant benefits from the following effect:\nGrants a +5 % Haste Status Effect.\nThis effect does not stack and can only be triggered once per active Drone.\nThis effect is lost upon hitting a Survivor."
+        "desc": ""
       },
       {
         "name": "Randomised Strobes",
-        "desc": "Lights flash randomly on the ground, making it harder to find purchase on the uneven terrain.\nSurvivors entering the Area of Effect of a Drone suffer from a '-5 % Hindered Status Effect for 3 seconds'."
+        "desc": ""
       },
       {
         "name": "Shotgun Speakers",
-        "desc": "Capable of directing high-frequency noises in a single direction over great distances, the Drones can focus in on one individual and distract them from danger for some time.\nSuppresses the Warning sound of Skill Checks for Survivors inside the Area of Effect of a Drone.\nThis effect lingers for 15 seconds after leaving the Area of Effect."
+        "desc": ""
       },
       {
         "name": "Stereo Remote Mic",
-        "desc": "An upgrade that allows increased three-dimensional audio tracking.\nIncreases the duration of the Unhackable State of Drones by +10 %."
+        "desc": ""
       },
       {
         "name": "Supercharge",
-        "desc": "The batteries may run a little hot, but removing the safety protocols from the cells makes them last a little longer.\nExtends the Battery life of Claw Traps by +12 %."
+        "desc": ""
       },
       {
         "name": "Ultrasonic Speaker",
@@ -3243,7 +3187,7 @@
   {
     "name": "The Slasher",
     "power": "Omnipresent Evil",
-    "powerDesc": "Movement Speeds:\t\nOmnipresent Evil: 7.24 m/s\nCharging and cancelling a Throwing Spike: 2.88 m/s\nThrowing a Throwing Spike: 1.8 m/s\n\nOmnipresent Evil:\nStarting cool-down: 3 seconds\nCool-down applied at the start of the Trial.\nJump Scare cool-down: 12 seconds\nCool-down applied after a Jump Scare.\nInteraction time: 0.15 seconds\nSpeed curve time: 0.5 seconds\nRefers to the amount of time it takes for Omnipresent Evil's movement speed curve to take effect after enterning Omnipresent Evil.\nJump Scare activation delay: 2 seconds\n\nOmnipresent Evil - Survivor Sensing:\nSurvivor sensing range: 16 metres\nRefers to the range in which Survivors will be sensed either by the fog or footsteps.\nFootstep minimum distance: 1.1 metres\nRefers to the distance needed between footsteps to trigger sensing.\nFootstep linger time: 1.5 seconds\nFootstep lifetime: 2.5 seconds\nRefers to the duration of the sensing effect after it is ended.\n\nOmnipresent Evil - Husk Attack:\nWhen enterning Omnipresent Evil, a husk is left",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Orderly's Shoe",
@@ -3334,22 +3278,10 @@
   {
     "name": "The Spirit",
     "power": "Yamaoka's Haunting",
-    "powerDesc": "Movement Speeds:\nMain Article\nWalking: 4.4 m/s\nPhase-Walking: 7.04 m/s\n\nPhase-Walking:\nCharge time: 1.5 seconds\nPower Gauge: 5 Charges\nDepletion rate: -1 c/s\nBy default, this makes ''Yamaoka's Haunting last for 5 seconds.\nRecharge rate: +0.333333 c/s\nBy default, this makes Yamaoka's Haunting recharge over 15 seconds.\nLinger duration of Power effects: 1 second\nThis refers to visual effects of Phase-Walking as well as the increased Movement speed.\nCool-down duration: 0 seconds\nThis allows The Spirit to instantly attack after ending her Phase-Walk''.\nMovement Speed multiplier: x1.6\n\nPassive Phasing:\nDuration: 0.5 seconds\nThis refers to the duration of the visual effects causing The Spirit to flicker in-and-out of view from the Survivors' POV.\nCool-down duration (minimum): 1 second\nThis refers to the Cool-down duration between two instances of Passive Phasing.\nCool-down duration (maximum): 5 seconds\nDitto.\n\nHusk:\nPerks tracking The Spirit are unable to track her ethereal form and will only",
+    "powerDesc": "",
     "addons": [
       {
-        "name": "Bloody Hair Brooch",
-        "desc": "A silken bow to tame wild hair.\nConsiderably increases ''Yamaoka's Haunting'' Activation Charge speed (30 %)."
-      },
-      {
-        "name": "Dirty Uwabaki",
-        "desc": ""
-      },
-      {
         "name": "Dried Cherry Blossom",
-        "desc": "A crumbling, dried cherry flower.Once the symbol of mortality.\nTriggers Killer Instinct when coming within 3 metres of a Survivor during a Phase-Walk.\nScratch Marks are no longer visible during a Phase-Walk."
-      },
-      {
-        "name": "Father's Glasses",
         "desc": ""
       },
       {
@@ -3362,18 +3294,14 @@
       },
       {
         "name": "Juniper Bonsai",
-        "desc": "Dark blue-green foliage bonsai tree.Once the symbol of Yamaoka family tradition.\nReduces the Passive Phasing cool-down by -1 second.\nIncreases the Passive Phasing duration by +50 %."
+        "desc": ""
       },
       {
         "name": "Kaiun Talisman",
-        "desc": "A Talisman to get luck on your side.\nIncreases the maximum Duration of the Phase-Walk by +1 second."
+        "desc": ""
       },
       {
         "name": "Katana Tsuba",
-        "desc": "The handguard of an ancestral blade. Crafted for the Yamaoka family.\nSlightly increases Yamaoka's Haunting Reappearance duration (0.2 seconds).\nSlightly increases Yamaoka's Haunting Reappearance Movement speed (5 %)."
-      },
-      {
-        "name": "Katsumori Talisman",
         "desc": ""
       },
       {
@@ -3386,7 +3314,7 @@
       },
       {
         "name": "Mother-Daughter Ring",
-        "desc": "A silver ring engraved with \"for my precious daughter\".\nIncreases the Movement speed during the Phase-Walk by +25 %.\nScratch Marks are no longer visible while using ''Yamaoka's Haunting''."
+        "desc": ""
       },
       {
         "name": "Muddy Sports Day Cap",
@@ -3394,11 +3322,7 @@
       },
       {
         "name": "Origami Crane",
-        "desc": "One of the one thousand Orizuru for your wish to come true.\nIncreases the Recovery rate of ''Yamaoka's Haunting'' by +20 %."
-      },
-      {
-        "name": "Prayer Beads Bracelet",
-        "desc": "A powerful bracelet that reads a sacred mantra.\nThe Phasing sound emission is heard by all Survivors outside of '''The Spirit's''' ."
+        "desc": ""
       },
       {
         "name": "Rin's Broken Watch",
@@ -3406,7 +3330,7 @@
       },
       {
         "name": "Rusty Flute",
-        "desc": "A rusty transverse flute with a haunting sound.\nIncreases the Power Recovery rate by +40 %."
+        "desc": ""
       },
       {
         "name": "Senko Hanabi",
@@ -3414,7 +3338,7 @@
       },
       {
         "name": "Shiawase Amulet",
-        "desc": "A Talisman that makes one happy and enthusiastic.\nIncreases the maximum Duration of the Phase-Walk by +0.5 seconds."
+        "desc": ""
       },
       {
         "name": "Uchiwa",
@@ -3422,15 +3346,15 @@
       },
       {
         "name": "Wakizashi Saya",
-        "desc": "The scabbard of an ancestral blade.Once crafted for the Yamaoka family.\nDuring a Phase-Walk, press the Active Ability button to immediately return to the Husk."
+        "desc": ""
       },
       {
         "name": "White Hair Ribbon",
-        "desc": "A silken bow to tame wild hair.\nModerately increases ''Yamaoka's Haunting'' Activation Charge speed (20 %)."
+        "desc": ""
       },
       {
         "name": "Yakuyoke Amulet",
-        "desc": "A powerful Talisman to protect your endeavours from being hindered by suspicious circumstances.\nIncreases the maximum Duration of the Phase-Walk by +3.5 seconds.\nReduces the Movement speed during the Phase-Walk by -15 %."
+        "desc": ""
       },
       {
         "name": "Zōri",
@@ -3445,11 +3369,11 @@
   {
     "name": "The Trapper",
     "power": "",
-    "powerDesc": "Movement Speeds:\nMain Article\nWalking: 4.6 m/s\n\nBear Traps:\nSetting time: 2.5 seconds\nThe animation is split into three phases, with only the second phase being affected by Add-ons:\nCrouching down: 0.5 seconds\nSetting: 1.5 seconds\nStanding up: 0.5 seconds\nDisarm time: 3.5 seconds\nEscape Attempt time: 1.8 seconds\nRescue time: 1.5 seconds\nEscape Attempt chance: 16.67 %\nThis is per attempt, but capped at a maximum of 6 attempts, after which the action will always succeed.\nSetting buffer: 1.5 metres\nThis refers to the minimum distance in-between two Bear Traps\nSelf-Catch Grace period: 3 seconds\nThis prevents The Trapper from getting caught in his own Bear Trap right after setting one.\nTrap Pick-Up time: 1 second\n\nColouring:\nBear Trap can be darkened by using the  Add-on, which makes them more difficult to spot for Survivors and more viable to place them in open spaces with few grass patches.\n\n{| class=\"wikitable\"\n! Defaultcenter|frameless|150x150px|link=Bear Traps !! center|frameless|150x1",
+    "powerDesc": "",
     "addons": [
       {
         "name": "4-Coil Spring Kit",
-        "desc": "A replacement kit for Bear Traps which changes the usual dual spring system to 4 coil springs, adding a great amount of strength to a Bear Trap's hold.\nIncreases the Bear Trap Disarm time by +33 %."
+        "desc": ""
       },
       {
         "name": "Bear Oil",
@@ -3457,7 +3381,7 @@
       },
       {
         "name": "Bloody Coil",
-        "desc": "Part sticky, part slippery, this grim liquid makes handling the Bear Traps spring more dangerous.\nWhen a healthy Survivor disarms a Bear Trap, the Bloody Coil exacts its price, putting the Survivor into the Injured State."
+        "desc": ""
       },
       {
         "name": "Coffee Grounds",
@@ -3465,23 +3389,19 @@
       },
       {
         "name": "Fastening Tools",
-        "desc": "A specialised set of tools used to fasten Bear Traps to ensure their effectiveness.\nModerately increases Bear Trap Setting speed. (50 %).\nModerately increases Bear Trap rescue or escape time. (25 %)."
+        "desc": ""
       },
       {
         "name": "Honing Stone",
-        "desc": "When used with the Bear Trap, the Honing Stone sharpens its blades.The razor-sharp blades inflict deep wounds aimed at bleeding the victim as fast as possible.\nInflicts the Dying State upon the trapped victim if they free themselves."
+        "desc": ""
       },
       {
         "name": "Iridescent Stone",
-        "desc": "Traps sharpened with this sickly gleaming stone seem to gain a life of their own.\nEvery 30 seconds, one closed Bear Trap chosen at random becomes set."
+        "desc": ""
       },
       {
         "name": "Lengthened Jaws",
         "desc": ""
-      },
-      {
-        "name": "Logwood Dye",
-        "desc": "Boiled wood ash used to dye Bear Traps, making them less noticeable.\n' the Bear Trap'."
       },
       {
         "name": "Makeshift Wrap",
@@ -3489,7 +3409,7 @@
       },
       {
         "name": "Oily Coil",
-        "desc": "An oiled spring that marks the hands of those who meddle with a Bear Trap.\nResetting a Bear Trap reveals the Aura of the last Survivor to have disarmed it for 5 seconds."
+        "desc": ""
       },
       {
         "name": "Padded Jaws",
@@ -3497,59 +3417,39 @@
       },
       {
         "name": "Rusted Jaws",
-        "desc": "64px\nThese Bear Trap jaws are covered with crusty and volatile rust spots that make injuries particularly difficult to heal.\nSurvivors injured by a Bear Trap suffer from the '''Mangled Status Effect''' for 70 seconds."
+        "desc": ""
       },
       {
         "name": "Secondary Coil",
-        "desc": "A secondary coil which keeps a Bear Trap functional in times when the primary coil becomes unusable.\nIncreases the Bear Trap Disarm time by +50 %."
+        "desc": ""
       },
       {
         "name": "Serrated Jaws",
-        "desc": "64px\nThese replacement Bear Trap jaws have saw-like blades which cause awful open wounds when they snap.\nSurvivors injured by a Bear Trap suffer from the Haemorrhage Status Effect until healed."
-      },
-      {
-        "name": "Setting Tools",
-        "desc": "Specialised tools designed to quickly and effortlessly set Bear Traps.\nConsiderably increases Bear Trap Setting speed.\nModerately increases Bear Trap Rescue and Escape times."
-      },
-      {
-        "name": "Stitched Bag",
-        "desc": "Skin pieces of all sorts crudely stitched together making for a very large bag.\nStart with 2 additional Bear Traps.\nIncreases Bear Trap Carrying capacity by 2 Bear Traps."
-      },
-      {
-        "name": "Strong Coil Spring",
-        "desc": "A large and heavy coil spring which adds a good amount of strength to the Bear Trap's hold.\nSlightly increases Bear Trap Disarm speed (20 %)."
+        "desc": ""
       },
       {
         "name": "Tar Bottle",
-        "desc": "A black, matte and sticky substance that when applied to Bear Traps, makes them far less noticeable.\n' the Bear Trap'."
+        "desc": ""
       },
       {
         "name": "Tension Spring",
         "desc": ""
       },
       {
-        "name": "Trap Setters",
-        "desc": "Simple tools designed to quickly and safely set Bear Traps.\n' Bear Trap' Setting speed."
-      },
-      {
         "name": "Trapper Bag",
-        "desc": "64px\nA cured leather waist bag. Large and sturdy to transport hunting equipment.\nStart with 1 extra Bear Trap.\nAllows the transportation of 1 extra Bear Trap."
+        "desc": ""
       },
       {
         "name": "Trapper Gloves",
-        "desc": "Protective padded leather gloves.\n' Bear Trap' Setting speed."
+        "desc": ""
       },
       {
         "name": "Trapper Sack",
         "desc": ""
       },
       {
-        "name": "Trapper Sack (Decommissioned)",
-        "desc": ""
-      },
-      {
         "name": "Wax Brick",
-        "desc": "64px\nA block of wax used to lower friction and facilitate movement in mechanical parts.\nBear Trap Rescue and Escape time."
+        "desc": ""
       },
       {
         "name": "Bear Trap",
@@ -3560,7 +3460,7 @@
   {
     "name": "The Trickster",
     "power": "Showstopper",
-    "powerDesc": "Movement Speeds:\nMain Article\nWalking while throwing Blades: 3.86 m/s\nAfter throwing 5 Blades: 3.53 m/s\nAfter throwing 10 Blades: 3.16 m/s\nWalking while performing Main Event: 3.92 m/s\n\nShowstopper:\nTime to enter Throw State: 0.3 seconds\nTime to exit Throw State: 1.15 second\nShowstopper Charge time: 0.35 seconds\nCool-down time between throws: 0.33 seconds\nCool-down multiplier after 5 Blades: 1.05x\nCool-down multiplier after 10 Blades: 1.1x\nReload time at Lockers: 3 seconds\n\nStyle Rank:\n-Rank:\nBlade throw rate multiplier: 0.95x\n-Rank:\nFile:AudioEvent K23 PWR Rank Achieved (D Rank).wav\nStyle Points requirement: 2 Points\nDecay delay: 30 seconds\nBlade throw rate multiplier: 1.05x\nBlade reload speed modifier: +5%\n-Rank:\nFile:AudioEvent_K23_PWR_Rank_Achieved_(C Rank).wav\nStyle Points requirement: 2 Points\nDecay delay: 27.35 seconds\nBlade throw rate multiplier: 1.13x\nBlade reload speed modifier: +15%\n-Rank:\nFile:AudioEvent K23 PWR Rank Achieved (B Rank).wav\nStyle Points requirement: 3 Points\n",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Bloody Boa",
@@ -3627,10 +3527,6 @@
         "desc": ""
       },
       {
-        "name": "Smash 'n' Run Gloves",
-        "desc": ""
-      },
-      {
         "name": "Tequila Moonrock",
         "desc": ""
       },
@@ -3655,11 +3551,11 @@
   {
     "name": "The Twins",
     "power": "Blood Bond",
-    "powerDesc": "Movement Speeds:\nMain Article\nWalking as Victor with a charged Pounce: 2.4 m/s\nWalking as Charlotte: 4.6 m/s\nWalking as Victor: 6.0 m/s\n\nCharlotte:\nKiller Instinct Linger duration: 1.5 seconds\nThis applies when a Survivor leaves '''Victor's' Shriek range or attached to a Survivor.\nCollision-Retention timer after becoming Dormant: 30 seconds\nAfter this timer elapses, Survivors can pass freely through Charlotte.\n\nVictor:\nGate Blocker Linger duration: 5 seconds\nUnbinding time: 0.75 seconds\nPounce Cancellation cool-down: 0.25 seconds\nPounce Charge time: 0.85 seconds\nInspecting empty Lockers: 3 seconds\nInspecting occupied Lockers: 2 seconds\nAura Linger duration after attaching to a Survivor: 5 seconds\nLanding height: 80 centimetres max\nIf Victor lands on a Prop or obstacle that is taller than this threshold, he will automatically be destroyed.\nCrush Interaction duration: 0.35 seconds\nRemove/Push Interaction duration: 10 seconds\nThe latter applies to when Victor holds a Survivor hostage in a",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Baby Teeth",
-        "desc": "Two teeth that Victor lost long ago.They're unusually sharp.\nSurvivors removing Victor suffer from the ''''' Status Effect for 30 seconds'."
+        "desc": ""
       },
       {
         "name": "Bloody Black Hood",
@@ -3675,7 +3571,7 @@
       },
       {
         "name": "Ceremonial Candelabrum",
-        "desc": "The candelabrum that Victor tipped over, causing his captors to burn.A symbol of his tenacity.\nIncreases the time needed by Survivors to crush Victor by +0.2 seconds."
+        "desc": ""
       },
       {
         "name": "Drop of Perfume",
@@ -3687,7 +3583,7 @@
       },
       {
         "name": "Iridescent Pendant",
-        "desc": "A glass-like pendant moulded from The Fog itself.There's a portrait of Madeleine Deshayes upon it, though something about her depiction seems unsettling.\nIf a Survivor crushes Victor while he's idle, they suffer from the '''Exposed Status Effect''' for 45 seconds."
+        "desc": ""
       },
       {
         "name": "Madeleine's Glove",
@@ -3699,15 +3595,15 @@
       },
       {
         "name": "Rusted Needle",
-        "desc": "A needle Madeleine used to sew up her children's tattered clothes.\nRemoving a latched-on Victor causes the Survivor to suffer from the '''Haemorrhage Status Effect''' until fully healed."
+        "desc": ""
       },
       {
         "name": "Sewer Sludge",
-        "desc": "A disgusting, sticky mixture that covered the Deshayes during an escape attempt through the city sewers.\nIncreases the time required to remove a latched-on Victor by +2 seconds."
+        "desc": ""
       },
       {
         "name": "Silencing Cloth",
-        "desc": "A coarse strip of cloth that a five-year-old Charlotte would put in her mouth.Stopped her from screaming when witch hunters were nearby.\nAfter waking from her Dormant State, Charlotte is granted the '''Undetectable Status Effect''' for 20 seconds."
+        "desc": ""
       },
       {
         "name": "Soured Milk",
@@ -3719,15 +3615,15 @@
       },
       {
         "name": "Stale Biscuit",
-        "desc": "A hard, unleavened biscuit that Madeleine stole from a town's market.It was not much, but it was better than most meals.\nDecreases Pounce cool-down time by -0.4 seconds."
+        "desc": ""
       },
       {
         "name": "Tiny Fingernail",
-        "desc": "Charlotte had many ways to mourn Victor's death.\nAs the fingernails loosened from his rotting hands, she took one in remembrance.\nReduces the Unbinding time of Victor by -0.25 seconds."
+        "desc": ""
       },
       {
         "name": "Toy Sword",
-        "desc": "A minuscule toy sword, only a few inches long.Holding it brought out a violent enthusiasm in Victor.\nReduces the Charge time of a Pounce by -0.1 second."
+        "desc": ""
       },
       {
         "name": "Victor's Soldier",
@@ -3735,7 +3631,7 @@
       },
       {
         "name": "Weighty Rattle",
-        "desc": "A shoddily carved rattle that Victor cried over until his mother stole it for him.\nIt is entirely too heavy to be trusted to a child.\nRemoving a latched-on Victor causes the Survivor to suffer from the '''Broken Status Effect''' for 20 seconds."
+        "desc": ""
       },
       {
         "name": "Blood Bond",
@@ -3746,7 +3642,7 @@
   {
     "name": "The Unknown",
     "power": "UVX",
-    "powerDesc": "Movement Speeds:\nMain Article\nWalking: 4.6 m/s\nCharging UVX: 4.002 m/s \n\nHallucinations (General):\nSpawn requirement: 45 Charges\nCharge rates:\nDefault, no Weakened Survivors: +1 c/s = 45 seconds\n1 Weakened Survivor: +1.25 c/s = 36 seconds\n2 Weakened Survivors: +1.75 c/s ≈ 26 seconds\n3 Weakened Survivors: +2.375 c/s ≈ 19 seconds\n4 Weakened Survivors: +3.5 c/s ≈ 13 seconds\nCharge-Time reduction: -10 seconds\nThis bonus is applied whenever either of the following occurs:\nA Survivor becomes Weakened or is injured by the UVX Projectile.\nA Hallucination is refunded, which can occur when the Spawn restriction zone around a Hook extends by hooking a Survivor onto it and now encompasses a Hallucination placed earlier.\nSpawn duration: 3 seconds\nThis refers to the period after the Spawning timer has been filled, in which the indicators on the sides of the HUD quickly rise to the top of the screen.\nPost-Spawn inactivity: 5 seconds\nAura Reveal range: 8 metres\nThis refers to the Auras of Hallucinatio",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Blurry Photo",
@@ -3837,14 +3733,10 @@
   {
     "name": "The Wraith",
     "power": "",
-    "powerDesc": "Movement Speeds:\nMain Article\nWalking: 4.6 m/s\nCloaked Walking: 6.0 m/s\nUncloaking: 1.6 m/s\nPost-Uncloak Boost: 6.9 m/s\nCloaking: 4.6 m/s\n\nSurprise Attack:\nThe Surprise Attack is a Score Event in the Deviousness Category that is triggered each time The Wraith successfully hits any Survivor within 5 seconds after uncloaking with a regular Basic Attack.The Surprise Attack is not a Special Attack, but rather just a Score Event the game checks for to trigger certain effects (e.g. ,  and ).\n\nCloaking:\nAction duration: 1.5 seconds\nThe Wailing Bell rings throughout the animation.\nStarting to cloak triggers a rattling noise.\nNo Movement Speed penalty.\nThe Wailing Bell rings throughout the animation.\n\nUncloaking:\nAction duration: 3 seconds\nThe Wailing Bell only starts ringing after 1.5 seconds.\nUncloak Movement speed: 1.6 m/s\nPost-Uncloak Speed burst: 1 second at 6 m/s\n\nStuns:\nGetting stunned while The Wraith is Cloaked forces him to uncloak while he is stunned in place for 4 seconds.\n\nLightbur",
+    "powerDesc": "",
     "addons": [
       {
         "name": "\"All Seeing\" - Blood",
-        "desc": ""
-      },
-      {
-        "name": "\"All Seeing\" - Mud",
         "desc": ""
       },
       {
@@ -3852,23 +3744,7 @@
         "desc": ""
       },
       {
-        "name": "\"All Seeing\" - White",
-        "desc": ""
-      },
-      {
-        "name": "\"Blind Warrior\" - Blood",
-        "desc": ""
-      },
-      {
         "name": "\"Blind Warrior\" - Mud",
-        "desc": ""
-      },
-      {
-        "name": "\"Blind Warrior\" - Soot",
-        "desc": ""
-      },
-      {
-        "name": "\"Blind Warrior\" - Spirit",
         "desc": ""
       },
       {
@@ -3877,31 +3753,27 @@
       },
       {
         "name": "\"Blink\" - Mud",
-        "desc": "The Kratin symbol, representing quick passing, is finger-drawn in mud on the body of the Bell.\n'''''' The Wraith's Disappearance time."
+        "desc": ""
       },
       {
         "name": "\"Blink\" - White",
-        "desc": "The Kratin symbol, representing quick passing, is stamped in white ink on the body of the Bell.\nTremendously reduces the Cloaking time (-60 %)."
+        "desc": ""
       },
       {
         "name": "Bone Clapper",
-        "desc": "A Bell clapper made from a highly polished piece of bone. Causes the sounds of the Wailing Bell to echo and warp chaotically.\nSurvivors can no longer discern the ''Wailing Bell's'' distance or direction."
+        "desc": ""
       },
       {
         "name": "Coxcombed Clapper",
-        "desc": "A simple coxcomb knotted rope wrapped around the Bell Clapper to muffle its sound. A malevolent Aura emanates from it.\nRenders the Wailing Bell completely silent."
+        "desc": ""
       },
       {
         "name": "\"Shadow Dance\" - Blood",
-        "desc": "The Yiwarick symbol, representing dark synergy, is stamped in blood on the body of the Bell.\n'''''' Breaking, Damaging, and Vaulting Action speeds when cloaked."
-      },
-      {
-        "name": "\"Shadow Dance\" - Soot",
         "desc": ""
       },
       {
         "name": "\"Shadow Dance\" - White",
-        "desc": "The Yiwarick symbol, representing dark synergy, is stamped in white ink on the body of the Bell.\n'''''' Breaking, Damaging, and Vaulting Action speeds when cloaked."
+        "desc": ""
       },
       {
         "name": "\"Swift Hunt\" - Blood",
@@ -3909,10 +3781,6 @@
       },
       {
         "name": "\"Swift Hunt\" - Mud",
-        "desc": ""
-      },
-      {
-        "name": "\"Swift Hunt\" - Soot",
         "desc": ""
       },
       {
@@ -3925,19 +3793,19 @@
       },
       {
         "name": "\"The Ghost\" - Soot",
-        "desc": "The Khugwemuu symbol, representing the spirit world, is finger-drawn out of soot on the body of the Bell.\nAfter uncloaking, The Wraith's Terror Radius and Red Stain will remain suppressed for 6 seconds."
+        "desc": ""
       },
       {
         "name": "\"The Hound\" - Soot",
-        "desc": "The Wonnug symbol, representing a peerless tracker, is finger-drawn out of soot on the body of the Bell.\nFresh Blood Marks are '''''' discernible than normal."
+        "desc": ""
       },
       {
         "name": "\"The Serpent\" - Soot",
-        "desc": "The Laokeye symbol, representing cunning, is finger-drawn out of soot on the body of the Bell.\nThe Wraith will uncloak completely after breaking  or damaging  when cloaked."
+        "desc": ""
       },
       {
         "name": "\"Windstorm\" - Blood",
-        "desc": "The Ohuwe-Onmnea symbol, representing a howling storm, is stamped in blood on the body of the Bell.\n'''''' The Wraith's Movement speed when cloaked."
+        "desc": ""
       },
       {
         "name": "\"Windstorm\" - Mud",
@@ -3945,7 +3813,7 @@
       },
       {
         "name": "\"Windstorm\" - White",
-        "desc": "The Ohuwe-Onmnea symbol, representing a howling storm, is stamped in white ink on the body of the Bell.\n'''''' The Wraith's Movement speed when cloaked."
+        "desc": ""
       },
       {
         "name": "Wailing Bell",
@@ -3956,7 +3824,7 @@
   {
     "name": "The Xenomorph",
     "power": "Hidden Pursuit",
-    "powerDesc": "Movement Speeds:\nMain Article\nTail Attack Cool-down: 1.2 m/s\nWalking (outside the Tunnels): '\nWalking (inside the Tunnels): 18 m/s\n\nCrawler Mode:\nActivation threshold: 35 Charges\nCharge rate outside of Tunnels: +1 c/s\nCharge rate inside of Tunnels: +8 c/s\nDe-Charge rate through Turret attack: -1.5 c/s\nMaximum remaining Charge after picking up a Survivor: 75 %\n\nTail Attack:\nCharge time: 0.3 seconds\nAttack range: 4.8 metres\nHitting time: 0.4 seconds\nCool-down on missed attacks: 2.5 seconds\nCool-down on successful attacks: 2.7 seconds\nSpeed Penalty duration upon cancellation: 1 second'\nIt is possible to cancel the Tail Strike, though only during an incredibly brief window right after initiating the attack.\n\nTunnel System:\nTime to enter a tunnel: 0.3 seconds\nTransition time: 0.25 seconds\nThis refers to the time it takes for the normal Map to transition to the Tunnel System after finishing the interaction of entering the tunnels.\nMaximum acceleration: x100.0\nMaximum detection distance: 16 m",
+    "powerDesc": "",
     "addons": [
       {
         "name": "Acidic Blood",
@@ -3972,7 +3840,7 @@
       },
       {
         "name": "Cat Carrier",
-        "desc": "Saving the cat is a noble goal.It's also very distracting.\nGrants the '''Undetectable Status Effect for 20 seconds, when a Remote Flame Turret' knocks you out of Crawler Mode''."
+        "desc": ""
       },
       {
         "name": "Cereal Rations",
