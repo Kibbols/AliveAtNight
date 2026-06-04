@@ -101,10 +101,10 @@ async function wikiGetModule(title) {
   return page?.revisions?.[0]?.slots?.main?.['*'] || page?.revisions?.[0]?.['*'] || '';
 }
 
-// Fetch rendered HTML for a wiki page via the worker
+// Fetch parsed article HTML for a wiki page via the worker (parse API = clean article HTML only)
 async function wikiGetHTML(page) {
   const url = new URL(WORKER_URL);
-  url.searchParams.set('html', '1');
+  url.searchParams.set('parse', '1');
   url.searchParams.set('page', page);
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Worker HTTP ${res.status} for ${page}`);
