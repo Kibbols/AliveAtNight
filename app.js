@@ -147,39 +147,40 @@ async function fetchPageData(rawPage) {
       if (['P', 'DIV', 'UL', 'DL'].includes(nextNode.tagName)) powerContent += ' ' + nextNode.textContent;
       nextNode = nextNode.nextElementSibling;
     }
-    powerDesc = powerContent.replace(/\s+/g, ' ').trim().slice(0, 1000);
+    powerDesc = powerContent.replace(/\s+/g, ' ').trim().slice(0, 5000);
   }
 
-  // Addon descriptions — span with id "Add-ons_for_..." is inside an h3,
-  // and the table is the next sibling of that h3
+  // Addon descriptions
+  // The span with id "Add-ons_for_..." lives inside an h3.
+  // The wikitable with addon data is the next <table> sibling after that h3.
   const addonDescs = {};
   const addonSpan = doc.querySelector('[id^="Add-ons_for_"]');
   if (addonSpan) {
-    // Walk up to the h3/h2/h4 heading element
-    let heading = addonSpan;
-    while (heading && !['H1','H2','H3','H4'].includes(heading.tagName)) {
-      heading = heading.parentElement;
-    }
-    // Find the next sibling table
-    let tableEl = heading ? heading.nextElementSibling : null;
-    while (tableEl && tableEl.tagName !== 'TABLE') {
-      tableEl = tableEl.nextElementSibling;
-    }
-    if (tableEl && tableEl.tagName === 'TABLE') {
-      tableEl.querySelectorAll('tr').forEach(row => {
-        const cells = row.querySelectorAll('td');
-        if (cells.length >= 2) {
-          const nameCell = cells.length >= 3 ? cells[1] : cells[0];
-          const descCell = cells.length >= 3 ? cells[2] : cells[1];
-          if (nameCell && descCell) {
-            const name = nameCell.textContent.replace(/\s+/g, ' ').trim();
-            const desc = descCell.textContent.replace(/'+/g, '').replace(/\s+/g, ' ').trim();
-            if (name.length >= 2 && name.length <= 60 && desc.length > 0) {
-              addonDescs[name] = desc;
+    let heading = addonSpan.closest('h1, h2, h3, h4, h5, h6');
+    if (heading) {
+      let sib = heading.nextElementSibling;
+      while (sib) {
+        if (sib.tagName === 'TABLE') {
+          sib.querySelectorAll('tr').forEach(row => {
+            const cells = row.querySelectorAll('td');
+            if (cells.length >= 2) {
+              const nameCell = cells.length >= 3 ? cells[1] : cells[0];
+              const descCell = cells.length >= 3 ? cells[2] : cells[1];
+              if (nameCell && descCell) {
+                const name = nameCell.textContent.replace(/\s+/g, ' ').trim();
+                const desc = descCell.textContent.replace(/'+/g, '').replace(/\s+/g, ' ').trim();
+                if (name.length >= 2 && name.length <= 60 && desc.length > 0) {
+                  addonDescs[name] = desc;
+                }
+              }
             }
-          }
+          });
+          break;
         }
-      });
+        // Stop if we hit another heading
+        if (/^H[1-6]$/.test(sib.tagName)) break;
+        sib = sib.nextElementSibling;
+      }
     }
   }
 
