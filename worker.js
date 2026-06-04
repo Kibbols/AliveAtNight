@@ -23,6 +23,21 @@ export default {
       const incoming = new URL(request.url);
       const params = incoming.searchParams;
 
+      // If ?parse=1&page=PageName, fetch article HTML via parse API (cleaner than full page)
+      if (params.get('parse') === '1') {
+        const page = params.get('page');
+        if (!page) return new Response(JSON.stringify({ error: 'Missing page param' }), { status: 400, headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' } });
+        const wikiUrl = `${WIKI_API_BASE}?action=parse&page=${encodeURIComponent(page)}&prop=text&format=json`;
+        const res = await fetch(wikiUrl, {
+          headers: { 'User-Agent': 'AliveAtNight/1.0 (https://kibbols.github.io/AliveAtNight)', 'Accept': 'application/json' },
+          cf: { cacheTtl: 3600, cacheEverything: true }
+        });
+        if (!res.ok) return new Response(JSON.stringify({ error: `Wiki returned ${res.status}` }), { status: res.status, headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' } });
+        const data = await res.json();
+        const html = data?.parse?.text?.['*'] || '';
+        return new Response(html, { status: 200, headers: { ...CORS_HEADERS, 'Content-Type': 'text/html', 'Cache-Control': 'public, max-age=3600' } });
+      }
+
       // If ?html=1&page=PageName, fetch rendered HTML from the wiki
       if (params.get('html') === '1') {
         const page = params.get('page');
