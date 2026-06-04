@@ -134,24 +134,23 @@ async function fetchPageData(rawPage) {
   const parser = new DOMParser();
   const doc = parser.parseFromString(html, 'text/html');
 
-  // Power description
+  // Power description — id is "Power_Trivia" in parsed HTML
   let powerDesc = '';
-  const powerHeading = doc.getElementById('Power') || doc.querySelector('[id^="Power"]');
+  const powerHeading = doc.getElementById('Power_Trivia') || doc.querySelector('[id^="Power_Trivia"]');
   if (powerHeading) {
     let powerContent = '';
     let currentElement = powerHeading.parentElement;
-    if (powerHeading.tagName !== 'H2' && powerHeading.tagName !== 'H3') currentElement = powerHeading;
     let nextNode = currentElement.nextElementSibling;
     while (nextNode) {
       if (nextNode.querySelector && nextNode.querySelector('[id^="Add-ons_for_"]')) break;
       if (nextNode.id && nextNode.id.startsWith('Add-ons_for_')) break;
-      if (['P', 'DIV', 'UL'].includes(nextNode.tagName)) powerContent += ' ' + nextNode.textContent;
+      if (['P', 'DIV', 'UL', 'DL'].includes(nextNode.tagName)) powerContent += ' ' + nextNode.textContent;
       nextNode = nextNode.nextElementSibling;
     }
     powerDesc = powerContent.replace(/\s+/g, ' ').trim().slice(0, 1000);
   }
 
-  // Addon descriptions
+  // Addon descriptions — id is "Add-ons_for_the_POWERNAME" in parsed HTML
   const addonDescs = {};
   const addonHeading = doc.querySelector('[id^="Add-ons_for_"]');
   if (addonHeading) {
