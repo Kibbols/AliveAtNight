@@ -551,11 +551,11 @@ function showPollButton() {
     btn.disabled = true;
     btn.textContent = 'Extracting…';
     try {
-      const extracted = await callGemini(`You are a data extractor. Given the following Dead by Daylight build recommendations, extract ONLY the build name, perk names, and add-on names for each build. Return ONLY a JSON array with no markdown, no backticks, no explanation. Format exactly like this:
+      const extracted = await callGemini(`You are a data extractor for a Twitch poll. Given the following Dead by Daylight build recommendations, extract the build name, perk names, and add-on names for each build. Then create a "poll_choice" for each build: a short string of the 4 perk names abbreviated to be human-readable, separated by commas with NO spaces after commas, that is STRICTLY 25 characters or fewer. Rules for abbreviation: replace "Hex:" with "H:", shorten each perk name as needed to fit — use recognisable short forms (e.g. "Pop Goes the Weasel" -> "Pop", "Corrupt Intervention" -> "Corrupt", "Save the Best for Last" -> "STBFL", "Nowhere to Hide" -> "NtH"). The entire poll_choice string including all commas must be 25 characters or fewer. Return ONLY a JSON array with no markdown, no backticks, no explanation. Format exactly like this:
 [
-  {"build": "Build Name Here", "perks": ["Perk 1", "Perk 2", "Perk 3", "Perk 4"], "addons": ["Addon 1", "Addon 2"]},
-  {"build": "Build Name Here", "perks": ["Perk 1", "Perk 2", "Perk 3", "Perk 4"], "addons": ["Addon 1", "Addon 2"]},
-  {"build": "Build Name Here", "perks": ["Perk 1", "Perk 2", "Perk 3", "Perk 4"], "addons": ["Addon 1", "Addon 2"]}
+  {"build": "Build Name Here", "perks": ["Perk 1", "Perk 2", "Perk 3", "Perk 4"], "addons": ["Addon 1", "Addon 2"], "poll_choice": "Perk1,Perk2,Perk3,Perk4"},
+  {"build": "Build Name Here", "perks": ["Perk 1", "Perk 2", "Perk 3", "Perk 4"], "addons": ["Addon 1", "Addon 2"], "poll_choice": "Perk1,Perk2,Perk3,Perk4"},
+  {"build": "Build Name Here", "perks": ["Perk 1", "Perk 2", "Perk 3", "Perk 4"], "addons": ["Addon 1", "Addon 2"], "poll_choice": "Perk1,Perk2,Perk3,Perk4"}
 ]
 
 Builds to extract from:
@@ -619,15 +619,7 @@ function showPollCopyBox(lines, builds) {
   const choiceInputs = builds.map((b, i) => {
     const inp = document.createElement('input');
     inp.type = 'text';
-    const toAcronym = (perk) => {
-      const hexMatch = perk.match(/^Hex:\s*(.+)$/i);
-      if (hexMatch) {
-        const acronym = hexMatch[1].split(/\s+/).map(w => w[0].toUpperCase()).join('');
-        return 'H:' + acronym;
-      }
-      return perk.split(/\s+/).map(w => w[0].toUpperCase()).join('');
-    };
-    inp.value = b.perks.map(toAcronym).join(',').slice(0, 25);
+    inp.value = (b.poll_choice || b.perks.join(',').slice(0, 25)).slice(0, 25);
     inp.style.cssText = 'width:100%;background:var(--bg-deep);color:var(--text-main);border:1px solid var(--border);border-radius:6px;padding:0.4rem 0.6rem;font-size:0.8rem;box-sizing:border-box';
     choicesWrap.appendChild(inp);
     return inp;
