@@ -563,7 +563,7 @@ ${lastKillerResponse}`);
       const clean = extracted.replace(/\`\`\`json|\`\`\`/g, '').trim();
       const builds = JSON.parse(clean);
       const lines = builds.map(b => `${b.build} | ${b.perks.join(', ')} | ${b.addons.join(', ')}`);
-      showPollCopyBox(lines, builds);
+      showPollCopyBox(lines, builds, lastKillerRef);
       btn.textContent = '🗳️ Create Twitch Poll';
     } catch (e) {
       btn.textContent = '⚠ Failed — try again';
@@ -573,7 +573,7 @@ ${lastKillerResponse}`);
   killerResults.appendChild(btn);
 }
 
-function showPollCopyBox(lines, builds) {
+function showPollCopyBox(lines, builds, killer) {
   const existing = document.getElementById('pollCopyBox');
   if (existing) existing.remove();
   const wrap = document.createElement('div');
@@ -592,7 +592,8 @@ function showPollCopyBox(lines, builds) {
   // Poll title input
   const titleInput = document.createElement('input');
   titleInput.type = 'text';
-  titleInput.value = 'Which build should I run?';
+  const shortName = killer ? killer.name.replace(/^The /, '') : '';
+  titleInput.value = shortName ? `Which ${shortName} build?` : 'Which build should I run?';
   titleInput.style.cssText = 'width:100%;background:var(--bg-deep);color:var(--text-main);border:1px solid var(--border);border-radius:6px;padding:0.5rem 0.6rem;font-size:0.85rem;margin-bottom:0.5rem;box-sizing:border-box';
 
   // Duration input
