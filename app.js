@@ -546,7 +546,7 @@ function showPollButton() {
   btn.id = 'pollBtn';
   btn.className = 'btn-secondary';
   btn.style.cssText = 'margin-top:1rem;width:100%';
-  btn.textContent = '📋 Copy as Streamer.bot Poll';
+  btn.textContent = '🗳️ Create Twitch Poll';
   btn.onclick = async () => {
     btn.disabled = true;
     btn.textContent = 'Extracting…';
@@ -564,7 +564,7 @@ ${lastKillerResponse}`);
       const builds = JSON.parse(clean);
       const lines = builds.map(b => `${b.build} | ${b.perks.join(', ')} | ${b.addons.join(', ')}`);
       showPollCopyBox(lines, builds);
-      btn.textContent = '📋 Copy as Streamer.bot Poll';
+      btn.textContent = '🗳️ Create Twitch Poll';
     } catch (e) {
       btn.textContent = '⚠ Failed — try again';
     }
@@ -613,13 +613,14 @@ function showPollCopyBox(lines, builds) {
   // Choices preview
   const label = document.createElement('div');
   label.style.cssText = 'font-size:0.8rem;color:var(--text-dim);margin-bottom:0.4rem';
-  label.textContent = 'Poll choices (build names, max 60 chars each):';
+  label.textContent = 'Poll choices (build + perks + addons, max 60 chars each):';
   const choicesWrap = document.createElement('div');
   choicesWrap.style.cssText = 'display:flex;flex-direction:column;gap:0.3rem;margin-bottom:0.5rem';
   const choiceInputs = builds.map((b, i) => {
     const inp = document.createElement('input');
     inp.type = 'text';
-    inp.value = b.build.slice(0, 60);
+    const full = `${b.build} | ${b.perks.join(', ')} | ${b.addons.join(', ')}`;
+    inp.value = full.slice(0, 60);
     inp.style.cssText = 'width:100%;background:var(--bg-deep);color:var(--text-main);border:1px solid var(--border);border-radius:6px;padding:0.4rem 0.6rem;font-size:0.8rem;box-sizing:border-box';
     choicesWrap.appendChild(inp);
     return inp;
