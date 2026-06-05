@@ -455,6 +455,186 @@ survivorGenBtn.addEventListener('click', async () => {
   finally { survivorGenBtn.disabled = false; }
 });
 
+let lastKillerResponse = '';
+let twitchToken = null;
+let twitchUserId = null;
+
+const TWITCH_CLIENT_ID = 'u2guup4sc83lg6e9iujj8r4lozuzhk';
+const TWITCH_REDIRECT_URI = 'https://kibbols.github.io/AliveAtNight/twitch-callback.html';
+const TWITCH_SCOPES = 'channel:manage:polls';
+
+// Listen for token back from OAuth popup
+window.addEventListener('message', async (e) => {
+  if (e.origin !== 'https://kibbols.github.io') return;
+  if (e.data?.type === 'twitch_token') {
+    twitchToken = e.data.access_token;
+    await fetchTwitchUser();
+    updateTwitchBtn();
+  }
+});
+
+// Also handle token from hash on redirect fallback
+(function checkHashToken() {
+  const hash = window.location.hash;
+  if (hash.includes('twitch_token=')) {
+    twitchToken = hash.split('twitch_token=')[1];
+    window.location.hash = '';
+    fetchTwitchUser().then(updateTwitchBtn);
+  }
+})();
+
+async function fetchTwitchUser() {
+  if (!twitchToken) return;
+  const res = await fetch(`${WORKER_URL}/?twitch=user&token=${twitchToken}`);
+  const data = await res.json();
+  twitchUserId = data?.data?.[0]?.id || null;
+}
+
+function connectTwitch() {
+  const url = `https://id.twitch.tv/oauth2/authorize?client_id=${TWITCH_CLIENT_ID}&redirect_uri=${encodeURIComponent(TWITCH_REDIRECT_URI)}&response_type=code&scope=${encodeURIComponent(TWITCH_SCOPES)}`;
+  window.open(url, 'twitch_auth', 'width=500,height=700');
+}
+
+function updateTwitchBtn() {
+  const btn = document.getElementById('twitchConnectBtn');
+  if (!btn) return;
+  if (twitchToken && twitchUserId) {
+    btn.textContent = '✓ Twitch Connected';
+    btn.style.background = 'var(--accent)';
+    btn.style.opacity = '1';
+  } else {
+    btn.textContent = '🟣 Connect Twitch';
+    btn.style.background = '';
+  }
+}
+
+async function createTwitchPoll(title, choices, duration) {
+  if (!twitchToken || !twitchUserId) throw new Error('Not connected to Twitch');
+  const res = await fetch(`${WORKER_URL}/?twitch=poll`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ access_token: twitchToken, broadcaster_id: twitchUserId, title, choices, duration })
+  });
+  const data = await res.json();
+  if (!data.data) throw new Error(data.message || JSON.stringify(data));
+  return data;
+}
+
+function showPollButton() {
+  const existing = document.getElementById('pollBtn');
+  if (existing) existing.remove();
+  const btn = document.createElement('button');
+  btn.id = 'pollBtn';
+  btn.className = 'btn-secondary';
+  btn.style.cssText = 'margin-top:1rem;width:100%';
+  btn.textContent = '📋 Copy as Streamer.bot Poll';
+  btn.onclick = async () => {
+    btn.disabled = true;
+    btn.textContent = 'Extracting…';
+    try {
+      const extracted = await callGemini(`You are a data extractor. Given the following Dead by Daylight build recommendations, extract ONLY the build name, perk names, and add-on names for each build. Return ONLY a JSON array with no markdown, no backticks, no explanation. Format exactly like this:
+[
+  {"build": "Build Name Here", "perks": ["Perk 1", "Perk 2", "Perk 3", "Perk 4"], "addons": ["Addon 1", "Addon 2"]},
+  {"build": "Build Name Here", "perks": ["Perk 1", "Perk 2", "Perk 3", "Perk 4"], "addons": ["Addon 1", "Addon 2"]},
+  {"build": "Build Name Here", "perks": ["Perk 1", "Perk 2", "Perk 3", "Perk 4"], "addons": ["Addon 1", "Addon 2"]}
+]
+
+Builds to extract from:
+${lastKillerResponse}`);
+      const clean = extracted.replace(/\`\`\`json|\`\`\`/g, '').trim();
+      const builds = JSON.parse(clean);
+      const lines = builds.map(b => `${b.build} | ${b.perks.join(', ')} | ${b.addons.join(', ')}`);
+      showPollCopyBox(lines, builds);
+      btn.textContent = '📋 Copy as Streamer.bot Poll';
+    } catch (e) {
+      btn.textContent = '⚠ Failed — try again';
+    }
+    btn.disabled = false;
+  };
+  killerResults.appendChild(btn);
+}
+
+function showPollCopyBox(lines, builds) {
+  const existing = document.getElementById('pollCopyBox');
+  if (existing) existing.remove();
+  const wrap = document.createElement('div');
+  wrap.id = 'pollCopyBox';
+  wrap.style.cssText = 'margin-top:1rem';
+
+  // Twitch connect button
+  const twitchBtn = document.createElement('button');
+  twitchBtn.id = 'twitchConnectBtn';
+  twitchBtn.className = 'btn-secondary';
+  twitchBtn.style.cssText = 'width:100%;margin-bottom:0.5rem';
+  twitchBtn.textContent = twitchToken && twitchUserId ? '✓ Twitch Connected' : '🟣 Connect Twitch';
+  if (twitchToken && twitchUserId) { twitchBtn.style.background = 'var(--accent)'; }
+  twitchBtn.onclick = () => { if (!twitchToken || !twitchUserId) connectTwitch(); };
+
+  // Poll title input
+  const titleInput = document.createElement('input');
+  titleInput.type = 'text';
+  titleInput.value = 'Which build should I run?';
+  titleInput.style.cssText = 'width:100%;background:var(--bg-deep);color:var(--text-main);border:1px solid var(--border);border-radius:6px;padding:0.5rem 0.6rem;font-size:0.85rem;margin-bottom:0.5rem;box-sizing:border-box';
+
+  // Duration input
+  const durationWrap = document.createElement('div');
+  durationWrap.style.cssText = 'display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem';
+  const durationLabel = document.createElement('span');
+  durationLabel.style.cssText = 'font-size:0.8rem;color:var(--text-dim);white-space:nowrap';
+  durationLabel.textContent = 'Duration (seconds):';
+  const durationInput = document.createElement('input');
+  durationInput.type = 'number';
+  durationInput.value = '60';
+  durationInput.min = '15';
+  durationInput.max = '1800';
+  durationInput.style.cssText = 'width:80px;background:var(--bg-deep);color:var(--text-main);border:1px solid var(--border);border-radius:6px;padding:0.4rem 0.5rem;font-size:0.85rem';
+  durationWrap.appendChild(durationLabel);
+  durationWrap.appendChild(durationInput);
+
+  // Choices preview
+  const label = document.createElement('div');
+  label.style.cssText = 'font-size:0.8rem;color:var(--text-dim);margin-bottom:0.4rem';
+  label.textContent = 'Poll choices (build names, max 60 chars each):';
+  const choicesWrap = document.createElement('div');
+  choicesWrap.style.cssText = 'display:flex;flex-direction:column;gap:0.3rem;margin-bottom:0.5rem';
+  const choiceInputs = builds.map((b, i) => {
+    const inp = document.createElement('input');
+    inp.type = 'text';
+    inp.value = b.build.slice(0, 60);
+    inp.style.cssText = 'width:100%;background:var(--bg-deep);color:var(--text-main);border:1px solid var(--border);border-radius:6px;padding:0.4rem 0.6rem;font-size:0.8rem;box-sizing:border-box';
+    choicesWrap.appendChild(inp);
+    return inp;
+  });
+
+  // Create poll button
+  const createBtn = document.createElement('button');
+  createBtn.className = 'btn-primary';
+  createBtn.style.cssText = 'width:100%;margin-top:0.25rem';
+  createBtn.textContent = '🗳️ Create Twitch Poll';
+  createBtn.onclick = async () => {
+    if (!twitchToken || !twitchUserId) { connectTwitch(); return; }
+    createBtn.disabled = true;
+    createBtn.textContent = 'Creating poll…';
+    try {
+      const choices = choiceInputs.map(i => i.value.trim()).filter(Boolean);
+      await createTwitchPoll(titleInput.value.trim() || 'Which build should I run?', choices, parseInt(durationInput.value) || 60);
+      createBtn.textContent = '✓ Poll Created!';
+      setTimeout(() => { createBtn.textContent = '🗳️ Create Twitch Poll'; createBtn.disabled = false; }, 3000);
+    } catch (e) {
+      createBtn.textContent = '⚠ ' + e.message;
+      setTimeout(() => { createBtn.textContent = '🗳️ Create Twitch Poll'; createBtn.disabled = false; }, 4000);
+    }
+  };
+
+  wrap.appendChild(twitchBtn);
+  wrap.appendChild(titleInput);
+  wrap.appendChild(durationWrap);
+  wrap.appendChild(label);
+  wrap.appendChild(choicesWrap);
+  wrap.appendChild(createBtn);
+  killerResults.appendChild(wrap);
+}
+
 killerGenBtn.addEventListener('click', async () => {
   const idx = killerSelect.value;
   if (idx === '' || idx === null) { killerSelect.focus(); return; }
@@ -470,7 +650,12 @@ killerGenBtn.addEventListener('click', async () => {
     addonContext = `\n**${killer.name}'s add-ons (use ONLY these, no others):**\n${list}`;
   }
   const intent = isSurprise ? 'Come up with genuinely creative, fun, and interesting builds that would make for entertaining YouTube content. Think outside the meta — find synergies, meme potential, unique playstyles, or high-skill-expression builds that viewers would find exciting to watch.' : `The user wants: "${buildRequest}"`;
-  try { renderMarkdown(killerResults, await callGemini(`You are a Dead by Daylight build theorist and YouTube content strategist with deep mechanical knowledge of the game.\n\n**Killer:** ${killer.name}\n**Killer Power — ${killer.power}:** ${killer.powerDesc}${addonContext}\n\n**Critical mechanical rules:**\n- Killer power hits are SPECIAL ATTACKS, not basic attacks. Perks that require "basic attacks" do NOT synergize with power hits unless the perk explicitly says "any attack" or "special attacks".\n- Reason from what each perk DOES mechanically, not its name or flavor text.\n- Only recommend add-ons from the list provided above. Do not invent or substitute add-on names.\n\n${intent}\n\nGenerate 3 distinct perk + add-on builds for ${killer.name}. For each build:\n1. Give the build a catchy name/title (suitable as a YouTube video title)\n2. List exactly 4 perks — for each, briefly explain what it does mechanically and why it fits\n3. List 2 add-ons from the provided list — explain the mechanical effect and why it fits\n4. Write a short "video pitch" (2-3 sentences) — why would viewers want to watch this?\n5. Rate: Difficulty (Beginner/Intermediate/Advanced), Fun Factor (1-5 🔪), Meme Potential (Low/Medium/High)`)); }
+  try {
+    const killerResponse = await callGemini(`You are a Dead by Daylight build theorist and YouTube content strategist with deep mechanical knowledge of the game.\n\n**Killer:** ${killer.name}\n**Killer Power — ${killer.power}:** ${killer.powerDesc}${addonContext}\n\n**Critical mechanical rules:**\n- Killer power hits are SPECIAL ATTACKS, not basic attacks. Perks that require "basic attacks" do NOT synergize with power hits unless the perk explicitly says "any attack" or "special attacks".\n- Reason from what each perk DOES mechanically, not its name or flavor text.\n- Only recommend add-ons from the list provided above. Do not invent or substitute add-on names.\n\n${intent}\n\nGenerate 3 distinct perk + add-on builds for ${killer.name}. For each build:\n1. Give the build a catchy name/title (suitable as a YouTube video title)\n2. List exactly 4 perks — for each, briefly explain what it does mechanically and why it fits\n3. List 2 add-ons from the provided list — explain the mechanical effect and why it fits\n4. Write a short "video pitch" (2-3 sentences) — why would viewers want to watch this?\n5. Rate: Difficulty (Beginner/Intermediate/Advanced), Fun Factor (1-5 🔪), Meme Potential (Low/Medium/High)`);
+    renderMarkdown(killerResults, killerResponse);
+    lastKillerResponse = killerResponse;
+    showPollButton();
+  }
   catch (err) { setError(killerResults, err.message); }
   finally { killerGenBtn.disabled = false; }
 });

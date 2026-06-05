@@ -10,12 +10,16 @@ const CORS_HEADERS = {
   'Access-Control-Allow-Headers': 'Content-Type',
 };
 
+const TWITCH_CLIENT_ID = 'u2guup4sc83lg6e9iujj8r4lozuzhk';
+const TWITCH_REDIRECT_URI = 'https://kibbols.github.io/AliveAtNight/twitch-callback.html';
+
 export default {
   async fetch(request, env, ctx) {
     if (request.method === 'OPTIONS') {
-      return new Response(null, { status: 204, headers: CORS_HEADERS });
+      return new Response(null, { status: 204, headers: { ...CORS_HEADERS, 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS' } });
     }
-    if (request.method !== 'GET') {
+    const isTwitchPost = request.method === 'POST' && new URL(request.url).searchParams.get('twitch');
+    if (request.method !== 'GET' && !isTwitchPost) {
       return new Response('Method not allowed', { status: 405, headers: CORS_HEADERS });
     }
 
@@ -59,6 +63,55 @@ export default {
           status: 200,
           headers: { ...CORS_HEADERS, 'Content-Type': 'text/html', 'Cache-Control': 'public, max-age=3600' }
         });
+      }
+
+      // POST ?twitch=token — exchange auth code for access token
+      if (params.get('twitch') === 'token' && request.method === 'POST') {
+        const body = await request.json();
+        const res = await fetch('https://id.twitch.tv/oauth2/token', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({
+            client_id: TWITCH_CLIENT_ID,
+            client_secret: env.TWITCH_CLIENT_SECRET,
+            code: body.code,
+            grant_type: 'authorization_code',
+            redirect_uri: TWITCH_REDIRECT_URI,
+          })
+        });
+        const data = await res.json();
+        return new Response(JSON.stringify(data), { status: res.status, headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' } });
+      }
+
+      // POST ?twitch=poll — create a Twitch poll
+      if (params.get('twitch') === 'poll' && request.method === 'POST') {
+        const body = await request.json();
+        const res = await fetch('https://api.twitch.tv/helix/polls', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${body.access_token}`,
+            'Client-Id': TWITCH_CLIENT_ID,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            broadcaster_id: body.broadcaster_id,
+            title: body.title,
+            choices: body.choices.map(c => ({ title: c })),
+            duration: body.duration || 60,
+          })
+        });
+        const data = await res.json();
+        return new Response(JSON.stringify(data), { status: res.status, headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' } });
+      }
+
+      // GET ?twitch=user — get user info from token
+      if (params.get('twitch') === 'user') {
+        const token = params.get('token');
+        const res = await fetch('https://api.twitch.tv/helix/users', {
+          headers: { 'Authorization': `Bearer ${token}`, 'Client-Id': TWITCH_CLIENT_ID }
+        });
+        const data = await res.json();
+        return new Response(JSON.stringify(data), { status: res.status, headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' } });
       }
 
       // Otherwise proxy the API call

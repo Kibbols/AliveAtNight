@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twitch Auth — AliveAtNight</title>
+  <style>
+    body { background: #0d0d0d; color: #e0e0e0; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+    p { font-size: 1.1rem; opacity: 0.7; }
+  </style>
+</head>
+<body>
+  <p>Connecting to Twitch…</p>
+  <script>
+    const WORKER_URL = 'https://aliveatnight-proxy.portgamingsttv.workers.dev';
+
+    async function handleCallback() {
+      // Extract code from URL query params
+      const params = new URLSearchParams(window.location.search);
+      const code = params.get('code');
+      const error = params.get('error');
+
+      if (error || !code) {
+        document.querySelector('p').textContent = 'Auth failed: ' + (error || 'No code received');
+        return;
+      }
+
+      try {
+        // Exchange code for token via worker
+        const res = await fetch(`${WORKER_URL}/?twitch=token`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ code })
+        });
+        const data = await res.json();
+
+        if (!data.access_token) {
+          document.querySelector('p').textContent = 'Token exchange failed: ' + JSON.stringify(data);
+          return;
+        }
+
+        // Store token and send to opener
+        sessionStorage.setItem('twitch_token', data.access_token);
+        if (window.opener) {
+          window.opener.postMessage({ type: 'twitch_token', access_token: data.access_token }, 'https://kibbols.github.io');
+          document.querySelector('p').textContent = 'Connected! You can close this window.';
+          setTimeout(() => window.close(), 1500);
+        } else {
+          // Fallback: redirect back with token in hash
+          window.location.href = 'https://kibbols.github.io/AliveAtNight/#twitch_token=' + data.access_token;
+        }
+      } catch (e) {
+        document.querySelector('p').textContent = 'Error: ' + e.message;
+      }
+    }
+
+    handleCallback();
+  </script>
+</body>
+</html>
