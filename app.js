@@ -560,13 +560,21 @@ function showPollButton() {
 
 Builds to extract from:
 ${lastKillerResponse}`);
-      const clean = extracted.replace(/\`\`\`json|\`\`\`/g, '').trim();
-      const builds = JSON.parse(clean);
+      const clean = extracted.replace(/```json|```/g, '').trim();
+      let builds;
+      try {
+        builds = JSON.parse(clean);
+      } catch (parseErr) {
+        console.error('Poll extraction parse error:', parseErr);
+        console.error('Raw extracted:', extracted);
+        throw new Error('Could not parse build data: ' + parseErr.message);
+      }
       const lines = builds.map(b => `${b.build} | ${b.perks.join(', ')} | ${b.addons.join(', ')}`);
       showPollCopyBox(lines, builds, lastKillerRef);
       btn.textContent = '🗳️ Create Twitch Poll';
     } catch (e) {
-      btn.textContent = '⚠ Failed — try again';
+      console.error('Poll button error:', e);
+      btn.textContent = '⚠ ' + e.message;
     }
     btn.disabled = false;
   };
