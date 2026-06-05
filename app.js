@@ -619,7 +619,15 @@ function showPollCopyBox(lines, builds) {
   const choiceInputs = builds.map((b, i) => {
     const inp = document.createElement('input');
     inp.type = 'text';
-    inp.value = b.perks.join(', ').slice(0, 60);
+    const toAcronym = (perk) => {
+      const hexMatch = perk.match(/^Hex:\s*(.+)$/i);
+      if (hexMatch) {
+        const acronym = hexMatch[1].split(/\s+/).map(w => w[0].toUpperCase()).join('');
+        return 'H:' + acronym;
+      }
+      return perk.split(/\s+/).map(w => w[0].toUpperCase()).join('');
+    };
+    inp.value = b.perks.map(toAcronym).join(',').slice(0, 25);
     inp.style.cssText = 'width:100%;background:var(--bg-deep);color:var(--text-main);border:1px solid var(--border);border-radius:6px;padding:0.4rem 0.6rem;font-size:0.8rem;box-sizing:border-box';
     choicesWrap.appendChild(inp);
     return inp;
