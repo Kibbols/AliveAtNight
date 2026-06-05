@@ -463,6 +463,11 @@ const TWITCH_CLIENT_ID = 'u2guup4sc83lg6e9iujj8r4lozuzhk';
 const TWITCH_REDIRECT_URI = 'https://kibbols.github.io/AliveAtNight/twitch-callback.html';
 const TWITCH_SCOPES = 'channel:manage:polls';
 
+document.addEventListener('DOMContentLoaded', () => {
+  const headerBtn = document.getElementById('twitchHeaderBtn');
+  if (headerBtn) headerBtn.onclick = () => { if (!twitchToken || !twitchUserId) connectTwitch(); };
+});
+
 // Listen for token back from OAuth popup
 window.addEventListener('message', async (e) => {
   if (e.origin !== 'https://kibbols.github.io') return;
@@ -496,15 +501,29 @@ function connectTwitch() {
 }
 
 function updateTwitchBtn() {
-  const btn = document.getElementById('twitchConnectBtn');
-  if (!btn) return;
-  if (twitchToken && twitchUserId) {
-    btn.textContent = '✓ Twitch Connected';
-    btn.style.background = 'var(--accent)';
-    btn.style.opacity = '1';
-  } else {
-    btn.textContent = '🟣 Connect Twitch';
-    btn.style.background = '';
+  // Update header button
+  const headerBtn = document.getElementById('twitchHeaderBtn');
+  if (headerBtn) {
+    if (twitchToken && twitchUserId) {
+      headerBtn.textContent = '✓ Twitch';
+      headerBtn.style.background = 'var(--accent)';
+      headerBtn.style.color = '#000';
+    } else {
+      headerBtn.textContent = '🟣 Twitch';
+      headerBtn.style.background = '';
+      headerBtn.style.color = '';
+    }
+  }
+  // Update inline poll button if present
+  const inlineBtn = document.getElementById('twitchConnectBtn');
+  if (inlineBtn) {
+    if (twitchToken && twitchUserId) {
+      inlineBtn.textContent = '✓ Twitch Connected';
+      inlineBtn.style.background = 'var(--accent)';
+    } else {
+      inlineBtn.textContent = '🟣 Connect Twitch';
+      inlineBtn.style.background = '';
+    }
   }
 }
 
