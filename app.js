@@ -583,7 +583,7 @@ function showPollCopyBox(lines, builds) {
   // Twitch connect button
   const twitchBtn = document.createElement('button');
   twitchBtn.id = 'twitchConnectBtn';
-  twitchBtn.className = 'btn-secondary';
+  twitchBtn.className = 'btn-secondary twitch-btn';
   twitchBtn.style.cssText = 'width:100%;margin-bottom:0.5rem';
   twitchBtn.textContent = twitchToken && twitchUserId ? '✓ Twitch Connected' : '🟣 Connect Twitch';
   if (twitchToken && twitchUserId) { twitchBtn.style.background = 'var(--accent)'; }
@@ -613,14 +613,13 @@ function showPollCopyBox(lines, builds) {
   // Choices preview
   const label = document.createElement('div');
   label.style.cssText = 'font-size:0.8rem;color:var(--text-dim);margin-bottom:0.4rem';
-  label.textContent = 'Poll choices (build + perks + addons, max 60 chars each):';
+  label.textContent = 'Poll choices (perks only, max 60 chars each):';
   const choicesWrap = document.createElement('div');
   choicesWrap.style.cssText = 'display:flex;flex-direction:column;gap:0.3rem;margin-bottom:0.5rem';
   const choiceInputs = builds.map((b, i) => {
     const inp = document.createElement('input');
     inp.type = 'text';
-    const full = `${b.build} | ${b.perks.join(', ')} | ${b.addons.join(', ')}`;
-    inp.value = full.slice(0, 60);
+    inp.value = b.perks.join(', ').slice(0, 60);
     inp.style.cssText = 'width:100%;background:var(--bg-deep);color:var(--text-main);border:1px solid var(--border);border-radius:6px;padding:0.4rem 0.6rem;font-size:0.8rem;box-sizing:border-box';
     choicesWrap.appendChild(inp);
     return inp;
@@ -628,7 +627,7 @@ function showPollCopyBox(lines, builds) {
 
   // Create poll button
   const createBtn = document.createElement('button');
-  createBtn.className = 'btn-primary';
+  createBtn.className = 'btn-primary twitch-btn';
   createBtn.style.cssText = 'width:100%;margin-top:0.25rem';
   createBtn.textContent = '🗳️ Create Twitch Poll';
   createBtn.onclick = async () => {
